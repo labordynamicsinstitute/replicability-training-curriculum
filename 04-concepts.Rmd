@@ -16,5 +16,20 @@ We therefore need to define a few concepts:
 
 ## Generic data workflow
 
+<div class="mermaid">
+graph TD;
+    subgraph Dataflow;
+    A((Input data)) ==>  B[Cleaning programs];
+    B ==> C((Analysis data));
+    C ==> D[Analysis programs]
+    D ==> E((Outputs));
+    end;
+    B -.-> F(("Auxiliary data<br/>(created)"));
+    F -.-> C;
+    Z((Source)) -.-> X[Data citation] -.-> A;
+
+</div>
+
+
 ## Assessing computational reproducibility
 
