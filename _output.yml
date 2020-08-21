@@ -16,3 +16,9 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default
+bookdown::tufte_html_book:
+  toc: yes
+  css: toc.css
+  split_by: chapter
+  includes:
+    in_header: _includes/mermaid.html
