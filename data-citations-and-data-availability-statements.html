@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Data citations and data availability statements | TRAINING For Reproducibility Verification</title>
+  <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="generator" content="bookdown 0.20.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Data citations and data availability statements | TRAINING For Reproducibility Verification" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Data citations and data availability statements | TRAINING For Reproducibility Verification" />
+  
+  <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  
+
+<meta name="author" content="Lars Vilhuber" />
+<meta name="author" content="Meredith Welch" />
+<meta name="author" content="David Wasser" />
+
+
+<meta name="date" content="2020-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-concepts.html"/>
+<link rel="next" href="generic-data-workflow.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+    <script src="js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Training for Reproducibility Verification</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tentative-agenda"><i class="fa fa-check"></i><b>1.1</b> Tentative Agenda</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-to-read-this-document"><i class="fa fa-check"></i><b>1.2</b> How to read this document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pre-requisites.html"><a href="pre-requisites.html"><i class="fa fa-check"></i><b>2</b> Pre-requisites</a></li>
+<li class="chapter" data-level="3" data-path="pre-training.html"><a href="pre-training.html"><i class="fa fa-check"></i><b>3</b> Pre-training tasks</a></li>
+<li class="chapter" data-level="4" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>4</b> Background</a><ul>
+<li class="chapter" data-level="4.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>4.1</b> Activities of the LDI Replication Lab</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="background.html"><a href="background.html#pre-publication-evaluation-of-reproducibility-and-quality-of-supplemental-materials"><i class="fa fa-check"></i><b>4.1.1</b> Pre-Publication Evaluation of Reproducibility and Quality of Supplemental Materials</a></li>
+<li class="chapter" data-level="4.1.2" data-path="background.html"><a href="background.html#post-publication-evaluation-of-reproducibility"><i class="fa fa-check"></i><b>4.1.2</b> Post-Publication Evaluation of Reproducibility</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="background.html"><a href="background.html#learning-goals"><i class="fa fa-check"></i><b>4.2</b> Learning goals</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-concepts.html"><a href="basic-concepts.html"><i class="fa fa-check"></i><b>5</b> Basic Concepts</a></li>
+<li class="chapter" data-level="6" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html"><i class="fa fa-check"></i><b>6</b> Data citations and data availability statements</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#a-very-short-history-of-data-citations"><i class="fa fa-check"></i><b>6.1</b> A very short history of data citations</a></li>
+<li class="chapter" data-level="6.2" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#how-do-you-create-a-data-citation"><i class="fa fa-check"></i><b>6.2</b> How do you create a data citation</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#an-imperfect-real-example"><i class="fa fa-check"></i><b>6.2.1</b> An imperfect real example</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#an-ideal-data-citation"><i class="fa fa-check"></i><b>6.2.2</b> An ideal (?) data citation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#data-citation-template"><i class="fa fa-check"></i><b>6.2.3</b> Data citation template</a></li>
+<li class="chapter" data-level="6.2.4" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#a-not-quite-serious-example"><i class="fa fa-check"></i><b>6.2.4</b> A not quite serious example</a></li>
+<li class="chapter" data-level="6.2.5" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#data-distributed-as-supplementary-data"><i class="fa fa-check"></i><b>6.2.5</b> Data distributed as supplementary data</a></li>
+<li class="chapter" data-level="6.2.6" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#producer"><i class="fa fa-check"></i><b>6.2.6</b> Producer</a></li>
+<li class="chapter" data-level="6.2.7" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#distributor"><i class="fa fa-check"></i><b>6.2.7</b> Distributor</a></li>
+<li class="chapter" data-level="6.2.8" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#dates"><i class="fa fa-check"></i><b>6.2.8</b> Dates</a></li>
+<li class="chapter" data-level="6.2.9" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#offline-access-mechanism"><i class="fa fa-check"></i><b>6.2.9</b> Offline access mechanism</a></li>
+<li class="chapter" data-level="6.2.10" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#confidential-databases"><i class="fa fa-check"></i><b>6.2.10</b> Confidential databases</a></li>
+<li class="chapter" data-level="6.2.11" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#no-formal-access-mechanism"><i class="fa fa-check"></i><b>6.2.11</b> No formal access mechanism</a></li>
+<li class="chapter" data-level="6.2.12" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#unknown-or-confidential-author"><i class="fa fa-check"></i><b>6.2.12</b> Unknown or confidential author</a></li>
+<li class="chapter" data-level="6.2.13" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#where-to-cite"><i class="fa fa-check"></i><b>6.2.13</b> Where to cite</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#dasmaster"><i class="fa fa-check"></i><b>6.3</b> Data availability statements</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-citations-and-data-availability-statements.html"><a href="data-citations-and-data-availability-statements.html#some-examples-of-das"><i class="fa fa-check"></i><b>6.3.1</b> Some examples of DAS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html"><i class="fa fa-check"></i><b>7</b> Generic data workflow</a></li>
+<li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
+<li class="chapter" data-level="A.1" data-path="privacy.html"><a href="privacy.html#privacy-of-replicators"><i class="fa fa-check"></i><b>A.1</b> Privacy of Replicators</a></li>
+<li class="chapter" data-level="A.2" data-path="privacy.html"><a href="privacy.html#the-privacy-of-authors"><i class="fa fa-check"></i><b>A.2</b> The Privacy of Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>B</b> Setup Checklist</a><ul>
+<li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
+<li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
+<li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
+<li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
+<li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TRAINING For Reproducibility Verification</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-citations-and-data-availability-statements" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Data citations and data availability statements</h1>
+<p>Most students and researchers have been trained to cite their sources. Mostly, this is meant to be literature sources, but the basic idea applies just as much to data: If you use somebody else's data, you should acknowledge that.</p>
+<div id="a-very-short-history-of-data-citations" class="section level2">
+<h2><span class="header-section-number">6.1</span> A very short history of data citations</h2>
+<p>The almost complete absence of data citations from the literature has lead to issues when data creators and data providers attempt to assess their impact on science. Typically, they revert to manually or algorithmically scouring the literature, trying to find instances where their data is used.</p>
+<p><img src="images/fair-crop.png" alt="FAIR" /> In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles <span class="citation">(FORCE11 <a href="#ref-FORCE11FAIRDATAPRINCIPLES">2016</a>)</span>. &quot;FAIR&quot; is an acronym for</p>
+<ul>
+<li>Findable,</li>
+<li>Accessible,</li>
+<li>Interoperable, and</li>
+<li>Re-usable</li>
+</ul>
+<p>These are principles which help the furthering of increased reproducibility - by making data accessible, reproducibility checks can be conducted. By making them interoperable and re-usable, others can reproduce, replicate, and expand on the original research. Findability remains an issue: how do you discover data that is hidden in a ZIP file on a journal website as part of an (otherwise) perfectly reproducible package?</p>
+<p>In fact, the same group had previously laid the groundwork to that. In 2014, they issued the &quot;<a href="https://doi.org/10.25490/a97f-egyk">Data Citation Principles</a> (DCP)&quot; <span class="citation">(Martone <a href="#ref-force11declaration">2014</a>)</span>. These laid out the ethical need for such citations, the content such citations should have, and some desirable attributes of data citations. Both the DCP as well as FAIR suggest that data be assigned unique identifiers, allowing them to be clearly referenced, and found. The most common identifier in the social sciences is the Digital Object Identifier (DOI), but others exist, in particular in the biological or physical sciences.</p>
+<div class="figure">
+<img src="images/data-citation-principles.png" alt="DCPrinciples" />
+<p class="caption">DCPrinciples</p>
+</div>
+<p>The DCC note that (emphasis added):</p>
+<blockquote>
+<p>Sound, reproducible scholarship rests upon a foundation of robust, accessible data. For this to be so in practice as well as theory, data must be accorded due importance in the practice of scholarship and in the enduring scholarly record. In other words, data should be considered legitimate, <strong>citable products of research</strong>. Data citation, <strong>like the citation of other evidence and sources</strong>, is good research practice and is part of the scholarly ecosystem supporting data reuse.</p>
+</blockquote>
+<p>Data citation increases the findability, accessibility, interoperability, and re-usability of research data (<a href="https://www.go-fair.org/fair-principles/">FAIR</a>). Through data citations, data providers can link to articles (<a href="https://www.crossref.org/services/event-data/">sometimes automatically</a>), allowing them to show the academic value of the data and continue providing the services around data creation. Finally, data citations open a new path to finding relevant science, by reaching the linked articles through data search interfaces, like <a href="https://www.openicpsr.org/openicpsr/search/aea/studies">openICPSR</a>, <a href="http://www.data-pass.org/">Data-Pass</a>, and <a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a>.</p>
+<p>These principles are imperfectly implemented even today. Many data providers, including some of the biggest statistical agencies, do not provide unique identifiers to a particular data file. Some might uniquely identify a data series. Others may heuristically refer to certain versions (&quot;V2&quot;). Few have robust archival quality unique identifiers.</p>
+<p>Journals' stylistic considerations also reduce the impact of the DCC. Citations - in the sense of appearing in a bibliography at the end of the document - do not provide much sense of any access method other than a download. The AEA follows the Chicago Manual of Style (CMOS), with several <a href="https://www.aeaweb.org/journals/policies/sample-references">additions on the AEA website</a>.</p>
+<div class="figure">
+<img src="images/bls-citation.png" alt="BLS citation at AEA" />
+<p class="caption">BLS citation at AEA</p>
+</div>
+<p>As the <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch14/psec014.html">CMOS states</a>, one of the criteria for a useful citation is conveying authority and permanence:</p>
+<blockquote>
+<p>Electronic content presented without formal ties to a publisher or sponsoring body has the authority equivalent to that of unpublished or self-published material in other media.</p>
+</blockquote>
+<p>FAIR data helps convey such information, but often, assessing what &quot;publisher&quot; or &quot;sponsoring body&quot; is reputable or reliable is tricky. And the citation fails to convey many important facets of data access. What if the cited resource requires a login, even if it is free? What if payment is required? What if a long-winding application process is required? Citations do not communicate that amount of detail. As we shall see <a href="data-citations-and-data-availability-statements.html#dasmaster">later</a>, there are ways to augment data citations with the needed information.</p>
+</div>
+<div id="how-do-you-create-a-data-citation" class="section level2">
+<h2><span class="header-section-number">6.2</span> How do you create a data citation</h2>
+<p><a href="https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html">ICPSR</a> <span class="citation">(ICPSR <a href="#ref-icpsr_citing_nodate">2020</a>)</span> notes that a citation should include the following items:</p>
+<ul>
+<li>Author</li>
+<li>Title</li>
+<li>Distributor</li>
+<li>Date</li>
+<li>Version</li>
+<li>Persistent identifier</li>
+</ul>
+<p>where any data source has the first five elements, and the ideal FAIR curated data source also has a persistent identifier.</p>
+<div id="an-imperfect-real-example" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> An imperfect real example</h3>
+<p>Consider the BLS citation shown earlier:</p>
+<blockquote>
+<p>Bureau of Labor Statistics. 2000–2010. “Current Employment Statistics: Colorado, Total Nonfarm, Seasonally adjusted - SMS08000000000000001.” United States Department of Labor. <a href="http://data.bls.gov/cgi-" class="uri">http://data.bls.gov/cgi-</a> bin/surveymost?sm+08 (accessed February 9, 2011).</p>
+</blockquote>
+<p>The <em>author</em> or creator is clearly <code>Bureau of Labor Statistics</code>. The <em>distributor</em> here is <code>United States Department of Labor</code>, which happens to be the government department housing the BLS. <em>Title</em> is arguably <code>Current Employment Statistics: Colorado, Total Nonfarm, Seasonally adjusted</code>, though some might argue that state, coverage, and seasonal adjustment identify <em>versions</em> of the survey. <em>Date</em> are the (original) dates of publication, or here, approximated by the date range covered by the series. But generally, <em>versions</em> relates to a chronologically released version - which is less clear in this case, and only captured by <code>(accessed February 9, 2011)</code>. There is no clear <em>persistent identifier</em>, the closest approximation is provided by a combination of the series identifier <code>SMS08000000000000001</code>, the URL <code>http://data.bls.gov/cgi-bin/surveymost?sm+08</code>, and the date accessed <code>(accessed February 9, 2011)</code>. Note that this is imperfect, because, unless you can time-travel, you cannot obtain the same dataset a second time.</p>
+<table style="width:28%;">
+<colgroup>
+<col width="16%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Author</em>:</td>
+<td><code>Bureau of Labor Statistics</code></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Title</em>:</td>
+<td><code>Current Employment Statistics: Colorado, Total Nonfarm, Seasonally adjusted</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Distributor</em>:</td>
+<td><code>United States Department of Labor</code></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Date</em>:</td>
+<td>2000-2010</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Version</em>:</td>
+<td><code>(accessed February 9, 2011)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Persistent identifier</em>:</td>
+<td><code>SMS08000000000000001</code> + <code>http://data.bls.gov/cgi-bin/surveymost?sm+08</code> + <code>(accessed February 9, 2011)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="an-ideal-data-citation" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> An ideal (?) data citation</h3>
+<p>What should the ideal data citation look like? ICPSR suggests</p>
+<blockquote>
+<p>Barnes, Samuel H. Italian Mass Election Survey, 1968. Ann Arbor, MI: Inter-university Consortium for Political and Social Research <a href="data-citations-and-data-availability-statements.html#distributor">distributor</a>, 1992-02-16. <a href="https://doi.org/10.3886/ICPSR07953.v1" class="uri">https://doi.org/10.3886/ICPSR07953.v1</a></p>
+</blockquote>
+<p>so that</p>
+<table style="width:28%;">
+<colgroup>
+<col width="16%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Author</em>:</td>
+<td><code>Barnes, Samuel H.</code></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Title</em>:</td>
+<td><code>Italian Mass Election Survey, 1968</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Distributor</em>:</td>
+<td><code>Inter-university Consortium for Political and Social Research</code></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Date</em>:</td>
+<td><code>1992-02-16</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Version</em>:</td>
+<td><code>V1</code></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Persistent identifier</em>:</td>
+<td><code>10.3886/ICPSR07953.v1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the date <code>1968</code> describes the survey, but its date of publication was 1992. The version is implicit in the DOI. The persistent identifier is just <code>10.3886/ICPSR07953.v1</code>, but the display guidelines for DOI suggest including the full URL that yields a resolution.</p>
+</div>
+<div id="data-citation-template" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Data citation template</h3>
+<p>In general, therefore, as long as you can fill out the table</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Author</em>:</td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Title</em>:</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Distributor</em>:</td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Date</em>:</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Version</em>:</td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><em>Persistent identifier</em>:</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>you can create a data citation:</p>
+<blockquote>
+<p>[AUTHOR], &quot;[TITLE]&quot;, <a href="data-citations-and-data-availability-statements.html#distributor">DISTRIBUTOR</a>, [DATE], [VERSION] + [Persistent Identifier]</p>
+</blockquote>
+</div>
+<div id="a-not-quite-serious-example" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> A not quite serious example</h3>
+<p>Many authors initially neglect to add data citations, or do not know how to add a data citation. Often, we see authors cite papers with supplementary data, but not databases or other data:</p>
+<blockquote>
+<p>We use data acquired from the NHL, dates of power outages collected by Tremblay et al (2018), augmented with information on the language and grammar skills of hockey players provided by the Ethnologue database.</p>
+</blockquote>
+<p>(note absence of citation for NHL and Ethnologue data). In the above example, three datasets are used, but only one is cited in some fashion.</p>
+<div id="better" class="section level4">
+<h4><span class="header-section-number">6.2.4.1</span> Better</h4>
+<p>The above example can be improved as follows:</p>
+<blockquote>
+<p>We use data acquired from the NHL (NHL, 2018), dates of power outages collected by Tremblay et al (2018, 2019), augmented with information on the language and grammar skills of hockey players provided by the Ethnologue database (Eberhard et al, 2019).</p>
+</blockquote>
+<p>with the reference list having the following entries:</p>
+<blockquote>
+<ul>
+<li>Eberhard, David M., Gary F. Simons, and Charles D. Fennig (eds.). 2019. <em>Ethnologue: Languages of the World.</em> Twenty-second edition. Dallas, Texas: SIL International. Online version: <a href="http://www.ethnologue.com" class="uri">http://www.ethnologue.com</a>.</li>
+<li>National Hockey League. 2018. <em>NHL Game Database 1917-2018</em>. National Hockey League Hall of Fame, Toronto, ON. Accessed February 29, 2019.</li>
+<li>Tremblay, Réjean, Ken Dryden, and José Theodore. 2018. &quot;The impact of power outages on goal-keeping in the NHL&quot;, <em>Journal of National Hockey Leagues</em>, vol 32, iss. 1.</li>
+<li>Tremblay, Réjean, Ken Dryden, and José Theodore. 2019. &quot;Power outages during NHL games (updated)&quot;, <em>Canadian Hockey Dataverse</em>, <a href="doi:10.1234/nhl.lnh.haha" class="uri">doi:10.1234/nhl.lnh.haha</a></li>
+</ul>
+</blockquote>
+<p>Assess why the latter is better.</p>
+</div>
+</div>
+<div id="data-distributed-as-supplementary-data" class="section level3">
+<h3><span class="header-section-number">6.2.5</span> Data distributed as supplementary data</h3>
+<p>The <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch14/psec187.html">CMOS provides examples</a> of how to cite supplementary materials that are attached to a specific article:</p>
+<blockquote>
+<p>Suárez-Rodríguez, M. and C. Macías Garcia. 2014. &quot;There Is No Such a Thing as a Free Cigarette: Lining Nests with Discarded Butts Brings Short-Term Benefits, but Causes Toxic Damage.&quot; <em>Journal of Evolutionary Biology</em> 27, no. 12 (December 2014): 2719–26, <a href="https://doi.org/10.1111/jeb.12531" class="uri">https://doi.org/10.1111/jeb.12531</a>, data deposited at Dryad Digital Repository, <a href="https://doi.org/10.5061/dryad.4t5rt" class="uri">https://doi.org/10.5061/dryad.4t5rt</a>.</p>
+</blockquote>
+<p>The <a href="https://www.aeaweb.org/journals/policies/sample-references">AEA guidance</a> used to provide an example, in which the citation links to the article landing page:</p>
+<blockquote>
+<p>Romer, Christina D., and David H. Romer. 2010. “The Macroeconomic Effects of Tax Changes: Estimates Based on a New Measure of Fiscal Shocks: Dataset.” <em>American Economic Review.</em> <a href="https://doi.org/10.1257/aer.100.3.763" class="uri">https://doi.org/10.1257/aer.100.3.763</a>.</p>
+</blockquote>
+<p>Many authors, however, would only cite the article itself, and not the data. Note however that modern data citation guidance suggest that both the article and the data used by the article should be cited, and this can lead to confusion. With the 2019 move of the AEA to a data archive, the correct citation for the above supplement would be:</p>
+<blockquote>
+<p>Romer, Christina D., and David H. Romer. 2010. &quot;Replication data for: The Macroeconomic Effects of Tax Changes: Estimates Based on a New Measure of Fiscal Shocks.&quot; <em>American Economic Association [publisher]</em>, * Inter-university Consortium for Political and Social Research <a href="data-citations-and-data-availability-statements.html#distributor">distributor</a>*, <a href="https://doi.org/10.3886/E112357V1" class="uri">https://doi.org/10.3886/E112357V1</a></p>
+</blockquote>
+<p>with the article also cited as:</p>
+<blockquote>
+<p>Romer, Christina D., and David H. Romer. 2010. “The Macroeconomic Effects of Tax Changes: Estimates Based on a New Measure of Fiscal Shocks” <em>American Economic Review.</em> no. 3 (June 2010): 763–801. <a href="https://doi.org/10.1257/aer.100.3.763" class="uri">https://doi.org/10.1257/aer.100.3.763</a>.</p>
+</blockquote>
+</div>
+<div id="producer" class="section level3">
+<h3><span class="header-section-number">6.2.6</span> Producer</h3>
+<p>Often, the creator of a dataset is an organization. The same way that an <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec037.html">organization as a work's author</a> can be cited:</p>
+<blockquote>
+<p>ISO (International Organization for Standardization). 1997. <em>Information and Documentation—Rules for the Abbreviation of Title Words and Titles of Publications</em>. ISO 4:1997. Paris: ISO.</p>
+</blockquote>
+<p>an organization can be cited as the creator of a dataset:</p>
+<blockquote>
+<p>Standard and Poor's (S&amp;P). 2017. <em>Compustat-Capital IQ</em>. S&amp;P Global Market Intelligence.</p>
+</blockquote>
+</div>
+<div id="distributor" class="section level3">
+<h3><span class="header-section-number">6.2.7</span> Distributor</h3>
+<p>In many cases, the data are not distributed by the creator. This means the <em>distributor</em> takes on the role of a <em>publisher</em> (of a book, of data). In the BLS example, the two differed only because the (higher-ranking) department counts as the distributor. In the case of Compustat, one might have obtained access through the Wharton Research Data Services, and cite as</p>
+<blockquote>
+<p>Standard and Poor's (S&amp;P). 2017. <em>Compustat-Capital IQ</em>. Wharton Research Data Services. <a href="https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/" class="uri">https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/</a></p>
+</blockquote>
+<p>If using the S&amp;P 500 data, there may be multiple providers:</p>
+<blockquote>
+<p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500 [SP500]</em>, retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/SP500" class="uri">https://fred.stlouisfed.org/series/SP500</a>, January 24, 2020.</p>
+</blockquote>
+<blockquote>
+<p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500</em>, provided via Haver Analytics Data Subscription, February 24, 2018.</p>
+</blockquote>
+<p>with hopefully the same content. Note that often, such data is subject to copyright and redistribution restrictions (see <a href="https://fred.stlouisfed.org/series/SP500">the page at FRED on SP500</a> and discussion in the <a href="data-citations-and-data-availability-statements.html#dasmaster">later section</a>).</p>
+</div>
+<div id="dates" class="section level3">
+<h3><span class="header-section-number">6.2.8</span> Dates</h3>
+<p>In some cases, it isn't clear when the dataset was <em>published</em>, though it may be clear what time period the dataset covers (as in the BLS case). One way to address this may be by <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec050.html">using the &quot;n.d.&quot; abbreviation for the date of publication</a> and including the date of coverage in the title:</p>
+<blockquote>
+<p>Standard and Poor's (S&amp;P). n.d. <em>Compustat-Capital IQ (1982-2017)</em>. Wharton Research Data Services. Accessed April 6, 2018. <a href="https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/" class="uri">https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/</a></p>
+</blockquote>
+<p>A related issue may arise when the dataset is comprised of multiple years, each of which has its own DOI. For instance, when accessing <a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies?q=american+community+survey">multiple years of American Community Survey data on ICPSR</a>, each has its own DOI:</p>
+<table style="width:17%;">
+<colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</td>
+<td>1998</td>
+<td>(ICPSR 3888)</td>
+<td>2008-05-21</td>
+</tr>
+<tr class="even">
+<td>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</td>
+<td>1997</td>
+<td>(ICPSR 3886)</td>
+<td>2008-05-21</td>
+</tr>
+<tr class="odd">
+<td>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</td>
+<td>2003</td>
+<td>(ICPSR 4117)</td>
+<td>2009-12-01</td>
+</tr>
+<tr class="even">
+<td>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</td>
+<td>2004</td>
+<td>(ICPSR 4370)</td>
+<td>2008-10-14</td>
+</tr>
+<tr class="odd">
+<td>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</td>
+<td>2009</td>
+<td>(ICPSR 33802)</td>
+<td>2013-04-04</td>
+</tr>
+<tr class="even">
+<td>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</td>
+<td>2008</td>
+<td>(ICPSR 29263)</td>
+<td>2011-11-08</td>
+</tr>
+</tbody>
+</table>
+<p>One approach to this is to create a composite citation, with additional information available in an online data appendix or a Data Availability Statement:</p>
+<blockquote>
+<p>Bureau Of The Census. 2009. “American Community Survey (ACS): Public Use Microdata Sample (PUMS), 1997-2009.” <em>United States Department Of Commerce</em> [publisher]. ICPSR - Interuniversity Consortium for Political and Social Research. <a href="data-citations-and-data-availability-statements.html#distributor">distributor</a> DOIs listed in data appendix.</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>Bureau Of The Census. 2009. “American Community Survey (ACS): Public Use Microdata Sample (PUMS), 1997-2009.” <em>United States Department Of Commerce</em> [publisher]. ICPSR - Interuniversity Consortium for Political and Social Research. <a href="data-citations-and-data-availability-statements.html#distributor">distributor</a> <a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies?q=american+community+survey" class="uri">https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies?q=american+community+survey</a> (accessed November 21, 2019)</p>
+</blockquote>
+<p>(and listing of exact DOIs in an appendix table).</p>
+</div>
+<div id="offline-access-mechanism" class="section level3">
+<h3><span class="header-section-number">6.2.9</span> Offline access mechanism</h3>
+<p>Many datasets are available only under license, memorandum, contract, etc., and do not have a formal online presence. This is quite similar to traditional offline archives, for instance manuscript collections. For such collections, <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec054.html">CMOS suggests</a>:</p>
+<blockquote>
+<p>Kallen, Horace. <em>Papers</em>. YIVO Institute for Jewish Research, New York. <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch14/psec229.html">Merriam, Charles E. <em>Papers</em>. Special Collections Research Center, box 26, folder 17. University of Chicago Library.</a></p>
+</blockquote>
+<p>and usage in the text as</p>
+<blockquote>
+<p>Alvin Johnson, in a memorandum prepared sometime in 1937 (Kallen Papers, file 36), observed that ...</p>
+</blockquote>
+<p>Similar citations can be constructed for offline databases:</p>
+<blockquote>
+<p>Bloom, Nick. 2019. <em>Confidential survey data on Cameroon business processes</em>. Stanford Secure Access Center (file &quot;cameroon-bloom.zip&quot;). Stanford University.</p>
+</blockquote>
+</div>
+<div id="confidential-databases" class="section level3">
+<h3><span class="header-section-number">6.2.10</span> Confidential databases</h3>
+<p>Similar forms may be used for confidential databases when no DOI exists:</p>
+<blockquote>
+<p>Internal Revenue Service. (YEAR). <em>Corporate Income Tax Returns [database]</em>. Department of Treasury, Washington DC, accessed YYYY-MM-DD.</p>
+</blockquote>
+<p>where the data, in this case, were accessed via the &quot;Department of Treasury,&quot; acting as a <em>secure</em> distributor (of access, not downloads). If the same data had been accessed via a secure research data center, the reference should have instead noted that access mechanism:</p>
+<blockquote>
+<p>Internal Revenue Service. (YEAR). <em>Corporate Income Tax Returns [database]</em>. Federal Research Data Centers, last accessed YYYY-MM-DD.</p>
+</blockquote>
+<div id="confidential-data-with-doi" class="section level4">
+<h4><span class="header-section-number">6.2.10.1</span> Confidential data with DOI</h4>
+<p>If a DOI exists, of course, the formal citation generated from that DOI should be used:</p>
+<blockquote>
+<p>Forschungsdatenzentrum der Bundesagentur für Arbeit. 2020. “Betriebs-Historik-Panel (BHP) – Version 7518 v1.” <em>Institut für Arbeitsmarkt- und Berufsforschung (IAB)</em>. <a href="https://doi.org/10.5164/IAB.BHP7518.DE.EN.V1" class="uri">https://doi.org/10.5164/IAB.BHP7518.DE.EN.V1</a>.</p>
+</blockquote>
+</div>
+</div>
+<div id="no-formal-access-mechanism" class="section level3">
+<h3><span class="header-section-number">6.2.11</span> No formal access mechanism</h3>
+<p>In some cases (not infrequently), access to data is through informal means. The <a href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec053.html">CMOS allows for citation of such information</a>, without inclusion in the references.</p>
+<blockquote>
+<p>(A. P. Møller, unpublished data; C. R. Brown and M. B. Brown, unpublished data)</p>
+</blockquote>
+<p>We would deviate from that suggestion, ask for inclusion in the reference list, and simply suggest using <em>unpublished data</em> as the locator, similar to a URN, in the reference list:</p>
+<blockquote>
+<p>Møller, A. P. n.d. “Data on Crocodile Sightings in Manhattan.” unpublished data. Accessed February 29, 2019.</p>
+</blockquote>
+</div>
+<div id="unknown-or-confidential-author" class="section level3">
+<h3><span class="header-section-number">6.2.12</span> Unknown or confidential author</h3>
+<p>In some cases, the authors might not be able to name the data creator, due to a non-disclosure agreement. One suggestion may then be</p>
+<blockquote>
+<p>Anonymous Firm, n.d. &quot;Data on financial transactions.&quot; Accessed under Non-disclosure Agreement, extract obtained on January 20, 2016.</p>
+</blockquote>
+</div>
+<div id="where-to-cite" class="section level3">
+<h3><span class="header-section-number">6.2.13</span> Where to cite</h3>
+<p>In all cases, data and code should be cited in the main manuscript. They should also be referenced in the data availability statement (some journals) or the README (other journals). However, in some cases, data is only used in an online appendix, and it is acceptable to cite the data there as well, and not in the main manuscript's bibliography.</p>
+<p>Furthermore, as data citation are still a relatively new concept, many authors will have substantially completed their manuscript, without including data citations. Adding them to the README is then acceptable practice (for now).</p>
+</div>
+</div>
+<div id="dasmaster" class="section level2">
+<h2><span class="header-section-number">6.3</span> Data availability statements</h2>
+<p>The academic publishing community's response are &quot;data availability statements (DAS).&quot; While mostly, these are pointers from the journal to where the data can be found. In the case of data supplements, this is almost trivial when the journal has a robust data availability policy, though some journals allow for self-declared but unverified DAS.</p>
+<p>Summarily, a data availability statement describes not just where the data can be obtained from, but also how the data can be obtained, conditions for obtaining it, and any additional restrictions.</p>
+<blockquote>
+<p>Some examples are provided by Springer/Nature and Hindawi:</p>
+<ul>
+<li><a href="https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880">Springer</a></li>
+<li><a href="https://www.hindawi.com/research.data/#statement.templates">Hindawi</a></li>
+</ul>
+</blockquote>
+<div id="some-examples-of-das" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Some examples of DAS</h3>
+<div id="example-for-public-use-data-included-in-data-archive" class="section level4">
+<h4><span class="header-section-number">6.3.1.1</span> Example for public use data included in data archive:</h4>
+<blockquote>
+<p>The paper uses data obtained from IPUMS (Ruggles et al, 2017). IPUMS-CPS does not currently provide the ability to store or reference custom extracts, but allows for redistribution for the purpose of replication. The archive contains the extracted data, codebook in the folder &quot;data/IPUMS&quot;. The data citation in the main article has the full URL.</p>
+</blockquote>
+</div>
+<div id="example-for-public-use-data-not-included-in-data-archive" class="section level4">
+<h4><span class="header-section-number">6.3.1.2</span> Example for public use data not included in data archive:</h4>
+<blockquote>
+<p>Data from the Socioeconomic High-resolution Rural Urban Geographic Dataset on India, Version 1.0 (Asher and Novosad, 2019) is used in this paper. The full dataset and documentation can be downloaded from <a href="https://doi.org/10.7910/DVN/DPESAK" class="uri">https://doi.org/10.7910/DVN/DPESAK</a>.</p>
+</blockquote>
+</div>
+<div id="example-for-public-use-data-with-required-permission" class="section level4">
+<h4><span class="header-section-number">6.3.1.3</span> Example for public use data with required permission:</h4>
+<blockquote>
+<p>The paper uses IPUMS Terra data. IPUMS-Terra does not allow for redistribution, except for the purpose of replication archives. Permissions as per <a href="https://terra.ipums.org/citation" class="uri">https://terra.ipums.org/citation</a> have been obtained, and are documented within the &quot;data/IPUMS-terra&quot; folder.</p>
+</blockquote>
+</div>
+<div id="example-for-confidential-data" class="section level4">
+<h4><span class="header-section-number">6.3.1.4</span> Example for confidential data:</h4>
+<blockquote>
+<p>The data for this project are confidential, but may be obtained with Data Use Agreements with the Massachusetts Department of Elementary and Secondary Education (DESE). Researchers interested in access to the data may contact [NAME] at [EMAIL], also see www.doe.mass.edu/research/contact.html. It can take some months to negotiate data use agreements and gain access to the data. The author will assist with any reasonable replication attempts for two years following publication.</p>
+</blockquote>
+</div>
+<div id="example-for-government-registers" class="section level4">
+<h4><span class="header-section-number">6.3.1.5</span> Example for Government registers</h4>
+<p>In some cases, governments have a list of their (named) registers. For instance, Statistics Denmark provides the full list of registers at <a href="http://www.dst.dk/extranet/forskningvariabellister/Oversigt%20over%20registre.html">http://www.dst.dk/extranet/forskningvariabellister/Oversigt%20over%20registre.html</a>. These can be used to craft data citations (see <a href="https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html#government-registers">Data citation guidance</a>). Data availability statements should describe how each such register can be accessed:</p>
+<blockquote>
+<p>The information used in the analysis combines several Danish administrative registers (as described in the paper). The data use is subject to the European Union’s General Data Protection Regulation(GDPR) per new Danish regulations from May 2018. The data are physically stored on computers at Statistics Denmark and, due to security considerations, the data may not be transferred to computers outside Statistics Denmark. Researchers interested in obtaining access to the register data employed in this paper are required to submit a written application to gain approval from Statistics Denmark. The application must include a detailed description of the proposed project, its purpose, and its social contribution, as well as a description of the required datasets, variables, and analysis population. Applications can be submitted by researchers who are affiliated with Danish institutions accepted by Statistics Denmark, or by researchers outside of Denmark who collaborate with researchers affiliated with these institutions.</p>
+</blockquote>
+<p>(Example taken from <a href="https://www.aeaweb.org/articles?id=10.1257/app.20170604">Fadlon and Nielsen, 2020</a> (forthcoming as of June 2020).</p>
+</div>
+<div id="sp-500" class="section level4">
+<h4><span class="header-section-number">6.3.1.6</span> S&amp;P 500</h4>
+<p>The S&amp;P 500 is one of the most widely known stock indexes. And yet, it is subject to copyright, and restrictions on redistribution. Some authors who use the S&amp;P 500 numbers may have downloaded it via FRED <a href="https://fred.stlouisfed.org/series/SP500" class="uri">https://fred.stlouisfed.org/series/SP500</a>, others through other data services (Haver Analytics, Bloomberg). The FRED website mentions that the data are</p>
+<blockquote>
+<ol start="3" style="list-style-type: upper-alpha">
+<li>S&amp;P Dow Jones Indices LLC. Reproduction of S&amp;P 500 in any form is prohibited except with the prior written permission of S&amp;P Dow Jones Indices LLC (&quot;S&amp;P&quot;).</li>
+</ol>
+</blockquote>
+<p>If obtained through FRED, the suggested citation is</p>
+<blockquote>
+<p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500 [SP500]</em>, retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/SP500" class="uri">https://fred.stlouisfed.org/series/SP500</a>, January 24, 2020.</p>
+</blockquote>
+<p>An analogue if accessing it through, say, Haver Analytics, might be</p>
+<blockquote>
+<p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500</em>, provided via Haver Analytics, January 24, 2020.</p>
+</blockquote>
+<p>Note that both citations do not provide (complete) information on how others might obtain the data, and what restrictions are imposed on the data (unless they visit the site, or read the terms of use of, say, their Haver Analytics description). A tentative Data Availability Statement might be:</p>
+<blockquote>
+<p>S&amp;P 500 data is (C) S&amp;P Dow Jones Indices LLC. Reproduction of S&amp;P 500 in any form is prohibited except with the prior written permission of S&amp;P Dow Jones Indices LLC (&quot;S&amp;P&quot;). It is thus not available as part of the replication archive. Users may access the past 10 years via FRED at <a href="https://fred.stlouisfed.org/series/SP500" class="uri">https://fred.stlouisfed.org/series/SP500</a>, or purchase longer access via Haver Analytics (<a href="http://www.haver.com/databaseprofiles.html#indicators" class="uri">http://www.haver.com/databaseprofiles.html#indicators</a>). Note that reproduction of our manuscript's tables requires data from [YYYY]-[ZZZZ].</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-FORCE11FAIRDATAPRINCIPLES">
+<p>FORCE11. 2016. “THE FAIR Data Principles.” <a href="https://www.force11.org/group/fairgroup/fairprinciples" class="uri">https://www.force11.org/group/fairgroup/fairprinciples</a>.</p>
+</div>
+<div id="ref-icpsr_citing_nodate">
+<p>ICPSR. 2020. “Citing Data.” Accessed August 21. <a href="https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html" class="uri">https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html</a>.</p>
+</div>
+<div id="ref-force11declaration">
+<p>Martone, M. (ed.). 2014. “Data Citation Synthesis Group: Joint Declaration of Data Citation Principles.” <em>FORCE11</em>. doi:<a href="https://doi.org/10.25490/a97f-egyk">10.25490/a97f-egyk</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-concepts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generic-data-workflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["training-curriculum.pdf", "training-curriculum.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
