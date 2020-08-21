@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Background | TRAINING For Reproducibility Verification</title>
+  <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="generator" content="bookdown 0.20.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Background | TRAINING For Reproducibility Verification" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Background | TRAINING For Reproducibility Verification" />
+  
+  <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  
+
+<meta name="author" content="Lars Vilhuber" />
+<meta name="author" content="Meredith Welch" />
+<meta name="author" content="David Wasser" />
+
+
+<meta name="date" content="2020-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="pre-training.html"/>
+<link rel="next" href="basic-concepts.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+    <script src="js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Training for Reproducibility Verification</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Tentative Agenda</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-read-this-document"><i class="fa fa-check"></i><b>1.1</b> How to read this document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pre-requisites.html"><a href="pre-requisites.html"><i class="fa fa-check"></i><b>2</b> Pre-requisites</a></li>
+<li class="chapter" data-level="3" data-path="pre-training.html"><a href="pre-training.html"><i class="fa fa-check"></i><b>3</b> Pre-training tasks</a></li>
+<li class="chapter" data-level="4" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>4</b> Background</a><ul>
+<li class="chapter" data-level="4.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>4.1</b> Activities of the LDI Replication Lab</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="background.html"><a href="background.html#pre-publication-evaluation-of-reproducibility-and-quality-of-supplemental-materials"><i class="fa fa-check"></i><b>4.1.1</b> Pre-Publication Evaluation of Reproducibility and Quality of Supplemental Materials</a></li>
+<li class="chapter" data-level="4.1.2" data-path="background.html"><a href="background.html#post-publication-evaluation-of-reproducibility"><i class="fa fa-check"></i><b>4.1.2</b> Post-Publication Evaluation of Reproducibility</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="background.html"><a href="background.html#learning-goals"><i class="fa fa-check"></i><b>4.2</b> Learning goals</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-concepts.html"><a href="basic-concepts.html"><i class="fa fa-check"></i><b>5</b> Basic Concepts</a><ul>
+<li class="chapter" data-level="5.1" data-path="basic-concepts.html"><a href="basic-concepts.html#data-citations-and-data-availability-statements"><i class="fa fa-check"></i><b>5.1</b> Data citations and data availability statements</a></li>
+<li class="chapter" data-level="5.2" data-path="basic-concepts.html"><a href="basic-concepts.html#generic-data-workflow"><i class="fa fa-check"></i><b>5.2</b> Generic data workflow</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-concepts.html"><a href="basic-concepts.html#assessing-computational-reproducibility"><i class="fa fa-check"></i><b>5.3</b> Assessing computational reproducibility</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
+<li class="chapter" data-level="A.1" data-path="privacy.html"><a href="privacy.html#privacy-of-replicators"><i class="fa fa-check"></i><b>A.1</b> Privacy of Replicators</a></li>
+<li class="chapter" data-level="A.2" data-path="privacy.html"><a href="privacy.html#the-privacy-of-authors"><i class="fa fa-check"></i><b>A.2</b> The Privacy of Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>B</b> Setup Checklist</a><ul>
+<li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
+<li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
+<li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
+<li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
+<li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TRAINING For Reproducibility Verification</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="background" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Background</h1>
+<p>On July 16, 2019, the AEA announced an updated &quot;<a href="https://www.aeaweb.org/journals/policies/data-code">Data and Code Availability Policy</a>&quot; <span class="citation">(American Economic Association <a href="#ref-AEA-announcement-July-2019">2019</a>; American Economic Association <a href="#ref-10.1257/pandp.110.dcap">2020</a>)</span>. Henceforth, replication materials must be made available to the AEA <em>prior</em> to acceptance - previously, it was prior to publication, but <em>after</em> acceptance. Computer code should be provided for all stages of the data cleaning and data analysis (code for the data cleaning portion was previously optional). Raw data must be uniformly made available, when permissions allow (also for author-collected survey data, data from experiments). For restricted-access or proprietary data, to the extent permissible, the data must be made available to the AEA Data Editor for verification, even if the data cannot be published by the author.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Enforcement of an existing but unenforced <strong>data citation requirement</strong> as per <a href="https://www.aeaweb.org/journals/policies/sample-references">AEA Citation Guidelines</a>.</p>
+<p>We also test licenses, access restrictions, and sometimes question the ability of authors to publish the data. We have had cases both ways: data provided after initial refusal, and data rejected by us because the license did not allow distribution.</p>
+<p>For now, we also check for obvious personally identifiable information (PII). However, the ultimate responsibility lies with authors.</p>
+<p>All data and code must be available in a &quot;trusted repository,&quot; which in most cases means the AEA's Data and Code Repository at openICPSR, for better transparency and findability. ZIP files are no longer accepted as supplementary packages, and we check that. Supplements are tagged with JEL codes, other keywords (e.g., <code>Current Population Survey'' or</code>behavioral study''), and optionally with methodological information (time period, geographic region, survey method used). Each deposit gets its own DOI - a permanent unique identifier. Deposits can be found through various search engines, such as the native search engine on openICPSR, through <a href="https://toolbox.google.com/datasetsearch">Google Data Search</a> or through DOI registries such as <a href="https://search.datacite.org/">DataCite</a>.</p>
+<p>To implement all this, we built a system using Jira, and connect to it from ScholarOne (system used for manuscript submission) and openICPSR.</p>
+<div id="activities-of-the-ldi-replication-lab" class="section level2">
+<h2><span class="header-section-number">4.1</span> Activities of the LDI Replication Lab</h2>
+<p>The LDI Replication Lab conducts reproducibility checks in two way.</p>
+<div id="pre-publication-evaluation-of-reproducibility-and-quality-of-supplemental-materials" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Pre-Publication Evaluation of Reproducibility and Quality of Supplemental Materials</h3>
+<p>The Lab performs pre-publication evaluation for the American Economic Association, i.e., prior to publication. Think of it as a &quot;reviewer&quot; of the data supplement.</p>
+<ul>
+<li>Analyze the provided materials - see <a href="https://social-science-data-editors.github.io/guidance/Verification_guidance.html">Verification guidance</a></li>
+<li>Verify data citations</li>
+<li>Verify ability to post data (do the authors have the right to post the data?)</li>
+<li>If possible, attempt replication</li>
+</ul>
+</div>
+<div id="post-publication-evaluation-of-reproducibility" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Post-Publication Evaluation of Reproducibility</h3>
+<p>We download articles and supplements, assess to what extent an undergraduate student can run the code that produces the analysis reported in the paper. We have also in the past done an evaluation of the response of authors when the code is only available &quot;upon request&quot;. Not currently an active project.</p>
+<p>This is a secondary goal, as time permits or as research goals suggest. It is quite similar to the first goal, but there is no interaction with authors, and no method to improve authors' files.</p>
+<blockquote>
+<p>Interested parties might visit <a href="https://bitss.github.io/ACRE/">ACRE</a> for how to incorporate this kind of activity into a class curriculum.</p>
+</blockquote>
+</div>
+</div>
+<div id="learning-goals" class="section level2">
+<h2><span class="header-section-number">4.2</span> Learning goals</h2>
+<p>In this training, you will learn how to verify compliance with the policy. This means going through a variety of checklists, obtaining data, and running code, as per instructions provided by authors. You will not be required to actively program, but you will learn a lot about how to program (and sometimes, how not to program). You will gain an appreciation for a well-structured empirical analysis, which you will benefit from for your own studies (now) and in your work (after graduation).</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-AEA-announcement-July-2019">
+<p>American Economic Association. 2019. “AEA Member Announcements: Updated AEA Data and Code Availability Policy.” <em>AEA Member Announcements: Updated AEA Data and Code Availability Policy (July 16, 2019)</em>. <a href="https://web.archive.org/web/20191208160745/https://www.aeaweb.org/news/member-announcements-july-16-2019" class="uri">https://web.archive.org/web/20191208160745/https://www.aeaweb.org/news/member-announcements-july-16-2019</a>.</p>
+</div>
+<div id="ref-10.1257/pandp.110.dcap">
+<p>American Economic Association. 2020. “Data and Code Availability Policy.” <em>AEA Papers and Proceedings</em> 110 (May): xxx. doi:<a href="https://doi.org/10.1257/pandp.110.xxx">10.1257/pandp.110.xxx</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>We regularly and successfully do so.<a href="background.html#fnref1">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pre-training.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-concepts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["training-curriculum.pdf", "training-curriculum.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
