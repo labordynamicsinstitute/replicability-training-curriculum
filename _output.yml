@@ -18,6 +18,14 @@ bookdown::pdf_book:
 bookdown::epub_book: default
 bookdown::tufte_html_book:
   toc: yes
+  toc_level: 1
+  css: toc.css
+  split_by: chapter
+  includes:
+    in_header: _includes/mermaid.html
+bookdown::html_book:
+  toc: yes
+  toc_level: 1
   css: toc.css
   split_by: chapter
   includes:

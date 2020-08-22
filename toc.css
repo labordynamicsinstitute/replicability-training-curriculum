@@ -71,7 +71,7 @@
   background: linear-gradient(to bottom, #262626 0%, #070707 100%);
 }
 #TOC .has-sub {
-  z-index: 1;
+  z-index: 9999;
 }
 #TOC .has-sub:hover > ul {
   display: block;
