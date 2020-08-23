@@ -11,84 +11,81 @@ We have examples of various actual reports (slightly anonymized):
  + [Example 2](REPLICATION-AEAREP278.md)
  + [Example 3](REPLICATION-AEAREP282.md) and its [revision](REPLICATION-AEAREP282-revised.md)
 
----
+
 
 ## Some high-level concepts
 
 
-###  (30 min) [Data documentation](https://social-science-data-editors.github.io/guidance/Requested_information_data.html)
+### On data documentation
+
+The [Social Science Data Editor's page on Data documentation](https://social-science-data-editors.github.io/guidance/Requested_information_data.html) provides guidance:
+
   + Identifying all data
   + What is great / good / just-good-enough data documentation
   + Citing data!
 
-###  (30 min) [Code and documentation](https://social-science-data-editors.github.io/guidance/Requested_information_code.html)
+### On code documentation
+
+The [Social Science Data Editor's page on Code and documentation](https://social-science-data-editors.github.io/guidance/Requested_information_code.html) provides guidance:
+
   + What do we consider to be "code"
   + Assessing the quality of the code documentation
-  + How to modify code for replicability/verification
+  
+### To come
 
----
-
-## Annotated REPLICATION.md
-
-You may want to consult [Unofficial Verification Guidance](https://social-science-data-editors.github.io/guidance/Verification_guidance.html) for additional tips and criteria.
-
----
-
-### SUMMARY
-
-> INSTRUCTION: The Data Editor will fill this part out. It will be based on any [REQUIRED] and [SUGGESTED] action items that the report makes a note of. 
-
-> INSTRUCTION: ALWAYS do "Data description", "Code description". If data is present, ALWAYS do "Data checks". If time is sufficient (initial assessment!), do "Replication steps", if not, explain why not.
-
----
-
-### Data description (raw data)
+How to modify code for replicability/verification
 
 
-> INSTRUCTIONS: Identify all data sources. Create a list (and commit the list together with this report) (not needed if filling out the "Data Citation and Information report"). For each data source, list in THIS document presence or absence of source, codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. Check for data citation. IN THIS DOCUMENT, point out only a summary of shortcomings.
 
----
-Examples:
+## What's in a replication report
 
-#### FRED Data
-- Variables sourced from the Federal Reserve Economic Database
-  - Federal funds rate
-    - Intended rate, or midpoint of target range sourced from FRED
-    - Data is provided in postedData.csv and described in README
-  - U.S. CPI data
-    - provided in postedVARData.csv; the authors also provide a link to the data
-- Citation: Source is not formally cited in References section
+The template used by the Lab can be found on Github at  [AEADataEditor/replication-template/blob/master/REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
 
-> [REQUIRED] Please add data citations to the article. Guidance on how to cite data is provided in the [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references).
+- SUMMARY &ast;
+- Data description &ast;
+- Data checks &ast;
+- Code description &ast;
+- Stated Requirements &ast;
+- Actual Requirements, if different
+- Computing Environment of the Replicator
+- Replication steps
+- Findings
+- Classification
 
-Suggested citation as per FRED website at the URL provided by the authors:
+We note that those sections marked "&ast;" can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a "dry" assessment of the completeness of the replication package. 
 
-> Suggested Citation:
->
-> >U.S. Bureau of Labor Statistics, Consumer Price Index for All Urban Consumers: All Items in U.S. City Average [CPIAUCSL], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPIAUCSL, January 13, 2020.
+In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) to highlight this. 
 
+### Summary
 
-### Equity index, Mexico
-- Sourced from Haver Analytics
-- Labeled as censored by authors, so not included in replication package
-- Authors include the Haver mnemonic in the README: S273IPC@INTDAILY
-- Citation: Source is not formally cited in References section
+The SUMMARY is intended for a quick glance by journal editor and authors. It should be short and succinct, with a bulleted (unduplicated) list of action items for the authors, drawn from the rest of the report. It is the first thing editors and authors will see. 
 
-> [REQUIRED] Please add data citations to the article. Guidance on how to cite data is provided in the [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references).
+![Example report summary](images/report-summary.png)
 
----
+###  Data description
 
-### Data description (analysis data)
+The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](https://bitss.github.io/ACRE/assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the "Data Citation and Information report", to obtain a machine-readable list of data sources and their attributes. 
 
-> INSTRUCTIONS: List the analysis data files provided. These will be the datasets that are read by the table/figure generating programs. Sometimes, cleaning and analysis are done in one step (no intermediate analysis data exists).
+Once the preparations above are completed, a summary should be written in the "Data Description" section. 
 
----
+#### Source data
 
-#### ICPSR data deposit
+For each data source, list 
 
-> INSTRUCTIONS: Most deposits will be at openICPSR, but all need to be checked for complete metadata. Detailed guidance is at [https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html). 
+- presence or absence of source data (data files), 
+- presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. 
+- whether the *data* is cited (see the section on [data citations](#datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
 
-![openICPSR metadata](../images/openICPSR_Workspace_Scope.jpg)
+![Data Description Section](images/report-data-description.png)
+
+#### Analysis data files
+
+If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.
+
+### Metadata checks on deposit
+
+Most replication packages received by the LDI Replication Lab will have been deposited in the AEA Data and Code Repository, but some may be on other trusted repositories (Dataverse, Zenodo, etc.).^[See the Social Science Data Editor website for a list of trusted repositories.] The replicators are asked to verify compliance with an AEA-specific list of required elements:
+
 
 - [ ] JEL Classification (required)
 - [ ] Manuscript Number (required)
@@ -101,37 +98,54 @@ Suggested citation as per FRED website at the URL provided by the authors:
 - [ ] Data Source (suggested)
 - [ ] Units of Observation (suggested)
 
-> INSTRUCTIONS: Go through the checklist above, and then choose ONE of the following results:
+If all required elements are provided, then the deposit passes. 
+Many of the recommended elements are not applicable to all data deposits - for instance, a simulation has no "geographic coverage" or "collection date", but a survey clearly does. 
 
-- [NOTE] openICPSR metadata is sufficient.
+![ICPSR metadata report](images/report-icpsr-long.png)
 
-or
+###  Data checks
 
-- [REQUIRED] Please update the required fields listed. 
+When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.
 
-and/or
+- can data be read (using software indicated by author)? This is a plausibility check for corrupted data.
+- Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is "archive-ready" if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers. 
+- Do the data files have variable labels and meaningful variable names? In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (`Q25S3`) to meaningful labels. 
 
-- [SUGGESTED] We suggest you update the fields marked as (suggested) above, in order to improve findability of your data and code supplement. 
+> Note that we do *not* require that variable *values* are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, *if* we think it is reasonable to do so  - a judgement call by the Data Editor.
 
-For additional guidance, see [https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html).
+- Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found [here](https://github.com/J-PAL/stata_PII_scan).] This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.
 
----
-
-### Data checks
-
-> INSTRUCTIONS: When data are present, run checks:
-> - can data be read (using software indicated by author)?
-
-> - Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)?
-
-> - Does the data have variable labels (Stata: run `describe using (name of DTA)` and check that there is content in the column "variable label")?
-
-> - Run check for PII ([PII_stata_scan.do](PII_stata_scan.do), sourced from [here](https://github.com/J-PAL/stata_PII_scan) if using Stata) and report results. Note: this check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. Apply judgement.
+![Data check report](images/report-data-checks.png)
 
 
-Note that we have **NOT** required that variable values are here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, **IF** we think it is reasonable to do so (judgement call).
+###  Code description
 
----
+https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx
+
+###  Stated Requirements
+###  Actual Requirements, if different
+###  Computing Environment of the Replicator
+###  Replication steps
+###  Findings
+###  Classification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Code description
 
@@ -174,7 +188,7 @@ programs/figure2.m
     - Mnemonic tables without numbering (`table_ols_fe.csv`)
     - No comments at all...
 
----
+
 
 ### Replication steps
 
