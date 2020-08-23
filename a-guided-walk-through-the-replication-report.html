@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Assessing computational reproducibility | TRAINING For Reproducibility Verification</title>
+  <title>Chapter 9 A guided walk through the Replication Report | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
   <meta name="generator" content="bookdown 0.20.3 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Assessing computational reproducibility | TRAINING For Reproducibility Verification" />
+  <meta property="og:title" content="Chapter 9 A guided walk through the Replication Report | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Assessing computational reproducibility | TRAINING For Reproducibility Verification" />
+  <meta name="twitter:title" content="Chapter 9 A guided walk through the Replication Report | TRAINING For Reproducibility Verification" />
   
   <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
   
@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generic-data-workflow.html"/>
-<link rel="next" href="a-guided-walk-through-the-replication-report.html"/>
+<link rel="prev" href="assessing-computational-reproducibility.html"/>
+<link rel="next" href="privacy.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -165,33 +165,299 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="assessing-computational-reproducibility" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Assessing computational reproducibility</h1>
-<p>The basic workflow is simple:</p>
+<div id="a-guided-walk-through-the-replication-report" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> A guided walk through the Replication Report</h1>
+<p>In order to work through a replication report, you will need</p>
 <ul>
-<li>obtain the pre-publication manuscript and any materials</li>
-<li>analyze the README, and possibly appendixes and data sections, to identify all data sources, and all processing instructions</li>
-<li>obtain all code</li>
-<li>obtain all data</li>
-<li>execute all code</li>
-<li>compare the output with the manuscript tables, figures, and in-text</li>
+<li><a href="Access_to_computers.md">Access to computers</a></li>
+<li>Reviewed the <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">Template REPORT</a></li>
 </ul>
-<p>In practice, this quickly becomes more complicated, and requires a multitude of if-then instructions. At the LDI Lab, we have implemented the generic workflow within a system called Jira, which replicators use to go through the steps above.</p>
-<div class="figure">
-<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="A complete workflow for reproducibility checks" />
-<p class="caption">A complete workflow for reproducibility checks</p>
+<p>We have examples of various actual reports (slightly anonymized):</p>
+<ul>
+<li><a href="sample_report.md">Example 1</a></li>
+<li><a href="REPLICATION-AEAREP278.md">Example 2</a></li>
+<li><a href="REPLICATION-AEAREP282.md">Example 3</a> and its <a href="REPLICATION-AEAREP282-revised.md">revision</a></li>
+</ul>
+<hr />
+<div id="some-high-level-concepts" class="section level2">
+<h2><span class="header-section-number">9.1</span> Some high-level concepts</h2>
+<div id="min-data-documentation" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> (30 min) <a href="https://social-science-data-editors.github.io/guidance/Requested_information_data.html">Data documentation</a></h3>
+<ul>
+<li>Identifying all data</li>
+<li>What is great / good / just-good-enough data documentation</li>
+<li>Citing data!</li>
+</ul>
 </div>
-<p>At each step, additional information is requested, mostly through in-app fields and questionnaires, but also via some external tools if the Jira app did not provide the functionality. At the end, a report is created by the replicator, identifying all steps taken, which steps succeeded, and the final outcome.</p>
-<p>We will first describe the <a href="#proto-report">prototypical report</a> and its elements, and then walk through the <a href="#detailed-steps">detailed steps</a> of the replicator's journey through the system. In our live training, replicators will also work on examples to &quot;get the hang of it.&quot;</p>
+<div id="min-code-and-documentation" class="section level3">
+<h3><span class="header-section-number">9.1.2</span> (30 min) <a href="https://social-science-data-editors.github.io/guidance/Requested_information_code.html">Code and documentation</a></h3>
+<ul>
+<li>What do we consider to be &quot;code&quot;</li>
+<li>Assessing the quality of the code documentation</li>
+<li>How to modify code for replicability/verification</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="annotated-replication.md" class="section level2">
+<h2><span class="header-section-number">9.2</span> Annotated REPLICATION.md</h2>
+<p>You may want to consult <a href="https://social-science-data-editors.github.io/guidance/Verification_guidance.html">Unofficial Verification Guidance</a> for additional tips and criteria.</p>
+<hr />
+<div id="summary" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> SUMMARY</h3>
+<blockquote>
+<p>INSTRUCTION: The Data Editor will fill this part out. It will be based on any [REQUIRED] and [SUGGESTED] action items that the report makes a note of.</p>
+</blockquote>
+<blockquote>
+<p>INSTRUCTION: ALWAYS do &quot;Data description&quot;, &quot;Code description&quot;. If data is present, ALWAYS do &quot;Data checks&quot;. If time is sufficient (initial assessment!), do &quot;Replication steps&quot;, if not, explain why not.</p>
+</blockquote>
+<hr />
+</div>
+<div id="data-description-raw-data" class="section level3">
+<h3><span class="header-section-number">9.2.2</span> Data description (raw data)</h3>
+<blockquote>
+<p>INSTRUCTIONS: Identify all data sources. Create a list (and commit the list together with this report) (not needed if filling out the &quot;Data Citation and Information report&quot;). For each data source, list in THIS document presence or absence of source, codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. Check for data citation. IN THIS DOCUMENT, point out only a summary of shortcomings.</p>
+</blockquote>
+</div>
+<div id="data-description-analysis-data" class="section level3">
+<h3><span class="header-section-number">9.2.3</span> Data description (analysis data)</h3>
+<blockquote>
+<p>INSTRUCTIONS: List the analysis data files provided. These will be the datasets that are read by the table/figure generating programs. Sometimes, cleaning and analysis are done in one step (no intermediate analysis data exists).</p>
+</blockquote>
+<hr />
+<div id="icpsr-data-deposit" class="section level4">
+<h4><span class="header-section-number">9.2.3.1</span> ICPSR data deposit</h4>
+<blockquote>
+<p>INSTRUCTIONS: Most deposits will be at openICPSR, but all need to be checked for complete metadata. Detailed guidance is at <a href="https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html" class="uri">https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html</a>.</p>
+</blockquote>
+<div class="figure">
+<img src="../images/openICPSR_Workspace_Scope.jpg" alt="openICPSR metadata" />
+<p class="caption">openICPSR metadata</p>
+</div>
+<ul>
+<li>[ ] JEL Classification (required)</li>
+<li>[ ] Manuscript Number (required)</li>
+<li>[ ] Subject Terms (highly recommended)</li>
+<li>[ ] Geographic coverage (highly recommended)</li>
+<li>[ ] Time period(s) (highly recommended)</li>
+<li>[ ] Collection date(s) (suggested)</li>
+<li>[ ] Universe (suggested)</li>
+<li>[ ] Data Type(s) (suggested)</li>
+<li>[ ] Data Source (suggested)</li>
+<li>[ ] Units of Observation (suggested)</li>
+</ul>
+<blockquote>
+<p>INSTRUCTIONS: Go through the checklist above, and then choose ONE of the following results:</p>
+</blockquote>
+<ul>
+<li><a href="checklist.html#note">NOTE</a> openICPSR metadata is sufficient.</li>
+</ul>
+<p>or</p>
+<ul>
+<li>[REQUIRED] Please update the required fields listed.</li>
+</ul>
+<p>and/or</p>
+<ul>
+<li>[SUGGESTED] We suggest you update the fields marked as (suggested) above, in order to improve findability of your data and code supplement.</li>
+</ul>
+<p>For additional guidance, see <a href="https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html" class="uri">https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html</a>.</p>
+<hr />
+</div>
+</div>
+<div id="data-checks" class="section level3">
+<h3><span class="header-section-number">9.2.4</span> Data checks</h3>
+<blockquote>
+<p>INSTRUCTIONS: When data are present, run checks: - can data be read (using software indicated by author)?</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)?</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Does the data have variable labels (Stata: run <code>describe using (name of DTA)</code> and check that there is content in the column &quot;variable label&quot;)?</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Run check for PII (<a href="PII_stata_scan.do" class="uri">PII_stata_scan.do</a>, sourced from <a href="https://github.com/J-PAL/stata_PII_scan">here</a> if using Stata) and report results. Note: this check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. Apply judgement.</li>
+</ul>
+</blockquote>
+<p>Note that we have <strong>NOT</strong> required that variable values are here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <strong>IF</strong> we think it is reasonable to do so (judgement call).</p>
+<hr />
+</div>
+<div id="code-description" class="section level3">
+<h3><span class="header-section-number">9.2.5</span> Code description</h3>
+<blockquote>
+<p>INSTRUCTIONS: Review the code (but do not run it yet).</p>
+</blockquote>
+<blockquote>
+<p>INSTRUCTIONS: <strong>Cleaning code:</strong> Is there code that transforms the raw data files (listed above) into the (provided) analysis data?</p>
+</blockquote>
+<blockquote>
+<p>INSTRUCTIONS: <strong>Analysis code:</strong> Identify all <strong>Figure, Table, and any in-text numbers</strong>. Create a list, mapping each of them to a particular program and line number within the program (use <a href="code-check-TEMPLATE.xlsx">this template</a>). Commit that list. You will come back to the list in your findings. IN THIS SECTION, point out only a summary description, including of shortcomings. E.g.</p>
+</blockquote>
+<p>There are four provided Stata do files, three Matlab .m files, including a &quot;master.do&quot;. - Table 5: could not identify code that produces Table 5 - Neither the program codes, nor the README, identify which tables are produced by what program.</p>
+<blockquote>
+<p>INSTRUCTIONS: You could generate list of all code files using the (Git) Bash shell: <code>find . -name \*.do</code> will find all files ending in <code>.do</code>. That list can be provided.</p>
+</blockquote>
+<pre><code>programs/master.do
+programs/table1.do
+programs/table2.do
+programs/figure1.do
+programs/table3.do
+programs/table4.m
+programs/figure2.m</code></pre>
+<blockquote>
+<p>NOTE: In-text numbers that reference numbers in tables do not need to be listed. Only in-text numbers that correspond to no table or figure need to be listed.</p>
+</blockquote>
+<p><em>What can go wrong?</em></p>
+<ul>
+<li>Not all code is provided. Frequently missing:</li>
+<li>Appendix code</li>
+<li>Transforming <em>raw</em> data into <em>analysis</em> data</li>
+<li>Code does not identify where specific tables/figures/numbers are created</li>
+<li>Ideally: one program per table/figure, called from master program</li>
+<li>Also feasible: Labels within the programs</li>
+<li>Issues:
+<ul>
+<li>no labels</li>
+<li>Mnemonic tables without numbering (<code>table_ols_fe.csv</code>)</li>
+<li>No comments at all...</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="replication-steps" class="section level3">
+<h3><span class="header-section-number">9.2.6</span> Replication steps</h3>
+<blockquote>
+<p>INSTRUCTIONS: provide details about your process of accessing the code and data. Do NOT detail things like &quot;I save them on my Desktop&quot;. DO describe actions that you did as per instructions (&quot;I added a config.do&quot;) DO describe any other actions you needed to do (&quot;I had to make changes in multiple programs&quot;), without going into detail (the commit log can provide that information)</p>
+</blockquote>
+<p>Example: 1. Downloaded code from URL provided. 2. Downloaded data from URL indicated in the README. A sign-up was required (not indicated in README) 3. Added the config.do generating system information, but commented out log creation, as author already creates log files. 4. Ran code as per README, but the third step did not work. 5. Made changes to the way the third step is run to get it to work.</p>
+</div>
+<div id="computing-environment" class="section level3">
+<h3><span class="header-section-number">9.2.7</span> Computing Environment</h3>
+<blockquote>
+<p>INSTRUCTIONS: This might be automated, for now, please fill in manually. Remove examples that are not relevant, adjust examples to fit special circumstances. Some of this is available from the standard log output in Stata. These can be found by right-clicking on &quot;My PC&quot; (for a PC), &quot;About this Mac&quot; (for a Mac), and a combination of &quot;free -g&quot; and &quot;cat /proc/cpuinfo&quot; on Linux.</p>
+</blockquote>
+<ul>
+<li>Mac Laptop, 8 GB of memory</li>
+<li>CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 @ 2.10Ghz (3 processors)</li>
+<li>CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)</li>
+<li>BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM;</li>
+</ul>
+<blockquote>
+<p>INSTRUCTIONS: Please also list the software you used (specific versions). List only the ones you used, add any not listed in the examples:</p>
+</blockquote>
+<ul>
+<li>Stata/MP 16</li>
+<li>Matlab R2019a</li>
+<li>Intel Compiler 3.14152</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>!!! NEW !!!</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>INSTRUCTIONS: List the (approximate) time the code ran. This would be added here AFTER you've run the code!</p>
+</blockquote>
+<p>Runtime: 30 min</p>
+<p>or</p>
+<p>Runtime: approx. 20 days</p>
+<blockquote>
+<blockquote>
+<p>Up through this part, you have not needed to run the code !! - We call this the &quot;Preliminary Report&quot;. So go ahead, and commit THIS document to the repository.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Now we actually run the code.</p>
+</blockquote>
+</blockquote>
+<div class="figure">
+<img src="../images/gears-1381719_640.jpg" alt="run the code. Image by Pete Linforth from Pixabay" />
+<p class="caption">run the code. Image by Pete Linforth from Pixabay</p>
+</div>
+</div>
+<div id="findings" class="section level3">
+<h3><span class="header-section-number">9.2.8</span> Findings</h3>
+<blockquote>
+<p>Describe your findings both positive and negative in some detail, for each <strong>Figure, Table, and any in-text numbers</strong>. You can re-use the Excel file created under <em>Code Description</em>. When errors happen, be as precise as possible. For differences in figures, provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran.</p>
+</blockquote>
+<div id="tables" class="section level4">
+<h4><span class="header-section-number">9.2.8.1</span> Tables</h4>
+<ul>
+<li>Table 1: Looks the same</li>
+<li>Table 2: (contains no data)</li>
+<li>Table 3: Minor differences in row 5, column 3:</li>
+<li>Reproduced: <strong>0.003</strong></li>
+<li>Manuscript: <strong>0.3</strong></li>
+</ul>
+</div>
+<div id="figures" class="section level4">
+<h4><span class="header-section-number">9.2.8.2</span> Figures</h4>
+<blockquote>
+<p>INSTRUCTIONS: Please provide a comparison with the paper when describing that figures look different. Use a screenshot for the paper, and the graph generated by the programs for the comparison. Reference the graph generated by the programs as a local file within the repository.</p>
+</blockquote>
+<p>Example: - Figure 1: Looks the same - Figure 2: no program provided - Figure 3: Paper version looks different from the one generated by programs:</p>
+<p>Paper version: <img src="media/dog.jpg" alt="Paper version" /></p>
+<p>Figure 3 generated by programs:</p>
+<div class="figure">
+<img src="media/odie.jpg" alt="Replicated version" />
+<p class="caption">Replicated version</p>
+</div>
+</div>
+<div id="in-text-numbers" class="section level4">
+<h4><span class="header-section-number">9.2.8.3</span> In-Text Numbers</h4>
+<blockquote>
+<p>INSTRUCTIONS: list page and line number of in-text numbers. If ambiguous, cite the surrounding text, i.e., &quot;the rate fell to 52% of all jobs: verified&quot;.</p>
+</blockquote>
+<p>[ ] There are no in-text numbers, or all in-text numbers stem from tables and figures.</p>
+<p>[ ] There are in-text numbers, but they are not identified in the code</p>
+<p>Example: - Page 21, line 5: Same</p>
+</div>
+</div>
+<div id="classification" class="section level3">
+<h3><span class="header-section-number">9.2.9</span> Classification</h3>
+<blockquote>
+<p>INSTRUCTIONS: Make an assessment here.</p>
+<p>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</p>
+<p>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different.</p>
+<p>Note that if any data is confidential and not available, then a partial replication applies. This should be noted on the &quot;Replication assessment questionnaire&quot;/ JIRA.</p>
+<p>Note that when all data is confidential, it is unlikely that this exercise should have been attempted.</p>
+<p>Failure to replicate: only a small number of programs ran successfully, or only a small number of numbers were successfully generated (&lt;25%)</p>
+</blockquote>
+<ul>
+<li>[ ] full replication</li>
+<li>[ ] full replication with minor issues</li>
+<li>[ ] partial replication (see above)</li>
+<li>[ ] not able to replicate most or all of the results (reasons see above)</li>
+</ul>
+</div>
+</div>
+<div id="some-additional-materials" class="section level2">
+<h2><span class="header-section-number">9.3</span> Some additional materials</h2>
+<p>Here's a collection from older presentations:</p>
+<ul>
+<li><a href="Replication-Report-Overview.pdf">Elements of a replication report</a></li>
+<li><a href="replicator_checklist.pdf">Replicator checklist</a></li>
+</ul>
+
 
 </div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="generic-data-workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="a-guided-walk-through-the-replication-report.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="assessing-computational-reproducibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="privacy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
