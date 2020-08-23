@@ -1,9 +1,15 @@
 # A guided walk through the Replication Report
 
- + [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md)
- + [Elements of a replication report](Replication-Report-Overview.pdf)
- + [Replicator checklist](replicator_checklist.pdf)
- + [Example 1](sample_report.md), [Example 2](REPLICATION-AEAREP278.md), [Example 3](REPLICATION-AEAREP282.md) and its [revision](REPLICATION-AEAREP282-revised.md)
+In order to work through a replication report, you will need
+
+- [Access to computers](Access_to_computers.md)
+- Reviewed the [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md)
+
+We have examples of various actual reports (slightly anonymized):
+
+ + [Example 1](sample_report.md)
+ + [Example 2](REPLICATION-AEAREP278.md)
+ + [Example 3](REPLICATION-AEAREP282.md) and its [revision](REPLICATION-AEAREP282-revised.md)
 
 ---
 
@@ -271,3 +277,11 @@ Example:
 - [ ] full replication with minor issues
 - [ ] partial replication (see above)
 - [ ] not able to replicate most or all of the results (reasons see above)
+
+
+## Some additional materials
+
+Here's a collection from older presentations:
+
+ + [Elements of a replication report](Replication-Report-Overview.pdf)
+ + [Replicator checklist](replicator_checklist.pdf)
