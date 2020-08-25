@@ -56,43 +56,6 @@
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -236,27 +199,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="overview" class="section level2">
 <h2><span class="header-section-number">10.2</span> Overview</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">config</code></pre></div>
-<pre><code>## $url
-## $url$acre
-## [1] &quot;https://bitss.github.io/ACRE/&quot;
-## 
-## $url$replraw
-## [1] &quot;https://github.com/labordynamicsinstitute/replicability-training/raw/master/&quot;
-## 
-## $url$replmd
-## [1] &quot;https://github.com/labordynamicsinstitute/replicability-training/blob/master/&quot;
-## 
-## $url$templmd
-## [1] &quot;https://github.com/AEADataEditor/replication-template/blob/master/&quot;
-## 
-## 
-## attr(,&quot;config&quot;)
-## [1] &quot;default&quot;
-## attr(,&quot;file&quot;)
-## [1] &quot;/home/travis/build/labordynamicsinstitute/replicability-training-curriculum/config.yml&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">config<span class="op">$</span>url<span class="op">$</span>replraw</code></pre></div>
-<pre><code>## [1] &quot;https://github.com/labordynamicsinstitute/replicability-training/raw/master/&quot;</code></pre>
 <div class="figure">
 <img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="jira image" />
 <p class="caption">jira image</p>
@@ -485,14 +427,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>This lets us know that you have started working on replication.</li>
 </ul>
-<p>At this stage, you are collecting information. - [ ] start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>) - the repository name should be the name of the JIRA issue (e.g., <code>aearep-123</code>) - Be sure that <code>aeaverification</code> is always the &quot;owner&quot; of the report on Bitbucket. - [x] populate the repository with the latest version of the <a href="https://github.com/AEADataEditor/replication-template">template</a> (<em>If you used the &quot;Import Repository&quot; technique outlined on the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">wiki</a>, this is already done!</em>)</p>
+<p>At this stage, you are collecting information.</p>
 <ul>
+<li>[ ] start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>)</li>
+<li>the repository name should be the name of the JIRA issue (e.g., <code>aearep-123</code>)</li>
+<li>Be sure that <code>aeaverification</code> is always the &quot;owner&quot; of the report on Bitbucket.</li>
+<li><p>[x] populate the repository with the latest version of the <a href="https://github.com/AEADataEditor/replication-template">template</a> (<em>If you used the &quot;Import Repository&quot; technique outlined on the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">wiki</a>, this is already done!</em>)</p></li>
 <li>[ ] Clone the Bitbucket repository onto the computer you are working on (<code>git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git</code> )</li>
 <li>[ ] Delete (<code>git rm</code>) unused files from the template! Example: <code>git rm README.md template-config.R</code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</li>
 <li>[ ] From the JIRA issue, download and add Manuscript, README.</li>
 <li>Download from Jira issue attachments. The manuscript is often called <code>PDF_Proof.pdf</code>.</li>
 <li>Add to the root of the repository, and add them to the Git repo (e.g., <code>git add PDF_Proof.pdf readme.pdf</code>)</li>
-<li>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</li>
+<li><p>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</p></li>
 </ul>
 <pre><code>code-check.xlsx
 config.do
@@ -580,14 +526,16 @@ REPLICATION.md</code></pre>
 <li><strong>[EXPERT TIP]</strong> You should <strong>not</strong> run the code at this time, only read the program code! (You can do this on your laptop)</li>
 <li>It may be useful to copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode. Alternatively, this can be pasted in under &quot;Findings&quot;.</li>
 </ul>
-<p>Next fill out the following fields in the Jira ticket: options (e.g. start typing &quot;Stata&quot; and you will see it pop up). - [ ] <code>BITBUCKET SHORT NAME</code> - if not already done earlier</p>
+<p>Next fill out the following fields in the Jira ticket:</p>
+<ul>
+<li>[ ] <code>BITBUCKET SHORT NAME</code> - if not already done earlier</li>
+</ul>
 <blockquote>
 <p>Commit!</p>
 </blockquote>
 <p>You can now proceed to change the status to <code>Data</code>. As you select that transition, you will be asked various questions:</p>
 <ul>
-<li>[ ] <code>Software Used</code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as<br />
-</li>
+<li>[ ] <code>Software Used</code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as options (e.g. start typing &quot;Stata&quot; and you will see it pop up).</li>
 <li>[ ] <code>PROGRAMSEQUENCE</code> Does the README tell you the correct sequence for running the code?</li>
 <li>[ ] <code>PROGRAMSDOCUMENTATION</code> Are the provided programs well commented? Are they documented in the README?</li>
 <li>[ ] <code>PROGRAMSSTRUCTUREMANUAL</code> Does the README note any manual changes that you need to make to the code in order for it to run?</li>
@@ -607,7 +555,14 @@ REPLICATION.md</code></pre>
 <li>[ ] Is the data readable?</li>
 <li>[ ] Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are the preferred formats by librarians, but <code>dta</code> or <code>spss</code> are also OK; <code>mat</code> files are discouraged)</li>
 </ul>
-<p>Fill out the following Jira fields: - [ ] <code>DATA PROVENANCE</code> Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as <code>CODE PROVENANCE</code>), but may be a user-provided URL or DOI. - if the data is in multiple places, enter &quot;Multiple&quot; here, and record the details in the REPLICATION.md - [ ] <code>WORKING LOCATION OF THE DATA</code> Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else</p>
+<p>Fill out the following Jira fields:</p>
+<ul>
+<li>[ ] <code>DATA PROVENANCE</code> Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as <code>CODE PROVENANCE</code>), but may be a user-provided URL or DOI.
+<ul>
+<li>if the data is in multiple places, enter &quot;Multiple&quot; here, and record the details in the REPLICATION.md</li>
+</ul></li>
+<li>[ ] <code>WORKING LOCATION OF THE DATA</code> Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else</li>
+</ul>
 <p>You can now proceed to change the status to <code>Write Preliminary Report</code>. You will be asked to provide additional information:</p>
 <ul>
 <li>[ ] <code>DATAAVAILABILITYACESS</code> Is at least some of the data available?</li>
