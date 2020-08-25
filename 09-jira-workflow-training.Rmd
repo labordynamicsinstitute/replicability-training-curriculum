@@ -10,11 +10,6 @@ Your supervisor will assign you to this workflow. This workflow covers code and 
 
 ## Overview
 
-```{r}
-config
-config$url$replraw
-```
-
 ![jira image](`r config$url$replraw`images/AEADataEditorWorkflow-20191217.png)
 
 The following table illustrates the flow and transitions. The `transition` field identifies the button that will appear in the interface
@@ -84,6 +79,7 @@ The first thing you must do is advance the ticket from `Open` to `In Progress`.
 - This lets us know that you have started working on replication.
 
 At this stage, you are collecting information. 
+
 - [ ] start by [creating a repository](https://bitbucket.org/repo/import) (for detailed instructions, see the [Wiki page](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket))
   - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
   - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
@@ -182,14 +178,14 @@ Do a first pass through the code files provided:
   - It may be useful to copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. Alternatively, this can be pasted in under "Findings".
 
 Next fill out the following fields in the Jira ticket:
-options (e.g. start typing "Stata" and you will see it pop up).
+
   - [ ] `BITBUCKET SHORT NAME` - if not already done earlier
 
 > Commit! 
 
 You can now proceed to change the status to `Data`. As you select that transition, you will be asked various questions:
 
-  - [ ] `Software Used` Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as  
+  - [ ] `Software Used` Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as  options (e.g. start typing "Stata" and you will see it pop up).
   - [ ] `PROGRAMSEQUENCE` Does the README tell you the correct sequence for running the code?
   - [ ] `PROGRAMSDOCUMENTATION` Are the provided programs well commented? Are they documented in the README?
   - [ ] `PROGRAMSSTRUCTUREMANUAL` Does the README note any manual changes that you need to make to the code in order for it to run?
@@ -209,6 +205,7 @@ You can now proceed to change the status to `Data`. As you select that transitio
   - [ ] Is the data in archive-ready formats (`csv` or `txt` are the preferred formats by librarians, but `dta` or `spss` are also OK; `mat` files are discouraged)
 
 Fill out the following Jira fields:
+
   - [ ] `DATA PROVENANCE` Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as `CODE PROVENANCE`), but may be a user-provided URL or DOI. 
     - if the data is in multiple places, enter "Multiple" here, and record the details in the REPLICATION.md
   - [ ] `WORKING LOCATION OF THE DATA` Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else
