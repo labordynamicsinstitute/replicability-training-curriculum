@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-08-24" />
+<meta name="date" content="2020-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +34,7 @@
   
   
 <link rel="prev" href="assessing-computational-reproducibility.html"/>
-<link rel="next" href="privacy.html"/>
+<link rel="next" href="a-guided-workflow.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -56,6 +56,43 @@
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -110,7 +147,7 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html"><i class="fa fa-check"></i><b>7</b> Generic data workflow</a><ul>
-<li class="chapter" data-level="7.1" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#details-on-data-workflows"><i class="fa fa-check"></i><b>7.1</b> Details on data workflows</a></li>
+<li class="chapter" data-level="7.1" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#dataflowdiagram"><i class="fa fa-check"></i><b>7.1</b> Details on data workflows</a></li>
 <li class="chapter" data-level="7.2" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#a-simple-example"><i class="fa fa-check"></i><b>7.2</b> A simple example</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
@@ -132,13 +169,26 @@
 <li class="chapter" data-level="9.2.9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#replication-steps"><i class="fa fa-check"></i><b>9.2.9</b> Replication steps</a></li>
 <li class="chapter" data-level="9.2.10" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#findings"><i class="fa fa-check"></i><b>9.2.10</b> Findings</a></li>
 <li class="chapter" data-level="9.2.11" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#classification"><i class="fa fa-check"></i><b>9.2.11</b> Classification</a></li>
-<li class="chapter" data-level="9.2.12" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#code-description-1"><i class="fa fa-check"></i><b>9.2.12</b> Code description</a></li>
-<li class="chapter" data-level="9.2.13" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#replication-steps-1"><i class="fa fa-check"></i><b>9.2.13</b> Replication steps</a></li>
-<li class="chapter" data-level="9.2.14" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#computing-environment"><i class="fa fa-check"></i><b>9.2.14</b> Computing Environment</a></li>
-<li class="chapter" data-level="9.2.15" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#findings-1"><i class="fa fa-check"></i><b>9.2.15</b> Findings</a></li>
-<li class="chapter" data-level="9.2.16" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#classification-1"><i class="fa fa-check"></i><b>9.2.16</b> Classification</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html"><i class="fa fa-check"></i><b>10</b> A guided workflow</a><ul>
+<li class="chapter" data-level="10.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#scope"><i class="fa fa-check"></i><b>10.1</b> Scope</a></li>
+<li class="chapter" data-level="10.2" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#overview"><i class="fa fa-check"></i><b>10.2</b> Overview</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#notes"><i class="fa fa-check"></i><b>10.2.1</b> Notes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#details"><i class="fa fa-check"></i><b>10.3</b> Details</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#in-progress"><i class="fa fa-check"></i><b>10.3.1</b> In Progress</a></li>
+<li class="chapter" data-level="10.3.2" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#code"><i class="fa fa-check"></i><b>10.3.2</b> Code</a></li>
+<li class="chapter" data-level="10.3.3" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#data"><i class="fa fa-check"></i><b>10.3.3</b> Data</a></li>
+<li class="chapter" data-level="10.3.4" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#write-preliminary-report"><i class="fa fa-check"></i><b>10.3.4</b> Write Preliminary Report</a></li>
+<li class="chapter" data-level="10.3.5" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#verification"><i class="fa fa-check"></i><b>10.3.5</b> Verification</a></li>
+<li class="chapter" data-level="10.3.6" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#code-review"><i class="fa fa-check"></i><b>10.3.6</b> Code Review</a></li>
+<li class="chapter" data-level="10.3.7" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#writing-report"><i class="fa fa-check"></i><b>10.3.7</b> Writing Report</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#replication-revisions"><i class="fa fa-check"></i><b>10.4</b> Replication Revisions</a></li>
+<li class="chapter" data-level="10.5" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#reviewing-reports"><i class="fa fa-check"></i><b>10.5</b> Reviewing Reports</a></li>
+<li class="chapter" data-level="10.6" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#publication"><i class="fa fa-check"></i><b>10.6</b> Publication</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
@@ -227,7 +277,7 @@
 <li>Classification</li>
 </ul>
 <p>We note that those sections marked &quot;*&quot; can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a &quot;dry&quot; assessment of the completeness of the replication package.</p>
-<p>In most sections, when elements are missing, wrong, or do not work, we use a <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">standardized set of action items</a> to highlight this.</p>
+<p>In most sections, when elements are missing, wrong, or do not work, we use a <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/sample-language-report.md">standardized set of action items</a> to highlight this.</p>
 <div id="summary" class="section level3">
 <h3><span class="header-section-number">9.2.1</span> Summary</h3>
 <p>The SUMMARY is intended for a quick glance by journal editor and authors. It should be short and succinct, with a bulleted (unduplicated) list of action items for the authors, drawn from the rest of the report. It is the first thing editors and authors will see.</p>
@@ -300,173 +350,93 @@
 </div>
 <div id="code-description" class="section level3">
 <h3><span class="header-section-number">9.2.5</span> Code description</h3>
-<p><a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx" class="uri">https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx</a></p>
+<p>All deposits should have code. In line with the <a href="generic-data-workflow.html#dataflowdiagram">basic data flow</a>, there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will not run it yet).</p>
+<ul>
+<li>Identify programs that create &quot;analysis files&quot; (&quot;data preparation code&quot;).</li>
+<li>Identify programs that create tables and figures.</li>
+</ul>
+<p>From the README, the replicator should be able to identify code to create all <strong>figures, tables, and any in-text numbers</strong>. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">template spreadsheet</a> is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the <a href="a-guided-walk-through-the-replication-report.html#findings">findings</a> section.</p>
 </div>
 <div id="stated-requirements" class="section level3">
 <h3><span class="header-section-number">9.2.6</span> Stated Requirements</h3>
+<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the Computing Environment of the Replicator. If all requirements are listed, check the box &quot;Requirements are complete&quot;. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires &quot;20,000 core compute hours&quot;, or that &quot;runs for weeks&quot;, or that requires custom software that needs to be acquired, may not be feasible.</p>
+<ul>
+<li>[ ] No requirements specified</li>
+<li>[ ] Software Requirements specified as follows:</li>
+<li>Software 1</li>
+<li>Software 2</li>
+<li>[ ] Computational Requirements specified as follows:</li>
+<li>Cluster size, etc.</li>
+<li>[ ] Time Requirements specified as follows:</li>
+<li><p>Length of necessary computation (hours, weeks, etc.)</p></li>
+<li><p>[ ] Requirements are complete.</p></li>
+</ul>
 </div>
 <div id="actual-requirements-if-different" class="section level3">
 <h3><span class="header-section-number">9.2.7</span> Actual Requirements, if different</h3>
+<p>If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should list the <em>complete</em> list of requirements here. This is usually amended as the reproducibility attempt progresses.</p>
 </div>
 <div id="computing-environment-of-the-replicator" class="section level3">
 <h3><span class="header-section-number">9.2.8</span> Computing Environment of the Replicator</h3>
-</div>
-<div id="replication-steps" class="section level3">
-<h3><span class="header-section-number">9.2.9</span> Replication steps</h3>
-</div>
-<div id="findings" class="section level3">
-<h3><span class="header-section-number">9.2.10</span> Findings</h3>
-</div>
-<div id="classification" class="section level3">
-<h3><span class="header-section-number">9.2.11</span> Classification</h3>
-</div>
-<div id="code-description-1" class="section level3">
-<h3><span class="header-section-number">9.2.12</span> Code description</h3>
-<blockquote>
-<p>INSTRUCTIONS: Review the code (but do not run it yet).</p>
-</blockquote>
-<blockquote>
-<p>INSTRUCTIONS: <strong>Cleaning code:</strong> Is there code that transforms the raw data files (listed above) into the (provided) analysis data?</p>
-</blockquote>
-<blockquote>
-<p>INSTRUCTIONS: <strong>Analysis code:</strong> Identify all <strong>Figure, Table, and any in-text numbers</strong>. Create a list, mapping each of them to a particular program and line number within the program (use <a href="code-check-TEMPLATE.xlsx">this template</a>). Commit that list. You will come back to the list in your findings. IN THIS SECTION, point out only a summary description, including of shortcomings. E.g.</p>
-</blockquote>
-<p>There are four provided Stata do files, three Matlab .m files, including a &quot;master.do&quot;. - Table 5: could not identify code that produces Table 5 - Neither the program codes, nor the README, identify which tables are produced by what program.</p>
-<blockquote>
-<p>INSTRUCTIONS: You could generate list of all code files using the (Git) Bash shell: <code>find . -name \*.do</code> will find all files ending in <code>.do</code>. That list can be provided.</p>
-</blockquote>
-<pre><code>programs/master.do
-programs/table1.do
-programs/table2.do
-programs/figure1.do
-programs/table3.do
-programs/table4.m
-programs/figure2.m</code></pre>
-<blockquote>
-<p>NOTE: In-text numbers that reference numbers in tables do not need to be listed. Only in-text numbers that correspond to no table or figure need to be listed.</p>
-</blockquote>
-<p><em>What can go wrong?</em></p>
+<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator's own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:</p>
 <ul>
-<li>Not all code is provided. Frequently missing:</li>
-<li>Appendix code</li>
-<li>Transforming <em>raw</em> data into <em>analysis</em> data</li>
-<li>Code does not identify where specific tables/figures/numbers are created</li>
-<li>Ideally: one program per table/figure, called from master program</li>
-<li>Also feasible: Labels within the programs</li>
-<li>Issues:
-<ul>
-<li>no labels</li>
-<li>Mnemonic tables without numbering (<code>table_ols_fe.csv</code>)</li>
-<li>No comments at all...</li>
-</ul></li>
+<li>(Windows) by right-clicking on &quot;My PC&quot;</li>
+<li>(Mac) Apple-menu &gt; &quot;About this Mac&quot;</li>
+<li>(Linux) see code in <code>tools/linux-system-info.sh</code></li>
 </ul>
-</div>
-<div id="replication-steps-1" class="section level3">
-<h3><span class="header-section-number">9.2.13</span> Replication steps</h3>
-<blockquote>
-<p>INSTRUCTIONS: provide details about your process of accessing the code and data. Do NOT detail things like &quot;I save them on my Desktop&quot;. DO describe actions that you did as per instructions (&quot;I added a config.do&quot;) DO describe any other actions you needed to do (&quot;I had to make changes in multiple programs&quot;), without going into detail (the commit log can provide that information)</p>
-</blockquote>
-<p>Example: 1. Downloaded code from URL provided. 2. Downloaded data from URL indicated in the README. A sign-up was required (not indicated in README) 3. Added the config.do generating system information, but commented out log creation, as author already creates log files. 4. Ran code as per README, but the third step did not work. 5. Made changes to the way the third step is run to get it to work.</p>
-</div>
-<div id="computing-environment" class="section level3">
-<h3><span class="header-section-number">9.2.14</span> Computing Environment</h3>
-<blockquote>
-<p>INSTRUCTIONS: This might be automated, for now, please fill in manually. Remove examples that are not relevant, adjust examples to fit special circumstances. Some of this is available from the standard log output in Stata. These can be found by right-clicking on &quot;My PC&quot; (for a PC), &quot;About this Mac&quot; (for a Mac), and a combination of &quot;free -g&quot; and &quot;cat /proc/cpuinfo&quot; on Linux.</p>
-</blockquote>
+<p>Examples might include:</p>
 <ul>
-<li>Mac Laptop, 8 GB of memory</li>
+<li>Mac Laptop, MacOS 10.14.6, 8 GB of memory (but only if you ran the analysis on the Mac Laptop!)</li>
 <li>CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 @ 2.10Ghz (3 processors)</li>
 <li>CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)</li>
 <li>BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM;</li>
 </ul>
-<blockquote>
-<p>INSTRUCTIONS: Please also list the software you used (specific versions). List only the ones you used, add any not listed in the examples:</p>
-</blockquote>
+<p>The list should also list the software the replicator used, with the specific version used (even if the author did not list that information). Examples include:</p>
 <ul>
 <li>Stata/MP 16</li>
 <li>Matlab R2019a</li>
 <li>Intel Compiler 3.14152</li>
 </ul>
-<blockquote>
-<blockquote>
-<p>!!! NEW !!!</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>INSTRUCTIONS: List the (approximate) time the code ran. This would be added here AFTER you've run the code!</p>
-</blockquote>
-<p>Runtime: 30 min</p>
-<p>or</p>
-<p>Runtime: approx. 20 days</p>
-<blockquote>
-<blockquote>
-<p>Up through this part, you have not needed to run the code !! - We call this the &quot;Preliminary Report&quot;. So go ahead, and commit THIS document to the repository.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>Now we actually run the code.</p>
-</blockquote>
-</blockquote>
-<div class="figure">
-<img src="../images/gears-1381719_640.jpg" alt="run the code. Image by Pete Linforth from Pixabay" />
-<p class="caption">run the code. Image by Pete Linforth from Pixabay</p>
 </div>
-</div>
-<div id="findings-1" class="section level3">
-<h3><span class="header-section-number">9.2.15</span> Findings</h3>
-<blockquote>
-<p>Describe your findings both positive and negative in some detail, for each <strong>Figure, Table, and any in-text numbers</strong>. You can re-use the Excel file created under <em>Code Description</em>. When errors happen, be as precise as possible. For differences in figures, provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran.</p>
-</blockquote>
-<div id="tables" class="section level4">
-<h4><span class="header-section-number">9.2.15.1</span> Tables</h4>
+<div id="replication-steps" class="section level3">
+<h3><span class="header-section-number">9.2.9</span> Replication steps</h3>
+<p>For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs.</p>
 <ul>
-<li>Table 1: Looks the same</li>
-<li>Table 2: (contains no data)</li>
-<li>Table 3: Minor differences in row 5, column 3:</li>
-<li>Reproduced: <strong>0.003</strong></li>
-<li>Manuscript: <strong>0.3</strong></li>
+<li>DO not include trivial details (&quot;I downloaded the code and saved on my Desktop&quot;).</li>
+<li>DO describe actions that you did as per instructions (&quot;I added a config.do&quot;)</li>
+<li>DO describe any other actions you needed to do (&quot;I had to make changes in multiple programs&quot;), without going into detail (the commit log can provide that information)</li>
 </ul>
+<p>The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!</p>
 </div>
-<div id="figures" class="section level4">
-<h4><span class="header-section-number">9.2.15.2</span> Figures</h4>
-<blockquote>
-<p>INSTRUCTIONS: Please provide a comparison with the paper when describing that figures look different. Use a screenshot for the paper, and the graph generated by the programs for the comparison. Reference the graph generated by the programs as a local file within the repository.</p>
-</blockquote>
-<p>Example: - Figure 1: Looks the same - Figure 2: no program provided - Figure 3: Paper version looks different from the one generated by programs:</p>
-<p>Paper version: <img src="media/dog.jpg" alt="Paper version" /></p>
-<p>Figure 3 generated by programs:</p>
-<div class="figure">
-<img src="media/odie.jpg" alt="Replicated version" />
-<p class="caption">Replicated version</p>
+<div id="findings" class="section level3">
+<h3><span class="header-section-number">9.2.10</span> Findings</h3>
+<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a> can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
 </div>
-</div>
-<div id="in-text-numbers" class="section level4">
-<h4><span class="header-section-number">9.2.15.3</span> In-Text Numbers</h4>
-<blockquote>
-<p>INSTRUCTIONS: list page and line number of in-text numbers. If ambiguous, cite the surrounding text, i.e., &quot;the rate fell to 52% of all jobs: verified&quot;.</p>
-</blockquote>
-<p>[ ] There are no in-text numbers, or all in-text numbers stem from tables and figures.</p>
-<p>[ ] There are in-text numbers, but they are not identified in the code</p>
-<p>Example: - Page 21, line 5: Same</p>
-</div>
-</div>
-<div id="classification-1" class="section level3">
-<h3><span class="header-section-number">9.2.16</span> Classification</h3>
-<blockquote>
-<p>INSTRUCTIONS: Make an assessment here.</p>
-<p>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</p>
-<p>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different.</p>
-<p>Note that if any data is confidential and not available, then a partial replication applies. This should be noted on the &quot;Replication assessment questionnaire&quot;/ JIRA.</p>
-<p>Note that when all data is confidential, it is unlikely that this exercise should have been attempted.</p>
-<p>Failure to replicate: only a small number of programs ran successfully, or only a small number of numbers were successfully generated (&lt;25%)</p>
-</blockquote>
+<div id="classification" class="section level3">
+<h3><span class="header-section-number">9.2.11</span> Classification</h3>
+<p>The replication report template used by the LDI Replication Lab uses a simplified scheme to summarize the reproducibility of the materials:</p>
 <ul>
+<li>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</li>
+<li>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different. Note that if any data is confidential and not available, then at best a partial replication can be achieved.</li>
+<li><p>Failure to replicate implies that only a small number of programs ran successfully, or only a small number of numbers were successfully generated (&lt;25%). Most replication packages that rely on confidential data will also be in this category.</p></li>
 <li>[ ] full replication</li>
 <li>[ ] full replication with minor issues</li>
 <li>[ ] partial replication (see above)</li>
-<li>[ ] not able to replicate most or all of the results (reasons see above)</li>
+<li><p>[ ] not able to replicate most or all of the results</p></li>
 </ul>
+<p>The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the <a href="https://bitss.github.io/ACRE/assessment.html#score">BITSS ACRE Project</a>. The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.</p>
+<p>The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab's JIRA system):</p>
+<ul>
+<li>[ ] <code>Discrepancy in output</code> (either figures or numbers in tables or text differ)</li>
+<li>[ ] <code>Bugs in code</code> that were fixable by the replicator (but should be fixed in the final deposit)</li>
+<li>[ ] <code>Code missing</code>, in particular if it prevented the replicator from completing the reproducibility check</li>
+<li>[ ] <code>Code not functional</code> is more severe than a simple bug: it prevented the replicator from completing the reproducibility check</li>
+<li>[ ] <code>Software not available to replicator</code> may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.</li>
+<li>[ ] <code>Insufficient time available to replicator</code> is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.</li>
+<li>[ ] <code>Data missing</code> is marked when data <em>should</em> be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package</li>
+<li>[ ] <code>Data not available</code> is marked when data requires additional access steps, for instance purchase or application procedure.</li>
+</ul>
+<p>Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the &quot;data are not available&quot; or because there is &quot;insufficient time&quot;, as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report.</p>
 </div>
 </div>
 <div id="some-additional-materials" class="section level2">
@@ -477,12 +447,8 @@ programs/figure2.m</code></pre>
 <li><a href="replicator_checklist.pdf">Replicator checklist</a></li>
 </ul>
 
-
 </div>
 </div>
-
-
-
 <div class="footnotes">
 <hr />
 <ol start="3">
@@ -496,7 +462,7 @@ programs/figure2.m</code></pre>
         </div>
       </div>
 <a href="assessing-computational-reproducibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="privacy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-guided-workflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
