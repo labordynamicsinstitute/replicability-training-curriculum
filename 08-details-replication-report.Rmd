@@ -182,9 +182,13 @@ For every replication or reproducibility attempt, the list of steps a replicator
 
 The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!
 
+![Steps with errors](images/report-steps-error.png)
+
 ###  Findings
 
 Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each **Data Preparation Code, Figure, Table, and any in-text numbers**, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](`r config$url$templmd`code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated. 
+
+![Findings with errors](images/report-findings-errors.png)
 
 
 ###  Classification
@@ -217,7 +221,11 @@ The reasons for not being able to fully reproduce the materials can be multiple,
 
 Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the "data are not available" or because there is "insufficient time", as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report. 
 
+![Outcome with non-replication](images/jira-outcomes1.png)
 
+![Outcome with full replication](images/jira-outcomes2.png)
+
+![Outcome with partial replication](images/jira-outcomes3.png)
 
 ## Some additional materials
 
