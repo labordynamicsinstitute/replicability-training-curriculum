@@ -2,14 +2,14 @@
 
 In order to work through a replication report, you will need
 
-- [Access to computers](Access_to_computers.md)
+- [Access to computers](`r config$url$replmd`Access_to_computers.md)
 - Reviewed the [Template REPORT](`r config$url$templmd`REPLICATION.md)
 
 We have examples of various actual reports (slightly anonymized):
 
- + [Example 1](sample_report.md)
- + [Example 2](REPLICATION-AEAREP278.md)
- + [Example 3](REPLICATION-AEAREP282.md) and its [revision](REPLICATION-AEAREP282-revised.md)
+ + [Example 1](`r config$url$replmd`sample_report.md)
+ + [Example 2](`r config$url$replmd`REPLICATION-AEAREP278.md)
+ + [Example 3](`r config$url$replmd`REPLICATION-AEAREP282.md) and its [revision](`r config$url$replmd`REPLICATION-AEAREP282-revised.md)
 
 
 
@@ -39,7 +39,7 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github at  [AEADataEditor/replication-template/blob/master/REPLICATION.md](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github at  [`r config$url$replmd`REPLICATION.md](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
