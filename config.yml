@@ -1,0 +1,6 @@
+default:
+  url:
+    acre: https://bitss.github.io/ACRE/
+    replraw: https://github.com/labordynamicsinstitute/replicability-training/raw/master/
+    replmd: https://github.com/labordynamicsinstitute/replicability-training/blob/master/
+    templmd: https://github.com/AEADataEditor/replication-template/blob/master/

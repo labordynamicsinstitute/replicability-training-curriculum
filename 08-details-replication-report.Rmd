@@ -3,7 +3,7 @@
 In order to work through a replication report, you will need
 
 - [Access to computers](Access_to_computers.md)
-- Reviewed the [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md)
+- Reviewed the [Template REPORT](`r config$url$templmd`REPLICATION.md)
 
 We have examples of various actual reports (slightly anonymized):
 
@@ -39,7 +39,7 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github at  [AEADataEditor/replication-template/blob/master/REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github at  [AEADataEditor/replication-template/blob/master/REPLICATION.md](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
@@ -54,7 +54,7 @@ The template used by the Lab can be found on Github at  [AEADataEditor/replicati
 
 We note that those sections marked "&ast;" can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a "dry" assessment of the completeness of the replication package. 
 
-In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) to highlight this. 
+In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](`r config$url$replmd`sample-language-report.md) to highlight this. 
 
 ### Summary
 
@@ -64,7 +64,7 @@ The SUMMARY is intended for a quick glance by journal editor and authors. It sho
 
 ###  Data description
 
-The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](https://bitss.github.io/ACRE/assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the "Data Citation and Information report", to obtain a machine-readable list of data sources and their attributes. 
+The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](`r config$url$acre`assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the "Data Citation and Information report", to obtain a machine-readable list of data sources and their attributes. 
 
 Once the preparations above are completed, a summary should be written in the "Data Description" section. 
 
@@ -120,177 +120,103 @@ When data are present, the replicator will run a few checks. These are not meant
 
 ###  Code description
 
-https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx
+All deposits should have code. In line with the [basic data flow](#dataflowdiagram), there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet). 
+
+- Identify programs that create "analysis files" ("data preparation code"). 
+- Identify programs that create tables and figures. 
+
+From the README, the replicator should be able to identify code to create all **figures, tables, and any in-text numbers**. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](`r config$url$templmd`code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section. 
+
+
 
 ###  Stated Requirements
+
+The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is **different** from the Computing Environment of the Replicator. If all requirements are listed, check the box "Requirements are complete". This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires "20,000 core compute hours", or that "runs for weeks", or that requires custom software that needs to be acquired, may not be feasible. 
+
+- [ ] No requirements specified
+- [ ] Software Requirements specified as follows:
+   - Software 1
+   - Software 2
+- [ ] Computational Requirements specified as follows:
+   - Cluster size, etc.
+- [ ] Time Requirements specified as follows:
+   - Length of necessary computation (hours, weeks, etc.)
+
+- [ ] Requirements are complete.
+
+
+
 ###  Actual Requirements, if different
+
+If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the *complete* list of requirements here. This is usually amended as the reproducibility attempt progresses.
+
 ###  Computing Environment of the Replicator
-###  Replication steps
-###  Findings
-###  Classification
 
+Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator's own attempt is important. This section should *not* describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:
 
+- (Windows) by right-clicking on "My PC"
+- (Mac) Apple-menu > "About this Mac"
+- (Linux) see code in `tools/linux-system-info.sh`
 
+Examples might include:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Code description
-
-> INSTRUCTIONS: Review the code (but do not run it yet). 
-
-> INSTRUCTIONS: **Cleaning code:** Is there code that transforms the raw data files (listed above) into the (provided) analysis data?
-
-> INSTRUCTIONS: **Analysis code:** Identify all **Figure, Table, and any in-text numbers**. Create a list, mapping each of them to a particular program and line number within the program (use [this template](code-check-TEMPLATE.xlsx)). Commit that list. You will come back to the list in your findings. IN THIS SECTION, point out only a summary description, including of shortcomings. E.g.
-
-There are four provided Stata do files, three Matlab .m files, including a "master.do". 
-- Table 5: could not identify code that produces Table 5
-- Neither the program codes, nor the README, identify which tables are produced by what program.
-
-> INSTRUCTIONS: You could generate list of all code files using the (Git) Bash shell:
-> ```find . -name \*.do```
-> will find all files ending in `.do `. That list can be provided.
-
-```
-programs/master.do
-programs/table1.do
-programs/table2.do
-programs/figure1.do
-programs/table3.do
-programs/table4.m
-programs/figure2.m
-```
-
-> NOTE: In-text numbers that reference numbers in tables do not need to be listed. Only in-text numbers that correspond to no table or figure need to be listed.
-
-*What can go wrong?*
-
-- Not all code is provided. Frequently missing:
-  - Appendix code
-  - Transforming *raw* data into *analysis* data
-- Code does not identify where specific tables/figures/numbers are created
-  - Ideally: one program per table/figure, called from master program
-  - Also feasible: Labels within the programs
-  - Issues: 
-    - no labels
-    - Mnemonic tables without numbering (`table_ols_fe.csv`)
-    - No comments at all...
-
-
-
-### Replication steps
-
-
-> INSTRUCTIONS: provide details about your process of accessing the code and data.
-> Do NOT detail things like "I save them on my Desktop".
-> DO describe actions   that you did  as per instructions ("I added a config.do")
-> DO describe any other actions you needed to do ("I had to make changes in multiple programs"), without going into detail (the commit log can provide that information)
-
-Example:
-1. Downloaded code from URL provided.
-2. Downloaded data from URL indicated in the README. A sign-up was required (not indicated in README)
-3. Added the config.do generating system information, but commented out log creation, as author already creates log files.
-4. Ran code as per README, but the third step did not work.
-5. Made changes to the way the third step is run to get it to work.
-
-### Computing Environment
-
-> INSTRUCTIONS: This might be automated, for now, please fill in manually. Remove examples that are not relevant, adjust examples to fit special circumstances. Some of this is available from the standard log output in Stata. These can be found by right-clicking on "My PC" (for a PC), "About this Mac" (for a Mac), and a combination of "free -g" and "cat /proc/cpuinfo" on Linux.
-
-- Mac Laptop, 8 GB of memory
+- Mac Laptop, MacOS 10.14.6, 8 GB of memory (but only if you ran the analysis on the Mac Laptop!)
 - CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 @ 2.10Ghz (3 processors)
 - CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)
 - BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM; 
 
-> INSTRUCTIONS: Please also list the software you used (specific versions). List only the ones you used, add any not listed in the examples:
+The list should also list the software the replicator used, with the specific version used (even if the author did not list that information). Examples include:
 
 - Stata/MP 16
 - Matlab R2019a
 - Intel Compiler 3.14152
 
->> !!! NEW !!!
 
-> INSTRUCTIONS: List the (approximate) time the code ran. This would be added here AFTER you've run the code!
+###  Replication steps
 
-Runtime: 30 min
+For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs. 
 
-or
+- DO not include trivial details ("I downloaded the code and saved on my Desktop"). 
+- DO describe actions   that you did  as per instructions ("I added a config.do")
+- DO describe any other actions you needed to do ("I had to make changes in multiple programs"), without going into detail (the commit log can provide that information)
 
-Runtime: approx. 20 days
+The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!
 
-> > Up through this part, you have not needed to run the code !! - We call this the "Preliminary Report". So go ahead, and commit THIS document to the repository.
+###  Findings
 
-> > Now we actually run the code.
-
-![run the code. Image by Pete Linforth from Pixabay](../images/gears-1381719_640.jpg)
-
-### Findings
-
-> Describe your findings both positive and negative in some detail, for each **Figure, Table, and any in-text numbers**. You can re-use the Excel file created under *Code Description*. When errors happen, be as precise as possible. For differences in figures, provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran.
-
-#### Tables
-- Table 1: Looks the same
-- Table 2: (contains no data)
-- Table 3: Minor differences in row 5, column 3: 
-  - Reproduced: **0.003** 
-  - Manuscript:  **0.3**
-
-#### Figures
-> INSTRUCTIONS: Please provide a comparison with the paper when describing that figures look different. Use a screenshot for the paper, and the graph generated by the programs for the comparison. Reference the graph generated by the programs as a local file within the repository.
-
-Example:
-- Figure 1: Looks the same
-- Figure 2: no program provided
-- Figure 3: Paper version looks different from the one generated by programs:
-
-Paper version:
-![Paper version](media/dog.jpg)
-
-Figure 3 generated by programs:
-
-![Replicated version](media/odie.jpg)
-
-#### In-Text Numbers
-> INSTRUCTIONS: list page and line number of in-text numbers. If ambiguous, cite the surrounding text, i.e., "the rate fell to 52% of all jobs: verified".
-
-[ ] There are no in-text numbers, or all in-text numbers stem from tables and figures.
-
-[ ] There are in-text numbers, but they are not identified in the code
-
-Example:
-- Page 21, line 5: Same
+Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each **Data Preparation Code, Figure, Table, and any in-text numbers**, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](`r config$url$templmd`code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated. 
 
 
-### Classification
+###  Classification
 
-> INSTRUCTIONS: Make an assessment here.
->
-> Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.
->
-> Partial replication means that a significant number (>25%) of programs and/or numbers are different.
->
-> Note that if any data is confidential and not available, then a partial replication applies. This should be noted on the "Replication assessment questionnaire"/ JIRA.
->
-> Note that when all data is confidential, it is unlikely that this exercise should have been attempted.
->
-> Failure to replicate: only a small number of programs ran successfully, or only a small number of numbers were successfully generated (<25%)
+The replication report template used by the LDI Replication Lab uses a simplified scheme to summarize the reproducibility of the materials:
+
+- Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.
+-  Partial replication means that a significant number (>25%) of programs and/or numbers are different.  Note that if any data is confidential and not available, then at best a partial replication can be achieved. 
+- Failure to replicate implies that only a small number of programs ran successfully, or only a small number of numbers were successfully generated (<25%). Most replication packages that rely on confidential data will also be in this category.
 
 - [ ] full replication
 - [ ] full replication with minor issues
 - [ ] partial replication (see above)
-- [ ] not able to replicate most or all of the results (reasons see above)
+- [ ] not able to replicate most or all of the results 
+
+
+The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the [BITSS ACRE Project](`r config$url$acre`assessment.html#score). The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.
+
+
+The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab's JIRA system):
+
+- [ ] `Discrepancy in output` (either figures or numbers in tables or text differ)
+- [ ] `Bugs in code`  that  were fixable by the replicator (but should be fixed in the final deposit)
+- [ ] `Code missing`, in particular if it  prevented the replicator from completing the reproducibility check
+- [ ] `Code not functional` is more severe than a simple bug: it  prevented the replicator from completing the reproducibility check
+- [ ] `Software not available to replicator`  may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.
+- [ ] `Insufficient time available to replicator` is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.
+- [ ] `Data missing` is marked when data *should* be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package
+- [ ] `Data not available` is marked when data requires additional access steps, for instance purchase or application procedure. 
+
+Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the "data are not available" or because there is "insufficient time", as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report. 
+
 
 
 ## Some additional materials
