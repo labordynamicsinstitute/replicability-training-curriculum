@@ -225,6 +225,9 @@ At this stage, you need to fill out the REPLICATION.md up to the "Replication st
 
 - There is sample language for commonly encountered problems at the [Fragments for REPLICATION.md](`r config$url$replraw`sample-language-report.md) link in the tall grey bar
   - [EXPERT TIP] Right-click, and open the sample language in a new tab, for easy reference.
+
+![Link to Fragments](images/jira-left-fragments.png)
+
 - [ ] Commit this preliminary report to the Bitbucket repository.
 
 
