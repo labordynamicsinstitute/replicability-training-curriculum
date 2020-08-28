@@ -19,7 +19,7 @@ pkgTest <- function(x,try=FALSE)
 
 # This is required to be run once per computer
 
-start.libraries <- c("rprojroot","bookdown")
+start.libraries <- c("rprojroot")
 
 results <- sapply(as.list(start.libraries), pkgTest,try=TRUE)
 # from here on, simply install to project-specific lib
