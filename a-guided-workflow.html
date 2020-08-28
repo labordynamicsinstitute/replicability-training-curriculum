@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-08-27" />
+<meta name="date" content="2020-08-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -416,7 +416,14 @@
 </div>
 <div id="details" class="section level2">
 <h2><span class="header-section-number">10.3</span> Details</h2>
-<p>Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note: - The blue <code>In Progress</code> box in the upper right is how you &quot;advance&quot; the Jira ticket. When you are first assigned a replication, this box will say <code>Open</code>. - The tall grey bar on the left side contains several handy links that you will use throughout the process. - Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.</p>
+<p>Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note:</p>
+<ul>
+<li>The blue <code>In Progress</code> box in the upper right is how you &quot;advance&quot; the Jira ticket. When you are first assigned a replication, this box will say <code>Open</code>.</li>
+<li>The tall grey bar on the left side contains several handy links that you will use throughout the process.
+<ul>
+<li>Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.</li>
+</ul></li>
+</ul>
 <div class="figure">
 <img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="jira image" />
 <p class="caption">jira image</p>
@@ -429,15 +436,19 @@
 </ul>
 <p>At this stage, you are collecting information.</p>
 <ul>
-<li>[ ] start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>)</li>
+<li>[ ] start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>)
+<ul>
 <li>the repository name should be the name of the JIRA issue (e.g., <code>aearep-123</code>)</li>
 <li>Be sure that <code>aeaverification</code> is always the &quot;owner&quot; of the report on Bitbucket.</li>
+</ul></li>
 <li><p>[x] populate the repository with the latest version of the <a href="https://github.com/AEADataEditor/replication-template">template</a> (<em>If you used the &quot;Import Repository&quot; technique outlined on the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">wiki</a>, this is already done!</em>)</p></li>
 <li>[ ] Clone the Bitbucket repository onto the computer you are working on (<code>git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git</code> )</li>
 <li>[ ] Delete (<code>git rm</code>) unused files from the template! Example: <code>git rm README.md template-config.R</code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</li>
-<li>[ ] From the JIRA issue, download and add Manuscript, README.</li>
+<li>[ ] From the JIRA issue, download and add Manuscript, README.
+<ul>
 <li>Download from Jira issue attachments. The manuscript is often called <code>PDF_Proof.pdf</code>.</li>
 <li>Add to the root of the repository, and add them to the Git repo (e.g., <code>git add PDF_Proof.pdf readme.pdf</code>)</li>
+</ul></li>
 <li><p>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</p></li>
 </ul>
 <pre><code>code-check.xlsx
@@ -448,18 +459,18 @@ readme.pdf
 REPLICATION.md</code></pre>
 <ul>
 <li><code>git commit, git push</code>...</li>
-<li>[ ] Then fill out the following fields in the Jira ticket (some may be pre-populated):</li>
-<li>[ ] <code>Code provenance</code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.
+<li>[ ] Then fill out the following fields in the Jira ticket (some may be pre-populated):
 <ul>
+<li>[ ] <code>Code provenance</code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.</li>
 <li>If code and/or data are provided by email, <code>Code provenance</code> should be filled out with &quot;<a href="https://email" class="uri">https://email</a>&quot;, otherwise with a URL.</li>
-</ul></li>
 <li>[ ] <code>Journal</code></li>
 <li>[ ] <code>Manuscript Central identifier</code></li>
 <li>[ ] <code>Bitbucket short name</code> (e.g., <code>aearep-123</code>) - this should auto-fill the <code>Git working location</code>.</li>
-<li>The following fields, located in the REPL. INFO tab on the bottom right of your Jira ticket, must also be filled out:</li>
-<li>[ ] <code>TYPEOFARTICLE</code> &quot;Does the article contain empirical work, simulations, or experimental work?&quot; - typically the answer should be &quot;Yes&quot;. You should answer &quot;No&quot; only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.</li>
-<li>[ ] <code>RCT</code> Is the paper about a randomized control trial? This should be immediately obvious from the abstract.
+</ul></li>
+<li>The following fields, located in the REPL. INFO tab on the bottom right of your Jira ticket, must also be filled out:
 <ul>
+<li>[ ] <code>TYPEOFARTICLE</code> &quot;Does the article contain empirical work, simulations, or experimental work?&quot; - typically the answer should be &quot;Yes&quot;. You should answer &quot;No&quot; only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.</li>
+<li>[ ] <code>RCT</code> Is the paper about a randomized control trial? This should be immediately obvious from the abstract.</li>
 <li><code>RCT NUMBER</code> If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)</li>
 </ul></li>
 </ul>
@@ -595,6 +606,9 @@ REPLICATION.md</code></pre>
 <blockquote>
 <p>Commit!</p>
 </blockquote>
+<pre><code>git add REPLICATION.md
+git commit -m &quot;Preliminary report&quot;
+git push</code></pre>
 <blockquote>
 <p>!! If you identify any of the elements above that prevent you from completing the issue on time, you should notify your supervisor. DO NOT ADVANCE THE TICKET!!</p>
 </blockquote>
@@ -642,9 +656,11 @@ REPLICATION.md</code></pre>
 <li>It may be useful to copy-and-paste the <em>code-check.xlsx</em>, including the column &quot;Replicated?&quot; and any notes column, into the &quot;Findings&quot; part. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</li>
 <li>Delete all of the instructional lines in REPLICATION.md before finishing the report.</li>
 <li>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</li>
-<li>Highlight differences:</li>
+<li>Highlight differences:
+<ul>
 <li>if only a small number of table entries: mention them by table in the report</li>
 <li>if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed</li>
+</ul></li>
 <li>Check that the <code>DataCitationSummary</code> field is filled out indicating how many data citations are in order: all, some, or none.</li>
 </ul>
 <p>To complete this stage, enter the direct URL of the report, i.e., in the relevant repository (if not already pre-filled):</p>
