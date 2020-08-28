@@ -58,6 +58,7 @@ The following are only relevant for "Publishers"  (if you have not been told you
 
 
 ### Notes
+
 - In the **Issue form**, please also fill out other fields, as noted.
 - At any point, you can move the issue to `Incomplete`: more information/action is required before you can proceed. You should also notify us of the situation ASAP
 - When committing, **always** use [Smart Commits](https://confluence.atlassian.com/bitbucket/use-smart-commits-298979931.html), e.g.
@@ -65,9 +66,11 @@ The following are only relevant for "Publishers"  (if you have not been told you
 - Use JIRA to communicate with your supervisor as issues arise, including code that takes a long time to run. 
 
 ## Details
+
 Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note:
-  - The blue `In Progress` box in the upper right is how you "advance" the Jira ticket. When you are first assigned a replication, this box will say `Open`.
-  - The tall grey bar on the left side contains several handy links that you will use throughout the process.
+
+- The blue `In Progress` box in the upper right is how you "advance" the Jira ticket. When you are first assigned a replication, this box will say `Open`.
+- The tall grey bar on the left side contains several handy links that you will use throughout the process.
     - Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.
 
 ![jira image](`r config$url$replraw`images/AEADataEditorWorkflow-20191217.png)
@@ -81,15 +84,15 @@ The first thing you must do is advance the ticket from `Open` to `In Progress`.
 At this stage, you are collecting information. 
 
 - [ ] start by [creating a repository](https://bitbucket.org/repo/import) (for detailed instructions, see the [Wiki page](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket))
-  - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
-  - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
+    - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
+    - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
 - [x] populate the repository with the latest version of the [template](https://github.com/AEADataEditor/replication-template) (*If you used the "Import Repository" technique outlined on the [wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket), this is already done!*) 
 
 - [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
 - [ ] Delete (`git rm`) unused files from the template! Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
 - [ ] From the JIRA issue, download and add Manuscript, README. 
-  - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
-  - Add to the root of the repository, and add them to the Git repo (e.g., `git add PDF_Proof.pdf readme.pdf`)
+    - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
+    - Add to the root of the repository, and add them to the Git repo (e.g., `git add PDF_Proof.pdf readme.pdf`)
 - The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:
 
 ```
@@ -103,15 +106,15 @@ REPLICATION.md
 
 - `git commit, git push`...
 - [ ] Then fill out the following fields in the Jira ticket (some may be pre-populated):
-  - [ ] `Code provenance` In almost all cases, this is the openICPSR repo for which you will have received a notification email.
-    - If code and/or data are provided by email, `Code provenance` should be filled out with  "https://email", otherwise with a URL.
-  - [ ] `Journal` 
-  - [ ] `Manuscript Central identifier`
-  - [ ] `Bitbucket short name` (e.g., `aearep-123`) - this should auto-fill the `Git working location`.
+    - [ ] `Code provenance` In almost all cases, this is the openICPSR repo for which you will have received a notification email.
+      - If code and/or data are provided by email, `Code provenance` should be filled out with  "https://email", otherwise with a URL.
+    - [ ] `Journal` 
+    - [ ] `Manuscript Central identifier`
+    - [ ] `Bitbucket short name` (e.g., `aearep-123`) - this should auto-fill the `Git working location`.
 - The following fields, located in the REPL. INFO tab on the bottom right of your Jira ticket, must also be filled out:
-  - [ ] `TYPEOFARTICLE` "Does the article contain empirical work, simulations, or experimental work?" - typically the answer should be "Yes". You should answer "No" only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.
-  - [ ] `RCT` Is the paper about a randomized control trial? This should be immediately obvious from the abstract.
-    - `RCT NUMBER` If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)
+    - [ ] `TYPEOFARTICLE` "Does the article contain empirical work, simulations, or experimental work?" - typically the answer should be "Yes". You should answer "No" only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.
+    - [ ] `RCT` Is the paper about a randomized control trial? This should be immediately obvious from the abstract.
+      - `RCT NUMBER` If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)
   
 You can now proceed to change the status to `Code`.
 
@@ -233,12 +236,19 @@ At this stage, you need to fill out the REPLICATION.md up to the "Replication st
 
 This stage allows for earlier identification of  issues that might warrant changes to the procedure. 
 
-  - This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.
-  - You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.
-  - The authors might have identified computational requirements that you do not have access to, or do not have the time to run ("compute cluster with 100 nodes", "Fortran compiler").
+- This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.
+- You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.
+- The authors might have identified computational requirements that you do not have access to, or do not have the time to run ("compute cluster with 100 nodes", "Fortran compiler").
 
 
-> Commit! 
+> Commit!
+
+```
+git add REPLICATION.md
+git commit -m "Preliminary report"
+git push
+```
+
 
 > !! If you identify any of the elements above that prevent you from completing the issue on time, you should notify your supervisor. DO NOT ADVANCE THE TICKET!!
 
@@ -289,8 +299,8 @@ At this stage, you will write the final version of the report.
 - Delete all of the instructional lines in REPLICATION.md  before finishing the report.
 - When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report
 - Highlight differences:
-  - if only a small number of table entries: mention them by table in the report
-  - if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed
+    - if only a small number of table entries: mention them by table in the report
+    - if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed
 - Check that the `DataCitationSummary` field is filled out indicating how many data citations are in order: all, some, or none. 
 
 To complete this stage, enter the direct URL of the report, i.e., in the relevant repository (if not already pre-filled):
