@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-08-28" />
+<meta name="date" content="2020-08-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -199,19 +199,9 @@
 <h2><span class="header-section-number">7.1</span> Details on data workflows</h2>
 <p>In a reproducible workflow, <em>instructions</em> to perform all of the above are provided. Most of the time, those instructions will be <em>computer code</em>, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments, but more often, acquiring data entails manual actions. For instance, secondary data access might be described in <a href="datacitations.html#dasmaster">Data Availability Statements</a>, whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures, but sometimes, authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly.</p>
 <p>The following diagram illustrates the generic flow:</p>
-<pre class="{=html}"><code>&lt;div class=&quot;mermaid&quot;&gt;
-graph TD;
-    subgraph Dataflow;
-    A((Input data)) ==&gt;  B[Cleaning programs];
-    B ==&gt; C((Analysis data));
-    C ==&gt; D[Analysis programs]
-    D ==&gt; E((Outputs));
-    end;
-    B -.-&gt; F((&quot;Auxiliary data&lt;br/&gt;(created)&quot;));
-    F -.-&gt; C;
-    Z((Source)) -.-&gt; X[Data citation] -.-&gt; A;
-
-&lt;/div&gt;</code></pre>
+<div class="mermaid">
+<p>graph TD; subgraph Dataflow; A((Input data)) ==&gt; B[Cleaning programs]; B ==&gt; C((Analysis data)); C ==&gt; D[Analysis programs] D ==&gt; E((Outputs)); end; B -.-&gt; F((&quot;Auxiliary data<br/>(created)&quot;)); F -.-&gt; C; Z((Source)) -.-&gt; X[Data citation] -.-&gt; A;</p>
+</div>
 <p>Real articles are often more complex. A simple example will be discussed next.</p>
 </div>
 <div id="a-simple-example" class="section level2">
