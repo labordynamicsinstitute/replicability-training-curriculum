@@ -12,7 +12,6 @@ In a reproducible workflow, *instructions* to perform all of the above are provi
 
 The following diagram illustrates the generic flow:
 
-```{=html}
 <div class="mermaid">
 graph TD;
     subgraph Dataflow;
@@ -26,7 +25,6 @@ graph TD;
     Z((Source)) -.-> X[Data citation] -.-> A;
 
 </div>
-```
 
 Real articles are often more complex. A simple example will be discussed next.
 
