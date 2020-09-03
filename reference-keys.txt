@@ -74,6 +74,17 @@ writing-report
 replication-revisions
 reviewing-reports
 publication
+generic-guidance
+writing-the-revision-report
+revision-workflow
+in-progress-1
+code-1
+data-1
+write-preliminary-report-1
+code-review-or-verification
+re-running-code
+writing-report-1
+an-example
 privacy
 privacy-of-replicators
 the-privacy-of-authors
