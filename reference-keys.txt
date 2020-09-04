@@ -74,6 +74,7 @@ writing-report
 replication-revisions
 reviewing-reports
 publication
+revision-reports-after-author-resubmission
 generic-guidance
 writing-the-revision-report
 revision-workflow
