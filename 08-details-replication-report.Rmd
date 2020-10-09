@@ -54,7 +54,7 @@ The template used by the Lab can be found on Github at  [`r config$url$replmd`RE
 
 We note that those sections marked "&ast;" can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a "dry" assessment of the completeness of the replication package. 
 
-In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](`r config$url$replmd`sample-language-report.md) to highlight this. 
+In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](`r config$url$templmd`sample-language-report.md) to highlight this. 
 
 ### Summary
 
