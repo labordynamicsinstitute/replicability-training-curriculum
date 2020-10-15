@@ -2,7 +2,7 @@
 
 The basic workflow is simple:
 
-- obtain the pre-publication manuscript and any materials
+- obtain the (pre-publication) manuscript and any materials
 - analyze the README, and possibly appendixes and data sections, to identify all data sources, and all processing instructions
 - obtain all code
 - obtain all data
