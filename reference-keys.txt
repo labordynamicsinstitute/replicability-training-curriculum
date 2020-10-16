@@ -111,3 +111,7 @@ email
 jira
 github
 language
+using-openicpsr-projects-prior-to-publication
+basics-of-openicpsr
+downloading-a-project
+reminders
