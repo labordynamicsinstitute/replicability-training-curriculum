@@ -59,7 +59,7 @@ replication-steps
 findings
 classification
 some-additional-materials
-a-guided-workflow
+aea-jira-workflow---a-guide
 scope
 overview
 notes
@@ -74,7 +74,7 @@ writing-report
 replication-revisions
 reviewing-reports
 publication
-revision-reports-after-author-resubmission
+aea-revision-reports-after-author-resubmission
 generic-guidance
 writing-the-revision-report
 revision-workflow
@@ -86,6 +86,14 @@ code-review-or-verification
 re-running-code
 writing-report-1
 an-example
+aea-interfacing-with-the-journal-management-system
+basic-setup
+submitting-to-the-jms
+decision-point
+request-revisions
+preparing-deposit-for-publication
+for-accept-with-changes
+for-accept
 privacy
 privacy-of-replicators
 the-privacy-of-authors
@@ -97,3 +105,9 @@ text-editor-vs.-word-processor
 availability-and-suggestions
 note
 help
+communication
+medium
+email
+jira
+github
+language

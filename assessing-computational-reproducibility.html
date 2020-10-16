@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Assessing computational reproducibility | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Assessing computational reproducibility | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-10-09" />
+<meta name="date" content="2020-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,13 +52,35 @@
 
 
 
-    <script src="js/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+<script>
+function toggleCitation() {
+  var x = document.getElementById("myCitation");
+  var button = document.getElementById("citationButton");
+  var date = document.getElementById("todayDate");
+  var url = document.getElementById("thisURL");
+  var d = new Date().toISOString();
+  var chapTitle = document.getElementsByTagName("h1")[1]
+  var citeTitle = document.getElementById("chapTitle")
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    button.innerHTML = "Hide citation";
+    date.innerHTML = d.split("T")[0];
+    url.innerHTML = window.location.href;
+    citeTitle.innerText = chapTitle.innerText.replace(/^[0-9]+ /,"")
+  } else {
+    x.style.display = "none";
+    button.innerHTML = "Show citation to this chapter";
+  }
+} 
+
+</script>
 
 
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
 </head>
 
 <body>
@@ -71,43 +93,23 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Training for Reproducibility Verification</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tentative-agenda"><i class="fa fa-check"></i><b>1.1</b> Tentative Agenda</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-to-read-this-document"><i class="fa fa-check"></i><b>1.2</b> How to read this document</a></li>
 </ul></li>
+<li class="part"><span><b>I Preliminary Tasks</b></span></li>
 <li class="chapter" data-level="2" data-path="pre-requisites.html"><a href="pre-requisites.html"><i class="fa fa-check"></i><b>2</b> Pre-requisites</a></li>
 <li class="chapter" data-level="3" data-path="pre-training.html"><a href="pre-training.html"><i class="fa fa-check"></i><b>3</b> Pre-training tasks</a></li>
+<li class="part"><span><b>II Overview</b></span></li>
 <li class="chapter" data-level="4" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>4</b> Background</a><ul>
-<li class="chapter" data-level="4.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>4.1</b> Activities of the LDI Replication Lab</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="background.html"><a href="background.html#pre-publication-evaluation-of-reproducibility-and-quality-of-supplemental-materials"><i class="fa fa-check"></i><b>4.1.1</b> Pre-Publication Evaluation of Reproducibility and Quality of Supplemental Materials</a></li>
-<li class="chapter" data-level="4.1.2" data-path="background.html"><a href="background.html#post-publication-evaluation-of-reproducibility"><i class="fa fa-check"></i><b>4.1.2</b> Post-Publication Evaluation of Reproducibility</a></li>
-</ul></li>
+<li class="chapter" data-level="4.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>4.1</b> Activities of the LDI Replication Lab</a></li>
 <li class="chapter" data-level="4.2" data-path="background.html"><a href="background.html#learning-goals"><i class="fa fa-check"></i><b>4.2</b> Learning goals</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="basic-concepts.html"><a href="basic-concepts.html"><i class="fa fa-check"></i><b>5</b> Basic Concepts</a></li>
 <li class="chapter" data-level="6" data-path="datacitations.html"><a href="datacitations.html"><i class="fa fa-check"></i><b>6</b> Data citations and data availability statements</a><ul>
 <li class="chapter" data-level="6.1" data-path="datacitations.html"><a href="datacitations.html#a-very-short-history-of-data-citations"><i class="fa fa-check"></i><b>6.1</b> A very short history of data citations</a></li>
-<li class="chapter" data-level="6.2" data-path="datacitations.html"><a href="datacitations.html#how-do-you-create-a-data-citation"><i class="fa fa-check"></i><b>6.2</b> How do you create a data citation</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="datacitations.html"><a href="datacitations.html#an-imperfect-real-example"><i class="fa fa-check"></i><b>6.2.1</b> An imperfect real example</a></li>
-<li class="chapter" data-level="6.2.2" data-path="datacitations.html"><a href="datacitations.html#an-ideal-data-citation"><i class="fa fa-check"></i><b>6.2.2</b> An ideal (?) data citation</a></li>
-<li class="chapter" data-level="6.2.3" data-path="datacitations.html"><a href="datacitations.html#data-citation-template"><i class="fa fa-check"></i><b>6.2.3</b> Data citation template</a></li>
-<li class="chapter" data-level="6.2.4" data-path="datacitations.html"><a href="datacitations.html#a-not-quite-serious-example"><i class="fa fa-check"></i><b>6.2.4</b> A not quite serious example</a></li>
-<li class="chapter" data-level="6.2.5" data-path="datacitations.html"><a href="datacitations.html#data-distributed-as-supplementary-data"><i class="fa fa-check"></i><b>6.2.5</b> Data distributed as supplementary data</a></li>
-<li class="chapter" data-level="6.2.6" data-path="datacitations.html"><a href="datacitations.html#producer"><i class="fa fa-check"></i><b>6.2.6</b> Producer</a></li>
-<li class="chapter" data-level="6.2.7" data-path="datacitations.html"><a href="datacitations.html#distributor"><i class="fa fa-check"></i><b>6.2.7</b> Distributor</a></li>
-<li class="chapter" data-level="6.2.8" data-path="datacitations.html"><a href="datacitations.html#dates"><i class="fa fa-check"></i><b>6.2.8</b> Dates</a></li>
-<li class="chapter" data-level="6.2.9" data-path="datacitations.html"><a href="datacitations.html#offline-access-mechanism"><i class="fa fa-check"></i><b>6.2.9</b> Offline access mechanism</a></li>
-<li class="chapter" data-level="6.2.10" data-path="datacitations.html"><a href="datacitations.html#confidential-databases"><i class="fa fa-check"></i><b>6.2.10</b> Confidential databases</a></li>
-<li class="chapter" data-level="6.2.11" data-path="datacitations.html"><a href="datacitations.html#no-formal-access-mechanism"><i class="fa fa-check"></i><b>6.2.11</b> No formal access mechanism</a></li>
-<li class="chapter" data-level="6.2.12" data-path="datacitations.html"><a href="datacitations.html#unknown-or-confidential-author"><i class="fa fa-check"></i><b>6.2.12</b> Unknown or confidential author</a></li>
-<li class="chapter" data-level="6.2.13" data-path="datacitations.html"><a href="datacitations.html#where-to-cite"><i class="fa fa-check"></i><b>6.2.13</b> Where to cite</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="datacitations.html"><a href="datacitations.html#dasmaster"><i class="fa fa-check"></i><b>6.3</b> Data availability statements</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="datacitations.html"><a href="datacitations.html#some-examples-of-das"><i class="fa fa-check"></i><b>6.3.1</b> Some examples of DAS</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="datacitations.html"><a href="datacitations.html#how-do-you-create-a-data-citation"><i class="fa fa-check"></i><b>6.2</b> How do you create a data citation</a></li>
+<li class="chapter" data-level="6.3" data-path="datacitations.html"><a href="datacitations.html#dasmaster"><i class="fa fa-check"></i><b>6.3</b> Data availability statements</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html"><i class="fa fa-check"></i><b>7</b> Generic data workflow</a><ul>
 <li class="chapter" data-level="7.1" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#dataflowdiagram"><i class="fa fa-check"></i><b>7.1</b> Details on data workflows</a></li>
@@ -115,56 +117,31 @@
 </ul></li>
 <li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
 <li class="chapter" data-level="9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>9</b> A guided walk through the Replication Report</a><ul>
-<li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#on-data-documentation"><i class="fa fa-check"></i><b>9.1.1</b> On data documentation</a></li>
-<li class="chapter" data-level="9.1.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#on-code-documentation"><i class="fa fa-check"></i><b>9.1.2</b> On code documentation</a></li>
-<li class="chapter" data-level="9.1.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#to-come"><i class="fa fa-check"></i><b>9.1.3</b> To come</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What's in a replication report</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#summary"><i class="fa fa-check"></i><b>9.2.1</b> Summary</a></li>
-<li class="chapter" data-level="9.2.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#data-description"><i class="fa fa-check"></i><b>9.2.2</b> Data description</a></li>
-<li class="chapter" data-level="9.2.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#metadata-checks-on-deposit"><i class="fa fa-check"></i><b>9.2.3</b> Metadata checks on deposit</a></li>
-<li class="chapter" data-level="9.2.4" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#data-checks"><i class="fa fa-check"></i><b>9.2.4</b> Data checks</a></li>
-<li class="chapter" data-level="9.2.5" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#code-description"><i class="fa fa-check"></i><b>9.2.5</b> Code description</a></li>
-<li class="chapter" data-level="9.2.6" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#stated-requirements"><i class="fa fa-check"></i><b>9.2.6</b> Stated Requirements</a></li>
-<li class="chapter" data-level="9.2.7" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#actual-requirements-if-different"><i class="fa fa-check"></i><b>9.2.7</b> Actual Requirements, if different</a></li>
-<li class="chapter" data-level="9.2.8" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#computing-environment-of-the-replicator"><i class="fa fa-check"></i><b>9.2.8</b> Computing Environment of the Replicator</a></li>
-<li class="chapter" data-level="9.2.9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#replication-steps"><i class="fa fa-check"></i><b>9.2.9</b> Replication steps</a></li>
-<li class="chapter" data-level="9.2.10" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#findings"><i class="fa fa-check"></i><b>9.2.10</b> Findings</a></li>
-<li class="chapter" data-level="9.2.11" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#classification"><i class="fa fa-check"></i><b>9.2.11</b> Classification</a></li>
-</ul></li>
+<li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a></li>
+<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What's in a replication report</a></li>
 <li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html"><i class="fa fa-check"></i><b>10</b> A guided workflow</a><ul>
-<li class="chapter" data-level="10.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#scope"><i class="fa fa-check"></i><b>10.1</b> Scope</a></li>
-<li class="chapter" data-level="10.2" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#overview"><i class="fa fa-check"></i><b>10.2</b> Overview</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#notes"><i class="fa fa-check"></i><b>10.2.1</b> Notes</a></li>
+<li class="part"><span><b>III AEA-specific training</b></span></li>
+<li class="chapter" data-level="10" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html"><i class="fa fa-check"></i><b>10</b> AEA Jira workflow - A guide</a><ul>
+<li class="chapter" data-level="10.1" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#scope"><i class="fa fa-check"></i><b>10.1</b> Scope</a></li>
+<li class="chapter" data-level="10.2" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#overview"><i class="fa fa-check"></i><b>10.2</b> Overview</a></li>
+<li class="chapter" data-level="10.3" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#details"><i class="fa fa-check"></i><b>10.3</b> Details</a></li>
+<li class="chapter" data-level="10.4" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#replication-revisions"><i class="fa fa-check"></i><b>10.4</b> Replication Revisions</a></li>
+<li class="chapter" data-level="10.5" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#reviewing-reports"><i class="fa fa-check"></i><b>10.5</b> Reviewing Reports</a></li>
+<li class="chapter" data-level="10.6" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#publication"><i class="fa fa-check"></i><b>10.6</b> Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#details"><i class="fa fa-check"></i><b>10.3</b> Details</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#in-progress"><i class="fa fa-check"></i><b>10.3.1</b> In Progress</a></li>
-<li class="chapter" data-level="10.3.2" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#code"><i class="fa fa-check"></i><b>10.3.2</b> Code</a></li>
-<li class="chapter" data-level="10.3.3" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#data"><i class="fa fa-check"></i><b>10.3.3</b> Data</a></li>
-<li class="chapter" data-level="10.3.4" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#write-preliminary-report"><i class="fa fa-check"></i><b>10.3.4</b> Write Preliminary Report</a></li>
-<li class="chapter" data-level="10.3.5" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#verification"><i class="fa fa-check"></i><b>10.3.5</b> Verification</a></li>
-<li class="chapter" data-level="10.3.6" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#code-review"><i class="fa fa-check"></i><b>10.3.6</b> Code Review</a></li>
-<li class="chapter" data-level="10.3.7" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#writing-report"><i class="fa fa-check"></i><b>10.3.7</b> Writing Report</a></li>
+<li class="chapter" data-level="11" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html"><i class="fa fa-check"></i><b>11</b> AEA: Revision reports after author resubmission</a><ul>
+<li class="chapter" data-level="11.1" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#generic-guidance"><i class="fa fa-check"></i><b>11.1</b> Generic Guidance</a></li>
+<li class="chapter" data-level="11.2" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#writing-the-revision-report"><i class="fa fa-check"></i><b>11.2</b> Writing the Revision Report</a></li>
+<li class="chapter" data-level="11.3" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#revision-workflow"><i class="fa fa-check"></i><b>11.3</b> Revision Workflow</a></li>
+<li class="chapter" data-level="11.4" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#an-example"><i class="fa fa-check"></i><b>11.4</b> An example</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#replication-revisions"><i class="fa fa-check"></i><b>10.4</b> Replication Revisions</a></li>
-<li class="chapter" data-level="10.5" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#reviewing-reports"><i class="fa fa-check"></i><b>10.5</b> Reviewing Reports</a></li>
-<li class="chapter" data-level="10.6" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#publication"><i class="fa fa-check"></i><b>10.6</b> Publication</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html"><i class="fa fa-check"></i><b>11</b> Revision reports after author resubmission</a><ul>
-<li class="chapter" data-level="11.1" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#generic-guidance"><i class="fa fa-check"></i><b>11.1</b> Generic Guidance</a></li>
-<li class="chapter" data-level="11.2" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#writing-the-revision-report"><i class="fa fa-check"></i><b>11.2</b> Writing the Revision Report</a></li>
-<li class="chapter" data-level="11.3" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#revision-workflow"><i class="fa fa-check"></i><b>11.3</b> Revision Workflow</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#in-progress-1"><i class="fa fa-check"></i><b>11.3.1</b> In Progress</a></li>
-<li class="chapter" data-level="11.3.2" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#code-1"><i class="fa fa-check"></i><b>11.3.2</b> Code</a></li>
-<li class="chapter" data-level="11.3.3" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#data-1"><i class="fa fa-check"></i><b>11.3.3</b> Data</a></li>
-<li class="chapter" data-level="11.3.4" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#write-preliminary-report-1"><i class="fa fa-check"></i><b>11.3.4</b> Write Preliminary report</a></li>
-<li class="chapter" data-level="11.3.5" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#code-review-or-verification"><i class="fa fa-check"></i><b>11.3.5</b> Code Review or Verification</a></li>
-<li class="chapter" data-level="11.3.6" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#writing-report-1"><i class="fa fa-check"></i><b>11.3.6</b> Writing Report</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="revision-reports-after-author-resubmission.html"><a href="revision-reports-after-author-resubmission.html#an-example"><i class="fa fa-check"></i><b>11.4</b> An example</a></li>
+<li class="chapter" data-level="12" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html"><i class="fa fa-check"></i><b>12</b> AEA: Interfacing with the Journal Management System</a><ul>
+<li class="chapter" data-level="12.1" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#basic-setup"><i class="fa fa-check"></i><b>12.1</b> Basic setup</a></li>
+<li class="chapter" data-level="12.2" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#submitting-to-the-jms"><i class="fa fa-check"></i><b>12.2</b> Submitting to the JMS</a></li>
+<li class="chapter" data-level="12.3" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#decision-point"><i class="fa fa-check"></i><b>12.3</b> Decision point?</a></li>
+<li class="chapter" data-level="12.4" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#request-revisions"><i class="fa fa-check"></i><b>12.4</b> Request revisions</a></li>
+<li class="chapter" data-level="12.5" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#preparing-deposit-for-publication"><i class="fa fa-check"></i><b>12.5</b> Preparing Deposit for Publication</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
@@ -180,8 +157,13 @@
 <li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
 <li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="communication.html"><a href="communication.html"><i class="fa fa-check"></i><b>C</b> Communication</a><ul>
+<li class="chapter" data-level="C.1" data-path="communication.html"><a href="communication.html#medium"><i class="fa fa-check"></i><b>C.1</b> Medium</a></li>
+<li class="chapter" data-level="C.2" data-path="communication.html"><a href="communication.html#language"><i class="fa fa-check"></i><b>C.2</b> Language</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li class="chapter"> ©️ 2020 Vilhuber, Wasser, Welch </li>
+<li class="chapter"><a href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="CC-BY-NC logo" src="assets/cc-by-nc.png" height="12px"/> CC-BY-NC</a></li>
 
 </ul>
 
@@ -204,7 +186,7 @@
 <h1><span class="header-section-number">Chapter 8</span> Assessing computational reproducibility</h1>
 <p>The basic workflow is simple:</p>
 <ul>
-<li>obtain the pre-publication manuscript and any materials</li>
+<li>obtain the (pre-publication) manuscript and any materials</li>
 <li>analyze the README, and possibly appendixes and data sections, to identify all data sources, and all processing instructions</li>
 <li>obtain all code</li>
 <li>obtain all data</li>
@@ -242,9 +224,9 @@
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": "labordynamicsinstitute",
+"facebook": false,
+"twitter": "larsvil",
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
@@ -268,9 +250,13 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["training-curriculum.pdf", "training-curriculum.epub"],
+"download": null,
 "toc": {
-"collapse": "section"
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
 }
 });
 });
