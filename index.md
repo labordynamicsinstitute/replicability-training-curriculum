@@ -1647,7 +1647,7 @@ We use email (yes, we know 🙄) through a mailing list
 
 When you expect to be absent/ cannot handle a request in a timely fashion
 
-- email Meredith and Lars
+- email the AEA Data Editor and assistants
 
 ### Jira
 
@@ -1676,10 +1676,11 @@ Don't write anything you wouldn't want your British aunt (or your mom, or your d
 
 For reference: Authors who have seen the documents written by this group
 
-- Thomas Piketty
-- Esther Duflo
-- John Abowd
-- Janet Yellen
+- Esther Duflo (Nobel Prize Economics 2019)
+- John Abowd (Chief Scientist at the US Census Bureau)
+- Janet Yellen (former Chair of the Federal Reserve Board)
+- Thomas Piketty (famous economist)
+
 
 
 <!--chapter:end:93-Communication.Rmd-->
