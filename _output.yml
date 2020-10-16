@@ -1,37 +1,35 @@
 bookdown::gitbook:
-  split_by: chapter
-  stand-alone: false
-  css: [css/style.css,style.css]
   includes:
-    in_header: _includes/mermaid.html
+    in_header: [includes/toggle-citation.html]
+  css: [assets/css/toc.css, assets/css/font-awesome.min.css]
+  split_by: chapter
+  toc_depth: 2
+  highlight: tango
+  keep_md: TRUE
   config:
+    sharing:
+      facebook: no
+      github: labordynamicsinstitute
+      twitter: larsvil
     toc:
       collapse: section
-      before: |
-        <li><a href="./">Training for Reproducibility Verification</a></li>
+      scroll_highlight: yes
+      before: null
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
+              <li class="chapter"> ©️ 2020 Vilhuber, Wasser, Welch </li>
+              <li class="chapter"><a href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="CC-BY-NC logo" src="assets/cc-by-nc.png" height="12px"/> CC-BY-NC</a></li>
+    toolbar:
+      position: fixed
 bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
   latex_engine: pdflatex
   citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
-bookdown::tufte_html_book:
-  stand-alone: false
-  toc: yes
-  toc_level: 1
-  css: toc.css
-  split_by: chapter
-  includes:
-    in_header: _includes/mermaid.html
-bookdown::html_book:
-  stand-alone: false
-  toc: yes
-  toc_level: 1
-  css: css/toc2.css
-  split_by: chapter
-  includes:
-    in_header: _includes/mermaid.html
+  base_format: rmarkdown::latex_fragment
+latex_fragment:
+  citation_package: natbib
+  latex_engine: pdflatex
+ 
+  
+
+
+  
+  

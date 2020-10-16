@@ -1,4 +1,4 @@
-# A guided  workflow
+# AEA Jira workflow - A guide
 
 For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki).
 
