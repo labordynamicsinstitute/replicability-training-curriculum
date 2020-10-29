@@ -11,7 +11,7 @@ documentclass: book
 bibliography: [paper.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo:  labordynamicsinstitute/replicability-training
+github-repo:  labordynamicsinstitute/replicability-training-curriculum
 description: "We provide training for students who will verify the reproducibility of economics articles."
 ---
 

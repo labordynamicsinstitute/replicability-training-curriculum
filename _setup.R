@@ -52,11 +52,15 @@ for ( dir in list(programs,libs)){
 
 
 # call the function
-global.libraries <- c("config")
+global.libraries <- c("here","bookdown","tufte","dplyr","tidyr","config","ggplot2") 
 
 results <- sapply(as.list(global.libraries), pkgTest,try=TRUE)
 
 # load libraries
+
+unload.libraries <- c("DT","DiagrammeR")
+
+results <- sapply(as.list(unload.libraries), pkgTest, try=TRUE)
 
 
 #require(knitr)
