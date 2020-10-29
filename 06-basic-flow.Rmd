@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Generic data workflow
 
 In a very generic, all empirical analysis goes through the following steps:
@@ -12,7 +17,9 @@ In a reproducible workflow, *instructions* to perform all of the above are provi
 
 The following diagram illustrates the generic flow:
 
-<div class="mermaid">
+```{r mermaid,echo=F,results='asis',eval=F}
+library(DiagrammeR)
+mermaid("
 graph TD;
     subgraph Dataflow;
     A((Input data)) ==>  B[Cleaning programs];
@@ -20,11 +27,15 @@ graph TD;
     C ==> D[Analysis programs]
     D ==> E((Outputs));
     end;
-    B -.-> F(("Auxiliary data<br/>(created)"));
+    B -.-> F((\"Auxiliary data<br/>(created)\"));
     F -.-> C;
     Z((Source)) -.-> X[Data citation] -.-> A;
-
-</div>
+",height='100%',width='100%')
+detach("package:DiagrammeR", unload = TRUE, character.only = TRUE)
+```
+```{r mermaidpng,echo=F,results='asis'}
+knitr::include_graphics("images/mermaid-data-flow.png")
+```
 
 Real articles are often more complex. A simple example will be discussed next.
 
