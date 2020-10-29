@@ -4,7 +4,7 @@ author:
   - "Lars Vilhuber"
   - "Meredith Welch"
   - "David Wasser"
-date: "2020-10-16"
+date: "2020-10-29"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1507,6 +1507,7 @@ Details in the full report, which you will receive via ScholarOne shortly. The m
    - start a message in the Communication log:
       - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
       - with body
+      
 ```
 This data and code deposit is accepted.
 
@@ -1514,10 +1515,12 @@ This data and code deposit is accepted.
  - Author: Please change the status of your deposit to "Submit to AEA"
  - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.
 ```
+
 6. On openICPSR, if "Deposit Status" = "*Submitted*":
   - start a message in the Communication log:
       - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
       - with body
+      
 ```
 This data and code deposit is accepted.
 

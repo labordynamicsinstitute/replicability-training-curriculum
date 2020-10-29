@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-10-16" />
+<meta name="date" content="2020-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 <script>
 function toggleCitation() {
@@ -371,16 +373,29 @@ submitters need &quot;Publisher&quot; permission on Jira (can be set in Project 
 <li>start a message in the Communication log:
 <ul>
 <li>with subject line: <code>AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted</code> (replace with appropriate numbers)</li>
-<li>with body ``` This data and code deposit is accepted.</li>
+<li>with body</li>
 </ul></li>
 </ul>
-<p>Action items: - Author: Please change the status of your deposit to &quot;Submit to AEA&quot; - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.</p>
-<pre><code>6. On openICPSR, if &quot;Deposit Status&quot; = &quot;*Submitted*&quot;:
-  - start a message in the Communication log:
-      - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
-      - with body</code></pre>
-<p>This data and code deposit is accepted.</p>
-<p>Action items: - Author: no further action required - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish. ```</p>
+<pre><code>This data and code deposit is accepted.
+
+ Action items:
+ - Author: Please change the status of your deposit to &quot;Submit to AEA&quot;
+ - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>On openICPSR, if &quot;Deposit Status&quot; = &quot;<em>Submitted</em>&quot;:</li>
+</ol>
+<ul>
+<li>start a message in the Communication log:
+<ul>
+<li>with subject line: <code>AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted</code> (replace with appropriate numbers)</li>
+<li>with body</li>
+</ul></li>
+</ul>
+<pre><code>This data and code deposit is accepted.
+
+ Action items:
+ - Author: no further action required
+ - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Back in the Jira popup, finalize by clicking &quot;OK&quot;. The issue will be moved to &quot;Pending Publication&quot;.</li>
 <li>You are not quite done yet! You will receive an email from openICPSR.<br />
