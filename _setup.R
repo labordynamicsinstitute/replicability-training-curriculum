@@ -58,7 +58,7 @@ results <- sapply(as.list(global.libraries), pkgTest,try=TRUE)
 
 # load libraries
 
-unload.libraries <- c("DT","DiagrammeR")
+unload.libraries <- c("DT")
 
 results <- sapply(as.list(unload.libraries), pkgTest, try=TRUE)
 
