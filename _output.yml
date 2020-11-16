@@ -1,7 +1,7 @@
 bookdown::gitbook:
   includes:
     in_header: [includes/toggle-citation.html]
-  css: [assets/css/toc.css, assets/css/font-awesome.min.css]
+  css: [css/style.css]
   split_by: chapter
   toc_depth: 2
   highlight: tango
