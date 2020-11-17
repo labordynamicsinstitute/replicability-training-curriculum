@@ -3,16 +3,6 @@ on:
   push:
     branches: 
       - main
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Your name'
-        # Default value if no value is explicitly provided
-        default: 'Github'
-        # Input has to be provided for the workflow to run
-        required: true
 jobs:
   create-website:
     runs-on: ubuntu-latest
