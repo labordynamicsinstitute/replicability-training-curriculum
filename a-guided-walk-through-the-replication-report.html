@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 A guided walk through the Replication Report | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 A guided walk through the Replication Report | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 9 A guided walk through the Replication Report | TRAINING For Reproducibility Verification" />
@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-10-29" />
+<meta name="date" content="2020-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,8 +52,7 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <script>
 function toggleCitation() {
@@ -81,8 +80,9 @@ function toggleCitation() {
 
 
 
-<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
 </head>
 
 <body>
@@ -120,7 +120,7 @@ function toggleCitation() {
 <li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
 <li class="chapter" data-level="9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>9</b> A guided walk through the Replication Report</a><ul>
 <li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a></li>
-<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What's in a replication report</a></li>
+<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What’s in a replication report</a></li>
 <li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
 </ul></li>
 <li class="part"><span><b>III AEA-specific training</b></span></li>
@@ -154,7 +154,7 @@ function toggleCitation() {
 <li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
 <li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
 <li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
-<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
 <li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
 <li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
 <li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
@@ -206,7 +206,7 @@ function toggleCitation() {
 <h2><span class="header-section-number">9.1</span> Some high-level concepts</h2>
 <div id="on-data-documentation" class="section level3">
 <h3><span class="header-section-number">9.1.1</span> On data documentation</h3>
-<p>The <a href="https://social-science-data-editors.github.io/guidance/Requested_information_data.html">Social Science Data Editor's page on Data documentation</a> provides guidance:</p>
+<p>The <a href="https://social-science-data-editors.github.io/guidance/Requested_information_data.html">Social Science Data Editor’s page on Data documentation</a> provides guidance:</p>
 <ul>
 <li>Identifying all data</li>
 <li>What is great / good / just-good-enough data documentation</li>
@@ -215,9 +215,9 @@ function toggleCitation() {
 </div>
 <div id="on-code-documentation" class="section level3">
 <h3><span class="header-section-number">9.1.2</span> On code documentation</h3>
-<p>The <a href="https://social-science-data-editors.github.io/guidance/Requested_information_code.html">Social Science Data Editor's page on Code and documentation</a> provides guidance:</p>
+<p>The <a href="https://social-science-data-editors.github.io/guidance/Requested_information_code.html">Social Science Data Editor’s page on Code and documentation</a> provides guidance:</p>
 <ul>
-<li>What do we consider to be &quot;code&quot;</li>
+<li>What do we consider to be “code”</li>
 <li>Assessing the quality of the code documentation</li>
 </ul>
 </div>
@@ -227,7 +227,7 @@ function toggleCitation() {
 </div>
 </div>
 <div id="whats-in-a-replication-report" class="section level2">
-<h2><span class="header-section-number">9.2</span> What's in a replication report</h2>
+<h2><span class="header-section-number">9.2</span> What’s in a replication report</h2>
 <p>The template used by the Lab can be found on Github at <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">https://github.com/labordynamicsinstitute/replicability-training/blob/master/REPLICATION.md</a>. The table of contents looks like this:</p>
 <ul>
 <li>SUMMARY *</li>
@@ -241,20 +241,20 @@ function toggleCitation() {
 <li>Findings</li>
 <li>Classification</li>
 </ul>
-<p>We note that those sections marked &quot;*&quot; can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a &quot;dry&quot; assessment of the completeness of the replication package.</p>
+<p>We note that those sections marked “*” can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a “dry” assessment of the completeness of the replication package.</p>
 <p>In most sections, when elements are missing, wrong, or do not work, we use a <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">standardized set of action items</a> to highlight this.</p>
 <div id="summary" class="section level3">
 <h3><span class="header-section-number">9.2.1</span> Summary</h3>
 <p>The SUMMARY is intended for a quick glance by journal editor and authors. It should be short and succinct, with a bulleted (unduplicated) list of action items for the authors, drawn from the rest of the report. It is the first thing editors and authors will see.</p>
 <div class="figure">
-<img src="images/report-summary.png" alt="Example report summary" />
+<img src="images/report-summary.png" alt="" />
 <p class="caption">Example report summary</p>
 </div>
 </div>
 <div id="data-description" class="section level3">
 <h3><span class="header-section-number">9.2.2</span> Data description</h3>
-<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the &quot;Data Citation and Information report&quot;, to obtain a machine-readable list of data sources and their attributes.</p>
-<p>Once the preparations above are completed, a summary should be written in the &quot;Data Description&quot; section.</p>
+<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.</p>
+<p>Once the preparations above are completed, a summary should be written in the “Data Description” section.</p>
 <div id="source-data" class="section level4">
 <h4><span class="header-section-number">9.2.2.1</span> Source data</h4>
 <p>For each data source, list</p>
@@ -264,7 +264,7 @@ function toggleCitation() {
 <li>whether the <em>data</em> is cited (see the section on <a href="datacitations.html#datacitations">data citations</a>. Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing.</li>
 </ul>
 <div class="figure">
-<img src="images/report-data-description.png" alt="Data Description Section" />
+<img src="images/report-data-description.png" alt="" />
 <p class="caption">Data Description Section</p>
 </div>
 </div>
@@ -275,22 +275,33 @@ function toggleCitation() {
 </div>
 <div id="metadata-checks-on-deposit" class="section level3">
 <h3><span class="header-section-number">9.2.3</span> Metadata checks on deposit</h3>
-<p>Most replication packages received by the LDI Replication Lab will have been deposited in the AEA Data and Code Repository, but some may be on other trusted repositories (Dataverse, Zenodo, etc.).<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> The replicators are asked to verify compliance with an AEA-specific list of required elements:</p>
+<p>Most replication packages received by the LDI Replication Lab will have been deposited in the AEA Data and Code Repository, but some may be on other trusted repositories (Dataverse, Zenodo, etc.).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The replicators are asked to verify compliance with an AEA-specific list of required elements:</p>
 <ul>
-<li>[ ] JEL Classification (required)</li>
-<li>[ ] Manuscript Number (required)</li>
-<li>[ ] Subject Terms (highly recommended)</li>
-<li>[ ] Geographic coverage (highly recommended)</li>
-<li>[ ] Time period(s) (highly recommended)</li>
-<li>[ ] Collection date(s) (suggested)</li>
-<li>[ ] Universe (suggested)</li>
-<li>[ ] Data Type(s) (suggested)</li>
-<li>[ ] Data Source (suggested)</li>
-<li>[ ] Units of Observation (suggested)</li>
+<li><input type="checkbox" disabled="" />
+JEL Classification (required)</li>
+<li><input type="checkbox" disabled="" />
+Manuscript Number (required)</li>
+<li><input type="checkbox" disabled="" />
+Subject Terms (highly recommended)</li>
+<li><input type="checkbox" disabled="" />
+Geographic coverage (highly recommended)</li>
+<li><input type="checkbox" disabled="" />
+Time period(s) (highly recommended)</li>
+<li><input type="checkbox" disabled="" />
+Collection date(s) (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Universe (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Data Type(s) (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Data Source (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Units of Observation (suggested)</li>
 </ul>
-<p>If all required elements are provided, then the deposit passes. Many of the recommended elements are not applicable to all data deposits - for instance, a simulation has no &quot;geographic coverage&quot; or &quot;collection date&quot;, but a survey clearly does.</p>
+<p>If all required elements are provided, then the deposit passes.
+Many of the recommended elements are not applicable to all data deposits - for instance, a simulation has no “geographic coverage” or “collection date”, but a survey clearly does.</p>
 <div class="figure">
-<img src="images/report-icpsr-long.png" alt="ICPSR metadata report" />
+<img src="images/report-icpsr-long.png" alt="" />
 <p class="caption">ICPSR metadata report</p>
 </div>
 </div>
@@ -299,17 +310,17 @@ function toggleCitation() {
 <p>When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.</p>
 <ul>
 <li>can data be read (using software indicated by author)? This is a plausibility check for corrupted data.</li>
-<li>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is &quot;archive-ready&quot; if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers.</li>
+<li>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is “archive-ready” if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers.</li>
 <li>Do the data files have variable labels and meaningful variable names? In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (<code>Q25S3</code>) to meaningful labels.</li>
 </ul>
 <blockquote>
 <p>Note that we do <em>not</em> require that variable <em>values</em> are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <em>if</em> we think it is reasonable to do so - a judgement call by the Data Editor.</p>
 </blockquote>
 <ul>
-<li>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.</li>
+<li>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.</li>
 </ul>
 <div class="figure">
-<img src="images/report-data-checks.png" alt="Data check report" />
+<img src="images/report-data-checks.png" alt="" />
 <p class="caption">Data check report</p>
 </div>
 </div>
@@ -317,24 +328,32 @@ function toggleCitation() {
 <h3><span class="header-section-number">9.2.5</span> Code description</h3>
 <p>All deposits should have code. In line with the <a href="generic-data-workflow.html#dataflowdiagram">basic data flow</a>, there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will not run it yet).</p>
 <ul>
-<li>Identify programs that create &quot;analysis files&quot; (&quot;data preparation code&quot;).</li>
+<li>Identify programs that create “analysis files” (“data preparation code”).</li>
 <li>Identify programs that create tables and figures.</li>
 </ul>
 <p>From the README, the replicator should be able to identify code to create all <strong>figures, tables, and any in-text numbers</strong>. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">template spreadsheet</a> is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the <a href="a-guided-walk-through-the-replication-report.html#findings">findings</a> section.</p>
 </div>
 <div id="stated-requirements" class="section level3">
 <h3><span class="header-section-number">9.2.6</span> Stated Requirements</h3>
-<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the Computing Environment of the Replicator. If all requirements are listed, check the box &quot;Requirements are complete&quot;. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires &quot;20,000 core compute hours&quot;, or that &quot;runs for weeks&quot;, or that requires custom software that needs to be acquired, may not be feasible.</p>
+<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the Computing Environment of the Replicator. If all requirements are listed, check the box “Requirements are complete”. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires “20,000 core compute hours”, or that “runs for weeks”, or that requires custom software that needs to be acquired, may not be feasible.</p>
 <ul>
-<li>[ ] No requirements specified</li>
-<li>[ ] Software Requirements specified as follows:</li>
+<li><input type="checkbox" disabled="" />
+No requirements specified</li>
+<li><input type="checkbox" disabled="" />
+Software Requirements specified as follows:<ul>
 <li>Software 1</li>
 <li>Software 2</li>
-<li>[ ] Computational Requirements specified as follows:</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Computational Requirements specified as follows:<ul>
 <li>Cluster size, etc.</li>
-<li>[ ] Time Requirements specified as follows:</li>
-<li><p>Length of necessary computation (hours, weeks, etc.)</p></li>
-<li><p>[ ] Requirements are complete.</p></li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Time Requirements specified as follows:<ul>
+<li>Length of necessary computation (hours, weeks, etc.)</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Requirements are complete.</li>
 </ul>
 </div>
 <div id="actual-requirements-if-different" class="section level3">
@@ -343,10 +362,10 @@ function toggleCitation() {
 </div>
 <div id="computing-environment-of-the-replicator" class="section level3">
 <h3><span class="header-section-number">9.2.8</span> Computing Environment of the Replicator</h3>
-<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator's own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:</p>
+<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator’s own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:</p>
 <ul>
-<li>(Windows) by right-clicking on &quot;My PC&quot;</li>
-<li>(Mac) Apple-menu &gt; &quot;About this Mac&quot;</li>
+<li>(Windows) by right-clicking on “My PC”</li>
+<li>(Mac) Apple-menu &gt; “About this Mac”</li>
 <li>(Linux) see code in <code>tools/linux-system-info.sh</code></li>
 </ul>
 <p>Examples might include:</p>
@@ -367,21 +386,21 @@ function toggleCitation() {
 <h3><span class="header-section-number">9.2.9</span> Replication steps</h3>
 <p>For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs.</p>
 <ul>
-<li>DO not include trivial details (&quot;I downloaded the code and saved on my Desktop&quot;).</li>
-<li>DO describe actions that you did as per instructions (&quot;I added a config.do&quot;)</li>
-<li>DO describe any other actions you needed to do (&quot;I had to make changes in multiple programs&quot;), without going into detail (the commit log can provide that information)</li>
+<li>DO not include trivial details (“I downloaded the code and saved on my Desktop”).</li>
+<li>DO describe actions that you did as per instructions (“I added a config.do”)</li>
+<li>DO describe any other actions you needed to do (“I had to make changes in multiple programs”), without going into detail (the commit log can provide that information)</li>
 </ul>
 <p>The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!</p>
 <div class="figure">
-<img src="images/report-steps-error.png" alt="Steps with errors" />
+<img src="images/report-steps-error.png" alt="" />
 <p class="caption">Steps with errors</p>
 </div>
 </div>
 <div id="findings" class="section level3">
 <h3><span class="header-section-number">9.2.10</span> Findings</h3>
-<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a> can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
+<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a> can be re-used to drive the list). When errors happen, the replicator’s description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
 <div class="figure">
-<img src="images/report-findings-errors.png" alt="Findings with errors" />
+<img src="images/report-findings-errors.png" alt="" />
 <p class="caption">Findings with errors</p>
 </div>
 </div>
@@ -389,44 +408,56 @@ function toggleCitation() {
 <h3><span class="header-section-number">9.2.11</span> Classification</h3>
 <p>The replication report template used by the LDI Replication Lab uses a simplified scheme to summarize the reproducibility of the materials:</p>
 <ul>
-<li>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</li>
-<li>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different. Note that if any data is confidential and not available, then at best a partial replication can be achieved.</li>
+<li><p>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</p></li>
+<li><p>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different. Note that if any data is confidential and not available, then at best a partial replication can be achieved.</p></li>
 <li><p>Failure to replicate implies that only a small number of programs ran successfully, or only a small number of numbers were successfully generated (&lt;25%). Most replication packages that rely on confidential data will also be in this category.</p></li>
-<li>[ ] full replication</li>
-<li>[ ] full replication with minor issues</li>
-<li>[ ] partial replication (see above)</li>
-<li><p>[ ] not able to replicate most or all of the results</p></li>
+<li><p><input type="checkbox" disabled="" />
+full replication</p></li>
+<li><p><input type="checkbox" disabled="" />
+full replication with minor issues</p></li>
+<li><p><input type="checkbox" disabled="" />
+partial replication (see above)</p></li>
+<li><p><input type="checkbox" disabled="" />
+not able to replicate most or all of the results</p></li>
 </ul>
 <p>The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the <a href="https://bitss.github.io/ACRE/assessment.html#score">BITSS ACRE Project</a>. The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.</p>
-<p>The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab's JIRA system):</p>
+<p>The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab’s JIRA system):</p>
 <ul>
-<li>[ ] <code>Discrepancy in output</code> (either figures or numbers in tables or text differ)</li>
-<li>[ ] <code>Bugs in code</code> that were fixable by the replicator (but should be fixed in the final deposit)</li>
-<li>[ ] <code>Code missing</code>, in particular if it prevented the replicator from completing the reproducibility check</li>
-<li>[ ] <code>Code not functional</code> is more severe than a simple bug: it prevented the replicator from completing the reproducibility check</li>
-<li>[ ] <code>Software not available to replicator</code> may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.</li>
-<li>[ ] <code>Insufficient time available to replicator</code> is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.</li>
-<li>[ ] <code>Data missing</code> is marked when data <em>should</em> be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package</li>
-<li>[ ] <code>Data not available</code> is marked when data requires additional access steps, for instance purchase or application procedure.</li>
+<li><input type="checkbox" disabled="" />
+<code>Discrepancy in output</code> (either figures or numbers in tables or text differ)</li>
+<li><input type="checkbox" disabled="" />
+<code>Bugs in code</code> that were fixable by the replicator (but should be fixed in the final deposit)</li>
+<li><input type="checkbox" disabled="" />
+<code>Code missing</code>, in particular if it prevented the replicator from completing the reproducibility check</li>
+<li><input type="checkbox" disabled="" />
+<code>Code not functional</code> is more severe than a simple bug: it prevented the replicator from completing the reproducibility check</li>
+<li><input type="checkbox" disabled="" />
+<code>Software not available to replicator</code> may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.</li>
+<li><input type="checkbox" disabled="" />
+<code>Insufficient time available to replicator</code> is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.</li>
+<li><input type="checkbox" disabled="" />
+<code>Data missing</code> is marked when data <em>should</em> be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package</li>
+<li><input type="checkbox" disabled="" />
+<code>Data not available</code> is marked when data requires additional access steps, for instance purchase or application procedure.</li>
 </ul>
-<p>Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the &quot;data are not available&quot; or because there is &quot;insufficient time&quot;, as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report.</p>
+<p>Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the “data are not available” or because there is “insufficient time”, as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report.</p>
 <div class="figure">
-<img src="images/jira-outcomes1.png" alt="Outcome with non-replication" />
+<img src="images/jira-outcomes1.png" alt="" />
 <p class="caption">Outcome with non-replication</p>
 </div>
 <div class="figure">
-<img src="images/jira-outcomes2.png" alt="Outcome with full replication" />
+<img src="images/jira-outcomes2.png" alt="" />
 <p class="caption">Outcome with full replication</p>
 </div>
 <div class="figure">
-<img src="images/jira-outcomes3.png" alt="Outcome with partial replication" />
+<img src="images/jira-outcomes3.png" alt="" />
 <p class="caption">Outcome with partial replication</p>
 </div>
 </div>
 </div>
 <div id="some-additional-materials" class="section level2">
 <h2><span class="header-section-number">9.3</span> Some additional materials</h2>
-<p>Here's a collection from older presentations:</p>
+<p>Here’s a collection from older presentations:</p>
 <ul>
 <li><a href="Replication-Report-Overview.pdf">Elements of a replication report</a></li>
 <li><a href="replicator_checklist.pdf">Replicator checklist</a></li>
@@ -441,8 +472,8 @@ function toggleCitation() {
 <div class="footnotes">
 <hr />
 <ol start="3">
-<li id="fn3"><p>See the Social Science Data Editor website for a list of trusted repositories.<a href="a-guided-walk-through-the-replication-report.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>The Stata version can be found <a href="https://github.com/J-PAL/stata_PII_scan">here</a>.<a href="a-guided-walk-through-the-replication-report.html#fnref4">↩</a></p></li>
+<li id="fn3"><p>See the Social Science Data Editor website for a list of trusted repositories.<a href="a-guided-walk-through-the-replication-report.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>The Stata version can be found <a href="https://github.com/J-PAL/stata_PII_scan">here</a>.<a href="a-guided-walk-through-the-replication-report.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

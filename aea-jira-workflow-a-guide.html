@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 AEA Jira workflow - A guide | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 AEA Jira workflow - A guide | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 10 AEA Jira workflow - A guide | TRAINING For Reproducibility Verification" />
@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-10-29" />
+<meta name="date" content="2020-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,8 +52,7 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <script>
 function toggleCitation() {
@@ -81,8 +80,9 @@ function toggleCitation() {
 
 
 
-<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
 </head>
 
 <body>
@@ -120,7 +120,7 @@ function toggleCitation() {
 <li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
 <li class="chapter" data-level="9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>9</b> A guided walk through the Replication Report</a><ul>
 <li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a></li>
-<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What's in a replication report</a></li>
+<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What’s in a replication report</a></li>
 <li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
 </ul></li>
 <li class="part"><span><b>III AEA-specific training</b></span></li>
@@ -154,7 +154,7 @@ function toggleCitation() {
 <li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
 <li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
 <li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
-<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
 <li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
 <li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
 <li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
@@ -202,16 +202,19 @@ function toggleCitation() {
 <div id="overview" class="section level2">
 <h2><span class="header-section-number">10.2</span> Overview</h2>
 <div class="figure">
-<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="jira image" />
+<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="" />
 <p class="caption">jira image</p>
 </div>
-<p>The following table illustrates the flow and transitions. The <code>transition</code> field identifies the button that will appear in the interface that needs to be clicked in order to progress an issue from the <code>From</code> state to the <code>To</code> state. The <code>Condition</code> field identifies which form field needs to be filled out in order to be able to make the transition. <code>Blocked</code> is always an option, and leads to a &quot;waiting state&quot; until a resolution can be found.</p>
-<table style="width:93%;">
+<p>The following table illustrates the flow and transitions. The <code>transition</code> field identifies the button that will appear in the interface
+that needs to be clicked in order to progress an issue from the <code>From</code> state to the <code>To</code> state. The <code>Condition</code> field identifies
+which form field needs to be filled out in order to be able to make the transition. <code>Blocked</code> is always an option, and leads to a “waiting state”
+until a resolution can be found.</p>
+<table>
 <colgroup>
-<col width="20%" />
-<col width="31%" />
-<col width="23%" />
-<col width="16%" />
+<col width="22%" />
+<col width="34%" />
+<col width="25%" />
+<col width="17%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -237,7 +240,7 @@ function toggleCitation() {
 <tr class="odd">
 <td align="left">Code</td>
 <td align="left">Access data</td>
-<td align="left">→ Data</td>
+<td align="left">→ Data | `Git</td>
 <td align="left"><code>Git working location</code>, <code>Data provenance</code> has been filled out.</td>
 </tr>
 <tr class="even">
@@ -249,13 +252,13 @@ function toggleCitation() {
 <tr class="odd">
 <td align="left">Write Preliminary Report</td>
 <td align="left">Data is accessible</td>
-<td align="left">→ Verification</td>
+<td align="left">→ Verification |</td>
 <td align="left"><code>Location of data</code> has been filled out.</td>
 </tr>
 <tr class="even">
 <td align="left">.</td>
 <td align="left">Data not available</td>
-<td align="left">→ Code review</td>
+<td align="left">→ Code review | `Rea</td>
 <td align="left"><code>Reason for non-accessibility of data</code> has been filled out.</td>
 </tr>
 <tr class="odd">
@@ -267,7 +270,7 @@ function toggleCitation() {
 <tr class="even">
 <td align="left">Report</td>
 <td align="left">Submit for review</td>
-<td align="left">→ Report Under Review</td>
+<td align="left">→ Report Under Review | `Rep</td>
 <td align="left"><code>Report URL</code> has been filled out.</td>
 </tr>
 <tr class="odd">
@@ -296,7 +299,7 @@ function toggleCitation() {
 </tr>
 </tbody>
 </table>
-<p>The following are only relevant for &quot;Approvers&quot; or &quot;Pre-Approvers&quot; (if you have not been told you are a &quot;(Pre-)Approver&quot;, you are not.)</p>
+<p>The following are only relevant for “Approvers” or “Pre-Approvers” (if you have not been told you are a “(Pre-)Approver”, you are not.)</p>
 <table>
 <thead>
 <tr class="header">
@@ -346,7 +349,7 @@ function toggleCitation() {
 <tr class="odd">
 <td align="left">Approved</td>
 <td align="left">Done</td>
-<td align="left">→ Done</td>
+<td align="left">→ Done | n.a</td>
 <td align="left">n.a.</td>
 </tr>
 <tr class="even">
@@ -357,13 +360,13 @@ function toggleCitation() {
 </tr>
 </tbody>
 </table>
-<p>The following are only relevant for &quot;Publishers&quot; (if you have not been told you are a &quot;Publisher&quot;, you are not.)</p>
-<table style="width:93%;">
+<p>The following are only relevant for “Publishers” (if you have not been told you are a “Publisher”, you are not.)</p>
+<table>
 <colgroup>
-<col width="20%" />
-<col width="31%" />
-<col width="23%" />
-<col width="16%" />
+<col width="22%" />
+<col width="34%" />
+<col width="25%" />
+<col width="17%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -395,7 +398,7 @@ function toggleCitation() {
 <tr class="even">
 <td align="left">Pending openICPSR changes</td>
 <td align="left">Prepare for publication</td>
-<td align="left">--&gt; Pending Publication</td>
+<td align="left">–&gt; Pending Publication</td>
 <td align="left"><code>openICPSRVersion</code> is filled out, Changes have been satisfied on openICPSR</td>
 </tr>
 <tr class="odd">
@@ -411,7 +414,8 @@ function toggleCitation() {
 <ul>
 <li>In the <strong>Issue form</strong>, please also fill out other fields, as noted.</li>
 <li>At any point, you can move the issue to <code>Incomplete</code>: more information/action is required before you can proceed. You should also notify us of the situation ASAP</li>
-<li>When committing, <strong>always</strong> use <a href="https://confluence.atlassian.com/bitbucket/use-smart-commits-298979931.html">Smart Commits</a>, e.g. &gt; JRA-34 #comment corrected indent issue</li>
+<li>When committing, <strong>always</strong> use <a href="https://confluence.atlassian.com/bitbucket/use-smart-commits-298979931.html">Smart Commits</a>, e.g.
+&gt; JRA-34 #comment corrected indent issue</li>
 <li>Use JIRA to communicate with your supervisor as issues arise, including code that takes a long time to run.</li>
 </ul>
 </div>
@@ -420,14 +424,14 @@ function toggleCitation() {
 <h2><span class="header-section-number">10.3</span> Details</h2>
 <p>Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note:</p>
 <ul>
-<li>The blue <code>In Progress</code> box in the upper right is how you &quot;advance&quot; the Jira ticket. When you are first assigned a replication, this box will say <code>Open</code>.</li>
+<li>The blue <code>In Progress</code> box in the upper right is how you “advance” the Jira ticket. When you are first assigned a replication, this box will say <code>Open</code>.</li>
 <li>The tall grey bar on the left side contains several handy links that you will use throughout the process.
 <ul>
-<li>Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.</li>
+<li>Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.</li>
 </ul></li>
 </ul>
 <div class="figure">
-<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="jira image" />
+<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="" />
 <p class="caption">jira image</p>
 </div>
 <div id="in-progress" class="section level3">
@@ -438,16 +442,19 @@ function toggleCitation() {
 </ul>
 <p>At this stage, you are collecting information.</p>
 <ul>
-<li>[ ] start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>)
-<ul>
+<li><p><input type="checkbox" disabled="" />
+start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>)</p><ul>
 <li>the repository name should be the name of the JIRA issue (e.g., <code>aearep-123</code>)</li>
-<li>Be sure that <code>aeaverification</code> is always the &quot;owner&quot; of the report on Bitbucket.</li>
+<li>Be sure that <code>aeaverification</code> is always the “owner” of the report on Bitbucket.</li>
 </ul></li>
-<li><p>[x] populate the repository with the latest version of the <a href="https://github.com/AEADataEditor/replication-template">template</a> (<em>If you used the &quot;Import Repository&quot; technique outlined on the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">wiki</a>, this is already done!</em>)</p></li>
-<li>[ ] Clone the Bitbucket repository onto the computer you are working on (<code>git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git</code> )</li>
-<li>[ ] Delete (<code>git rm</code>) unused files from the template! Example: <code>git rm README.md template-config.R</code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</li>
-<li>[ ] From the JIRA issue, download and add Manuscript, README.
-<ul>
+<li><p><input type="checkbox" disabled="" checked="" />
+populate the repository with the latest version of the <a href="https://github.com/AEADataEditor/replication-template">template</a> (<em>If you used the “Import Repository” technique outlined on the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">wiki</a>, this is already done!</em>)</p></li>
+<li><p><input type="checkbox" disabled="" />
+Clone the Bitbucket repository onto the computer you are working on (<code>git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git</code> )</p></li>
+<li><p><input type="checkbox" disabled="" />
+Delete (<code>git rm</code>) unused files from the template! Example: <code>git rm README.md template-config.R</code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</p></li>
+<li><p><input type="checkbox" disabled="" />
+From the JIRA issue, download and add Manuscript, README.</p><ul>
 <li>Download from Jira issue attachments. The manuscript is often called <code>PDF_Proof.pdf</code>.</li>
 <li>Add to the root of the repository, and add them to the Git repo (e.g., <code>git add PDF_Proof.pdf readme.pdf</code>)</li>
 </ul></li>
@@ -460,20 +467,28 @@ PII_stata_scan.do
 readme.pdf
 REPLICATION.md</code></pre>
 <ul>
-<li><code>git commit, git push</code>...</li>
-<li>[ ] Then fill out the following fields in the Jira ticket (some may be pre-populated):
-<ul>
-<li>[ ] <code>Code provenance</code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.</li>
-<li>If code and/or data are provided by email, <code>Code provenance</code> should be filled out with &quot;<a href="https://email" class="uri">https://email</a>&quot;, otherwise with a URL.</li>
-<li>[ ] <code>Journal</code></li>
-<li>[ ] <code>Manuscript Central identifier</code></li>
-<li>[ ] <code>Bitbucket short name</code> (e.g., <code>aearep-123</code>) - this should auto-fill the <code>Git working location</code>.</li>
+<li><code>git commit, git push</code>…</li>
+<li><input type="checkbox" disabled="" />
+Then fill out the following fields in the Jira ticket (some may be pre-populated):<ul>
+<li><input type="checkbox" disabled="" />
+<code>Code provenance</code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.<ul>
+<li>If code and/or data are provided by email, <code>Code provenance</code> should be filled out with “<a href="https://email" class="uri">https://email</a>”, otherwise with a URL.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+<code>Journal</code></li>
+<li><input type="checkbox" disabled="" />
+<code>Manuscript Central identifier</code></li>
+<li><input type="checkbox" disabled="" />
+<code>Bitbucket short name</code> (e.g., <code>aearep-123</code>) - this should auto-fill the <code>Git working location</code>.</li>
 </ul></li>
 <li>The following fields, located in the REPL. INFO tab on the bottom right of your Jira ticket, must also be filled out:
 <ul>
-<li>[ ] <code>TYPEOFARTICLE</code> &quot;Does the article contain empirical work, simulations, or experimental work?&quot; - typically the answer should be &quot;Yes&quot;. You should answer &quot;No&quot; only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.</li>
-<li>[ ] <code>RCT</code> Is the paper about a randomized control trial? This should be immediately obvious from the abstract.</li>
+<li><input type="checkbox" disabled="" />
+<code>TYPEOFARTICLE</code> “Does the article contain empirical work, simulations, or experimental work?” - typically the answer should be “Yes”. You should answer “No” only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.</li>
+<li><input type="checkbox" disabled="" />
+<code>RCT</code> Is the paper about a randomized control trial? This should be immediately obvious from the abstract.<ul>
 <li><code>RCT NUMBER</code> If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)</li>
+</ul></li>
 </ul></li>
 </ul>
 <p>You can now proceed to change the status to <code>Code</code>.</p>
@@ -488,18 +503,24 @@ REPLICATION.md</code></pre>
 <p>This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
 <hr />
 <ul>
-<li>[ ] Download the code from openICPSR (typicaly for most cases). See <a href="openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.</li>
-<li>[ ] Populate the Bitbucket repository:</li>
+<li><input type="checkbox" disabled="" />
+Download the code from openICPSR (typicaly for most cases). See <a href="openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.</li>
+<li><input type="checkbox" disabled="" />
+Populate the Bitbucket repository:<ul>
 <li>If not already done, use <code>git clone</code> to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like <code>aearep-123</code>.
 <ul>
 <li><strong>[EXPERT TIP]</strong> It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.</li>
 </ul></li>
 <li>Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the <code>aearep-123</code> repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.</li>
 <li>Unzip the openICPSR folder. On Windows, double-click. On OSX, [replace me]. From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code></li>
-<li>The manuscript's files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
-<li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).</li>
-<li>[ ] Also add the manuscript, and any response by the authors (if a revision)</li>
-<li>[ ] Be sure to <code>git push</code> it all to Bitbucket, with a meaningful commit message. The repository should now look like this:</li>
+<li>The manuscript’s files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+<li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Also add the manuscript, and any response by the authors (if a revision)</li>
+<li><input type="checkbox" disabled="" />
+Be sure to <code>git push</code> it all to Bitbucket, with a meaningful commit message.
+The repository should now look like this:</li>
 </ul>
 <pre><code>116941/
 code-check.xlsx
@@ -511,99 +532,133 @@ REPLICATION.md</code></pre>
 <p>Now you will establish a <strong>list of Datasets used</strong> and fill out the <strong>Data Citation and Information</strong> report.</p>
 <ul>
 <li>From the <strong>README</strong> provided by the authors, the <strong>data section</strong> of the article itself, or an <strong>appendix</strong>, establish a list of datasets used in the article.</li>
-<li>[ ] Now you will fill out the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information</a></strong> report:</li>
+<li><input type="checkbox" disabled="" />
+Now you will fill out the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information</a></strong> report:<ul>
 <li>A <a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">link to the report</a> can be found in the tall grey bar on the left side of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.</li>
-<li>[ ] Fill out the <code>DATA CITATION REPORT</code> field on Jira with the date on which you complete this report.
-<ul>
+<li><input type="checkbox" disabled="" />
+Fill out the <code>DATA CITATION REPORT</code> field on Jira with the date on which you complete this report.<ul>
 <li>If there are more than 10 datasets that you can see, get approval from your Team Lead to fill out <a href="https://drive.google.com/file/d/1-4Ah3AvNVmFJCs6IfjTKUrMOvZ9BHiO6/view?usp=sharing">this spreadsheet</a> instead (see the <a href="https://drive.google.com/file/d/1VzS7akscWckx_TKAUy0bhufE5oVgwn1B/view?usp=sharing">printed form</a> for allowed categories). You should fill out the FIRST dataset on the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information form</a></strong>. At the end of the form is an upload option, where you should upload the form. The spreadsheet should then <em>also</em> be added to the repo (add, commit, push), and a note added to the JIRA comments.</li>
 </ul></li>
 <li>Use the list of datasets to guide you when filling this out.</li>
-<li>[ ] <strong>AT THE SAME TIME:</strong> write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the <strong>Data Citation and Information</strong> .</li>
-<li>[ ] In particular, check each provided URL, and verify if there is a <strong>&quot;Data Use Agreement&quot;, &quot;Citation requirement&quot;, &quot;License&quot;</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</li>
-<li>[ ] Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (<code>git add</code>, <code>git commit</code>, <code>git push</code>)</li>
-<li>[ ] Fill out the <code>DataCitationSummary</code> field indicating how many data citations are in order: all, some, or none.</li>
-<li>[ ] Fill out the <code>Data Provenance</code> section - is the data in the openICPSR repository, or is it someplace else? &quot;Various&quot; is a legitimate answer if it is in various locations.</li>
+<li><input type="checkbox" disabled="" />
+<strong>AT THE SAME TIME:</strong> write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the <strong>Data Citation and Information</strong> .</li>
+<li><input type="checkbox" disabled="" />
+In particular, check each provided URL, and verify if there is a <strong>“Data Use Agreement”, “Citation requirement”, “License”</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (<code>git add</code>, <code>git commit</code>, <code>git push</code>)</li>
+<li><input type="checkbox" disabled="" />
+Fill out the <code>DataCitationSummary</code> field indicating how many data citations are in order: all, some, or none.</li>
+<li><input type="checkbox" disabled="" />
+Fill out the <code>Data Provenance</code> section - is the data in the openICPSR repository, or is it someplace else? “Various” is a legitimate answer if it is in various locations.</li>
 </ul>
 <p>Do a first pass through the code files provided:</p>
 <blockquote>
 <p>Do NOT run any code!</p>
 </blockquote>
 <ul>
-<li>[ ] review the code in detail.</li>
-<li>[ ] In the template, you will find <em><a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a></em>. Use this to create a list of all Tables and Figures in the paper, and use this to guide you in <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a>.</li>
-<li>[ ] Fill out the &quot;Code Description&quot; section of the REPLICATION.md</li>
+<li><input type="checkbox" disabled="" />
+review the code in detail.</li>
+<li><input type="checkbox" disabled="" />
+In the template, you will find <em><a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a></em>. Use this to create a list of all Tables and Figures in the paper, and use this to guide you in <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a>.</li>
+<li><input type="checkbox" disabled="" />
+Fill out the “Code Description” section of the REPLICATION.md<ul>
 <li>Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the <code>Software Used</code> later as well, but provide details here.</li>
-<li>Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README?</li>
+<li>Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what’s written in the README?</li>
 <li>Are all the REQUIREMENTS listed? How long does the author say the code will run?</li>
 <li>Are there files in the archive not explained in the README?</li>
 <li><strong>[EXPERT TIP]</strong> You should <strong>not</strong> run the code at this time, only read the program code! (You can do this on your laptop)</li>
-<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode. Alternatively, this can be pasted in under &quot;Findings&quot;.</li>
+<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode. Alternatively, this can be pasted in under “Findings”.</li>
+</ul></li>
 </ul>
 <p>Next fill out the following fields in the Jira ticket:</p>
 <ul>
-<li>[ ] <code>BITBUCKET SHORT NAME</code> - if not already done earlier</li>
+<li><input type="checkbox" disabled="" />
+<code>BITBUCKET SHORT NAME</code> - if not already done earlier</li>
 </ul>
 <blockquote>
 <p>Commit!</p>
 </blockquote>
 <p>You can now proceed to change the status to <code>Data</code>. As you select that transition, you will be asked various questions:</p>
 <ul>
-<li>[ ] <code>Software Used</code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as options (e.g. start typing &quot;Stata&quot; and you will see it pop up).</li>
-<li>[ ] <code>PROGRAMSEQUENCE</code> Does the README tell you the correct sequence for running the code?</li>
-<li>[ ] <code>PROGRAMSDOCUMENTATION</code> Are the provided programs well commented? Are they documented in the README?</li>
-<li>[ ] <code>PROGRAMSSTRUCTUREMANUAL</code> Does the README note any manual changes that you need to make to the code in order for it to run?</li>
+<li><input type="checkbox" disabled="" />
+<code>Software Used</code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as options (e.g. start typing “Stata” and you will see it pop up).</li>
+<li><input type="checkbox" disabled="" />
+<code>PROGRAMSEQUENCE</code> Does the README tell you the correct sequence for running the code?</li>
+<li><input type="checkbox" disabled="" />
+<code>PROGRAMSDOCUMENTATION</code> Are the provided programs well commented? Are they documented in the README?</li>
+<li><input type="checkbox" disabled="" />
+<code>PROGRAMSSTRUCTUREMANUAL</code> Does the README note any manual changes that you need to make to the code in order for it to run?</li>
 </ul>
 </div>
 <div id="data" class="section level3">
 <h3><span class="header-section-number">10.3.3</span> Data</h3>
 <ul>
-<li>[ ] Download the data (if not already done in the previous step, and if available).</li>
+<li><input type="checkbox" disabled="" />
+Download the data (if not already done in the previous step, and if available).<ul>
 <li>Data should be stored locally (currently) / in <a href="https://confluence.atlassian.com/bitbucket/git-large-file-storage-in-bitbucket-829078514.html">Git LFS</a> (soon)</li>
-<li>[ ] If there is data: Run the PII-checking code, review the output, and record the result in the REPLICATION.md</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+If there is data: Run the PII-checking code, review the output, and record the result in the REPLICATION.md<ul>
 <li>You should check the output - it is not automatic.</li>
 <li>You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.</li>
 <li>The author will NOT see the output from the program unless you copy <strong>relevant</strong> parts of it into the report.</li>
-<li>[ ] Describe the data</li>
-<li>[ ] do relevant variables have labels?</li>
-<li>[ ] Is the data readable?</li>
-<li>[ ] Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are the preferred formats by librarians, but <code>dta</code> or <code>spss</code> are also OK; <code>mat</code> files are discouraged)</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Describe the data<ul>
+<li><input type="checkbox" disabled="" />
+do relevant variables have labels?</li>
+<li><input type="checkbox" disabled="" />
+Is the data readable?</li>
+<li><input type="checkbox" disabled="" />
+Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are the preferred formats by librarians, but <code>dta</code> or <code>spss</code> are also OK; <code>mat</code> files are discouraged)</li>
+</ul></li>
 </ul>
 <p>Fill out the following Jira fields:</p>
 <ul>
-<li>[ ] <code>DATA PROVENANCE</code> Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as <code>CODE PROVENANCE</code>), but may be a user-provided URL or DOI.
-<ul>
-<li>if the data is in multiple places, enter &quot;Multiple&quot; here, and record the details in the REPLICATION.md</li>
+<li><input type="checkbox" disabled="" />
+<code>DATA PROVENANCE</code> Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as <code>CODE PROVENANCE</code>), but may be a user-provided URL or DOI.<ul>
+<li>if the data is in multiple places, enter “Multiple” here, and record the details in the REPLICATION.md</li>
 </ul></li>
-<li>[ ] <code>WORKING LOCATION OF THE DATA</code> Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else</li>
+<li><input type="checkbox" disabled="" />
+<code>WORKING LOCATION OF THE DATA</code> Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else</li>
 </ul>
 <p>You can now proceed to change the status to <code>Write Preliminary Report</code>. You will be asked to provide additional information:</p>
 <ul>
-<li>[ ] <code>DATAAVAILABILITYACESS</code> Is at least some of the data available?</li>
-<li>[ ] <code>DATAAVAILABILITYEXCLUSIVE</code> Is there data that is <strong>only</strong> accessible to the author (nobody else)?</li>
-<li>[ ] <code>REASON FOR NON-ACCESSIBILITY OF DATA</code> Fill this out if <strong>none</strong> of the code can be run</li>
-<li>[ ] <code>NUMBEROFDATASETS</code> How many datasets are used in the article?</li>
-<li>[ ] <code>DATASETSINCLUDED</code> How many of the datasets used in the article are actually provided by the authors?</li>
+<li><input type="checkbox" disabled="" />
+<code>DATAAVAILABILITYACESS</code> Is at least some of the data available?</li>
+<li><input type="checkbox" disabled="" />
+<code>DATAAVAILABILITYEXCLUSIVE</code> Is there data that is <strong>only</strong> accessible to the author (nobody else)?</li>
+<li><input type="checkbox" disabled="" />
+<code>REASON FOR NON-ACCESSIBILITY OF DATA</code> Fill this out if <strong>none</strong> of the code can be run</li>
+<li><input type="checkbox" disabled="" />
+<code>NUMBEROFDATASETS</code> How many datasets are used in the article?</li>
+<li><input type="checkbox" disabled="" />
+<code>DATASETSINCLUDED</code> How many of the datasets used in the article are actually provided by the authors?</li>
 </ul>
 </div>
 <div id="write-preliminary-report" class="section level3">
 <h3><span class="header-section-number">10.3.4</span> Write Preliminary Report</h3>
-<p>At this stage, you need to fill out the REPLICATION.md up to the &quot;Replication steps&quot; part.</p>
+<p>At this stage, you need to fill out the REPLICATION.md up to the “Replication steps” part.</p>
 <ul>
-<li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
+<li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar
+<ul>
 <li>[EXPERT TIP] Right-click, and open the sample language in a new tab, for easy reference.</li>
+</ul></li>
 </ul>
 <div class="figure">
-<img src="images/jira-left-fragments.png" alt="Link to Fragments" />
+<img src="images/jira-left-fragments.png" alt="" />
 <p class="caption">Link to Fragments</p>
 </div>
 <ul>
-<li>[ ] Commit this preliminary report to the Bitbucket repository.</li>
+<li><input type="checkbox" disabled="" />
+Commit this preliminary report to the Bitbucket repository.</li>
 </ul>
 <p>This stage allows for earlier identification of issues that might warrant changes to the procedure.</p>
 <ul>
 <li>This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.</li>
 <li>You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.</li>
-<li>The authors might have identified computational requirements that you do not have access to, or do not have the time to run (&quot;compute cluster with 100 nodes&quot;, &quot;Fortran compiler&quot;).</li>
+<li>The authors might have identified computational requirements that you do not have access to, or do not have the time to run (“compute cluster with 100 nodes”, “Fortran compiler”).</li>
 </ul>
 <blockquote>
 <p>Commit!</p>
@@ -615,14 +670,18 @@ git push</code></pre>
 <p>!! If you identify any of the elements above that prevent you from completing the issue on time, you should notify your supervisor. DO NOT ADVANCE THE TICKET!!</p>
 </blockquote>
 <ul>
-<li>Otherwise, advance the ticket to one of three options: <code>Verification</code>, <code>Code Review</code>, or <code>Incomplete</code></li>
+<li>Otherwise, advance the ticket to one of three options: <code>Verification</code>, <code>Code Review</code>, or <code>Incomplete</code>
+<ul>
 <li><code>Verification</code>: at least some of the data is accessible. In order to progress to this state,
 <ul>
-<li>[ ] <code>Working location of data</code>has to be filled out</li>
-<li>[ ] <code>Computing environment</code> has to be selected.</li>
+<li><input type="checkbox" disabled="" />
+<code>Working location of data</code>has to be filled out</li>
+<li><input type="checkbox" disabled="" />
+<code>Computing environment</code> has to be selected.</li>
 </ul></li>
 <li><code>Code Review</code>: none of the data is accessible</li>
 <li><code>Incomplete</code>: more information/action is required before you can proceed</li>
+</ul></li>
 </ul>
 </div>
 <div id="verification" class="section level3">
@@ -655,7 +714,7 @@ git push</code></pre>
 <ul>
 <li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
 <li>Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.</li>
-<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em>, including the column &quot;Replicated?&quot; and any notes column, into the &quot;Findings&quot; part. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</li>
+<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em>, including the column “Replicated?” and any notes column, into the “Findings” part. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</li>
 <li>Delete all of the instructional lines in REPLICATION.md before finishing the report.</li>
 <li>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</li>
 <li>Highlight differences:
@@ -676,25 +735,25 @@ git push</code></pre>
 <h2><span class="header-section-number">10.4</span> Replication Revisions</h2>
 <ul>
 <li>See <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Revision-to-a-Replication">revision guidance</a> on the wiki.</li>
-<li>When receiving updated files from authors, do NOT create &quot;update&quot; or &quot;new&quot; directories. The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.</li>
-<li>When running a second replication on the same archive, please be sure to have the committed &quot;REPLICATION.md&quot; be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</li>
+<li>When receiving updated files from authors, do NOT create “update” or “new” directories. The current state of the repository should always correspond to the author’s structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.</li>
+<li>When running a second replication on the same archive, please be sure to have the committed “REPLICATION.md” be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</li>
 </ul>
 </div>
 <div id="reviewing-reports" class="section level2">
 <h2><span class="header-section-number">10.5</span> Reviewing Reports</h2>
-<p>&quot;Approvers&quot; and &quot;Pre-approvers&quot; will review the reports, and finalize the Summary. In particular, approvers must select/confirm one of the recommendations (field <code>MCRecommendationV2</code>):</p>
+<p>“Approvers” and “Pre-approvers” will review the reports, and finalize the Summary. In particular, approvers must select/confirm one of the recommendations (field <code>MCRecommendationV2</code>):</p>
 <ul>
 <li><strong>Accepted</strong> - the manuscript moves forward in the publishing workflow on Manuscript Central, the Data Editor does not see the manuscript again.</li>
 <li><strong>Accepted with changes</strong> - same, but some conditions may be imposed. However, the Data Editor does not need to see the manuscript again.</li>
-<li><strong>Revisions requested - manuscript ready</strong> - Some revisions need to be made, and the Data Editor needs to see the authors' response. However, the manuscript can move forward in the publishing workflow (rarely used)</li>
+<li><strong>Revisions requested - manuscript ready</strong> - Some revisions need to be made, and the Data Editor needs to see the authors’ response. However, the manuscript can move forward in the publishing workflow (rarely used)</li>
 <li><strong>Conditional Acceptance</strong> - the Data Editor expects to see a response from the authors to the report.</li>
-<li><strong>Revise and resubmit</strong> - the Data Editor has detected a serious problem which needs to go back to the &quot;Revise and resubmit&quot; phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript's conclusions based on the reproduction attempt. Rarely used.</li>
+<li><strong>Revise and resubmit</strong> - the Data Editor has detected a serious problem which needs to go back to the “Revise and resubmit” phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript’s conclusions based on the reproduction attempt. Rarely used.</li>
 </ul>
 <p>See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-report-review.md">Report review guidelines</a> and <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/Preapprovers.md">Preapprovers</a> for details.</p>
 </div>
 <div id="publication" class="section level2">
 <h2><span class="header-section-number">10.6</span> Publication</h2>
-<p>Once all review rounds have been completed, the last revision will lead to a recommendation of &quot;Accepted&quot;. The Data Editor's staff prepares the openICPSR deposit for final publication. In general, this means that a note is added to the &quot;Project Communications Log&quot; on openICPSR, denoting the acceptance of the deposit. The AEA publication staff can subsequently move this issue forward to &quot;Published&quot; when the supplement has been published on openICPSR.</p>
+<p>Once all review rounds have been completed, the last revision will lead to a recommendation of “Accepted”. The Data Editor’s staff prepares the openICPSR deposit for final publication. In general, this means that a note is added to the “Project Communications Log” on openICPSR, denoting the acceptance of the deposit. The AEA publication staff can subsequently move this issue forward to “Published” when the supplement has been published on openICPSR.</p>
 <ul>
 <li>The field <code>openICPSRDOI</code> is pre-filled, but should be checked by the AEA publication staff.</li>
 </ul>

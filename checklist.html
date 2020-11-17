@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Setup Checklist | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Setup Checklist | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="B Setup Checklist | TRAINING For Reproducibility Verification" />
@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-10-29" />
+<meta name="date" content="2020-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,8 +52,7 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <script>
 function toggleCitation() {
@@ -81,8 +80,9 @@ function toggleCitation() {
 
 
 
-<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
 </head>
 
 <body>
@@ -120,7 +120,7 @@ function toggleCitation() {
 <li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
 <li class="chapter" data-level="9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>9</b> A guided walk through the Replication Report</a><ul>
 <li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a></li>
-<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What's in a replication report</a></li>
+<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What’s in a replication report</a></li>
 <li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
 </ul></li>
 <li class="part"><span><b>III AEA-specific training</b></span></li>
@@ -154,7 +154,7 @@ function toggleCitation() {
 <li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
 <li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
 <li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
-<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
 <li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
 <li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
 <li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
@@ -194,40 +194,47 @@ function toggleCitation() {
 <div id="accounts-you-will-need-to-sign-up-for-action-required" class="section level2">
 <h2><span class="header-section-number">B.1</span> Accounts you will need to sign up for (action required)</h2>
 <ul>
-<li>[ ] CISER account (for computing access) - <a href="https://ciser.cornell.edu/computing/request-an-account/">Select &quot;Apply for Research account&quot; and list Lars as a sponsor.</a> Do not select &quot;<em>Request Secure Data Services account</em>&quot;. If prompted about using sensitive or restricted data, please select &quot;<em>No</em>&quot;. Otherwise, this will take you to a window to sign up for a CRADC account instead, which is not necessary. If you encounter this issue, please email the <a href="https://ciser.cornell.edu/consulting/ciser-helpdesk/">CISER help desk</a> asking them cancel the CRADC account request.
-<ul>
-<li>If using a Mac and if &quot;<em>Microsoft Remote Desktop</em>&quot; is not already installed on Mac, install <a href="https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466">Remote Desktop Software from iTunes</a> (not necessary on Windows, as it is pre-installed)</li>
+<li><input type="checkbox" disabled="" />
+CISER account (for computing access) - <a href="https://ciser.cornell.edu/computing/request-an-account/">Select “Apply for Research account” and list Lars as a sponsor.</a> Do not select “<em>Request Secure Data Services account</em>”. If prompted about using sensitive or restricted data, please select “<em>No</em>”. Otherwise, this will take you to a window to sign up for a CRADC account instead, which is not necessary. If you encounter this issue, please email the <a href="https://ciser.cornell.edu/consulting/ciser-helpdesk/">CISER help desk</a> asking them cancel the CRADC account request.<ul>
+<li>If using a Mac and if “<em>Microsoft Remote Desktop</em>” is not already installed on Mac, install <a href="https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466">Remote Desktop Software from iTunes</a> (not necessary on Windows, as it is pre-installed)</li>
 <li>Once an account is set up, learn <a href="https://ciser.cornell.edu/computing/computing-help/how-to-login/">How to log on to CISER</a> (also includes download links)</li>
 </ul></li>
-<li>[ ] You will need <a href="https://www.icpsr.umich.edu/cgi-bin/newacct">openICPSR account</a>, in order to download pre-publication materials. Please be sure to use your Cornell e-mail!</li>
+<li><input type="checkbox" disabled="" />
+You will need <a href="https://www.icpsr.umich.edu/cgi-bin/newacct">openICPSR account</a>, in order to download pre-publication materials. Please be sure to use your Cornell e-mail!</li>
 </ul>
 </div>
 <div id="accounts-you-will-be-signed-up-for-no-action-required" class="section level2">
 <h2><span class="header-section-number">B.2</span> Accounts you will be signed up for (no action required)</h2>
 <ul>
-<li>[ ] Atlassian account
-<ul>
+<li><input type="checkbox" disabled="" />
+Atlassian account<ul>
 <li>Bitbucket for access to the <a href="https://bitbucket.org/aeaverification/">internal Git repos</a></li>
 <li>Jira account for the <a href="https://aeadataeditors.atlassian.net/">internal issue tracker</a></li>
 </ul></li>
-<li>[x] Email is used for the mailing list <a href="mailto:ldi-lab-l@cornell.edu">ldi-lab-l@cornell.edu</a></li>
+<li><input type="checkbox" disabled="" checked="" />
+Email is used for the mailing list <a href="mailto:ldi-lab-l@cornell.edu">ldi-lab-l@cornell.edu</a></li>
 </ul>
 </div>
 <div id="software-to-install-on-your-laptop" class="section level2">
 <h2><span class="header-section-number">B.3</span> Software to install on your laptop</h2>
 <ul>
-<li>[x] Command line (PowerShell, or Terminal, your choice) - pre-installed</li>
-<li>[ ] Windows Remote Desktop (see above)</li>
-<li>[ ] Git command line tool (<a href="https://git-scm.com/downloads">download the software</a>, then follow the guide on <a href="https://github.com/labordynamicsinstitute/ldi-lab-standards/wiki/Setting-up-Git">Installing Git on your computer</a></li>
-<li>[ ] Visual Studio Code (<a href="https://code.visualstudio.com/">download location</a>), a powerful text editor</li>
-<li>[ ] Sourcetree (Git graphical interface optimized for Bitbucket) <a href="https://www.sourcetreeapp.com/">download location</a> (OPTIONAL)</li>
+<li><input type="checkbox" disabled="" checked="" />
+Command line (PowerShell, or Terminal, your choice) - pre-installed</li>
+<li><input type="checkbox" disabled="" />
+Windows Remote Desktop (see above)</li>
+<li><input type="checkbox" disabled="" />
+Git command line tool (<a href="https://git-scm.com/downloads">download the software</a>, then follow the guide on <a href="https://github.com/labordynamicsinstitute/ldi-lab-standards/wiki/Setting-up-Git">Installing Git on your computer</a></li>
+<li><input type="checkbox" disabled="" />
+Visual Studio Code (<a href="https://code.visualstudio.com/">download location</a>), a powerful text editor</li>
+<li><input type="checkbox" disabled="" />
+Sourcetree (Git graphical interface optimized for Bitbucket) <a href="https://www.sourcetreeapp.com/">download location</a> (OPTIONAL)</li>
 </ul>
 <p>Other software is optional. You will use statistical software on other computers <a href="#Access_to_computers">that we will get you access to</a>.</p>
 </div>
 <div id="text-editor-vs.-word-processor" class="section level2">
-<h2><span class="header-section-number">B.4</span> Text editor vs. Word processor</h2>
+<h2><span class="header-section-number">B.4</span> Text editor vs. Word processor</h2>
 <p>You want to use a <strong>text editor</strong>, not a <strong>word processor</strong>. The difference: a <strong>text editor</strong> creates simple text files, without fancy formatting.</p>
-<p>If you are creating code in Stata, Matlab, or Rstudio, you are using a customized text editor, sometimes called an <strong>IDE</strong> = &quot;Integrated Development Environment&quot;. That is OK. But remember that all such program code is a straight text file.</p>
+<p>If you are creating code in Stata, Matlab, or Rstudio, you are using a customized text editor, sometimes called an <strong>IDE</strong> = “Integrated Development Environment”. That is OK. But remember that all such program code is a straight text file.</p>
 <p>General purpose text editors can view and edit them all, although they may lack some of the fancy features that make programming easier in the dedicated IDE.</p>
 </div>
 <div id="availability-and-suggestions" class="section level2">

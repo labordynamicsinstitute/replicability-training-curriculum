@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 AEA: Revision reports after author resubmission | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 AEA: Revision reports after author resubmission | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
-  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 11 AEA: Revision reports after author resubmission | TRAINING For Reproducibility Verification" />
@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-10-29" />
+<meta name="date" content="2020-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,8 +52,7 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <script>
 function toggleCitation() {
@@ -81,8 +80,9 @@ function toggleCitation() {
 
 
 
-<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
 </head>
 
 <body>
@@ -120,7 +120,7 @@ function toggleCitation() {
 <li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
 <li class="chapter" data-level="9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>9</b> A guided walk through the Replication Report</a><ul>
 <li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a></li>
-<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What's in a replication report</a></li>
+<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What’s in a replication report</a></li>
 <li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
 </ul></li>
 <li class="part"><span><b>III AEA-specific training</b></span></li>
@@ -154,7 +154,7 @@ function toggleCitation() {
 <li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
 <li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
 <li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
-<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
 <li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
 <li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
 <li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
@@ -197,8 +197,8 @@ function toggleCitation() {
 <ul>
 <li><p>Most revisions will not take you much time, so please try to process them quickly!</p></li>
 <li><p>Revisions do not require you to repeat all of the same steps as the original replication (see below).</p></li>
-<li><p><strong>Do not create a new Bitbucket repo</strong>. You will overwrite the original repo (the original contents will still be available -- this is why we use version control software like Bitbucket!)</p></li>
-<li>The original REPLICATION.md is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.
+<li><p><strong>Do not create a new Bitbucket repo</strong>. You will overwrite the original repo (the original contents will still be available – this is why we use version control software like Bitbucket!)</p></li>
+<li><p>The original REPLICATION.md is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.</p>
 <ul>
 <li>If new issues turn up as a result of additional materials provided, these are okay to include as [REQUIRED] changes in the revised report.</li>
 <li>If you are unsure about something, add it to the report. While reviewing your report, we can make a determination about whether or not it can be done after acceptance of the manuscript, be a suggested instead of required change, etc.</li>
@@ -215,9 +215,9 @@ function toggleCitation() {
 </ul></li>
 <li>Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively.
 <ul>
-<li>Note: in the summary, these tags are using bullets (<code>- [REQUIRED]</code>) - those should be changed to &quot;quotes&quot;: <code>&gt; [We REQUESTED]</code></li>
+<li>Note: in the summary, these tags are using bullets (<code>- [REQUIRED]</code>) - those should be changed to “quotes”: <code>&gt; [We REQUESTED]</code></li>
 </ul></li>
-<li>Below each such tag, add a bullet point. Start the paragraph with &quot;Done&quot; if the issue was resolved, or &quot;Not done&quot; if not. Then explain what was done.</li>
+<li>Below each such tag, add a bullet point. Start the paragraph with “Done” if the issue was resolved, or “Not done” if not. Then explain what was done.</li>
 </ul>
 <p>An example:</p>
 <pre><code>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)</code></pre>
@@ -234,26 +234,30 @@ function toggleCitation() {
 <li>You do not need to fill out a new Data Citation and Information Report.</li>
 <li>You <em>may</em> not need to re-run any code.</li>
 </ul>
-<div id="in-progress-1" class="section level3">
+<div id="in-progress" class="section level3">
 <h3><span class="header-section-number">11.3.1</span> In Progress</h3>
 <p>First, advance the ticket from <code>Assigned</code> to <code>In Progress</code>.</p>
 <ul>
-<li>[ ] Identify previous issue.
-<ul>
+<li><p><input type="checkbox" disabled="" />
+Identify previous issue.</p><ul>
 <li>You should see the previous issue listed under <strong>Linked Issues</strong> on JIRA.</li>
 <li>Use the previous issue, to fill in the following JIRA fields (if not already filled):
 <ul>
 <li><code>Code provenance</code></li>
 <li><code>Journal</code></li>
 <li><code>Empirical Article</code></li>
-<li><code>Bitbucket short name</code>. This should be the name of the original JIRA issue (e.g. <code>aearep-123)</code>.</li>
+<li><code>Bitbucket short name</code>. This should be the name of the original JIRA issue (e.g. <code>aearep-123)</code>.</li>
 <li><code>openICPSR project number</code></li>
 </ul></li>
 </ul></li>
-<li><p>[ ] Download the materials attached to the JIRA issue. This will typically include an updated copy of the manuscript, readme, and a response to the editor addressing the requested changes from the prior replication attempt. These should be added to the root of the repository</p></li>
-<li><p>[ ] Remove obsolete files. In the root, this should be obvious (old manuscript, old README), in the copy of the code, a bit trickier, but necessary.</p></li>
-<li>[ ] Add these to the root of the repository locally, and then add, commit, and push them to the Bitbucket repository (e.g., <code>git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf</code>)</li>
-<li><p>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</p></li>
+<li><p><input type="checkbox" disabled="" />
+Download the materials attached to the JIRA issue. This will typically include an updated copy of the manuscript, readme, and a response to the editor addressing the requested changes from the prior replication attempt. These should be added to the root of the repository</p></li>
+<li><p><input type="checkbox" disabled="" />
+Remove obsolete files. In the root, this should be obvious (old manuscript, old README), in the copy of the code, a bit trickier, but necessary.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Add these to the root of the repository locally, and then add, commit, and push them to the Bitbucket repository (e.g., <code>git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf</code>)</p><ul>
+<li>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</li>
+</ul></li>
 </ul>
 <pre><code>code-check.xlsx
 config.do
@@ -263,38 +267,41 @@ readme.pdf
 REPLICATION.md
 reply_to_editor.pdf</code></pre>
 <ul>
-<li>[ ] Open <code>REPLICATION.md</code> to review the requested changes from the prior replication attempt. Read the reply to the editor, if provided, to get a sense of what changes the authors made. Make a determination if the revision requires re-running code.
-<ul>
+<li><input type="checkbox" disabled="" />
+Open <code>REPLICATION.md</code> to review the requested changes from the prior replication attempt. Read the reply to the editor, if provided, to get a sense of what changes the authors made. Make a determination if the revision requires re-running code.<ul>
 <li>If there were [REQUIRED] changes in the Code Description, Replication Steps, or Findings sections of the original report, you will likely have to re-run code.</li>
 <li>If the only [REQUIRED] changes were data citations or changes to the README, you should not need to re-run code.</li>
 </ul></li>
 </ul>
 <p>Change the status from <code>In Progress</code> to <code>Code</code>.</p>
 </div>
-<div id="code-1" class="section level3">
+<div id="code" class="section level3">
 <h3><span class="header-section-number">11.3.2</span> Code</h3>
-<p>At this point, you may want to transition to CISER if you haven't already. You should <code>git pull</code> to ensure the changes you've made are reflected in the local version of the repository on CISER.</p>
+<p>At this point, you may want to transition to CISER if you haven’t already. You should <code>git pull</code> to ensure the changes you’ve made are reflected in the local version of the repository on CISER.</p>
 <ul>
-<li>[ ] Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code>12345</code> then all updated materials will again go into the <code>12345</code> subdirectory.
-<ul>
+<li><p><input type="checkbox" disabled="" />
+Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code>12345</code> then all updated materials will again go into the <code>12345</code> subdirectory.</p><ul>
 <li>Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the <code>aearep-123</code> repo on Bitbucket.</li>
 <li>Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to <code>git rm</code> them).</li>
 <li>Ensure that output produced from the prior replication attempt remains in the repository.</li>
 </ul></li>
-<li><p>[ ] Update the Data Description section of the report.</p></li>
-<li><p>[ ] Update the Code Description section of the report.</p></li>
-<li>[ ] Fill out the required JIRA fields:
-<ul>
+<li><p><input type="checkbox" disabled="" />
+Update the Data Description section of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Code Description section of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Fill out the required JIRA fields:</p><ul>
 <li><code>Data Provenance</code></li>
 </ul></li>
 </ul>
 <p>Change the status from <code>Code</code> to <code>Data</code>.</p>
 </div>
-<div id="data-1" class="section level3">
+<div id="data" class="section level3">
 <h3><span class="header-section-number">11.3.3</span> Data</h3>
 <ul>
-<li><p>[ ] Update the Data Checks section of the report, if new data have been provided.</p></li>
-<li>Fill out the required fields in JIRA:
+<li><p><input type="checkbox" disabled="" />
+Update the Data Checks section of the report, if new data have been provided.</p></li>
+<li><p>Fill out the required fields in JIRA:</p>
 <ul>
 <li><code>Working location of the data</code> or</li>
 <li><code>Reason for non-accessibility</code></li>
@@ -302,11 +309,13 @@ reply_to_editor.pdf</code></pre>
 </ul>
 <p>Change the status from <code>Data</code> to <code>Write Preliminary Report</code>.</p>
 </div>
-<div id="write-preliminary-report-1" class="section level3">
+<div id="write-preliminary-report" class="section level3">
 <h3><span class="header-section-number">11.3.4</span> Write Preliminary report</h3>
 <ul>
-<li><p>[ ] Ensure all sections of the report up to Replication Steps have been updated.</p></li>
-<li><p>[ ] Delete sections of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Ensure all sections of the report up to Replication Steps have been updated.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Delete sections of the report.</p></li>
 </ul>
 <p>Change the status from <code>Writing preliminary report</code> to <code>Code Review</code> or <code>Verification</code>.</p>
 </div>
@@ -317,43 +326,49 @@ reply_to_editor.pdf</code></pre>
 <div id="re-running-code" class="section level4">
 <h4><span class="header-section-number">11.3.5.1</span> Re-running code</h4>
 <ul>
-<li>You <strong>do not</strong> need to re-verify tables/figures that were successfully replicated the first time <em>unless</em> the new code also affects them.</li>
-<li>If parts of the code take a long time to run and the [REQUIRED] changes do not involve those parts, you do not need to re-run that part of the code.</li>
+<li><p>You <strong>do not</strong> need to re-verify tables/figures that were successfully replicated the first time <em>unless</em> the new code also affects them.</p></li>
+<li><p>If parts of the code take a long time to run and the [REQUIRED] changes do not involve those parts, you do not need to re-run that part of the code.</p></li>
 <li><p><strong>Be careful!</strong> Sometimes the code will produce intermediate outputs along the way that may be needed later on. So if you skip parts of the code and cannot replicate the result(s), go back and check to see if you actually need to run all of the code.</p></li>
-<li><p>[ ] Run relevant parts of code, including the config.do generating system.</p></li>
-<li><p>[ ] Update the Replication Steps section of the report, accordingly.</p></li>
-<li><p>[ ] Update the <code>code-check.xlsx</code> file.</p></li>
-<li><p>[ ] Update the Findings section of the report.</p></li>
-<li><p>[ ] <code>git add</code>, <code>git commit</code>, and <code>git push</code> any new results to the Bitbucket repository.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Run relevant parts of code, including the config.do generating system.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Replication Steps section of the report, accordingly.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the <code>code-check.xlsx</code> file.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Findings section of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+<code>git add</code>, <code>git commit</code>, and <code>git push</code> any new results to the Bitbucket repository.</p></li>
 </ul>
 <p>Change the status from <code>Code Review</code> or <code>Verification</code> to <code>Writing Report</code>.</p>
 </div>
 </div>
-<div id="writing-report-1" class="section level3">
+<div id="writing-report" class="section level3">
 <h3><span class="header-section-number">11.3.6</span> Writing Report</h3>
 <p>In this stage, you will finalize the revision report.</p>
 <ul>
-<li>[ ] Ensure all [REQUIRED] and [SUGGESTED] items from the original report have been changed to [We REQUESTED] and [We SUGGESTED] in the body of the report.
-<ul>
+<li><p><input type="checkbox" disabled="" />
+Ensure all [REQUIRED] and [SUGGESTED] items from the original report have been changed to [We REQUESTED] and [We SUGGESTED] in the body of the report.</p><ul>
 <li>The resolution (or lack thereof) should be included as a bullet point directly below the request.</li>
 </ul></li>
-<li><p>[ ] Ensure any new issues found are tagged with the appropriate [REQUIRED] and [SUGGESTED] tags.</p></li>
-<li>[ ] Delete/modify any comments of the report template that are no longer true:
-<ul>
-<li>e.g. if the previous report stated &quot;Data not cited&quot; and the author has now added citations, then that part should state &quot;Data is cited&quot; or &quot;Data is now cited&quot;.</li>
+<li><p><input type="checkbox" disabled="" />
+Ensure any new issues found are tagged with the appropriate [REQUIRED] and [SUGGESTED] tags.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Delete/modify any comments of the report template that are no longer true:</p><ul>
+<li>e.g. if the previous report stated “Data not cited” and the author has now added citations, then that part should state “Data is cited” or “Data is now cited”.</li>
 </ul></li>
-<li>[ ] Delete any parts of the report template that are no longer relevant:
-<ul>
-<li>e.g. if no code changes were [REQUIRED], then delete the sections involving code, replication steps, and findings.</li>
+<li><p><input type="checkbox" disabled="" />
+Delete any parts of the report template that are no longer relevant:</p><ul>
+<li>e.g. if no code changes were [REQUIRED], then delete the sections involving code, replication steps, and findings.</li>
 <li>careful however here, too: authors should only be making changes to parts that we requested changes for, but if they change things elsewhere, then you should, in fact, retain that section, and accurately describe it again. New errors <em>can</em> be introduced!</li>
 </ul></li>
-<li>[ ] Update the Classification.
-<ul>
+<li><p><input type="checkbox" disabled="" />
+Update the Classification.</p><ul>
 <li>If you do not need to re-run code for the revision, keep the original classification.</li>
 <li>If you do need to re-run code for the revision, update the classification appropriately.</li>
 </ul></li>
-<li><p>[ ] Incorporate all old/new requested changes and resolutions in the SUMMARY section of the report:</p>
-<ul>
+<li><p><input type="checkbox" disabled="" />
+Incorporate all old/new requested changes and resolutions in the SUMMARY section of the report:</p><ul>
 <li>Create sub-sections for <strong>New</strong>, <strong>Unresolved</strong>, and <strong>Resolved</strong> issues.</li>
 <li>Replace all previously <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> items in the SUMMARY section with <code>&gt; [We REQUESTED]</code> and <code>&gt; [We SUGGESTED]</code>, respectively. New issues should still have the <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> tags.</li>
 <li>Below each item, include the same resolution you listed in the body of the report.</li>
@@ -390,7 +405,7 @@ reply_to_editor.pdf</code></pre>
 
 - Done. A setup program has been added to the deposit, which 
   installs all necessary packages.</code></pre>
-<p>Finally, don't forget to <code>git add</code>, <code>git commit</code>, and <code>git push</code> the new report. Then, change the status in JIRA from <code>Writing Report</code> to <code>Report Under Review</code>.</p>
+<p>Finally, don’t forget to <code>git add</code>, <code>git commit</code>, and <code>git push</code> the new report. Then, change the status in JIRA from <code>Writing Report</code> to <code>Report Under Review</code>.</p>
 
 </div>
 </div>

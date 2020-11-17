@@ -4,14 +4,14 @@ author:
   - "Lars Vilhuber"
   - "Meredith Welch"
   - "David Wasser"
-date: "2020-10-29"
+date: "2020-11-17"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 bibliography: [paper.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo:  labordynamicsinstitute/replicability-training
+github-repo:  labordynamicsinstitute/replicability-training-curriculum
 description: "We provide training for students who will verify the reproducibility of economics articles."
 ---
 
@@ -478,6 +478,11 @@ Note that both citations do not provide (complete) information on how others mig
 
 <!--chapter:end:05-data-citations-and-das.Rmd-->
 
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Generic data workflow
 
 In a very generic, all empirical analysis goes through the following steps:
@@ -492,19 +497,8 @@ In a reproducible workflow, *instructions* to perform all of the above are provi
 
 The following diagram illustrates the generic flow:
 
-<div class="mermaid">
-graph TD;
-    subgraph Dataflow;
-    A((Input data)) ==>  B[Cleaning programs];
-    B ==> C((Analysis data));
-    C ==> D[Analysis programs]
-    D ==> E((Outputs));
-    end;
-    B -.-> F(("Auxiliary data<br/>(created)"));
-    F -.-> C;
-    Z((Source)) -.-> X[Data citation] -.-> A;
 
-</div>
+<img src="images/mermaid-data-flow.png" width="778" />
 
 Real articles are often more complex. A simple example will be discussed next.
 
@@ -1386,7 +1380,7 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 <ul>
 <li>submitters needs password to ScholarOne (Lars shares via LastPass)</li>
 <li>submitters need permissions on openICPSR (Lars requests from openICPSR)</li>
-<li>submitters need &quot;Publisher&quot; permission on Jira (can be set in Project -&gt; Settings -&gt; People in Jira)</li>
+<li>submitters need <code>Publisher</code> permission on Jira (can be set in Project -&gt; Settings -&gt; People in Jira)</li>
 </ul>
 </div>
 
@@ -1394,13 +1388,13 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 
 > Reminder: for the AEA, the JMS is ScholarOne.
 
-1. Open the issue on JIRA. It must be "Approved".
-2. Click on the "Submit to MC" transition. A pop-up will be shown.
+1. Open the issue on JIRA. It must be `Approved`.
+2. Click on the `Submit to MC` transition. A pop-up will be shown.
 
 ![Submit to MC pop-up](images/jira-Submit-to-MC.png)
 
 3. In the pop-up, you should have all the necessary information
-   - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab"
+   - Note: links in the pop-up window are not clickable: double-click, then use right-click to `Open in New Tab`
    - `MCEntryURL`  has the link to Manuscript Central (MC) in order to submit
    - `Manuscript Central Identifier` to find the manuscript
    - `MCRecommendationV2` has the information about how the editorial office should proceed, to be selected in the JMS
@@ -1411,18 +1405,18 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 5. Open the Manuscript Central link (double-click, right-click, open in new tab)
    1. Enter your credentials to access Manuscript Central (if using LastPass, let LastPass fill the information)
    2. Click on the review tab and identify the manuscript number (`Manuscript Central Identifier`) of the paper
-   3. Select "Continue Review"
-   4. Always click "Yes" when asked: Would you be willing to review a revision of this manuscript?
+   3. Select `Continue Review`
+   4. Always click `Yes` when asked: Would you be willing to review a revision of this manuscript?
    5. Select the recommendation as noted in the Issue
       - If `MCStatus` contains `CA`: Look at the field `MCRecommendationV2`
       - If `MCStatus` contains `RR`: Look at the field  `MCRecommendation`
-   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field "Comments to the Author". Add "Details are in the full report."
-   7. Select and upload the `REPLICATION.pdf`, click on "For author and  editor".
-   8. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field "Confidential Comments to the Coeditor".
+   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. Add "Details are in the full report."
+   7. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
+   8. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field `Confidential Comments to the Coeditor`.
    8. Re-verify all information
-   9. Click on "Submit"
+   9. Click on `Submit`
 6. Back in the pop-up, 
-   1. Click on "Submit to MC"
+   1. Click on `Submit to MC`
 
 
 ## Decision point?
@@ -1445,15 +1439,17 @@ To do so, proceed as follows:
 1. Open the issue on Jira
 2. Right-click on the `Code Provenance` field to open the openICPSR deposit.
 3. On openICPSR, 
-   - verify what the openICPSR "Deposit Status" is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
-   - if  "Deposit Status" = "*Deposit in Progress*", you are done on openICPSR. Go back to the Jira issue
-   - if "Deposit Status" = "*Submitted*", then
-      - click on "Change Status", choose "Request revisions"
+   - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
+   - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue
+   - if `Deposit Status` = *`Submitted`*, then
+      - click on `Change Status`, choose `Request revisions`
   - in the pop-up, paste and submit the following lines: 
-```
-Revisions requested. Details in the full report, which you will receive via ScholarOne shortly. 
-```
-4. Back in the Jira issue, transition the issue to "Done".
+
+<div class="bbox">
+<p>Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.</p>
+</div>
+
+4. Back in the Jira issue, transition the issue to `Done`.
 
 
 
@@ -1464,72 +1460,77 @@ Revisions requested. Details in the full report, which you will receive via Scho
 ### FOR ACCEPT WITH CHANGES
 
 1. Open the issue on Jira
-2. Click on the "Wait for response on openICPSR" transition to "Pending openICPSR changes". The pop-up will 
-3. Look for a file "`for openICPSR.md`" in the repository.
+2. Click on the `Wait for response on openICPSR` transition to `Pending openICPSR changes`. 
+  - In the pop-up, you should have all the necessary information.
+     - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
+     - If not already done: `Code provenance` should point to openICPSR. If not, go to the final step.
+     - Make a note of the issue number (in the URL) and the `Manuscript Central identifier` again.
+
+![Pop-up for transition to Pending openICSPR](images/jira-Wait-for-response-on-ICPSR.png)
+
+3. Look for a file "for openICPSR.md" in the repository.
 4. On openICPSR, 
-  - (new!) verify what the openICPSR "Deposit Status" is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
-5. On openICPSR, if "Deposit Status" = "*Deposit in Progress*"
+  - (new!) verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
+5. On openICPSR, if `Deposit Status` = *`Deposit in Progress`*
    - start a message in the Communication log:
       - with subject line: `Please make the following changes (AEAREP-xxx)` (replace with appropriate numbers)
       - Message content: 
          - the contents of the repository-specific "for openICPSR.md"
          - then the following lines: 
-```
-Details in the full report, which you will receive via ScholarOne shortly. The manuscript is accepted, the author should address the remaining issue in the openICPSR repository. Once completed, do not resubmit to ScholarOne. Please use the openICPSR Project Communication log, specifying AEAREP-xxx.
-```
+
+<div class="bbox">
+<p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
+</div>
 (replace xxx with the issue number)
 
-6. On openICPSR, if "Deposit Status" = "*Submitted*":
-  - click on "Change Status", choose "Request revisions"
+6. On openICPSR, if `Deposit Status` = *`Submitted`*:
+  - click on `Change Status`, choose `Request revisions`
   - in the pop-up, 
     - paste the the contents  of the repository-specific "for openICPSR.md"
     - then the following lines: 
-```
-Details in the full report, which you will receive via ScholarOne shortly. The manuscript is accepted, the author should address the remaining issue in the openICPSR repository. Once completed, do not resubmit to ScholarOne. Please use the openICPSR Project Communication log, specifying AEAREP-xxx.
-```
+
+<div class="bbox">
+<p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
+</div>
 (replace xxx with the issue number)
  
 
 ### FOR ACCEPT:
 1. Open the issue on Jira
-2. Click on the "Prepare for publication" transition
-
-![Pop-up for transition to Pending openICSPR](images/jira-Wait-for-response-on-ICPSR.png)
-
+2. Click on the `Prepare for publication` transition
 3. In the pop-up, you should have all the necessary information.
    - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
    - If not already done: `Code provenance` should point to openICPSR. If not, go to the final step.
    - Make a note of the issue number (in the URL) and the `Manuscript Central identifier` again.
 4. On openICPSR,
    - remove any RAs from the Share list (leave anybody else who is on there!)
-   - (new!) verify what the openICPSR "Deposit Status" is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
-5. On openICPSR, if "Deposit Status" = "*Deposit in Progress*"
+   - (new!) verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
+5. On openICPSR, if `Deposit Status` = *`Deposit in Progress`*
    - start a message in the Communication log:
       - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
       - with body
       
-```
-This data and code deposit is accepted.
+\BeginKnitrBlock{bbox}<div class="bbox">This data and code deposit is accepted.
 
- Action items:
+Action items:
+
  - Author: Please change the status of your deposit to "Submit to AEA"
- - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.
-```
+ - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.</div>\EndKnitrBlock{bbox}
 
-6. On openICPSR, if "Deposit Status" = "*Submitted*":
+6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - start a message in the Communication log:
       - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
       - with body
       
-```
-This data and code deposit is accepted.
 
- Action items:
+\BeginKnitrBlock{bbox}<div class="bbox">This data and code deposit is accepted.
+
+Action items:
+
  - Author: no further action required
- - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.
-```
+ - AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.</div>\EndKnitrBlock{bbox}
 
-7. Back in the Jira popup, finalize by clicking "OK". The issue will be moved to "Pending Publication".
+7. Back in the Jira popup, finalize by clicking `OK`. The issue will be moved to `Pending Publication`.
 8. You are not quite done yet! You will receive an email from openICPSR.  
    - the email needs to be forwarded to *dataeditor-queue@aeapubs.org* 
    - manually add the **issue number** (AEAREP-xxx) into the subject line
