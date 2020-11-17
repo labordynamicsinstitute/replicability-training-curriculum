@@ -2,7 +2,7 @@ name: Create website
 on: 
   push:
     branches: 
-      - main
+      - master
 jobs:
   create-website:
     runs-on: ubuntu-latest
