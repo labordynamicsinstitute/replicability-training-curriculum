@@ -20,7 +20,12 @@ description: "We provide training for students who will verify the reproducibili
 This document is meant to guide the training of students in assessing the reproducibility of articles in the social sciences, and in particular in economics.
 
 ```{r setup,include=FALSE}
-source("_setup.R")
+#source("_setup.R")
+
+# define a few things
+
+config <- config::get()
+
 zoom.1 <- "https://cornell.zoom.us/j/99936798622"
 zoom.2 <- "https://cornell.zoom.us/j/93317162895"
 ```

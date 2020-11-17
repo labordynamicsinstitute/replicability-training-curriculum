@@ -8,6 +8,10 @@ if ( sysinf['sysname'] == 'Darwin' ) {
    Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
 }
 
+# setup a few things, if needed
+
+source("_setup.R")
+
 #run bookdown
 
 bookdown::render_book('index.Rmd', 'bookdown::gitbook')

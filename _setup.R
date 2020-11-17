@@ -48,7 +48,7 @@ for ( dir in list(programs,libs)){
 
 # set the install path to the local
 
-.libPaths(libs)
+#.libPaths(libs)
 
 
 # call the function
@@ -64,8 +64,3 @@ results <- sapply(as.list(unload.libraries), pkgTest, try=TRUE)
 
 
 #require(knitr)
-
-# define a few things
-
-config <- config::get()
-
