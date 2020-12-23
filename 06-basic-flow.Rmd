@@ -36,6 +36,7 @@ detach("package:DiagrammeR", unload = TRUE, character.only = TRUE)
 ```{r mermaidpng,echo=F,results='asis'}
 knitr::include_graphics("images/mermaid-data-flow.png")
 ```
+<!-- The figure above does not appear -->
 
 Real articles are often more complex. A simple example will be discussed next.
 
@@ -82,3 +83,4 @@ graph TD;
 
 </div>
 ```
+<!-- The figure above does not appear -->

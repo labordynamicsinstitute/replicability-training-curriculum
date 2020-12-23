@@ -7,6 +7,7 @@ Most students and researchers have been trained to cite their sources. Mostly, t
 The almost complete absence of data citations from the literature has lead to issues when data creators and data providers attempt to assess their impact on science. Typically, they revert to manually or algorithmically scouring the literature, trying to find instances where their data is used.
 
 ![FAIR](images/fair-crop.png)
+
 In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles [@FORCE11FAIRDATAPRINCIPLES]. "FAIR" is an acronym for
 
 - Findable, 
