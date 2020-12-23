@@ -4,7 +4,7 @@ author:
   - "Lars Vilhuber"
   - "Meredith Welch"
   - "David Wasser"
-date: "2020-11-17"
+date: "2020-12-23"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -159,6 +159,7 @@ Most students and researchers have been trained to cite their sources. Mostly, t
 The almost complete absence of data citations from the literature has lead to issues when data creators and data providers attempt to assess their impact on science. Typically, they revert to manually or algorithmically scouring the literature, trying to find instances where their data is used.
 
 ![FAIR](images/fair-crop.png)
+
 In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles [@FORCE11FAIRDATAPRINCIPLES]. "FAIR" is an acronym for
 
 - Findable, 
@@ -499,6 +500,7 @@ The following diagram illustrates the generic flow:
 
 
 <img src="images/mermaid-data-flow.png" width="778" />
+<!-- The figure above does not appear -->
 
 Real articles are often more complex. A simple example will be discussed next.
 
@@ -545,6 +547,7 @@ graph TD;
 
 </div>
 ```
+<!-- The figure above does not appear -->
 
 <!--chapter:end:06-basic-flow.Rmd-->
 
@@ -574,7 +577,8 @@ We will first describe the [prototypical report](#proto-report) and its elements
 In order to work through a replication report, you will need
 
 - [Access to computers](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Access_to_computers.md)
-- Reviewed the [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md)
+- Reviewed the [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md) 
+<!-- Access to computers link does not work-->
 
 We have examples of various actual reports (slightly anonymized):
 
@@ -601,7 +605,9 @@ The [Social Science Data Editor's page on Code and documentation](https://social
 
   + What do we consider to be "code"
   + Assessing the quality of the code documentation
-  
+
+
+
 ### To come
 
 How to modify code for replicability/verification
@@ -636,8 +642,19 @@ The SUMMARY is intended for a quick glance by journal editor and authors. It sho
 ###  Data description
 
 The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](https://bitss.github.io/ACRE/assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the "Data Citation and Information report", to obtain a machine-readable list of data sources and their attributes. 
+<!-- An essential part in writing the data descrption section is identifying the data used in the manuscript. Whie the dataset used for the main analysis is often explained in the README or in the manuscript, but the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.-->
 
 Once the preparations above are completed, a summary should be written in the "Data Description" section. 
+
+#### What data need to be described?
+All "Source data" and "Analysis data files" should be listed. 
+- Data needs to be listed include:
+   - Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data
+   - Data used to create maps.
+      - The data source of the geographical information is a source data if the map is created by the authors. 
+- Data need not be listed include:
+   - Source data for the numbers or estimates directly quoted from other aritcles 
+   - Souce data for the parameters used for calibrations, unless they are estimated within the article.
 
 #### Source data
 
@@ -645,13 +662,16 @@ For each data source, list
 
 - presence or absence of source data (data files), 
 - presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. 
+   - The information of the source location of the data should instruct the replicator how to access the source data.
 - whether the *data* is cited (see the section on [data citations](#datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
 
 ![Data Description Section](images/report-data-description.png)
 
+<!-- Either raw data or a description about how to access the raw data needs to be provided, paired with data preparation program to transform the source data to analysis data.  -->
+
 #### Analysis data files
 
-If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.
+Analysis data files are the data files from which output tables and figures are produced directly. If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.
 
 ### Metadata checks on deposit
 

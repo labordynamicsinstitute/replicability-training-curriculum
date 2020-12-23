@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-11-17" />
+<meta name="date" content="2020-12-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,7 +201,8 @@ function toggleCitation() {
 <h2><span class="header-section-number">7.1</span> Details on data workflows</h2>
 <p>In a reproducible workflow, <em>instructions</em> to perform all of the above are provided. Most of the time, those instructions will be <em>computer code</em>, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments, but more often, acquiring data entails manual actions. For instance, secondary data access might be described in <a href="datacitations.html#dasmaster">Data Availability Statements</a>, whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures, but sometimes, authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly.</p>
 <p>The following diagram illustrates the generic flow:</p>
-<p><img src="images/mermaid-data-flow.png" width="778" /></p>
+<p><img src="images/mermaid-data-flow.png" width="778" />
+<!-- The figure above does not appear --></p>
 <p>Real articles are often more complex. A simple example will be discussed next.</p>
 </div>
 <div id="a-simple-example" class="section level2">
@@ -245,6 +246,7 @@ graph TD;
     Z(("Source:<br/><i>Decennial Census")) -.-> X[Data citation] -.-> A;
 
 </div>
+<!-- The figure above does not appear -->
 
 </div>
 </div>

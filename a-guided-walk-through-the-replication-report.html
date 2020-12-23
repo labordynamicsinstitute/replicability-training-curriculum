@@ -26,7 +26,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2020-11-17" />
+<meta name="date" content="2020-12-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,8 @@ function toggleCitation() {
 <p>In order to work through a replication report, you will need</p>
 <ul>
 <li><a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/Access_to_computers.md">Access to computers</a></li>
-<li>Reviewed the <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">Template REPORT</a></li>
+<li>Reviewed the <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">Template REPORT</a>
+<!-- Access to computers link does not work--></li>
 </ul>
 <p>We have examples of various actual reports (slightly anonymized):</p>
 <ul>
@@ -253,24 +254,40 @@ function toggleCitation() {
 </div>
 <div id="data-description" class="section level3">
 <h3><span class="header-section-number">9.2.2</span> Data description</h3>
-<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.</p>
+<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.
+<!-- An essential part in writing the data descrption section is identifying the data used in the manuscript. Whie the dataset used for the main analysis is often explained in the README or in the manuscript, but the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.--></p>
 <p>Once the preparations above are completed, a summary should be written in the “Data Description” section.</p>
+<div id="what-data-need-to-be-described" class="section level4">
+<h4><span class="header-section-number">9.2.2.1</span> What data need to be described?</h4>
+<p>All “Source data” and “Analysis data files” should be listed.
+- Data needs to be listed include:
+- Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data
+- Data used to create maps.
+- The data source of the geographical information is a source data if the map is created by the authors.
+- Data need not be listed include:
+- Source data for the numbers or estimates directly quoted from other aritcles
+- Souce data for the parameters used for calibrations, unless they are estimated within the article.</p>
+</div>
 <div id="source-data" class="section level4">
-<h4><span class="header-section-number">9.2.2.1</span> Source data</h4>
+<h4><span class="header-section-number">9.2.2.2</span> Source data</h4>
 <p>For each data source, list</p>
 <ul>
 <li>presence or absence of source data (data files),</li>
-<li>presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK.</li>
+<li>presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK.
+<ul>
+<li>The information of the source location of the data should instruct the replicator how to access the source data.</li>
+</ul></li>
 <li>whether the <em>data</em> is cited (see the section on <a href="datacitations.html#datacitations">data citations</a>. Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing.</li>
 </ul>
 <div class="figure">
 <img src="images/report-data-description.png" alt="" />
 <p class="caption">Data Description Section</p>
 </div>
+<!-- Either raw data or a description about how to access the raw data needs to be provided, paired with data preparation program to transform the source data to analysis data.  -->
 </div>
 <div id="analysis-data-files" class="section level4">
-<h4><span class="header-section-number">9.2.2.2</span> Analysis data files</h4>
-<p>If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.</p>
+<h4><span class="header-section-number">9.2.2.3</span> Analysis data files</h4>
+<p>Analysis data files are the data files from which output tables and figures are produced directly. If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.</p>
 </div>
 </div>
 <div id="metadata-checks-on-deposit" class="section level3">
