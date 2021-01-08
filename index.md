@@ -4,7 +4,7 @@ author:
   - "Lars Vilhuber"
   - "Meredith Welch"
   - "David Wasser"
-date: "2020-12-23"
+date: "2021-01-08"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -576,15 +576,15 @@ We will first describe the [prototypical report](#proto-report) and its elements
 
 In order to work through a replication report, you will need
 
-- [Access to computers](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Access_to_computers.md)
+- [Access to computers](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Access_to_computers.md)
 - Reviewed the [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md) 
 <!-- Access to computers link does not work-->
 
 We have examples of various actual reports (slightly anonymized):
 
- + [Example 1](https://github.com/labordynamicsinstitute/replicability-training/blob/master/sample_report.md)
- + [Example 2](https://github.com/labordynamicsinstitute/replicability-training/blob/master/REPLICATION-AEAREP278.md)
- + [Example 3](https://github.com/labordynamicsinstitute/replicability-training/blob/master/REPLICATION-AEAREP282.md) and its [revision](https://github.com/labordynamicsinstitute/replicability-training/blob/master/REPLICATION-AEAREP282-revised.md)
+ + [Example 1](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/sample_report.md)
+ + [Example 2](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP278.md)
+ + [Example 3](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP282.md) and its [revision](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP282-revised.md)
 
 
 
@@ -616,7 +616,7 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github at  [https://github.com/labordynamicsinstitute/replicability-training/blob/master/REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github at  [https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
@@ -837,9 +837,9 @@ For pre-publication verification, we use a Jira-based workflow similar to the po
 
 ## Scope
 
-Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md) for details.
+Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-supervisor-notes.md) for details.
 
-- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Instructions-PandP-Checks.md).
+- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Instructions-PandP-Checks.md).
 
 ## Overview
 
@@ -1158,7 +1158,7 @@ You can now submit your report for review by changing the status to `Under Revie
 - **Conditional Acceptance** - the Data Editor expects to see a response from the authors to the report.
 - **Revise and resubmit** - the Data Editor has detected a serious problem which needs to go back to the "Revise and resubmit" phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript's conclusions based on the reproduction attempt. Rarely used.
 
-See [Report review guidelines](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-report-review.md) and [Preapprovers](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Preapprovers.md) for details.
+See [Report review guidelines](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-report-review.md) and [Preapprovers](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Preapprovers.md) for details.
 
 ## Publication
 
@@ -1166,7 +1166,7 @@ Once all review rounds have been completed, the last revision will lead to a rec
 
 - The field `openICPSRDOI` is pre-filled, but should be checked by the AEA publication staff.
 
-See [Preparing for publication](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-prepare-publication.md) for details.
+See [Preparing for publication](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-prepare-publication.md) for details.
 
 <!--chapter:end:11-jira-workflow-training.Rmd-->
 
