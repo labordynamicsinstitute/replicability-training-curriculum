@@ -2,6 +2,7 @@
 title: "TRAINING For Reproducibility Verification"
 author: 
   - "Lars Vilhuber"
+  - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
 date: "2021-01-08"
@@ -25,25 +26,6 @@ This document is meant to guide the training of students in assessing the reprod
 
 
 
-## Tentative Agenda
-
-Items that are **bolded** are joint with the [Computational Tools for Social Scientists Workshop](https://labordynamicsinstitute.github.io/computing4economists/) (for graduate students). Items in *italics* are optional. Passwords for Zoom meetings were transmitted by email.
-
-| Time |  Aug 24                                                         |  Aug 25                                                               | Aug 26                                      | Aug 27                                                 | Aug 28                     |
-|------|-----------------------------------------------------------------|-----------------------------------------------------------------------|---------------------------------------------|--------------------------------------------------------|----------------------------|
-| 1:00 | (1:30) [Welcome to LDI Lab](https://cornell.zoom.us/j/99936798622)                         |                                                                       | *Coffee hour: What does the AEA Data and Code Availability policy imply for an economist's research?*| |                          |
-| 2:00 |  [**Intro to: Reproducible practices**](https://cornell.zoom.us/j/93317162895)             |  [Breakout groups: debugging software and accounts](https://cornell.zoom.us/j/99936798622)       |  (reserved for working on test articles)    | (reserved for working on test articles)                |  (reserved for working on test articles)  |
-| 3:00 |  [**Reproducible practices, data citation**](https://cornell.zoom.us/j/93317162895)        |  [**A prototypical replication report**](https://cornell.zoom.us/j/93317162895)                  |  [Small group peer mentoring](https://cornell.zoom.us/j/99936798622)   | [Small group peer mentoring](https://cornell.zoom.us/j/99936798622)               | [Follow-up on test articles (whole group)](https://cornell.zoom.us/j/99936798622) |
-| 4:00 |  [*A Markdown reproducible report with Stata and R*](https://cornell.zoom.us/j/93317162895)|  [A walkthrough of the workflow for unpublished articles](https://cornell.zoom.us/j/99936798622) |  (reserved for working on test articles)    | (reserved for working on test articles)                |                            |
-| 5:00 |  [What will you be doing in the Lab](https://cornell.zoom.us/j/99936798622)                |  [*Basics and advanced version control*](https://cornell.zoom.us/j/93317162895)                  |  (reserved for working on test articles)    | (reserved for working on test articles)                |                            |
-
-
-
-> Training will occur virtually, through a combination of required self-study and live Zoom meetings. 
->
-> - The live part of the training will take place **Aug 24, Aug 25, and Aug 28, 2020**.
-> - If your application to the LDI Replication Lab was accepted,  you will be receiving a calendar invite with the Zoom information soon. 
-> - All the remaining information here is open to anybody. 
 
 Content is [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/).
 
