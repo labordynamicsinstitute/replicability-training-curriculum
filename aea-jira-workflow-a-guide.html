@@ -27,7 +27,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2021-01-08" />
+<meta name="date" content="2021-01-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,9 +198,9 @@ function toggleCitation() {
 <p>For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki">Wiki</a>.</p>
 <div id="scope" class="section level2">
 <h2><span class="header-section-number">10.1</span> Scope</h2>
-<p>Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see <a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-supervisor-notes.md">other document</a> for details.</p>
+<p>Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see <a href="jira-supervisor-notes.md">other document</a> for details.</p>
 <ul>
-<li>This workflow <strong>DOES NOT</strong> cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See <a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Instructions-PandP-Checks.md">Instructions PandP Checks</a>.</li>
+<li>This workflow <strong>DOES NOT</strong> cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See <a href="Instructions-PandP-Checks.md">Instructions PandP Checks</a>.</li>
 </ul>
 </div>
 <div id="overview" class="section level2">
@@ -435,8 +435,8 @@ until a resolution can be found.</p>
 </ul></li>
 </ul>
 <div class="figure">
-<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="" />
-<p class="caption">jira image</p>
+<img src="images/jira-screen.png" alt="" />
+<p class="caption">jira screen</p>
 </div>
 <div id="in-progress" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> In Progress</h3>
@@ -516,8 +516,10 @@ Populate the Bitbucket repository:<ul>
 <li><strong>[EXPERT TIP]</strong> It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.</li>
 </ul></li>
 <li>Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the <code>aearep-123</code> repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.</li>
-<li>Unzip the openICPSR folder. On Windows, double-click. On OSX, [replace me]. From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code></li>
+<li>Unzip the openICPSR folder under a folder <strong>named by the openICPSR repostory number</strong>. On Windows and OSX, double-click. From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code>
+<ul>
 <li>The manuscript’s files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+</ul></li>
 <li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
@@ -535,7 +537,7 @@ readme.pdf
 REPLICATION.md</code></pre>
 <p>Now you will establish a <strong>list of Datasets used</strong> and fill out the <strong>Data Citation and Information</strong> report.</p>
 <ul>
-<li>From the <strong>README</strong> provided by the authors, the <strong>data section</strong> of the article itself, or an <strong>appendix</strong>, establish a list of datasets used in the article.</li>
+<li>From the <strong>README</strong> provided by the authors, the <strong>data section of the article itself</strong>, or an <strong>appendix</strong>, establish a list of datasets used in the article.</li>
 <li><input type="checkbox" disabled="" />
 Now you will fill out the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information</a></strong> report:<ul>
 <li>A <a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">link to the report</a> can be found in the tall grey bar on the left side of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.</li>
@@ -545,7 +547,9 @@ Fill out the <code>DATA CITATION REPORT</code> field on Jira with the date on wh
 </ul></li>
 <li>Use the list of datasets to guide you when filling this out.</li>
 <li><input type="checkbox" disabled="" />
-<strong>AT THE SAME TIME:</strong> write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the <strong>Data Citation and Information</strong> .</li>
+<strong>AT THE SAME TIME:</strong> write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the <strong>Data Citation and Information</strong> .<ul>
+<li>If data are cited, copy and past the citation to the replication report, clarify which one you are referring to.</li>
+</ul></li>
 <li><input type="checkbox" disabled="" />
 In particular, check each provided URL, and verify if there is a <strong>“Data Use Agreement”, “Citation requirement”, “License”</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</li>
 </ul></li>
@@ -555,6 +559,8 @@ Add the list of datasets to the repository by committing the preliminary version
 Fill out the <code>DataCitationSummary</code> field indicating how many data citations are in order: all, some, or none.</li>
 <li><input type="checkbox" disabled="" />
 Fill out the <code>Data Provenance</code> section - is the data in the openICPSR repository, or is it someplace else? “Various” is a legitimate answer if it is in various locations.</li>
+<li><input type="checkbox" disabled="" />
+Plrease refer to <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html">Chapter 9 A guided walk through the Replication Report</a> for more details about which datasets to be included and how toa ssess the provided information.</li>
 </ul>
 <p>Do a first pass through the code files provided:</p>
 <blockquote>
@@ -572,7 +578,10 @@ Fill out the “Code Description” section of the REPLICATION.md<ul>
 <li>Are all the REQUIREMENTS listed? How long does the author say the code will run?</li>
 <li>Are there files in the archive not explained in the README?</li>
 <li><strong>[EXPERT TIP]</strong> You should <strong>not</strong> run the code at this time, only read the program code! (You can do this on your laptop)</li>
-<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode. Alternatively, this can be pasted in under “Findings”.</li>
+<li>Copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Omitte “Replicated?” Column in doing so. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.
+<ul>
+<li>This table will be pasted in under “Findings” again, with “Replicated?” column.</li>
+</ul></li>
 </ul></li>
 </ul>
 <p>Next fill out the following fields in the Jira ticket:</p>
@@ -645,7 +654,7 @@ Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are t
 <h3><span class="header-section-number">10.3.4</span> Write Preliminary Report</h3>
 <p>At this stage, you need to fill out the REPLICATION.md up to the “Replication steps” part.</p>
 <ul>
-<li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar
+<li>There is sample language for commonly encountered problems at the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar
 <ul>
 <li>[EXPERT TIP] Right-click, and open the sample language in a new tab, for easy reference.</li>
 </ul></li>
@@ -690,7 +699,7 @@ git push</code></pre>
 </div>
 <div id="verification" class="section level3">
 <h3><span class="header-section-number">10.3.5</span> Verification</h3>
-<p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
+<p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
 <p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.</p>
 <p>Follow the steps <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a></p>
 <p>You should commit your report with intermediate results as you have them. Do <strong>not</strong> wait until you have all the results finished. Commit frequently!</p>
@@ -706,7 +715,8 @@ git push</code></pre>
 <li>packages that are installed late in the code, but not mentioned in a setup program or the README</li>
 <li>commands that your experience shows require packages to be installed, but are not mentioned.</li>
 </ul>
-<p>The <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
+<p>Note that in this stage, “Working location of data” and “Computing environment” section in the report are not relevant, so write N/A for these sections.</p>
+<p>The <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
 <blockquote>
 <p>Add! Commit! Push!</p>
 </blockquote>
@@ -716,9 +726,9 @@ git push</code></pre>
 <h3><span class="header-section-number">10.3.7</span> Writing Report</h3>
 <p>At this stage, you will write the final version of the report.</p>
 <ul>
-<li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
+<li>There is sample language for commonly encountered problems at the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
 <li>Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.</li>
-<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em>, including the column “Replicated?” and any notes column, into the “Findings” part. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</li>
+<li>Copy-and-paste the <em>code-check.xlsx</em>, including the column “Replicated?” and any notes column, into the “Findings” part. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</li>
 <li>Delete all of the instructional lines in REPLICATION.md before finishing the report.</li>
 <li>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</li>
 <li>Highlight differences:
@@ -738,7 +748,7 @@ git push</code></pre>
 <div id="replication-revisions" class="section level2">
 <h2><span class="header-section-number">10.4</span> Replication Revisions</h2>
 <ul>
-<li>See <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Revision-to-a-Replication">revision guidance</a> on the wiki.</li>
+<li>See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html">revision guidance</a> on the Chapter 11.</li>
 <li>When receiving updated files from authors, do NOT create “update” or “new” directories. The current state of the repository should always correspond to the author’s structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.</li>
 <li>When running a second replication on the same archive, please be sure to have the committed “REPLICATION.md” be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</li>
 </ul>
@@ -753,7 +763,7 @@ git push</code></pre>
 <li><strong>Conditional Acceptance</strong> - the Data Editor expects to see a response from the authors to the report.</li>
 <li><strong>Revise and resubmit</strong> - the Data Editor has detected a serious problem which needs to go back to the “Revise and resubmit” phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript’s conclusions based on the reproduction attempt. Rarely used.</li>
 </ul>
-<p>See <a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-report-review.md">Report review guidelines</a> and <a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Preapprovers.md">Preapprovers</a> for details.</p>
+<p>See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html">Report review guidelines</a> and <a href="Preapprovers.md">Preapprovers</a> for details.</p>
 </div>
 <div id="publication" class="section level2">
 <h2><span class="header-section-number">10.6</span> Publication</h2>
@@ -761,7 +771,7 @@ git push</code></pre>
 <ul>
 <li>The field <code>openICPSRDOI</code> is pre-filled, but should be checked by the AEA publication staff.</li>
 </ul>
-<p>See <a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-prepare-publication.md">Preparing for publication</a> for details.</p>
+<p>See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html">Preparing for publication</a> for details.</p>
 
 </div>
 </div>

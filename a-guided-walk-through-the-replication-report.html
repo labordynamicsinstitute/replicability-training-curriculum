@@ -27,7 +27,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2021-01-08" />
+<meta name="date" content="2021-01-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -258,19 +258,27 @@ function toggleCitation() {
 </div>
 <div id="data-description" class="section level3">
 <h3><span class="header-section-number">9.2.2</span> Data description</h3>
-<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.
-<!-- An essential part in writing the data descrption section is identifying the data used in the manuscript. Whie the dataset used for the main analysis is often explained in the README or in the manuscript, but the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.--></p>
+<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.</p>
+<p>An essential part in writing the data descrption section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.</p>
 <p>Once the preparations above are completed, a summary should be written in the “Data Description” section.</p>
 <div id="what-data-need-to-be-described" class="section level4">
 <h4><span class="header-section-number">9.2.2.1</span> What data need to be described?</h4>
-<p>All “Source data” and “Analysis data files” should be listed.
-- Data needs to be listed include:
-- Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data
-- Data used to create maps.
-- The data source of the geographical information is a source data if the map is created by the authors.
-- Data need not be listed include:
-- Source data for the numbers or estimates directly quoted from other aritcles
-- Souce data for the parameters used for calibrations, unless they are estimated within the article.</p>
+<p>All “<code>input</code> (original) data sources” and “Analysis data files” should be listed.</p>
+<ul>
+<li>Data needs to be listed include:
+<ul>
+<li>Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data</li>
+<li>Data used to create maps.
+<ul>
+<li>The data source of the geographical information is a source data if the map is created by the authors.</li>
+</ul></li>
+</ul></li>
+<li>Data need not be listed include:
+<ul>
+<li>Source data for the numbers or estimates directly quoted from other aritcles</li>
+<li>Souce data for the parameters used for calibrations, unless they are estimated within the article.</li>
+</ul></li>
+</ul>
 </div>
 <div id="source-data" class="section level4">
 <h4><span class="header-section-number">9.2.2.2</span> Source data</h4>
@@ -280,6 +288,7 @@ function toggleCitation() {
 <li>presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK.
 <ul>
 <li>The information of the source location of the data should instruct the replicator how to access the source data.</li>
+<li>A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.</li>
 </ul></li>
 <li>whether the <em>data</em> is cited (see the section on <a href="datacitations.html#datacitations">data citations</a>. Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing.</li>
 </ul>
@@ -287,7 +296,6 @@ function toggleCitation() {
 <img src="images/report-data-description.png" alt="" />
 <p class="caption">Data Description Section</p>
 </div>
-<!-- Either raw data or a description about how to access the raw data needs to be provided, paired with data preparation program to transform the source data to analysis data.  -->
 </div>
 <div id="analysis-data-files" class="section level4">
 <h4><span class="header-section-number">9.2.2.3</span> Analysis data files</h4>
@@ -330,15 +338,27 @@ Many of the recommended elements are not applicable to all data deposits - for i
 <h3><span class="header-section-number">9.2.4</span> Data checks</h3>
 <p>When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.</p>
 <ul>
-<li>can data be read (using software indicated by author)? This is a plausibility check for corrupted data.</li>
-<li>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is “archive-ready” if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers.</li>
-<li>Do the data files have variable labels and meaningful variable names? In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (<code>Q25S3</code>) to meaningful labels.</li>
+<li>can data be read (using software indicated by author)?
+<ul>
+<li>This is a plausibility check for corrupted data.</li>
+</ul></li>
+<li>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)?
+<ul>
+<li>Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is “archive-ready” if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers.</li>
+</ul></li>
+<li>Do the data files have variable labels and meaningful variable names?
+<ul>
+<li>In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (<code>Q25S3</code>) to meaningful labels.</li>
+</ul></li>
 </ul>
 <blockquote>
 <p>Note that we do <em>not</em> require that variable <em>values</em> are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <em>if</em> we think it is reasonable to do so - a judgement call by the Data Editor.</p>
 </blockquote>
 <ul>
-<li>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.</li>
+<li>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+<ul>
+<li>This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.</li>
+</ul></li>
 </ul>
 <div class="figure">
 <img src="images/report-data-checks.png" alt="" />

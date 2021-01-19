@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-01-08"
+date: "2021-01-19"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -488,13 +488,14 @@ In a very generic, all empirical analysis goes through the following steps:
 
 ## Details on data workflows {#dataflowdiagram}
 
-In a reproducible workflow, *instructions* to perform all of the above are provided. Most of the time, those instructions will be *computer code*, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments, but more often, acquiring data entails manual actions. For instance, secondary data access might be described in [Data Availability Statements](#dasmaster), whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.^[Note that when the authors generate or collect primary data, subsequent users of the same data are secondary data users, but replication might also involve re-executing the experiment, or collecting data anew with the same survey instruments.] Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures, but sometimes, authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly. 
+In a reproducible workflow, *instructions* to perform all of the above are provided. Most of the time, those instructions will be *computer code*, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments. But more often, acquiring data entails manual actions. For instance, secondary data access might be described in [Data Availability Statements](#dasmaster), whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.^[Note that when the authors generate or collect primary data, subsequent users of the same data are secondary data users, but replication might also involve re-executing the experiment, or collecting data anew with the same survey instruments.] Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures. But sometimes authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly. 
 
 The following diagram illustrates the generic flow:
 
 
 <img src="images/mermaid-data-flow.png" width="778" />
-<!-- The figure above does not appear -->
+
+![Data flow](images/mermaid-data-flow.png)
 
 Real articles are often more complex. A simple example will be discussed next.
 
@@ -636,12 +637,14 @@ The SUMMARY is intended for a quick glance by journal editor and authors. It sho
 ###  Data description
 
 The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](https://bitss.github.io/ACRE/assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the "Data Citation and Information report", to obtain a machine-readable list of data sources and their attributes. 
-<!-- An essential part in writing the data descrption section is identifying the data used in the manuscript. Whie the dataset used for the main analysis is often explained in the README or in the manuscript, but the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.-->
+
+An essential part in writing the data descrption section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.
 
 Once the preparations above are completed, a summary should be written in the "Data Description" section. 
 
 #### What data need to be described?
-All "Source data" and "Analysis data files" should be listed. 
+All "`input` (original) data sources" and "Analysis data files" should be listed. 
+   
 - Data needs to be listed include:
    - Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data
    - Data used to create maps.
@@ -657,11 +660,10 @@ For each data source, list
 - presence or absence of source data (data files), 
 - presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. 
    - The information of the source location of the data should instruct the replicator how to access the source data.
+   - A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.
 - whether the *data* is cited (see the section on [data citations](#datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
 
 ![Data Description Section](images/report-data-description.png)
-
-<!-- Either raw data or a description about how to access the raw data needs to be provided, paired with data preparation program to transform the source data to analysis data.  -->
 
 #### Analysis data files
 
@@ -692,13 +694,17 @@ Many of the recommended elements are not applicable to all data deposits - for i
 
 When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.
 
-- can data be read (using software indicated by author)? This is a plausibility check for corrupted data.
-- Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is "archive-ready" if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers. 
-- Do the data files have variable labels and meaningful variable names? In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (`Q25S3`) to meaningful labels. 
+- can data be read (using software indicated by author)? 
+   - This is a plausibility check for corrupted data.
+- Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? 
+   - Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is "archive-ready" if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers. 
+- Do the data files have variable labels and meaningful variable names? 
+   - In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (`Q25S3`) to meaningful labels. 
 
 > Note that we do *not* require that variable *values* are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, *if* we think it is reasonable to do so  - a judgement call by the Data Editor.
 
-- Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found [here](https://github.com/J-PAL/stata_PII_scan).] This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.
+- Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found [here](https://github.com/J-PAL/stata_PII_scan).] 
+   - This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.
 
 ![Data check report](images/report-data-checks.png)
 
@@ -831,9 +837,9 @@ For pre-publication verification, we use a Jira-based workflow similar to the po
 
 ## Scope
 
-Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-supervisor-notes.md) for details.
+Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](jira-supervisor-notes.md) for details.
 
-- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Instructions-PandP-Checks.md).
+- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](Instructions-PandP-Checks.md).
 
 ## Overview
 
@@ -900,7 +906,7 @@ Additional details for each of the key stages are provided here. Below is a scre
 - The tall grey bar on the left side contains several handy links that you will use throughout the process.
     - Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.
 
-![jira image](https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png)
+![jira screen](images/jira-screen.png)
 
 ### In Progress
 
@@ -962,8 +968,8 @@ This is because the git setup we use does not allow you to include the data file
   - If not already done, use `git clone` to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like `aearep-123`.
     - **[EXPERT TIP]** It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.
   - Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the `aearep-123` repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.
-  - Unzip the openICPSR folder. On Windows, double-click. On OSX, [replace me]. From bash: `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
-  - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
+  - Unzip the openICPSR folder under a folder **named by the openICPSR repostory number**. On Windows and OSX, double-click. From bash: `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
+    - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
   - Perform a `git add`, `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
 - [ ] Also add the manuscript, and any response by the authors (if a revision)
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message.
@@ -981,17 +987,19 @@ REPLICATION.md
 
 Now you will establish a **list of Datasets used** and fill out the **Data Citation and Information** report.
 
-- From the **README** provided by the authors, the **data section** of the article itself, or an **appendix**, establish a list of datasets used in the article.
+- From the **README** provided by the authors, the **data section of the article itself**, or an **appendix**, establish a list of datasets used in the article.
 - [ ] Now you will fill out the **[Data Citation and Information](https://goo.gl/forms/3IaMu6PCG7P7WhK43)** report:
   - A [link to the report](https://goo.gl/forms/3IaMu6PCG7P7WhK43) can be found in the tall grey bar on the left side of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.
   - [ ] Fill out the `DATA CITATION REPORT` field on Jira with the date on which you complete this report.
     - If there are more than 10 datasets that you can see, get approval from your Team Lead to fill out [this spreadsheet](https://drive.google.com/file/d/1-4Ah3AvNVmFJCs6IfjTKUrMOvZ9BHiO6/view?usp=sharing) instead (see the [printed form](https://drive.google.com/file/d/1VzS7akscWckx_TKAUy0bhufE5oVgwn1B/view?usp=sharing) for allowed categories). You should fill out the FIRST dataset on the **[Data Citation and Information form](https://goo.gl/forms/3IaMu6PCG7P7WhK43)**. At the end of the form is an upload option, where you should upload the form. The spreadsheet should then *also* be added to the repo (add, commit, push), and a note added to the JIRA comments. 
   - Use the list of datasets to guide you when filling this out.
-  - [ ] **AT THE SAME TIME:** write the corresponding `Data description` section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the **Data Citation and Information** . 
+  - [ ] **AT THE SAME TIME:** write the corresponding `Data description` section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the **Data Citation and Information** .
+    - If data are cited, copy and past the citation to the replication report, clarify which one you are referring to. 
   - [ ] In particular, check each provided URL, and verify if there is a **"Data Use Agreement", "Citation requirement", "License"** on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor. 
 - [ ] Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (`git add`, `git commit`, `git push`)
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: all, some, or none. 
 - [ ] Fill out the `Data Provenance` section - is the data in the openICPSR repository, or is it someplace else? "Various" is a legitimate answer if it is in various locations.
+- [ ] Plrease refer to [Chapter 9 A guided walk through the Replication Report](https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how toa ssess the provided information.
 
 Do a first pass through the code files provided:
 
@@ -1004,8 +1012,9 @@ Do a first pass through the code files provided:
   - Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README? 
   - Are all the REQUIREMENTS listed? How long does the author say the code will run?
   - Are there files in the archive not explained in the README?
-  - **[EXPERT TIP]** You should **not**   run the code at this time, only read the program code! (You can do this on your laptop)
-  - It may be useful to copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. Alternatively, this can be pasted in under "Findings".
+  - **[EXPERT TIP]** You should **not** run the code at this time, only read the program code! (You can do this on your laptop)
+  - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omitte "Replicated?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
+    - This table will be pasted in under "Findings" again, with "Replicated?" column.
 
 Next fill out the following fields in the Jira ticket:
 
@@ -1053,7 +1062,7 @@ You can now proceed to change the status to `Write Preliminary Report`. You will
 
 At this stage, you need to fill out the REPLICATION.md up to the "Replication steps" part. 
 
-- There is sample language for commonly encountered problems at the [Fragments for REPLICATION.md](https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md) link in the tall grey bar
+- There is sample language for commonly encountered problems at the [Fragments for REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
   - [EXPERT TIP] Right-click, and open the sample language in a new tab, for easy reference.
 
 ![Link to Fragments](images/jira-left-fragments.png)
@@ -1076,7 +1085,6 @@ git commit -m "Preliminary report"
 git push
 ```
 
-
 > !! If you identify any of the elements above that prevent you from completing the issue on time, you should notify your supervisor. DO NOT ADVANCE THE TICKET!!
 
 - Otherwise, advance the ticket to one of three options: `Verification`, `Code Review`, or `Incomplete`
@@ -1088,7 +1096,7 @@ git push
 
 ### Verification
 
-In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The [REPLICATION.md](https://github.com/labordynamicsinstitute/replicability-training/raw/master/REPLICATION.md) is the report.
+In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The [REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md) is the report.
 
 
 Keep a log of what you do, what you find, and what does not work, in the `REPLICATION.md`, under *Findings*.
@@ -1108,7 +1116,9 @@ In this stage, you are verifying the code by inspecting the completeness of the 
 - packages that are installed late in the code, but not mentioned in a setup program or the README
 - commands that your experience shows require packages to be installed, but are not mentioned.
 
-The [REPLICATION.md](https://github.com/labordynamicsinstitute/replicability-training/raw/master/REPLICATION.md) is the report.
+Note that in this stage, "Working location of data" and "Computing environment" section in the report are not relevant, so write N/A for these sections.
+
+The [REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md) is the report.
 
 
 > Add! Commit! Push!
@@ -1120,9 +1130,9 @@ You can now proceed to change the status to `Writing Report`.
 
 At this stage, you will write the final version of the report.
 
-- There is sample language for commonly encountered problems at the [Fragments for REPLICATION.md](https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md) link in the tall grey bar
+- There is sample language for commonly encountered problems at the [Fragments for REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
 - Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.
-- It may be useful to copy-and-paste the *code-check.xlsx*, including the column "Replicated?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
+- Copy-and-paste the *code-check.xlsx*, including the column "Replicated?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
 - Delete all of the instructional lines in REPLICATION.md  before finishing the report.
 - When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report
 - Highlight differences:
@@ -1138,7 +1148,7 @@ You can now submit your report for review by changing the status to `Under Revie
 
 ## Replication Revisions
 
-- See [revision guidance](https://github.com/labordynamicsinstitute/replicability-training/wiki/Revision-to-a-Replication) on the wiki.
+- See [revision guidance](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html) on the Chapter 11.
 - When receiving updated files from authors, do NOT create "update" or "new" directories. The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
 - When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
 
@@ -1152,7 +1162,7 @@ You can now submit your report for review by changing the status to `Under Revie
 - **Conditional Acceptance** - the Data Editor expects to see a response from the authors to the report.
 - **Revise and resubmit** - the Data Editor has detected a serious problem which needs to go back to the "Revise and resubmit" phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript's conclusions based on the reproduction attempt. Rarely used.
 
-See [Report review guidelines](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-report-review.md) and [Preapprovers](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Preapprovers.md) for details.
+See [Report review guidelines](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html) and [Preapprovers](Preapprovers.md) for details.
 
 ## Publication
 
@@ -1160,7 +1170,7 @@ Once all review rounds have been completed, the last revision will lead to a rec
 
 - The field `openICPSRDOI` is pre-filled, but should be checked by the AEA publication staff.
 
-See [Preparing for publication](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/jira-prepare-publication.md) for details.
+See [Preparing for publication](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html) for details.
 
 <!--chapter:end:11-jira-workflow-training.Rmd-->
 
