@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-01-19"
+date: "2021-01-21"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -837,9 +837,9 @@ For pre-publication verification, we use a Jira-based workflow similar to the po
 
 ## Scope
 
-Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](jira-supervisor-notes.md) for details.
+Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md) for details.
 
-- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](Instructions-PandP-Checks.md).
+- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Instructions-PandP-Checks.md).
 
 ## Overview
 
@@ -1162,7 +1162,7 @@ You can now submit your report for review by changing the status to `Under Revie
 - **Conditional Acceptance** - the Data Editor expects to see a response from the authors to the report.
 - **Revise and resubmit** - the Data Editor has detected a serious problem which needs to go back to the "Revise and resubmit" phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript's conclusions based on the reproduction attempt. Rarely used.
 
-See [Report review guidelines](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html) and [Preapprovers](Preapprovers.md) for details.
+See [Report review guidelines](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html) and [Preapprovers](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Preapprovers.md) for details.
 
 ## Publication
 
