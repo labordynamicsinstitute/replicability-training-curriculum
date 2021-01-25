@@ -69,4 +69,4 @@ results <- sapply(as.list(unload.libraries), pkgTest, try=TRUE)
 
 # copy fixed assets over
 
-file.copy(image.dir,output.dir,recursive=TRUE)
+file.copy(images.dir,output.dir,recursive=TRUE)
