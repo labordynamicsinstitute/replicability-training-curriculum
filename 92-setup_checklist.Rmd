@@ -21,6 +21,7 @@
 - [ ] Git command line tool ([download the software](https://git-scm.com/downloads), then follow the guide on [Installing Git on your computer](https://github.com/labordynamicsinstitute/ldi-lab-standards/wiki/Setting-up-Git)
 - [ ] Visual Studio Code ([download location](https://code.visualstudio.com/)), a powerful text editor
 - [ ] Sourcetree (Git graphical interface optimized for Bitbucket) [download location](https://www.sourcetreeapp.com/) (OPTIONAL)
+    - Note that you may run into an error message on mac: "Sourcetree can’t be opened because Apple cannot check it for malicious software.". This is because Sourcetree is not a verified program on Mac. However, you could install the program by force using System Preferences, or running terminal commands.
 
 Other software is optional. You will use statistical software on other computers [that we will get you access to](#Access_to_computers).
 
