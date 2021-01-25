@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 A guided workflow | TRAINING For Reproducibility Verification</title>
+  <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 A guided workflow | TRAINING For Reproducibility Verification" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 A guided workflow | TRAINING For Reproducibility Verification" />
+  
+  <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  
+
+<meta name="author" content="Lars Vilhuber" />
+<meta name="author" content="Meredith Welch" />
+<meta name="author" content="David Wasser" />
+
+
+<meta name="date" content="2020-08-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="a-guided-walk-through-the-replication-report.html"/>
+<link rel="next" href="privacy.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+    <script src="js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Training for Reproducibility Verification</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tentative-agenda"><i class="fa fa-check"></i><b>1.1</b> Tentative Agenda</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-to-read-this-document"><i class="fa fa-check"></i><b>1.2</b> How to read this document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pre-requisites.html"><a href="pre-requisites.html"><i class="fa fa-check"></i><b>2</b> Pre-requisites</a></li>
+<li class="chapter" data-level="3" data-path="pre-training.html"><a href="pre-training.html"><i class="fa fa-check"></i><b>3</b> Pre-training tasks</a></li>
+<li class="chapter" data-level="4" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>4</b> Background</a><ul>
+<li class="chapter" data-level="4.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>4.1</b> Activities of the LDI Replication Lab</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="background.html"><a href="background.html#pre-publication-evaluation-of-reproducibility-and-quality-of-supplemental-materials"><i class="fa fa-check"></i><b>4.1.1</b> Pre-Publication Evaluation of Reproducibility and Quality of Supplemental Materials</a></li>
+<li class="chapter" data-level="4.1.2" data-path="background.html"><a href="background.html#post-publication-evaluation-of-reproducibility"><i class="fa fa-check"></i><b>4.1.2</b> Post-Publication Evaluation of Reproducibility</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="background.html"><a href="background.html#learning-goals"><i class="fa fa-check"></i><b>4.2</b> Learning goals</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-concepts.html"><a href="basic-concepts.html"><i class="fa fa-check"></i><b>5</b> Basic Concepts</a></li>
+<li class="chapter" data-level="6" data-path="datacitations.html"><a href="datacitations.html"><i class="fa fa-check"></i><b>6</b> Data citations and data availability statements</a><ul>
+<li class="chapter" data-level="6.1" data-path="datacitations.html"><a href="datacitations.html#a-very-short-history-of-data-citations"><i class="fa fa-check"></i><b>6.1</b> A very short history of data citations</a></li>
+<li class="chapter" data-level="6.2" data-path="datacitations.html"><a href="datacitations.html#how-do-you-create-a-data-citation"><i class="fa fa-check"></i><b>6.2</b> How do you create a data citation</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="datacitations.html"><a href="datacitations.html#an-imperfect-real-example"><i class="fa fa-check"></i><b>6.2.1</b> An imperfect real example</a></li>
+<li class="chapter" data-level="6.2.2" data-path="datacitations.html"><a href="datacitations.html#an-ideal-data-citation"><i class="fa fa-check"></i><b>6.2.2</b> An ideal (?) data citation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="datacitations.html"><a href="datacitations.html#data-citation-template"><i class="fa fa-check"></i><b>6.2.3</b> Data citation template</a></li>
+<li class="chapter" data-level="6.2.4" data-path="datacitations.html"><a href="datacitations.html#a-not-quite-serious-example"><i class="fa fa-check"></i><b>6.2.4</b> A not quite serious example</a></li>
+<li class="chapter" data-level="6.2.5" data-path="datacitations.html"><a href="datacitations.html#data-distributed-as-supplementary-data"><i class="fa fa-check"></i><b>6.2.5</b> Data distributed as supplementary data</a></li>
+<li class="chapter" data-level="6.2.6" data-path="datacitations.html"><a href="datacitations.html#producer"><i class="fa fa-check"></i><b>6.2.6</b> Producer</a></li>
+<li class="chapter" data-level="6.2.7" data-path="datacitations.html"><a href="datacitations.html#distributor"><i class="fa fa-check"></i><b>6.2.7</b> Distributor</a></li>
+<li class="chapter" data-level="6.2.8" data-path="datacitations.html"><a href="datacitations.html#dates"><i class="fa fa-check"></i><b>6.2.8</b> Dates</a></li>
+<li class="chapter" data-level="6.2.9" data-path="datacitations.html"><a href="datacitations.html#offline-access-mechanism"><i class="fa fa-check"></i><b>6.2.9</b> Offline access mechanism</a></li>
+<li class="chapter" data-level="6.2.10" data-path="datacitations.html"><a href="datacitations.html#confidential-databases"><i class="fa fa-check"></i><b>6.2.10</b> Confidential databases</a></li>
+<li class="chapter" data-level="6.2.11" data-path="datacitations.html"><a href="datacitations.html#no-formal-access-mechanism"><i class="fa fa-check"></i><b>6.2.11</b> No formal access mechanism</a></li>
+<li class="chapter" data-level="6.2.12" data-path="datacitations.html"><a href="datacitations.html#unknown-or-confidential-author"><i class="fa fa-check"></i><b>6.2.12</b> Unknown or confidential author</a></li>
+<li class="chapter" data-level="6.2.13" data-path="datacitations.html"><a href="datacitations.html#where-to-cite"><i class="fa fa-check"></i><b>6.2.13</b> Where to cite</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="datacitations.html"><a href="datacitations.html#dasmaster"><i class="fa fa-check"></i><b>6.3</b> Data availability statements</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="datacitations.html"><a href="datacitations.html#some-examples-of-das"><i class="fa fa-check"></i><b>6.3.1</b> Some examples of DAS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html"><i class="fa fa-check"></i><b>7</b> Generic data workflow</a><ul>
+<li class="chapter" data-level="7.1" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#dataflowdiagram"><i class="fa fa-check"></i><b>7.1</b> Details on data workflows</a></li>
+<li class="chapter" data-level="7.2" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#a-simple-example"><i class="fa fa-check"></i><b>7.2</b> A simple example</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>8</b> Assessing computational reproducibility</a></li>
+<li class="chapter" data-level="9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>9</b> A guided walk through the Replication Report</a><ul>
+<li class="chapter" data-level="9.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>9.1</b> Some high-level concepts</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#on-data-documentation"><i class="fa fa-check"></i><b>9.1.1</b> On data documentation</a></li>
+<li class="chapter" data-level="9.1.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#on-code-documentation"><i class="fa fa-check"></i><b>9.1.2</b> On code documentation</a></li>
+<li class="chapter" data-level="9.1.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#to-come"><i class="fa fa-check"></i><b>9.1.3</b> To come</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>9.2</b> What’s in a replication report</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#summary"><i class="fa fa-check"></i><b>9.2.1</b> Summary</a></li>
+<li class="chapter" data-level="9.2.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#data-description"><i class="fa fa-check"></i><b>9.2.2</b> Data description</a></li>
+<li class="chapter" data-level="9.2.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#metadata-checks-on-deposit"><i class="fa fa-check"></i><b>9.2.3</b> Metadata checks on deposit</a></li>
+<li class="chapter" data-level="9.2.4" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#data-checks"><i class="fa fa-check"></i><b>9.2.4</b> Data checks</a></li>
+<li class="chapter" data-level="9.2.5" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#code-description"><i class="fa fa-check"></i><b>9.2.5</b> Code description</a></li>
+<li class="chapter" data-level="9.2.6" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#stated-requirements"><i class="fa fa-check"></i><b>9.2.6</b> Stated Requirements</a></li>
+<li class="chapter" data-level="9.2.7" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#actual-requirements-if-different"><i class="fa fa-check"></i><b>9.2.7</b> Actual Requirements, if different</a></li>
+<li class="chapter" data-level="9.2.8" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#computing-environment-of-the-replicator"><i class="fa fa-check"></i><b>9.2.8</b> Computing Environment of the Replicator</a></li>
+<li class="chapter" data-level="9.2.9" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#replication-steps"><i class="fa fa-check"></i><b>9.2.9</b> Replication steps</a></li>
+<li class="chapter" data-level="9.2.10" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#findings"><i class="fa fa-check"></i><b>9.2.10</b> Findings</a></li>
+<li class="chapter" data-level="9.2.11" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#classification"><i class="fa fa-check"></i><b>9.2.11</b> Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>9.3</b> Some additional materials</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html"><i class="fa fa-check"></i><b>10</b> A guided workflow</a><ul>
+<li class="chapter" data-level="10.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#scope"><i class="fa fa-check"></i><b>10.1</b> Scope</a></li>
+<li class="chapter" data-level="10.2" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#overview"><i class="fa fa-check"></i><b>10.2</b> Overview</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#notes"><i class="fa fa-check"></i><b>10.2.1</b> Notes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#details"><i class="fa fa-check"></i><b>10.3</b> Details</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#in-progress"><i class="fa fa-check"></i><b>10.3.1</b> In Progress</a></li>
+<li class="chapter" data-level="10.3.2" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#code"><i class="fa fa-check"></i><b>10.3.2</b> Code</a></li>
+<li class="chapter" data-level="10.3.3" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#data"><i class="fa fa-check"></i><b>10.3.3</b> Data</a></li>
+<li class="chapter" data-level="10.3.4" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#write-preliminary-report"><i class="fa fa-check"></i><b>10.3.4</b> Write Preliminary Report</a></li>
+<li class="chapter" data-level="10.3.5" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#verification"><i class="fa fa-check"></i><b>10.3.5</b> Verification</a></li>
+<li class="chapter" data-level="10.3.6" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#code-review"><i class="fa fa-check"></i><b>10.3.6</b> Code Review</a></li>
+<li class="chapter" data-level="10.3.7" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#writing-report"><i class="fa fa-check"></i><b>10.3.7</b> Writing Report</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#replication-revisions"><i class="fa fa-check"></i><b>10.4</b> Replication Revisions</a></li>
+<li class="chapter" data-level="10.5" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#reviewing-reports"><i class="fa fa-check"></i><b>10.5</b> Reviewing Reports</a></li>
+<li class="chapter" data-level="10.6" data-path="a-guided-workflow.html"><a href="a-guided-workflow.html#publication"><i class="fa fa-check"></i><b>10.6</b> Publication</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
+<li class="chapter" data-level="A.1" data-path="privacy.html"><a href="privacy.html#privacy-of-replicators"><i class="fa fa-check"></i><b>A.1</b> Privacy of Replicators</a></li>
+<li class="chapter" data-level="A.2" data-path="privacy.html"><a href="privacy.html#the-privacy-of-authors"><i class="fa fa-check"></i><b>A.2</b> The Privacy of Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>B</b> Setup Checklist</a><ul>
+<li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
+<li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
+<li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
+<li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
+<li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TRAINING For Reproducibility Verification</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="a-guided-workflow" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> A guided workflow</h1>
+<p>For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki">Wiki</a>.</p>
+<div id="scope" class="section level2">
+<h2><span class="header-section-number">10.1</span> Scope</h2>
+<p>Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md">other document</a> for details.</p>
+<ul>
+<li>This workflow <strong>DOES NOT</strong> cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/Instructions-PandP-Checks.md">Instructions PandP Checks</a>.</li>
+</ul>
+</div>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">10.2</span> Overview</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">config</a></code></pre></div>
+<pre><code>## $url
+## $url$acre
+## [1] &quot;https://bitss.github.io/ACRE/&quot;
+## 
+## $url$replraw
+## [1] &quot;https://github.com/labordynamicsinstitute/replicability-training/raw/master/&quot;
+## 
+## $url$replmd
+## [1] &quot;https://github.com/labordynamicsinstitute/replicability-training/blob/master/&quot;
+## 
+## $url$templmd
+## [1] &quot;https://github.com/AEADataEditor/replication-template/blob/master/&quot;
+## 
+## 
+## attr(,&quot;config&quot;)
+## [1] &quot;default&quot;
+## attr(,&quot;file&quot;)
+## [1] &quot;/mnt/local/slow_home/vilhuber/Workspace-non-encrypted/git/LDI/replicability-training-curriculum/config.yml&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">config<span class="op">$</span>url<span class="op">$</span>replraw</a></code></pre></div>
+<pre><code>## [1] &quot;https://github.com/labordynamicsinstitute/replicability-training/raw/master/&quot;</code></pre>
+<div class="figure">
+<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="jira image" />
+<p class="caption">jira image</p>
+</div>
+<p>The following table illustrates the flow and transitions. The <code>transition</code> field identifies the button that will appear in the interface
+that needs to be clicked in order to progress an issue from the <code>From</code> state to the <code>To</code> state. The <code>Condition</code> field identifies
+which form field needs to be filled out in order to be able to make the transition. <code>Blocked</code> is always an option, and leads to a “waiting state”
+until a resolution can be found.</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="34%" />
+<col width="25%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">From</th>
+<th align="left">Transition</th>
+<th align="left">→ To</th>
+<th align="left">Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Assigned</td>
+<td align="left">Start task</td>
+<td align="left">→ In Progress</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">In Progress</td>
+<td align="left">Download code</td>
+<td align="left">→ Code</td>
+<td align="left"><code>Code provenance</code> have been filled out, <code>Journal</code> has been identified, <code>Empirical Article</code>=<code>Yes</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Code</td>
+<td align="left">Access data</td>
+<td align="left">→ Data | `Git</td>
+<td align="left"><code>Git working location</code>, <code>Data provenance</code> has been filled out.</td>
+</tr>
+<tr class="even">
+<td align="left">Data</td>
+<td align="left">Prepare preliminary report</td>
+<td align="left">→ Write Preliminary Report</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Write Preliminary Report</td>
+<td align="left">Data is accessible</td>
+<td align="left">→ Verification |</td>
+<td align="left"><code>Location of data</code> has been filled out.</td>
+</tr>
+<tr class="even">
+<td align="left">.</td>
+<td align="left">Data not available</td>
+<td align="left">→ Code review | `Rea</td>
+<td align="left"><code>Reason for non-accessibility of data</code> has been filled out.</td>
+</tr>
+<tr class="odd">
+<td align="left">Verification, Code review</td>
+<td align="left">Prepare report</td>
+<td align="left">→ Report</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Report</td>
+<td align="left">Submit for review</td>
+<td align="left">→ Report Under Review | `Rep</td>
+<td align="left"><code>Report URL</code> has been filled out.</td>
+</tr>
+<tr class="odd">
+<td align="left">Multiple</td>
+<td align="left">Need information</td>
+<td align="left">→ Incomplete</td>
+<td align="left">when information is missing</td>
+</tr>
+<tr class="even">
+<td align="left">Incomplete</td>
+<td align="left">Restart</td>
+<td align="left">→ Code review</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">.</td>
+<td align="left">Restart verification</td>
+<td align="left">→ Verification</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">.</td>
+<td align="left">Restart task</td>
+<td align="left">→ In Progress</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>The following are only relevant for “Approvers” or “Pre-Approvers” (if you have not been told you are a “(Pre-)Approver”, you are not.)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">From</th>
+<th align="left">Transition</th>
+<th align="left">→ To</th>
+<th align="left">Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Open</td>
+<td align="left">Assign</td>
+<td align="left">→ Assigned</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">In Progress</td>
+<td align="left">Alternate Workflow</td>
+<td align="left">→ Alternate Workflow</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Under Review</td>
+<td align="left">Approve</td>
+<td align="left">→ Approved</td>
+<td align="left">Can only be done by <strong>approvers</strong>.</td>
+</tr>
+<tr class="even">
+<td align="left">Pre-approved</td>
+<td align="left">Approve</td>
+<td align="left">→ Approved</td>
+<td align="left">Can only be done by <strong>approvers</strong>.</td>
+</tr>
+<tr class="odd">
+<td align="left">Under Review</td>
+<td align="left">Pre-Approve</td>
+<td align="left">→ Pre-Approved</td>
+<td align="left">Can only be done by <strong>pre-approvers</strong>.</td>
+</tr>
+<tr class="even">
+<td align="left">.</td>
+<td align="left">Incomplete</td>
+<td align="left">→ Incomplete</td>
+<td align="left">n.a.</td>
+</tr>
+<tr class="odd">
+<td align="left">Approved</td>
+<td align="left">Done</td>
+<td align="left">→ Done | n.a</td>
+<td align="left">n.a.</td>
+</tr>
+<tr class="even">
+<td align="left">Blocked</td>
+<td align="left">Reopen</td>
+<td align="left">→ Open</td>
+<td align="left">n.a.</td>
+</tr>
+</tbody>
+</table>
+<p>The following are only relevant for “Publishers” (if you have not been told you are a “Publisher”, you are not.)</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="34%" />
+<col width="25%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">From</th>
+<th align="left">Transition</th>
+<th align="left">→ To</th>
+<th align="left">Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Approved</td>
+<td align="left">Submit to MC</td>
+<td align="left">→ Submitted to MC</td>
+<td align="left"><code>MCRecommendationV2</code> is filled out</td>
+</tr>
+<tr class="even">
+<td align="left">Submitted to MC</td>
+<td align="left">Wait for response on ICPSR</td>
+<td align="left">→ Pending openICPSR changes</td>
+<td align="left"><code>MCRecommendationV2</code> is <code>Accepted with changes</code> and notes to be added on openICPSR</td>
+</tr>
+<tr class="odd">
+<td align="left">Submitted to MC</td>
+<td align="left">Prepare for publication</td>
+<td align="left">→ Pending Publication</td>
+<td align="left"><code>openICPSRVersion</code> is filled out, issue is NOT an <code>R&amp;R</code></td>
+</tr>
+<tr class="even">
+<td align="left">Pending openICPSR changes</td>
+<td align="left">Prepare for publication</td>
+<td align="left">–&gt; Pending Publication</td>
+<td align="left"><code>openICPSRVersion</code> is filled out, Changes have been satisfied on openICPSR</td>
+</tr>
+<tr class="odd">
+<td align="left">Pending Publication</td>
+<td align="left">Publish</td>
+<td align="left">→ Published</td>
+<td align="left"><code>openICPSRDOI</code> is set</td>
+</tr>
+</tbody>
+</table>
+<div id="notes" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> Notes</h3>
+<ul>
+<li>In the <strong>Issue form</strong>, please also fill out other fields, as noted.</li>
+<li>At any point, you can move the issue to <code>Incomplete</code>: more information/action is required before you can proceed. You should also notify us of the situation ASAP</li>
+<li>When committing, <strong>always</strong> use <a href="https://confluence.atlassian.com/bitbucket/use-smart-commits-298979931.html">Smart Commits</a>, e.g.
+&gt; JRA-34 #comment corrected indent issue</li>
+<li>Use JIRA to communicate with your supervisor as issues arise, including code that takes a long time to run.</li>
+</ul>
+</div>
+</div>
+<div id="details" class="section level2">
+<h2><span class="header-section-number">10.3</span> Details</h2>
+<p>Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note:
+- The blue <code>In Progress</code> box in the upper right is how you “advance” the Jira ticket. When you are first assigned a replication, this box will say <code>Open</code>.
+- The tall grey bar on the left side contains several handy links that you will use throughout the process.
+- Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.</p>
+<div class="figure">
+<img src="https://github.com/labordynamicsinstitute/replicability-training/raw/master/images/AEADataEditorWorkflow-20191217.png" alt="jira image" />
+<p class="caption">jira image</p>
+</div>
+<div id="in-progress" class="section level3">
+<h3><span class="header-section-number">10.3.1</span> In Progress</h3>
+<p>The first thing you must do is advance the ticket from <code>Open</code> to <code>In Progress</code>.</p>
+<ul>
+<li>This lets us know that you have started working on replication.</li>
+</ul>
+<p>At this stage, you are collecting information.
+- [ ] start by <a href="https://bitbucket.org/repo/import">creating a repository</a> (for detailed instructions, see the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">Wiki page</a>)
+- the repository name should be the name of the JIRA issue (e.g., <code>aearep-123</code>)
+- Be sure that <code>aeaverification</code> is always the “owner” of the report on Bitbucket.
+- [x] populate the repository with the latest version of the <a href="https://github.com/AEADataEditor/replication-template">template</a> (<em>If you used the “Import Repository” technique outlined on the <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket">wiki</a>, this is already done!</em>)</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+Clone the Bitbucket repository onto the computer you are working on (<code>git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git</code> )</li>
+<li><input type="checkbox" disabled="" />
+Delete (<code>git rm</code>) unused files from the template! Example: <code>git rm README.md template-config.R</code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</li>
+<li><input type="checkbox" disabled="" />
+From the JIRA issue, download and add Manuscript, README.<ul>
+<li>Download from Jira issue attachments. The manuscript is often called <code>PDF_Proof.pdf</code>.</li>
+<li>Add to the root of the repository, and add them to the Git repo (e.g., <code>git add PDF_Proof.pdf readme.pdf</code>)</li>
+</ul></li>
+<li>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</li>
+</ul>
+<pre><code>code-check.xlsx
+config.do
+PDF_Proof.PDF
+PII_stata_scan.do
+readme.pdf
+REPLICATION.md</code></pre>
+<ul>
+<li><code>git commit, git push</code>…</li>
+<li><input type="checkbox" disabled="" />
+Then fill out the following fields in the Jira ticket (some may be pre-populated):<ul>
+<li><input type="checkbox" disabled="" />
+<code>Code provenance</code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.<ul>
+<li>If code and/or data are provided by email, <code>Code provenance</code> should be filled out with “<a href="https://email" class="uri">https://email</a>”, otherwise with a URL.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+<code>Journal</code></li>
+<li><input type="checkbox" disabled="" />
+<code>Manuscript Central identifier</code></li>
+<li><input type="checkbox" disabled="" />
+<code>Bitbucket short name</code> (e.g., <code>aearep-123</code>) - this should auto-fill the <code>Git working location</code>.</li>
+</ul></li>
+<li>The following fields, located in the REPL. INFO tab on the bottom right of your Jira ticket, must also be filled out:
+<ul>
+<li><input type="checkbox" disabled="" />
+<code>TYPEOFARTICLE</code> “Does the article contain empirical work, simulations, or experimental work?” - typically the answer should be “Yes”. You should answer “No” only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.</li>
+<li><input type="checkbox" disabled="" />
+<code>RCT</code> Is the paper about a randomized control trial? This should be immediately obvious from the abstract.<ul>
+<li><code>RCT NUMBER</code> If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>You can now proceed to change the status to <code>Code</code>.</p>
+</div>
+<div id="code" class="section level3">
+<h3><span class="header-section-number">10.3.2</span> Code</h3>
+<p>In this stage, download the code or the entire replication package, and populate the Bitbucket repository.</p>
+<hr />
+<blockquote>
+<p>You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps.</p>
+</blockquote>
+<p>This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
+<hr />
+<ul>
+<li><input type="checkbox" disabled="" />
+Download the code from openICPSR (typicaly for most cases). See <a href="openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.</li>
+<li><input type="checkbox" disabled="" />
+Populate the Bitbucket repository:<ul>
+<li>If not already done, use <code>git clone</code> to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like <code>aearep-123</code>.
+<ul>
+<li><strong>[EXPERT TIP]</strong> It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.</li>
+</ul></li>
+<li>Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the <code>aearep-123</code> repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.</li>
+<li>Unzip the openICPSR folder. On Windows, double-click. On OSX, [replace me]. From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code></li>
+<li>The manuscript’s files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+<li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Also add the manuscript, and any response by the authors (if a revision)</li>
+<li><input type="checkbox" disabled="" />
+Be sure to <code>git push</code> it all to Bitbucket, with a meaningful commit message.
+The repository should now look like this:</li>
+</ul>
+<pre><code>116941/
+code-check.xlsx
+config.do
+PDF_Proof.PDF
+PII_stata_scan.do
+readme.pdf
+REPLICATION.md</code></pre>
+<p>Now you will establish a <strong>list of Datasets used</strong> and fill out the <strong>Data Citation and Information</strong> report.</p>
+<ul>
+<li>From the <strong>README</strong> provided by the authors, the <strong>data section</strong> of the article itself, or an <strong>appendix</strong>, establish a list of datasets used in the article.</li>
+<li><input type="checkbox" disabled="" />
+Now you will fill out the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information</a></strong> report:<ul>
+<li>A <a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">link to the report</a> can be found in the tall grey bar on the left side of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.</li>
+<li><input type="checkbox" disabled="" />
+Fill out the <code>DATA CITATION REPORT</code> field on Jira with the date on which you complete this report.<ul>
+<li>If there are more than 10 datasets that you can see, get approval from your Team Lead to fill out <a href="https://drive.google.com/file/d/1-4Ah3AvNVmFJCs6IfjTKUrMOvZ9BHiO6/view?usp=sharing">this spreadsheet</a> instead (see the <a href="https://drive.google.com/file/d/1VzS7akscWckx_TKAUy0bhufE5oVgwn1B/view?usp=sharing">printed form</a> for allowed categories). You should fill out the FIRST dataset on the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information form</a></strong>. At the end of the form is an upload option, where you should upload the form. The spreadsheet should then <em>also</em> be added to the repo (add, commit, push), and a note added to the JIRA comments.</li>
+</ul></li>
+<li>Use the list of datasets to guide you when filling this out.</li>
+<li><input type="checkbox" disabled="" />
+<strong>AT THE SAME TIME:</strong> write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the <strong>Data Citation and Information</strong> .</li>
+<li><input type="checkbox" disabled="" />
+In particular, check each provided URL, and verify if there is a <strong>“Data Use Agreement”, “Citation requirement”, “License”</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (<code>git add</code>, <code>git commit</code>, <code>git push</code>)</li>
+<li><input type="checkbox" disabled="" />
+Fill out the <code>DataCitationSummary</code> field indicating how many data citations are in order: all, some, or none.</li>
+<li><input type="checkbox" disabled="" />
+Fill out the <code>Data Provenance</code> section - is the data in the openICPSR repository, or is it someplace else? “Various” is a legitimate answer if it is in various locations.</li>
+</ul>
+<p>Do a first pass through the code files provided:</p>
+<blockquote>
+<p>Do NOT run any code!</p>
+</blockquote>
+<ul>
+<li><input type="checkbox" disabled="" />
+review the code in detail.</li>
+<li><input type="checkbox" disabled="" />
+In the template, you will find <em><a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a></em>. Use this to create a list of all Tables and Figures in the paper, and use this to guide you in <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a>.</li>
+<li><input type="checkbox" disabled="" />
+Fill out the “Code Description” section of the REPLICATION.md<ul>
+<li>Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the <code>Software Used</code> later as well, but provide details here.</li>
+<li>Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what’s written in the README?</li>
+<li>Are all the REQUIREMENTS listed? How long does the author say the code will run?</li>
+<li>Are there files in the archive not explained in the README?</li>
+<li><strong>[EXPERT TIP]</strong> You should <strong>not</strong> run the code at this time, only read the program code! (You can do this on your laptop)</li>
+<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode. Alternatively, this can be pasted in under “Findings”.</li>
+</ul></li>
+</ul>
+<p>Next fill out the following fields in the Jira ticket:
+options (e.g. start typing “Stata” and you will see it pop up).
+- [ ] <code>BITBUCKET SHORT NAME</code> - if not already done earlier</p>
+<blockquote>
+<p>Commit!</p>
+</blockquote>
+<p>You can now proceed to change the status to <code>Data</code>. As you select that transition, you will be asked various questions:</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+<code>Software Used</code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as<br />
+</li>
+<li><input type="checkbox" disabled="" />
+<code>PROGRAMSEQUENCE</code> Does the README tell you the correct sequence for running the code?</li>
+<li><input type="checkbox" disabled="" />
+<code>PROGRAMSDOCUMENTATION</code> Are the provided programs well commented? Are they documented in the README?</li>
+<li><input type="checkbox" disabled="" />
+<code>PROGRAMSSTRUCTUREMANUAL</code> Does the README note any manual changes that you need to make to the code in order for it to run?</li>
+</ul>
+</div>
+<div id="data" class="section level3">
+<h3><span class="header-section-number">10.3.3</span> Data</h3>
+<ul>
+<li><input type="checkbox" disabled="" />
+Download the data (if not already done in the previous step, and if available).<ul>
+<li>Data should be stored locally (currently) / in <a href="https://confluence.atlassian.com/bitbucket/git-large-file-storage-in-bitbucket-829078514.html">Git LFS</a> (soon)</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+If there is data: Run the PII-checking code, review the output, and record the result in the REPLICATION.md<ul>
+<li>You should check the output - it is not automatic.</li>
+<li>You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.</li>
+<li>The author will NOT see the output from the program unless you copy <strong>relevant</strong> parts of it into the report.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Describe the data<ul>
+<li><input type="checkbox" disabled="" />
+do relevant variables have labels?</li>
+<li><input type="checkbox" disabled="" />
+Is the data readable?</li>
+<li><input type="checkbox" disabled="" />
+Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are the preferred formats by librarians, but <code>dta</code> or <code>spss</code> are also OK; <code>mat</code> files are discouraged)</li>
+</ul></li>
+</ul>
+<p>Fill out the following Jira fields:
+- [ ] <code>DATA PROVENANCE</code> Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as <code>CODE PROVENANCE</code>), but may be a user-provided URL or DOI.
+- if the data is in multiple places, enter “Multiple” here, and record the details in the REPLICATION.md
+- [ ] <code>WORKING LOCATION OF THE DATA</code> Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else</p>
+<p>You can now proceed to change the status to <code>Write Preliminary Report</code>. You will be asked to provide additional information:</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+<code>DATAAVAILABILITYACESS</code> Is at least some of the data available?</li>
+<li><input type="checkbox" disabled="" />
+<code>DATAAVAILABILITYEXCLUSIVE</code> Is there data that is <strong>only</strong> accessible to the author (nobody else)?</li>
+<li><input type="checkbox" disabled="" />
+<code>REASON FOR NON-ACCESSIBILITY OF DATA</code> Fill this out if <strong>none</strong> of the code can be run</li>
+<li><input type="checkbox" disabled="" />
+<code>NUMBEROFDATASETS</code> How many datasets are used in the article?</li>
+<li><input type="checkbox" disabled="" />
+<code>DATASETSINCLUDED</code> How many of the datasets used in the article are actually provided by the authors?</li>
+</ul>
+</div>
+<div id="write-preliminary-report" class="section level3">
+<h3><span class="header-section-number">10.3.4</span> Write Preliminary Report</h3>
+<p>At this stage, you need to fill out the REPLICATION.md up to the “Replication steps” part.</p>
+<ul>
+<li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar
+<ul>
+<li>[EXPERT TIP] Right-click, and open the sample language in a new tab, for easy reference.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Commit this preliminary report to the Bitbucket repository.</li>
+</ul>
+<p>This stage allows for earlier identification of issues that might warrant changes to the procedure.</p>
+<ul>
+<li>This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.</li>
+<li>You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.</li>
+<li>The authors might have identified computational requirements that you do not have access to, or do not have the time to run (“compute cluster with 100 nodes”, “Fortran compiler”).</li>
+</ul>
+<blockquote>
+<p>Commit!</p>
+</blockquote>
+<blockquote>
+<p>!! If you identify any of the elements above that prevent you from completing the issue on time, you should notify your supervisor. DO NOT ADVANCE THE TICKET!!</p>
+</blockquote>
+<ul>
+<li>Otherwise, advance the ticket to one of three options: <code>Verification</code>, <code>Code Review</code>, or <code>Incomplete</code>
+<ul>
+<li><code>Verification</code>: at least some of the data is accessible. In order to progress to this state,
+<ul>
+<li><input type="checkbox" disabled="" />
+<code>Working location of data</code>has to be filled out</li>
+<li><input type="checkbox" disabled="" />
+<code>Computing environment</code> has to be selected.</li>
+</ul></li>
+<li><code>Code Review</code>: none of the data is accessible</li>
+<li><code>Incomplete</code>: more information/action is required before you can proceed</li>
+</ul></li>
+</ul>
+</div>
+<div id="verification" class="section level3">
+<h3><span class="header-section-number">10.3.5</span> Verification</h3>
+<p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
+<p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.</p>
+<p>Follow the steps <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a></p>
+<p>You should commit your report with intermediate results as you have them. Do <strong>not</strong> wait until you have all the results finished. Commit frequently!</p>
+<blockquote>
+<p>Add (report, modified files)! Commit! Push!</p>
+</blockquote>
+<p>You can now proceed to change the status to <code>Writing Report</code>.</p>
+</div>
+<div id="code-review" class="section level3">
+<h3><span class="header-section-number">10.3.6</span> Code Review</h3>
+<p>In this stage, you are verifying the code by inspecting the completeness of the source code. In general, your ability to detect any issues is limited, but go through the code one more time, and identify</p>
+<ul>
+<li>packages that are installed late in the code, but not mentioned in a setup program or the README</li>
+<li>commands that your experience shows require packages to be installed, but are not mentioned.</li>
+</ul>
+<p>The <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
+<blockquote>
+<p>Add! Commit! Push!</p>
+</blockquote>
+<p>You can now proceed to change the status to <code>Writing Report</code>.</p>
+</div>
+<div id="writing-report" class="section level3">
+<h3><span class="header-section-number">10.3.7</span> Writing Report</h3>
+<p>At this stage, you will write the final version of the report.</p>
+<ul>
+<li>There is sample language for commonly encountered problems at the <a href="https://github.com/labordynamicsinstitute/replicability-training/raw/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
+<li>Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.</li>
+<li>It may be useful to copy-and-paste the <em>code-check.xlsx</em>, including the column “Replicated?” and any notes column, into the “Findings” part. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</li>
+<li>Delete all of the instructional lines in REPLICATION.md before finishing the report.</li>
+<li>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</li>
+<li>Highlight differences:
+<ul>
+<li>if only a small number of table entries: mention them by table in the report</li>
+<li>if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed</li>
+</ul></li>
+<li>Check that the <code>DataCitationSummary</code> field is filled out indicating how many data citations are in order: all, some, or none.</li>
+</ul>
+<p>To complete this stage, enter the direct URL of the report, i.e., in the relevant repository (if not already pre-filled):</p>
+<blockquote>
+<p><a href="https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md" class="uri">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</a></p>
+</blockquote>
+<p>You can now submit your report for review by changing the status to <code>Under Review</code></p>
+</div>
+</div>
+<div id="replication-revisions" class="section level2">
+<h2><span class="header-section-number">10.4</span> Replication Revisions</h2>
+<ul>
+<li>See <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Revision-to-a-Replication">revision guidance</a> on the wiki.</li>
+<li>When receiving updated files from authors, do NOT create “update” or “new” directories. The current state of the repository should always correspond to the author’s structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.</li>
+<li>When running a second replication on the same archive, please be sure to have the committed “REPLICATION.md” be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</li>
+</ul>
+</div>
+<div id="reviewing-reports" class="section level2">
+<h2><span class="header-section-number">10.5</span> Reviewing Reports</h2>
+<p>“Approvers” and “Pre-approvers” will review the reports, and finalize the Summary. In particular, approvers must select/confirm one of the recommendations (field <code>MCRecommendationV2</code>):</p>
+<ul>
+<li><strong>Accepted</strong> - the manuscript moves forward in the publishing workflow on Manuscript Central, the Data Editor does not see the manuscript again.</li>
+<li><strong>Accepted with changes</strong> - same, but some conditions may be imposed. However, the Data Editor does not need to see the manuscript again.</li>
+<li><strong>Revisions requested - manuscript ready</strong> - Some revisions need to be made, and the Data Editor needs to see the authors’ response. However, the manuscript can move forward in the publishing workflow (rarely used)</li>
+<li><strong>Conditional Acceptance</strong> - the Data Editor expects to see a response from the authors to the report.</li>
+<li><strong>Revise and resubmit</strong> - the Data Editor has detected a serious problem which needs to go back to the “Revise and resubmit” phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript’s conclusions based on the reproduction attempt. Rarely used.</li>
+</ul>
+<p>See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-report-review.md">Report review guidelines</a> and <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/Preapprovers.md">Preapprovers</a> for details.</p>
+</div>
+<div id="publication" class="section level2">
+<h2><span class="header-section-number">10.6</span> Publication</h2>
+<p>Once all review rounds have been completed, the last revision will lead to a recommendation of “Accepted”. The Data Editor’s staff prepares the openICPSR deposit for final publication. In general, this means that a note is added to the “Project Communications Log” on openICPSR, denoting the acceptance of the deposit. The AEA publication staff can subsequently move this issue forward to “Published” when the supplement has been published on openICPSR.</p>
+<ul>
+<li>The field <code>openICPSRDOI</code> is pre-filled, but should be checked by the AEA publication staff.</li>
+</ul>
+<p>See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-prepare-publication.md">Preparing for publication</a> for details.</p>
+
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="a-guided-walk-through-the-replication-report.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="privacy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["training-curriculum.pdf", "training-curriculum.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
