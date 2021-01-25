@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-01-21"
+date: "2021-01-25"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -491,10 +491,10 @@ In a very generic, all empirical analysis goes through the following steps:
 In a reproducible workflow, *instructions* to perform all of the above are provided. Most of the time, those instructions will be *computer code*, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments. But more often, acquiring data entails manual actions. For instance, secondary data access might be described in [Data Availability Statements](#dasmaster), whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.^[Note that when the authors generate or collect primary data, subsequent users of the same data are secondary data users, but replication might also involve re-executing the experiment, or collecting data anew with the same survey instruments.] Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures. But sometimes authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly. 
 
 The following diagram illustrates the generic flow:
-
+<!--
 
 <img src="images/mermaid-data-flow.png" width="778" />
-
+-->
 ![Data flow](images/mermaid-data-flow.png)
 
 Real articles are often more complex. A simple example will be discussed next.
@@ -528,7 +528,7 @@ A `cleaning program` is identified and described.
 An `analysis program` is also listed, and identified as creating `output` Table 1. An inspection of the "[manuscript](https://github.com/labordynamicsinstitute/simple-example/blob/master/text/simple-paper.pdf)" shows that only a single table is included.
 
 So a flow diagram for the simple example might be:
-
+<!--This figure above does not appear
 ```{=html}
 <div class="mermaid">
 graph TD;
@@ -542,7 +542,8 @@ graph TD;
 
 </div>
 ```
-<!-- The figure above does not appear -->
+-->
+![Data flow](images/mermaid-data-flow-example.png)
 
 <!--chapter:end:06-basic-flow.Rmd-->
 
