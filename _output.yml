@@ -6,7 +6,6 @@ bookdown::gitbook:
   toc_depth: 2
   highlight: tango
   keep_md: TRUE
-  self_contained: FALSE
   config:
     sharing:
       facebook: no
