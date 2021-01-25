@@ -37,8 +37,10 @@ basepath <- rprojroot::find_root(rprojroot::has_file("LICENSE.md"))
 # Main directories
 programs <- file.path(basepath,"programs")
 libs <- file.path(basepath,".libs")
+images.dir <- file.path(basepath,"images")
+output.dir <- file.path(basepath,"_book")
 
-for ( dir in list(programs,libs)){
+for ( dir in list(programs,libs,output.dir)){
         if (file.exists(dir)){
         } else {
         dir.create(file.path(dir))
@@ -64,3 +66,7 @@ results <- sapply(as.list(unload.libraries), pkgTest, try=TRUE)
 
 
 #require(knitr)
+
+# copy fixed assets over
+
+file.copy(image.dir,output.dir,recursive=TRUE)
