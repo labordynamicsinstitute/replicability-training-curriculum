@@ -8,7 +8,7 @@ In order to work through a replication report, you will need
 
 We have examples of various actual reports (slightly anonymized):
 
- + [Example 1](`r config$url$replmd`sample_report.md)
+ + [Example 1](`r config$url$replobsoletemd`sample_report.md)
  + [Example 2](`r config$url$replmd`REPLICATION-AEAREP278.md)
  + [Example 3](`r config$url$replmd`REPLICATION-AEAREP282.md) and its [revision](`r config$url$replmd`REPLICATION-AEAREP282-revised.md)
 
