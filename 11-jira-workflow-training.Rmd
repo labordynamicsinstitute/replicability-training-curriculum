@@ -166,7 +166,7 @@ Now you will establish a **list of Datasets used** and fill out the **Data Citat
 - [ ] Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (`git add`, `git commit`, `git push`)
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: all, some, or none. 
 - [ ] Fill out the `Data Provenance` section - is the data in the openICPSR repository, or is it someplace else? "Various" is a legitimate answer if it is in various locations.
-- [ ] Plrease refer to [Chapter 9 A guided walk through the Replication Report](https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how toa ssess the provided information.
+- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how toa ssess the provided information.
 
 Do a first pass through the code files provided:
 
