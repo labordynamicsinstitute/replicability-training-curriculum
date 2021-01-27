@@ -4,6 +4,4 @@ default:
     replraw: https://github.com/labordynamicsinstitute/replicability-training/raw/master/
     replmd: https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/
     reploldmd: https://github.com/labordynamicsinstitute/replicability-training/blob/master/
-    replobsoletemd: 
-    https://github.com/labordynamicsinstitute/replicability-training/tree/master/TrainingCurriculum-obsolete
     templmd: https://github.com/AEADataEditor/replication-template/blob/master/
