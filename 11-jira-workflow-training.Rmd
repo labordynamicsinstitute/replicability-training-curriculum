@@ -20,7 +20,7 @@ until a resolution can be found.
 | From         | Transition           | → To           | Condition |
 |:-------------|:---------------------|:---------------|:----------|
 | Assigned     | Start task           | → In Progress  |           |
-| In Progress  | Download code        | → Code         | `Code provenance` have been filled out, `Journal` has been identified, `Empirical Article`=`Yes` |
+| In Progress  | Download code        | → Code         | `Code provenance` have been filled out, `Journal` has been identified, `Empirical Article`=`Yes`, `External validation` != "yes" |
 | Code         | Access data          | →	Data          | `Git working location`, `Data provenance` has been filled out. |
 | Data         | Prepare preliminary report | → Write Preliminary Report | |
 | Write Preliminary Report | Data is accessible   | →	Verification  | `Location of data` has been filled out.|
@@ -111,7 +111,7 @@ REPLICATION.md
     - [ ] `Journal` 
     - [ ] `Manuscript Central identifier`
     - [ ] `Bitbucket short name` (e.g., `aearep-123`) - this should auto-fill the `Git working location`.
-- The following fields, located in the REPL. INFO tab on the bottom right of your Jira ticket, must also be filled out:
+- The following fields, located in the **REPL. INFO** tab on the bottom right of your Jira ticket, must also be filled out:
     - [ ] `TYPEOFARTICLE` "Does the article contain empirical work, simulations, or experimental work?" - typically the answer should be "Yes". You should answer "No" only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.
     - [ ] `RCT` Is the paper about a randomized control trial? This should be immediately obvious from the abstract.
       - `RCT NUMBER` If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)
