@@ -112,6 +112,8 @@ Revisions requested. Details in the full report, which you will receive via Scho
 
 ```{block, type="bbox"}
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
+
+Once all changes have been made, please change the status of your deposit to "Submit to AEA".
 ```
 (replace xxx with the issue number)
 
