@@ -69,15 +69,15 @@ The following are only relevant for "Publishers"  (if you have not been told you
 
 Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note:
 
-- The blue `In Progress` box in the upper right is how you "advance" the Jira ticket. When you are first assigned a replication, this box will say `Open`.
-- The tall grey bar on the left side contains several handy links that you will use throughout the process.
+- The blue `In Progress` box in the upper right - area 3 of the screen - is how you "advance" the Jira ticket. When you are first assigned a replication, this box will say `Open`.
+- The tall grey bar on the left side - area 1 of the screen - contains several handy links that you will use throughout the process.
     - Sometimes this box is not visible. To make it visible, edit the URL for the Jira ticket so that there are no characters after the ticket number (e.g. AEAREP-123). You may have to refresh the page after doing so.
 
 ![jira screen](images/jira-screen.png)
 
 ### In Progress
 
-The first thing you must do is advance the ticket from `Open` to `In Progress`.
+The first thing you must do is to advance the ticket from `Open` to `In Progress`.
 
 - This lets us know that you have started working on replication.
 
@@ -89,33 +89,37 @@ At this stage, you are collecting information.
 - [x] populate the repository with the latest version of the [template](https://github.com/AEADataEditor/replication-template) (*If you used the "Import Repository" technique outlined on the [wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket), this is already done!*) 
 
 - [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
-- [ ] Delete (`git rm`) unused files from the template! Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
+- [ ] Delete (`git rm`) unused files from the template! 
+  - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
 - [ ] From the JIRA issue, download and add Manuscript, README. 
     - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
     - Add to the root of the repository, and add them to the Git repo (e.g., `git add PDF_Proof.pdf readme.pdf`)
-- The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:
+- The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). 
+  - Example:
+    ```
+    code-check.xlsx
+    config.do
+    PDF_Proof.PDF
+    PII_stata_scan.do
+    readme.pdf
+    REPLICATION.md
+    ```
 
-```
-code-check.xlsx
-config.do
-PDF_Proof.PDF
-PII_stata_scan.do
-readme.pdf
-REPLICATION.md
-```
-
-- `git commit, git push`...
+- `git commit`, `git push`...
 - [ ] Then fill out the following fields in the Jira ticket (some may be pre-populated):
     - [ ] `Code provenance` In almost all cases, this is the openICPSR repo for which you will have received a notification email.
       - If code and/or data are provided by email, `Code provenance` should be filled out with  "https://email", otherwise with a URL.
     - [ ] `Journal` 
     - [ ] `Manuscript Central identifier`
-    - [ ] `Bitbucket short name` (e.g., `aearep-123`) - this should auto-fill the `Git working location`.
-- The following fields, located in the **REPL. INFO** tab on the bottom right of your Jira ticket, must also be filled out:
-    - [ ] `TYPEOFARTICLE` "Does the article contain empirical work, simulations, or experimental work?" - typically the answer should be "Yes". You should answer "No" only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.
-    - [ ] `RCT` Is the paper about a randomized control trial? This should be immediately obvious from the abstract.
-      - `RCT NUMBER` If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)
-  
+    - [ ] `Bitbucket short name` (e.g., `aearep-123`) 
+      - this should auto-fill the `Git working location`.
+- The following fields, located in the **REPL. INFO** tab area 2 of the screen, must also be filled out:
+  ![Replication Info](images/jira-screen.png)
+    - [ ] `Empirical Article`: "Does the article contain empirical work, simulations, or experimental work?" 
+      - typically the answer should be "Yes". You should answer "No" only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.
+    - [ ] `RCT`: Is the paper about a randomized control trial? This should be immediately obvious from the abstract.
+      - `RCT NUMBER`: If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)
+
 You can now proceed to change the status to `Code`.
 
 ### Code
@@ -130,7 +134,7 @@ This is because the git setup we use does not allow you to include the data file
 
 ---
 
-- [ ] Download the code from openICPSR (typicaly for most cases). See [openICPSR repositories](openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
+- [ ] Download the code from openICPSR (typicaly for most cases). See [openICPSR repositories](`r config$url$reploldmd`openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
 - [ ] Populate the Bitbucket repository:
   - If not already done, use `git clone` to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like `aearep-123`.
     - **[EXPERT TIP]** It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.
@@ -139,8 +143,7 @@ This is because the git setup we use does not allow you to include the data file
     - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
   - Perform a `git add`, `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
 - [ ] Also add the manuscript, and any response by the authors (if a revision)
-- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message.
-The repository should now look like this:
+- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. After pushing to the repository, is should now look like this:
 
 ```
 116941/
@@ -153,10 +156,18 @@ REPLICATION.md
 ```
 
 Now you will establish a **list of Datasets used** and fill out the **Data Citation and Information** report.
+- Please check Data and Code Availability Form.
+  - The form should be attached in the jira ticket. 
+  - In area 2 of the screen, choose DCAF.
+    - Open Data and Code Availability Form, and check if all blanks are filled out.
+    - Once you checked the form, choose "Yes" from the dropdown menu of `DCAF_README_checked` cell.
+    - If the answer to the following question at the bottom of the form is "Yes", then, choose "Yes" from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose "No".
+      "Is any of the data used in this manuscript subject to access restrictions?"
+  ![jira screen](images/jira-screen.png)
 
 - From the **README** provided by the authors, the **data section of the article itself**, or an **appendix**, establish a list of datasets used in the article.
-- [ ] Now you will fill out the **[Data Citation and Information](https://goo.gl/forms/3IaMu6PCG7P7WhK43)** report:
-  - A [link to the report](https://goo.gl/forms/3IaMu6PCG7P7WhK43) can be found in the tall grey bar on the left side of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.
+- [ ] Fill out the **[Data Citation and Information](https://goo.gl/forms/3IaMu6PCG7P7WhK43)** report:
+  - A [link to the report](https://goo.gl/forms/3IaMu6PCG7P7WhK43) can be found in the tall grey bar - area 1 of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.
   - [ ] Fill out the `DATA CITATION REPORT` field on Jira with the date on which you complete this report.
     - If there are more than 10 datasets that you can see, get approval from your Team Lead to fill out [this spreadsheet](https://drive.google.com/file/d/1-4Ah3AvNVmFJCs6IfjTKUrMOvZ9BHiO6/view?usp=sharing) instead (see the [printed form](https://drive.google.com/file/d/1VzS7akscWckx_TKAUy0bhufE5oVgwn1B/view?usp=sharing) for allowed categories). You should fill out the FIRST dataset on the **[Data Citation and Information form](https://goo.gl/forms/3IaMu6PCG7P7WhK43)**. At the end of the form is an upload option, where you should upload the form. The spreadsheet should then *also* be added to the repo (add, commit, push), and a note added to the JIRA comments. 
   - Use the list of datasets to guide you when filling this out.
@@ -165,8 +176,9 @@ Now you will establish a **list of Datasets used** and fill out the **Data Citat
   - [ ] In particular, check each provided URL, and verify if there is a **"Data Use Agreement", "Citation requirement", "License"** on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor. 
 - [ ] Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (`git add`, `git commit`, `git push`)
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: all, some, or none. 
-- [ ] Fill out the `Data Provenance` section - is the data in the openICPSR repository, or is it someplace else? "Various" is a legitimate answer if it is in various locations.
-- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how toa ssess the provided information.
+- [ ] Fill out the `Data Provenance` section 
+  - is the data in the openICPSR repository, or is it someplace else? "Various" is a legitimate answer if it is in various locations.
+- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how to assess the provided information.
 
 Do a first pass through the code files provided:
 
