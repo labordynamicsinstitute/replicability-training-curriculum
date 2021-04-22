@@ -1,6 +1,8 @@
+# (PART) Basics {-}
+
 # Basic Concepts
 
-The goal thus of the reproducibility activity is 
+The goal of the reproducibility activity is 
 
 - to verify provenance of all data sources, 
 - to verify the availability of all computer code to produce analysis files from data sources, and to produce tables, figures, and in-text numbers from analysis files,
