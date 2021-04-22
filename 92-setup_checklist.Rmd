@@ -29,8 +29,7 @@
     - [ ] Install Plugins:  [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
     - [ ] Install Plugins:  [Auto-Open Markdown Preview](https://marketplace.visualstudio.com/items?itemName=hnw.vscode-auto-open-markdown-preview) (OPTIONAL, can sometimes be inconvenient)
     - [ ] Install Plugins:  [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) will debug your Markdown
-- [ ] Sourcetree (Git graphical interface optimized for Bitbucket) [download location](https://www.sourcetreeapp.com/) (OPTIONAL)
-    - Note that you may run into an error message on mac: "Sourcetree can’t be opened because Apple cannot check it for malicious software.". This is because Sourcetree is not a verified program on Mac. However, you could install the program by force using System Preferences, or running terminal commands.
+
 
 Other software is optional. You will use statistical software on other computers [that we will get you access to](#Access_to_computers).
 
