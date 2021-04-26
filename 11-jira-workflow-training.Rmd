@@ -135,6 +135,7 @@ This is because the git setup we use does not allow you to include the data file
 ---
 
 - [ ] Download the code from openICPSR (typicaly for most cases). See [openICPSR repositories](`r config$url$reploldmd`openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
+  ![icpsr screen](images/icpsr-download.png)
 - [ ] Populate the Bitbucket repository:
   - If not already done, use `git clone` to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like `aearep-123`.
     - **[EXPERT TIP]** It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.
