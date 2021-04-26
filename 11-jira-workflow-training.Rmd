@@ -91,9 +91,9 @@ At this stage, you are collecting information.
 - [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
 - [ ] Delete (`git rm`) unused files from the template! 
   - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
-- [ ] From the JIRA issue, download and add Manuscript, README. 
+- [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
     - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
-    - Add to the root of the repository, and add them to the Git repo (e.g., `git add PDF_Proof.pdf readme.pdf`)
+    - Add to the root of the repository, and add them to the Git repo (e.g., `git add PDF_Proof.pdf DataCodeAvailability.pdf`)
 - The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). 
   - Example:
     ```
@@ -101,7 +101,7 @@ At this stage, you are collecting information.
     config.do
     PDF_Proof.PDF
     PII_stata_scan.do
-    readme.pdf
+    DataCodeAvailability.pdf
     REPLICATION.md
     ```
 
