@@ -42,14 +42,14 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github at  [`r config$url$replmd`REPLICATION.md](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github [here](`r config$url$replmd`REPLICATION.md](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
 - Data checks &ast;
 - Code description &ast;
 - Stated Requirements &ast;
-- Actual Requirements, if different
+- Missing Requirements &ast;
 - Computing Environment of the Replicator
 - Replication steps
 - Findings
@@ -168,7 +168,7 @@ The authors should have specified specific requirements in terms of software, co
 
 
 
-###  Actual Requirements, if different
+###  Missing Requirements
 
 If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the *complete* list of requirements here. This is usually amended as the reproducibility attempt progresses.
 
