@@ -78,7 +78,7 @@ To do so, proceed as follows:
   - in the pop-up, paste and submit the following lines: 
 
 ```{block, type="bbox"}
-Revisions requested. Details in the full report, which you will receive via ScholarOne shortly. 
+Revisions requested. Details in the full report, which has been sent to the Editor in charge of your manuscript. 
 ```
 
 4. Back in the Jira issue, transition the issue to `Done`.
