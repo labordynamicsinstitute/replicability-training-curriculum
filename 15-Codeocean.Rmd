@@ -2,17 +2,17 @@
 
 The workflow should be the same up until the verification stage, at which point you will use Codeocean to run the reproducibility check, as opposed to running directly in the statistical software. You can run Codeocean on your personal workspace or on CISER.
 
-#### Create a Capsule
+## Create a Capsule
 - In Codeocean, create a new capsule. Name the compute capsule as "(AEAREP-xxxx) Compute Capsule for: TITLE"
 Example:
 > AEAREP-1974 Compute Capsule for: Waiting to Choose: The Role of Deliberation in Intertemporal Choice
 
-#### Environment
+## Environment
 - Set up the environment specified by the authors. This includes software, version of that software, and any dependencies (packages). 
 Example:
 `Stata(16) with ssc packages estout and boottest`
 
-#### Files and Directories
+## Files and Directories
 - Upload the code and data files to the `/code` and `/data` directories in Codeocean.
 
 - There are only three directories in the Codeocean environment: `/data`; `/code`; `/results`.
@@ -31,12 +31,12 @@ Example:
     ``` 
     - If the authors provide instructions on a specific order in which to individually execute programs, each program will need to be added to the "run" file in that order. In this case, you should be including the `config.do` at the top of each program instead of only the `Master.do`. 
 
-#### Log files
+## Log files
 
 - As with any case, if the authors' code creates log files, you can comment out the log file creation in the `config.do`. 
 - If the authors' code does not generate log files, you must amend the `config.do` to write the log files to the /results directory (i.e. ```global logdir "/results"```). 
 
-#### Output
+## Output
 
 - Nothing is captured unless it is *explicitly* exported to the `/results` directory.
     - For example, you will not see any analysis files saved by the code unless they are saved as something such as `/results/cleaned_data.dta`. However, you do not *NEED* no do this. The program(s) should still run as long as the files are successfully created.
@@ -45,7 +45,7 @@ Example:
 
 - Download the `/results` directory and add it to the repository.
 
-#### Jira
+## Jira
 
 - The `Computing Environment` and `Working location of the data` should be "Codeocean"
 - Share your CodeOcean capsule with `dataeditor@aeapubs.org`
