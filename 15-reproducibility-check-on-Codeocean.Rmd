@@ -15,7 +15,7 @@ Example:
 Example:
 `Stata(16) with ssc packages estout and boottest`
 
-    ![Environment](images/environment.png)
+![Environment](images/environment.png)
 
 ## Files and Directories
 
