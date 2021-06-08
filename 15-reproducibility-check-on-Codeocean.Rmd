@@ -15,7 +15,7 @@ Example:
 Example:
 `Stata(16) with ssc packages estout and boottest`
 
-> > (needs screenshot)
+    ![Environment](images/environment.png)
 
 ## Files and Directories
 
@@ -29,7 +29,7 @@ Example:
 
 - Define the default `run` file using the dropdown menu to the right of the file. This will create a new file (called `run`) which is a Bash script that CodeOcean uses to run all of the other code. 
 
-> > (needs screenshot)
+    ![run](images/run_file.png)
 
 - Which file to use for the automatic creation of the `run` file depends on your manuscript:
     - If the manuscript has a single master file (e.g., `master.do`), use that. The `run` file will then look like 
