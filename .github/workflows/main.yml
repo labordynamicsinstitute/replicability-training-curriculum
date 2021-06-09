@@ -30,4 +30,4 @@ jobs:
            user_name: 'Github Action Bot'
            user_email: 'lars.vilhuber@cornell.edu'
            publish_branch: gh-pages 
-           keep_files: true
+           keep_files: false
