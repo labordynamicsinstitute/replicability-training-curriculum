@@ -2,7 +2,7 @@
 
 You will be assigned a Jira issue. It should look something like this:
 
-![](images/jira-pnp-screenshot.png)
+![](images/jira-pnp_screenshot.png)
 
 Take note of the 4 highlighted fields:
 
