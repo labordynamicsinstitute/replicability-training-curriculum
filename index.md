@@ -1885,7 +1885,7 @@ Once the form PDF has been added to the issue, you should first return to the op
 
 <!--chapter:end:14-Instructions-PandP-Checks.Rmd-->
 
-`# AEA: Reproducibility Checks in Codeocean
+# AEA: Reproducibility Checks in Codeocean
 
 The workflow should be the same up until the verification stage, at which point you will use Codeocean to run the reproducibility check, as opposed to running directly in the statistical software. You can run Codeocean on your personal workspace or on CISER.
 
