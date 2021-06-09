@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 A guided walk through the Replication Report | TRAINING For Reproducibility Verification</title>
+  <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 A guided walk through the Replication Report | TRAINING For Reproducibility Verification" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 A guided walk through the Replication Report | TRAINING For Reproducibility Verification" />
+  
+  <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  
+
+<meta name="author" content="Lars Vilhuber" />
+<meta name="author" content="Hyuk Son" />
+<meta name="author" content="Meredith Welch" />
+<meta name="author" content="David Wasser" />
+
+
+<meta name="date" content="2021-06-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="assessing-computational-reproducibility.html"/>
+<link rel="next" href="aea-jira-workflow-a-guide.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<script>
+function toggleCitation() {
+  var x = document.getElementById("myCitation");
+  var button = document.getElementById("citationButton");
+  var date = document.getElementById("todayDate");
+  var url = document.getElementById("thisURL");
+  var d = new Date().toISOString();
+  var chapTitle = document.getElementsByTagName("h1")[1]
+  var citeTitle = document.getElementById("chapTitle")
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    button.innerHTML = "Hide citation";
+    date.innerHTML = d.split("T")[0];
+    url.innerHTML = window.location.href;
+    citeTitle.innerText = chapTitle.innerText.replace(/^[0-9]+ /,"")
+  } else {
+    x.style.display = "none";
+    button.innerHTML = "Show citation to this chapter";
+  }
+} 
+
+</script>
+
+
+
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-read-this-document"><i class="fa fa-check"></i><b>1.1</b> How to read this document</a></li>
+</ul></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a><ul>
+<li class="chapter" data-level="2.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>2.1</b> Activities of the LDI Replication Lab</a></li>
+<li class="chapter" data-level="2.2" data-path="background.html"><a href="background.html#learning-goals"><i class="fa fa-check"></i><b>2.2</b> Learning goals</a></li>
+</ul></li>
+<li class="part"><span><b>II Preliminary Tasks</b></span></li>
+<li class="chapter" data-level="3" data-path="pre-requisites.html"><a href="pre-requisites.html"><i class="fa fa-check"></i><b>3</b> Pre-requisites</a></li>
+<li class="chapter" data-level="4" data-path="pre-training.html"><a href="pre-training.html"><i class="fa fa-check"></i><b>4</b> Pre-training tasks</a><ul>
+<li class="chapter" data-level="4.1" data-path="pre-training.html"><a href="pre-training.html#read"><i class="fa fa-check"></i><b>4.1</b> Read</a></li>
+<li class="chapter" data-level="4.2" data-path="pre-training.html"><a href="pre-training.html#view"><i class="fa fa-check"></i><b>4.2</b> View</a></li>
+<li class="chapter" data-level="4.3" data-path="pre-training.html"><a href="pre-training.html#install"><i class="fa fa-check"></i><b>4.3</b> Install</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="toolkit.html"><a href="toolkit.html"><i class="fa fa-check"></i><b>5</b> Toolkit</a><ul>
+<li class="chapter" data-level="5.1" data-path="toolkit.html"><a href="toolkit.html#command-line"><i class="fa fa-check"></i><b>5.1</b> Command line</a></li>
+<li class="chapter" data-level="5.2" data-path="toolkit.html"><a href="toolkit.html#markdown"><i class="fa fa-check"></i><b>5.2</b> Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="toolkit.html"><a href="toolkit.html#git"><i class="fa fa-check"></i><b>5.3</b> Git</a></li>
+</ul></li>
+<li class="part"><span><b>III Basics</b></span></li>
+<li class="chapter" data-level="6" data-path="basic-concepts.html"><a href="basic-concepts.html"><i class="fa fa-check"></i><b>6</b> Basic Concepts</a></li>
+<li class="chapter" data-level="7" data-path="datacitations.html"><a href="datacitations.html"><i class="fa fa-check"></i><b>7</b> Data citations and data availability statements</a><ul>
+<li class="chapter" data-level="7.1" data-path="datacitations.html"><a href="datacitations.html#a-very-short-history-of-data-citations"><i class="fa fa-check"></i><b>7.1</b> A very short history of data citations</a></li>
+<li class="chapter" data-level="7.2" data-path="datacitations.html"><a href="datacitations.html#how-do-you-create-a-data-citation"><i class="fa fa-check"></i><b>7.2</b> How do you create a data citation</a></li>
+<li class="chapter" data-level="7.3" data-path="datacitations.html"><a href="datacitations.html#dasmaster"><i class="fa fa-check"></i><b>7.3</b> Data availability statements</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html"><i class="fa fa-check"></i><b>8</b> Generic data workflow</a><ul>
+<li class="chapter" data-level="8.1" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#dataflowdiagram"><i class="fa fa-check"></i><b>8.1</b> Details on data workflows</a></li>
+<li class="chapter" data-level="8.2" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#a-simple-example"><i class="fa fa-check"></i><b>8.2</b> A simple example</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>9</b> Assessing computational reproducibility</a></li>
+<li class="chapter" data-level="10" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>10</b> A guided walk through the Replication Report</a><ul>
+<li class="chapter" data-level="10.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>10.1</b> Some high-level concepts</a></li>
+<li class="chapter" data-level="10.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>10.2</b> What’s in a replication report</a></li>
+<li class="chapter" data-level="10.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>10.3</b> Some additional materials</a></li>
+</ul></li>
+<li class="part"><span><b>IV AEA-specific training</b></span></li>
+<li class="chapter" data-level="11" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html"><i class="fa fa-check"></i><b>11</b> AEA Jira workflow - A guide</a><ul>
+<li class="chapter" data-level="11.1" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#scope"><i class="fa fa-check"></i><b>11.1</b> Scope</a></li>
+<li class="chapter" data-level="11.2" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#overview"><i class="fa fa-check"></i><b>11.2</b> Overview</a></li>
+<li class="chapter" data-level="11.3" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#details"><i class="fa fa-check"></i><b>11.3</b> Details</a></li>
+<li class="chapter" data-level="11.4" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#replication-revisions"><i class="fa fa-check"></i><b>11.4</b> Replication Revisions</a></li>
+<li class="chapter" data-level="11.5" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#reviewing-reports"><i class="fa fa-check"></i><b>11.5</b> Reviewing Reports</a></li>
+<li class="chapter" data-level="11.6" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#publication"><i class="fa fa-check"></i><b>11.6</b> Publication</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html"><i class="fa fa-check"></i><b>12</b> AEA: Revision reports after author resubmission</a><ul>
+<li class="chapter" data-level="12.1" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#generic-guidance"><i class="fa fa-check"></i><b>12.1</b> Generic Guidance</a></li>
+<li class="chapter" data-level="12.2" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#writing-the-revision-report"><i class="fa fa-check"></i><b>12.2</b> Writing the Revision Report</a></li>
+<li class="chapter" data-level="12.3" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#revision-workflow"><i class="fa fa-check"></i><b>12.3</b> Revision Workflow</a></li>
+<li class="chapter" data-level="12.4" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#an-example"><i class="fa fa-check"></i><b>12.4</b> An example</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html"><i class="fa fa-check"></i><b>13</b> AEA: Interfacing with the Journal Management System</a><ul>
+<li class="chapter" data-level="13.1" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#basic-setup"><i class="fa fa-check"></i><b>13.1</b> Basic setup</a></li>
+<li class="chapter" data-level="13.2" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#submitting-to-the-jms"><i class="fa fa-check"></i><b>13.2</b> Submitting to the JMS</a></li>
+<li class="chapter" data-level="13.3" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#decision-point"><i class="fa fa-check"></i><b>13.3</b> Decision point?</a></li>
+<li class="chapter" data-level="13.4" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#request-revisions"><i class="fa fa-check"></i><b>13.4</b> Request revisions</a></li>
+<li class="chapter" data-level="13.5" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#preparing-deposit-for-publication"><i class="fa fa-check"></i><b>13.5</b> Preparing Deposit for Publication</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html"><i class="fa fa-check"></i><b>14</b> AEA: Instructions for Papers and Proceedings checks</a><ul>
+<li class="chapter" data-level="14.1" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#step-1"><i class="fa fa-check"></i><b>14.1</b> Step 1</a></li>
+<li class="chapter" data-level="14.2" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#step-2"><i class="fa fa-check"></i><b>14.2</b> Step 2</a></li>
+<li class="chapter" data-level="14.3" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#create-a-capsule"><i class="fa fa-check"></i><b>14.3</b> Create a Capsule</a></li>
+<li class="chapter" data-level="14.4" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#environment"><i class="fa fa-check"></i><b>14.4</b> Environment</a></li>
+<li class="chapter" data-level="14.5" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#files-and-directories"><i class="fa fa-check"></i><b>14.5</b> Files and Directories</a></li>
+<li class="chapter" data-level="14.6" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#log-files"><i class="fa fa-check"></i><b>14.6</b> Log files</a></li>
+<li class="chapter" data-level="14.7" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#output"><i class="fa fa-check"></i><b>14.7</b> Output</a></li>
+<li class="chapter" data-level="14.8" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#notes"><i class="fa fa-check"></i><b>14.8</b> Notes</a></li>
+<li class="chapter" data-level="14.9" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#recording-runs"><i class="fa fa-check"></i><b>14.9</b> Recording runs</a></li>
+<li class="chapter" data-level="14.10" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#jira"><i class="fa fa-check"></i><b>14.10</b> Jira</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
+<li class="chapter" data-level="A.1" data-path="privacy.html"><a href="privacy.html#privacy-of-replicators"><i class="fa fa-check"></i><b>A.1</b> Privacy of Replicators</a></li>
+<li class="chapter" data-level="A.2" data-path="privacy.html"><a href="privacy.html#the-privacy-of-authors"><i class="fa fa-check"></i><b>A.2</b> The Privacy of Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>B</b> Setup Checklist</a><ul>
+<li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
+<li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
+<li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
+<li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
+<li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="communication.html"><a href="communication.html"><i class="fa fa-check"></i><b>C</b> Communication</a><ul>
+<li class="chapter" data-level="C.1" data-path="communication.html"><a href="communication.html#medium"><i class="fa fa-check"></i><b>C.1</b> Medium</a></li>
+<li class="chapter" data-level="C.2" data-path="communication.html"><a href="communication.html#language"><i class="fa fa-check"></i><b>C.2</b> Language</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html"><i class="fa fa-check"></i><b>D</b> Using openICPSR Projects Prior to Publication</a><ul>
+<li class="chapter" data-level="D.1" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html#basics-of-openicpsr"><i class="fa fa-check"></i><b>D.1</b> Basics of openICPSR</a></li>
+<li class="chapter" data-level="D.2" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html#downloading-a-project"><i class="fa fa-check"></i><b>D.2</b> Downloading a project</a></li>
+<li class="chapter" data-level="D.3" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html#reminders"><i class="fa fa-check"></i><b>D.3</b> Reminders</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="access-to-computers.html"><a href="access-to-computers.html"><i class="fa fa-check"></i><b>E</b> Access to Computers</a><ul>
+<li class="chapter" data-level="E.1" data-path="access-to-computers.html"><a href="access-to-computers.html#what-can-you-do-where"><i class="fa fa-check"></i><b>E.1</b> What can you do where</a></li>
+<li class="chapter" data-level="E.2" data-path="access-to-computers.html"><a href="access-to-computers.html#where-is-the-data"><i class="fa fa-check"></i><b>E.2</b> Where is the data</a></li>
+<li class="chapter" data-level="E.3" data-path="access-to-computers.html"><a href="access-to-computers.html#what-software"><i class="fa fa-check"></i><b>E.3</b> What software</a></li>
+<li class="chapter" data-level="E.4" data-path="access-to-computers.html"><a href="access-to-computers.html#what-if-the-code-runs-for-a-long-time-i-need-to-run-to-class-i-need-my-life-twitter-back-on-my-laptop"><i class="fa fa-check"></i><b>E.4</b> What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop</a></li>
+<li class="chapter" data-level="E.5" data-path="access-to-computers.html"><a href="access-to-computers.html#requesting-access"><i class="fa fa-check"></i><b>E.5</b> Requesting Access</a></li>
+<li class="chapter" data-level="E.6" data-path="access-to-computers.html"><a href="access-to-computers.html#where-can-i-learn-more"><i class="fa fa-check"></i><b>E.6</b> Where can I learn more</a></li>
+</ul></li>
+<li class="divider"></li>
+<li class="chapter"> ©️ 2020 Vilhuber, Wasser, Welch </li>
+<li class="chapter"><a href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="CC-BY-NC logo" src="assets/cc-by-nc.png" height="12px"/> CC-BY-NC</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TRAINING For Reproducibility Verification</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="a-guided-walk-through-the-replication-report" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> A guided walk through the Replication Report</h1>
+<p>In order to work through a replication report, you will need</p>
+<ul>
+<li><a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/Access_to_computers.md">Access to computers</a></li>
+<li>Reviewed the <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">Template REPORT</a>
+<!-- Access to computers link does not work--></li>
+</ul>
+<p>We have examples of various actual reports (slightly anonymized):</p>
+<ul>
+<li><a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/sample_report.md">Example 1</a></li>
+<li><a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP278.md">Example 2</a></li>
+<li><a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP282.md">Example 3</a> and its <a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP282-revised.md">revision</a></li>
+</ul>
+<div id="some-high-level-concepts" class="section level2">
+<h2><span class="header-section-number">10.1</span> Some high-level concepts</h2>
+<div id="on-data-documentation" class="section level3">
+<h3><span class="header-section-number">10.1.1</span> On data documentation</h3>
+<p>The <a href="https://social-science-data-editors.github.io/guidance/Requested_information_data.html">Social Science Data Editor’s page on Data documentation</a> provides guidance:</p>
+<ul>
+<li>Identifying all data</li>
+<li>What is great / good / just-good-enough data documentation</li>
+<li>Citing data!</li>
+</ul>
+</div>
+<div id="on-code-documentation" class="section level3">
+<h3><span class="header-section-number">10.1.2</span> On code documentation</h3>
+<p>The <a href="https://social-science-data-editors.github.io/guidance/Requested_information_code.html">Social Science Data Editor’s page on Code and documentation</a> provides guidance:</p>
+<ul>
+<li>What do we consider to be “code”</li>
+<li>Assessing the quality of the code documentation</li>
+</ul>
+</div>
+<div id="to-come" class="section level3">
+<h3><span class="header-section-number">10.1.3</span> To come</h3>
+<p>How to modify code for replicability/verification</p>
+</div>
+</div>
+<div id="whats-in-a-replication-report" class="section level2">
+<h2><span class="header-section-number">10.2</span> What’s in a replication report</h2>
+<p>The template used by the Lab can be found on Github [here](<a href="https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION.md" class="uri">https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION.md</a>](<a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md" class="uri">https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md</a>). The table of contents looks like this:</p>
+<ul>
+<li>SUMMARY *</li>
+<li>Data description *</li>
+<li>Data checks *</li>
+<li>Code description *</li>
+<li>Stated Requirements *</li>
+<li>Missing Requirements *</li>
+<li>Computing Environment of the Replicator</li>
+<li>Replication steps</li>
+<li>Findings</li>
+<li>Classification</li>
+</ul>
+<p>We note that those sections marked “*” can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a “dry” assessment of the completeness of the replication package.</p>
+<p>In most sections, when elements are missing, wrong, or do not work, we use a <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">standardized set of action items</a> to highlight this.</p>
+<div id="summary" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> Summary</h3>
+<p>The SUMMARY is intended for a quick glance by journal editor and authors. It should be short and succinct, with a bulleted (unduplicated) list of action items for the authors, drawn from the rest of the report. It is the first thing editors and authors will see.</p>
+<div class="figure">
+<img src="images/report-summary.png" alt="" />
+<p class="caption">Example report summary</p>
+</div>
+</div>
+<div id="data-description" class="section level3">
+<h3><span class="header-section-number">10.2.2</span> Data description</h3>
+<p>The data description can require substantial time to complete. The replicator is asked to identify all <code>input</code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, but any list will suffice here. In addition, we ask replicators to fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.</p>
+<p>An essential part in writing the data descrption section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.</p>
+<p>Once the preparations above are completed, a summary should be written in the “Data Description” section.</p>
+<div id="what-data-need-to-be-described" class="section level4">
+<h4><span class="header-section-number">10.2.2.1</span> What data need to be described?</h4>
+<p>All “<code>input</code> (original) data sources” and “Analysis data files” should be listed.</p>
+<ul>
+<li>Data needs to be listed include:
+<ul>
+<li>Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data</li>
+<li>Data used to create maps.
+<ul>
+<li>The data source of the geographical information is a source data if the map is created by the authors.</li>
+</ul></li>
+</ul></li>
+<li>Data need not be listed include:
+<ul>
+<li>Source data for the numbers or estimates directly quoted from other aritcles</li>
+<li>Souce data for the parameters used for calibrations, unless they are estimated within the article.</li>
+</ul></li>
+</ul>
+</div>
+<div id="source-data" class="section level4">
+<h4><span class="header-section-number">10.2.2.2</span> Source data</h4>
+<p>For each data source, list</p>
+<ul>
+<li>presence or absence of source data (data files),</li>
+<li>presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK.
+<ul>
+<li>The information of the source location of the data should instruct the replicator how to access the source data.</li>
+<li>A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.</li>
+</ul></li>
+<li>whether the <em>data</em> is cited (see the section on <a href="datacitations.html#datacitations">data citations</a>. Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing.</li>
+</ul>
+<div class="figure">
+<img src="images/report-data-description.png" alt="" />
+<p class="caption">Data Description Section</p>
+</div>
+</div>
+<div id="analysis-data-files" class="section level4">
+<h4><span class="header-section-number">10.2.2.3</span> Analysis data files</h4>
+<p>Analysis data files are the data files from which output tables and figures are produced directly. If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.</p>
+</div>
+</div>
+<div id="metadata-checks-on-deposit" class="section level3">
+<h3><span class="header-section-number">10.2.3</span> Metadata checks on deposit</h3>
+<p>Most replication packages received by the LDI Replication Lab will have been deposited in the AEA Data and Code Repository, but some may be on other trusted repositories (Dataverse, Zenodo, etc.).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The replicators are asked to verify compliance with an AEA-specific list of required elements:</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+JEL Classification (required)</li>
+<li><input type="checkbox" disabled="" />
+Manuscript Number (required)</li>
+<li><input type="checkbox" disabled="" />
+Subject Terms (highly recommended)</li>
+<li><input type="checkbox" disabled="" />
+Geographic coverage (highly recommended)</li>
+<li><input type="checkbox" disabled="" />
+Time period(s) (highly recommended)</li>
+<li><input type="checkbox" disabled="" />
+Collection date(s) (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Universe (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Data Type(s) (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Data Source (suggested)</li>
+<li><input type="checkbox" disabled="" />
+Units of Observation (suggested)</li>
+</ul>
+<p>If all required elements are provided, then the deposit passes.
+Many of the recommended elements are not applicable to all data deposits - for instance, a simulation has no “geographic coverage” or “collection date”, but a survey clearly does.</p>
+<div class="figure">
+<img src="images/report-icpsr-long.png" alt="" />
+<p class="caption">ICPSR metadata report</p>
+</div>
+</div>
+<div id="data-checks" class="section level3">
+<h3><span class="header-section-number">10.2.4</span> Data checks</h3>
+<p>When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.</p>
+<ul>
+<li>can data be read (using software indicated by author)?
+<ul>
+<li>This is a plausibility check for corrupted data.</li>
+</ul></li>
+<li>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)?
+<ul>
+<li>Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is “archive-ready” if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers.</li>
+</ul></li>
+<li>Do the data files have variable labels and meaningful variable names?
+<ul>
+<li>In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (<code>Q25S3</code>) to meaningful labels.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Note that we do <em>not</em> require that variable <em>values</em> are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <em>if</em> we think it is reasonable to do so - a judgement call by the Data Editor.</p>
+</blockquote>
+<ul>
+<li>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+<ul>
+<li>This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="images/report-data-checks.png" alt="" />
+<p class="caption">Data check report</p>
+</div>
+</div>
+<div id="code-description" class="section level3">
+<h3><span class="header-section-number">10.2.5</span> Code description</h3>
+<p>All deposits should have code. In line with the <a href="generic-data-workflow.html#dataflowdiagram">basic data flow</a>, there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will not run it yet).</p>
+<ul>
+<li>Identify programs that create “analysis files” (“data preparation code”).</li>
+<li>Identify programs that create tables and figures.</li>
+</ul>
+<p>From the README, the replicator should be able to identify code to create all <strong>figures, tables, and any in-text numbers</strong>. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">template spreadsheet</a> is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the <a href="a-guided-walk-through-the-replication-report.html#findings">findings</a> section.</p>
+</div>
+<div id="stated-requirements" class="section level3">
+<h3><span class="header-section-number">10.2.6</span> Stated Requirements</h3>
+<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the Computing Environment of the Replicator. If all requirements are listed, check the box “Requirements are complete”. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires “20,000 core compute hours”, or that “runs for weeks”, or that requires custom software that needs to be acquired, may not be feasible.</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+No requirements specified</li>
+<li><input type="checkbox" disabled="" />
+Software Requirements specified as follows:<ul>
+<li>Software 1</li>
+<li>Software 2</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Computational Requirements specified as follows:<ul>
+<li>Cluster size, etc.</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Time Requirements specified as follows:<ul>
+<li>Length of necessary computation (hours, weeks, etc.)</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Requirements are complete.</li>
+</ul>
+</div>
+<div id="missing-requirements" class="section level3">
+<h3><span class="header-section-number">10.2.7</span> Missing Requirements</h3>
+<p>If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should list the <em>complete</em> list of requirements here. This is usually amended as the reproducibility attempt progresses.</p>
+</div>
+<div id="computing-environment-of-the-replicator" class="section level3">
+<h3><span class="header-section-number">10.2.8</span> Computing Environment of the Replicator</h3>
+<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator’s own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:</p>
+<ul>
+<li>(Windows) by right-clicking on “My PC”</li>
+<li>(Mac) Apple-menu &gt; “About this Mac”</li>
+<li>(Linux) see code in <code>tools/linux-system-info.sh</code></li>
+</ul>
+<p>Examples might include:</p>
+<ul>
+<li>Mac Laptop, MacOS 10.14.6, 8 GB of memory (but only if you ran the analysis on the Mac Laptop!)</li>
+<li>CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 @ 2.10Ghz (3 processors)</li>
+<li>CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)</li>
+<li>BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM;</li>
+</ul>
+<p>The list should also list the software the replicator used, with the specific version used (even if the author did not list that information). Examples include:</p>
+<ul>
+<li>Stata/MP 16</li>
+<li>Matlab R2019a</li>
+<li>Intel Compiler 3.14152</li>
+</ul>
+</div>
+<div id="replication-steps" class="section level3">
+<h3><span class="header-section-number">10.2.9</span> Replication steps</h3>
+<p>For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs.</p>
+<ul>
+<li>DO not include trivial details (“I downloaded the code and saved on my Desktop”).</li>
+<li>DO describe actions that you did as per instructions (“I added a config.do”)</li>
+<li>DO describe any other actions you needed to do (“I had to make changes in multiple programs”), without going into detail (the commit log can provide that information)</li>
+</ul>
+<p>The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!</p>
+<div class="figure">
+<img src="images/report-steps-error.png" alt="" />
+<p class="caption">Steps with errors</p>
+</div>
+</div>
+<div id="findings" class="section level3">
+<h3><span class="header-section-number">10.2.10</span> Findings</h3>
+<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out <a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a> can be re-used to drive the list). When errors happen, the replicator’s description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
+<div class="figure">
+<img src="images/report-findings-errors.png" alt="" />
+<p class="caption">Findings with errors</p>
+</div>
+</div>
+<div id="classification" class="section level3">
+<h3><span class="header-section-number">10.2.11</span> Classification</h3>
+<p>The replication report template used by the LDI Replication Lab uses a simplified scheme to summarize the reproducibility of the materials:</p>
+<ul>
+<li><p>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</p></li>
+<li><p>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different. Note that if any data is confidential and not available, then at best a partial replication can be achieved.</p></li>
+<li><p>Failure to replicate implies that only a small number of programs ran successfully, or only a small number of numbers were successfully generated (&lt;25%). Most replication packages that rely on confidential data will also be in this category.</p></li>
+<li><p><input type="checkbox" disabled="" />
+full replication</p></li>
+<li><p><input type="checkbox" disabled="" />
+full replication with minor issues</p></li>
+<li><p><input type="checkbox" disabled="" />
+partial replication (see above)</p></li>
+<li><p><input type="checkbox" disabled="" />
+not able to replicate most or all of the results</p></li>
+</ul>
+<p>The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the <a href="https://bitss.github.io/ACRE/assessment.html#score">BITSS ACRE Project</a>. The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.</p>
+<p>The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab’s JIRA system):</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+<code>Discrepancy in output</code> (either figures or numbers in tables or text differ)</li>
+<li><input type="checkbox" disabled="" />
+<code>Bugs in code</code> that were fixable by the replicator (but should be fixed in the final deposit)</li>
+<li><input type="checkbox" disabled="" />
+<code>Code missing</code>, in particular if it prevented the replicator from completing the reproducibility check</li>
+<li><input type="checkbox" disabled="" />
+<code>Code not functional</code> is more severe than a simple bug: it prevented the replicator from completing the reproducibility check</li>
+<li><input type="checkbox" disabled="" />
+<code>Software not available to replicator</code> may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.</li>
+<li><input type="checkbox" disabled="" />
+<code>Insufficient time available to replicator</code> is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.</li>
+<li><input type="checkbox" disabled="" />
+<code>Data missing</code> is marked when data <em>should</em> be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package</li>
+<li><input type="checkbox" disabled="" />
+<code>Data not available</code> is marked when data requires additional access steps, for instance purchase or application procedure.</li>
+</ul>
+<p>Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the “data are not available” or because there is “insufficient time”, as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report.</p>
+<div class="figure">
+<img src="images/jira-outcomes1.png" alt="" />
+<p class="caption">Outcome with non-replication</p>
+</div>
+<div class="figure">
+<img src="images/jira-outcomes2.png" alt="" />
+<p class="caption">Outcome with full replication</p>
+</div>
+<div class="figure">
+<img src="images/jira-outcomes3.png" alt="" />
+<p class="caption">Outcome with partial replication</p>
+</div>
+</div>
+</div>
+<div id="some-additional-materials" class="section level2">
+<h2><span class="header-section-number">10.3</span> Some additional materials</h2>
+<p>Here’s a collection from older presentations:</p>
+<ul>
+<li><a href="Replication-Report-Overview.pdf">Elements of a replication report</a></li>
+<li><a href="replicator_checklist.pdf">Replicator checklist</a></li>
+</ul>
+
+</div>
+</div>
+
+
+
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>See the Social Science Data Editor website for a list of trusted repositories.<a href="a-guided-walk-through-the-replication-report.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>The Stata version can be found <a href="https://github.com/J-PAL/stata_PII_scan">here</a>.<a href="a-guided-walk-through-the-replication-report.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="assessing-computational-reproducibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aea-jira-workflow-a-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": "labordynamicsinstitute",
+"facebook": false,
+"twitter": "larsvil",
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

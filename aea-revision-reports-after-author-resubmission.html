@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 12 AEA: Revision reports after author resubmission | TRAINING For Reproducibility Verification</title>
+  <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 12 AEA: Revision reports after author resubmission | TRAINING For Reproducibility Verification" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 12 AEA: Revision reports after author resubmission | TRAINING For Reproducibility Verification" />
+  
+  <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
+  
+
+<meta name="author" content="Lars Vilhuber" />
+<meta name="author" content="Hyuk Son" />
+<meta name="author" content="Meredith Welch" />
+<meta name="author" content="David Wasser" />
+
+
+<meta name="date" content="2021-06-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="aea-jira-workflow-a-guide.html"/>
+<link rel="next" href="aea-interfacing-with-the-journal-management-system.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<script>
+function toggleCitation() {
+  var x = document.getElementById("myCitation");
+  var button = document.getElementById("citationButton");
+  var date = document.getElementById("todayDate");
+  var url = document.getElementById("thisURL");
+  var d = new Date().toISOString();
+  var chapTitle = document.getElementsByTagName("h1")[1]
+  var citeTitle = document.getElementById("chapTitle")
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    button.innerHTML = "Hide citation";
+    date.innerHTML = d.split("T")[0];
+    url.innerHTML = window.location.href;
+    citeTitle.innerText = chapTitle.innerText.replace(/^[0-9]+ /,"")
+  } else {
+    x.style.display = "none";
+    button.innerHTML = "Show citation to this chapter";
+  }
+} 
+
+</script>
+
+
+
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-read-this-document"><i class="fa fa-check"></i><b>1.1</b> How to read this document</a></li>
+</ul></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a><ul>
+<li class="chapter" data-level="2.1" data-path="background.html"><a href="background.html#activities-of-the-ldi-replication-lab"><i class="fa fa-check"></i><b>2.1</b> Activities of the LDI Replication Lab</a></li>
+<li class="chapter" data-level="2.2" data-path="background.html"><a href="background.html#learning-goals"><i class="fa fa-check"></i><b>2.2</b> Learning goals</a></li>
+</ul></li>
+<li class="part"><span><b>II Preliminary Tasks</b></span></li>
+<li class="chapter" data-level="3" data-path="pre-requisites.html"><a href="pre-requisites.html"><i class="fa fa-check"></i><b>3</b> Pre-requisites</a></li>
+<li class="chapter" data-level="4" data-path="pre-training.html"><a href="pre-training.html"><i class="fa fa-check"></i><b>4</b> Pre-training tasks</a><ul>
+<li class="chapter" data-level="4.1" data-path="pre-training.html"><a href="pre-training.html#read"><i class="fa fa-check"></i><b>4.1</b> Read</a></li>
+<li class="chapter" data-level="4.2" data-path="pre-training.html"><a href="pre-training.html#view"><i class="fa fa-check"></i><b>4.2</b> View</a></li>
+<li class="chapter" data-level="4.3" data-path="pre-training.html"><a href="pre-training.html#install"><i class="fa fa-check"></i><b>4.3</b> Install</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="toolkit.html"><a href="toolkit.html"><i class="fa fa-check"></i><b>5</b> Toolkit</a><ul>
+<li class="chapter" data-level="5.1" data-path="toolkit.html"><a href="toolkit.html#command-line"><i class="fa fa-check"></i><b>5.1</b> Command line</a></li>
+<li class="chapter" data-level="5.2" data-path="toolkit.html"><a href="toolkit.html#markdown"><i class="fa fa-check"></i><b>5.2</b> Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="toolkit.html"><a href="toolkit.html#git"><i class="fa fa-check"></i><b>5.3</b> Git</a></li>
+</ul></li>
+<li class="part"><span><b>III Basics</b></span></li>
+<li class="chapter" data-level="6" data-path="basic-concepts.html"><a href="basic-concepts.html"><i class="fa fa-check"></i><b>6</b> Basic Concepts</a></li>
+<li class="chapter" data-level="7" data-path="datacitations.html"><a href="datacitations.html"><i class="fa fa-check"></i><b>7</b> Data citations and data availability statements</a><ul>
+<li class="chapter" data-level="7.1" data-path="datacitations.html"><a href="datacitations.html#a-very-short-history-of-data-citations"><i class="fa fa-check"></i><b>7.1</b> A very short history of data citations</a></li>
+<li class="chapter" data-level="7.2" data-path="datacitations.html"><a href="datacitations.html#how-do-you-create-a-data-citation"><i class="fa fa-check"></i><b>7.2</b> How do you create a data citation</a></li>
+<li class="chapter" data-level="7.3" data-path="datacitations.html"><a href="datacitations.html#dasmaster"><i class="fa fa-check"></i><b>7.3</b> Data availability statements</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html"><i class="fa fa-check"></i><b>8</b> Generic data workflow</a><ul>
+<li class="chapter" data-level="8.1" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#dataflowdiagram"><i class="fa fa-check"></i><b>8.1</b> Details on data workflows</a></li>
+<li class="chapter" data-level="8.2" data-path="generic-data-workflow.html"><a href="generic-data-workflow.html#a-simple-example"><i class="fa fa-check"></i><b>8.2</b> A simple example</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="assessing-computational-reproducibility.html"><a href="assessing-computational-reproducibility.html"><i class="fa fa-check"></i><b>9</b> Assessing computational reproducibility</a></li>
+<li class="chapter" data-level="10" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html"><i class="fa fa-check"></i><b>10</b> A guided walk through the Replication Report</a><ul>
+<li class="chapter" data-level="10.1" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-high-level-concepts"><i class="fa fa-check"></i><b>10.1</b> Some high-level concepts</a></li>
+<li class="chapter" data-level="10.2" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#whats-in-a-replication-report"><i class="fa fa-check"></i><b>10.2</b> What’s in a replication report</a></li>
+<li class="chapter" data-level="10.3" data-path="a-guided-walk-through-the-replication-report.html"><a href="a-guided-walk-through-the-replication-report.html#some-additional-materials"><i class="fa fa-check"></i><b>10.3</b> Some additional materials</a></li>
+</ul></li>
+<li class="part"><span><b>IV AEA-specific training</b></span></li>
+<li class="chapter" data-level="11" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html"><i class="fa fa-check"></i><b>11</b> AEA Jira workflow - A guide</a><ul>
+<li class="chapter" data-level="11.1" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#scope"><i class="fa fa-check"></i><b>11.1</b> Scope</a></li>
+<li class="chapter" data-level="11.2" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#overview"><i class="fa fa-check"></i><b>11.2</b> Overview</a></li>
+<li class="chapter" data-level="11.3" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#details"><i class="fa fa-check"></i><b>11.3</b> Details</a></li>
+<li class="chapter" data-level="11.4" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#replication-revisions"><i class="fa fa-check"></i><b>11.4</b> Replication Revisions</a></li>
+<li class="chapter" data-level="11.5" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#reviewing-reports"><i class="fa fa-check"></i><b>11.5</b> Reviewing Reports</a></li>
+<li class="chapter" data-level="11.6" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#publication"><i class="fa fa-check"></i><b>11.6</b> Publication</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html"><i class="fa fa-check"></i><b>12</b> AEA: Revision reports after author resubmission</a><ul>
+<li class="chapter" data-level="12.1" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#generic-guidance"><i class="fa fa-check"></i><b>12.1</b> Generic Guidance</a></li>
+<li class="chapter" data-level="12.2" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#writing-the-revision-report"><i class="fa fa-check"></i><b>12.2</b> Writing the Revision Report</a></li>
+<li class="chapter" data-level="12.3" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#revision-workflow"><i class="fa fa-check"></i><b>12.3</b> Revision Workflow</a></li>
+<li class="chapter" data-level="12.4" data-path="aea-revision-reports-after-author-resubmission.html"><a href="aea-revision-reports-after-author-resubmission.html#an-example"><i class="fa fa-check"></i><b>12.4</b> An example</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html"><i class="fa fa-check"></i><b>13</b> AEA: Interfacing with the Journal Management System</a><ul>
+<li class="chapter" data-level="13.1" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#basic-setup"><i class="fa fa-check"></i><b>13.1</b> Basic setup</a></li>
+<li class="chapter" data-level="13.2" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#submitting-to-the-jms"><i class="fa fa-check"></i><b>13.2</b> Submitting to the JMS</a></li>
+<li class="chapter" data-level="13.3" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#decision-point"><i class="fa fa-check"></i><b>13.3</b> Decision point?</a></li>
+<li class="chapter" data-level="13.4" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#request-revisions"><i class="fa fa-check"></i><b>13.4</b> Request revisions</a></li>
+<li class="chapter" data-level="13.5" data-path="aea-interfacing-with-the-journal-management-system.html"><a href="aea-interfacing-with-the-journal-management-system.html#preparing-deposit-for-publication"><i class="fa fa-check"></i><b>13.5</b> Preparing Deposit for Publication</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html"><i class="fa fa-check"></i><b>14</b> AEA: Instructions for Papers and Proceedings checks</a><ul>
+<li class="chapter" data-level="14.1" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#step-1"><i class="fa fa-check"></i><b>14.1</b> Step 1</a></li>
+<li class="chapter" data-level="14.2" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#step-2"><i class="fa fa-check"></i><b>14.2</b> Step 2</a></li>
+<li class="chapter" data-level="14.3" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#create-a-capsule"><i class="fa fa-check"></i><b>14.3</b> Create a Capsule</a></li>
+<li class="chapter" data-level="14.4" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#environment"><i class="fa fa-check"></i><b>14.4</b> Environment</a></li>
+<li class="chapter" data-level="14.5" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#files-and-directories"><i class="fa fa-check"></i><b>14.5</b> Files and Directories</a></li>
+<li class="chapter" data-level="14.6" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#log-files"><i class="fa fa-check"></i><b>14.6</b> Log files</a></li>
+<li class="chapter" data-level="14.7" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#output"><i class="fa fa-check"></i><b>14.7</b> Output</a></li>
+<li class="chapter" data-level="14.8" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#notes"><i class="fa fa-check"></i><b>14.8</b> Notes</a></li>
+<li class="chapter" data-level="14.9" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#recording-runs"><i class="fa fa-check"></i><b>14.9</b> Recording runs</a></li>
+<li class="chapter" data-level="14.10" data-path="aea-instructions-for-papers-and-proceedings-checks.html"><a href="aea-instructions-for-papers-and-proceedings-checks.html#jira"><i class="fa fa-check"></i><b>14.10</b> Jira</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="privacy.html"><a href="privacy.html"><i class="fa fa-check"></i><b>A</b> Privacy</a><ul>
+<li class="chapter" data-level="A.1" data-path="privacy.html"><a href="privacy.html#privacy-of-replicators"><i class="fa fa-check"></i><b>A.1</b> Privacy of Replicators</a></li>
+<li class="chapter" data-level="A.2" data-path="privacy.html"><a href="privacy.html#the-privacy-of-authors"><i class="fa fa-check"></i><b>A.2</b> The Privacy of Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>B</b> Setup Checklist</a><ul>
+<li class="chapter" data-level="B.1" data-path="checklist.html"><a href="checklist.html#accounts-you-will-need-to-sign-up-for-action-required"><i class="fa fa-check"></i><b>B.1</b> Accounts you will need to sign up for (action required)</a></li>
+<li class="chapter" data-level="B.2" data-path="checklist.html"><a href="checklist.html#accounts-you-will-be-signed-up-for-no-action-required"><i class="fa fa-check"></i><b>B.2</b> Accounts you will be signed up for (no action required)</a></li>
+<li class="chapter" data-level="B.3" data-path="checklist.html"><a href="checklist.html#software-to-install-on-your-laptop"><i class="fa fa-check"></i><b>B.3</b> Software to install on your laptop</a></li>
+<li class="chapter" data-level="B.4" data-path="checklist.html"><a href="checklist.html#text-editor-vs.-word-processor"><i class="fa fa-check"></i><b>B.4</b> Text editor vs. Word processor</a></li>
+<li class="chapter" data-level="B.5" data-path="checklist.html"><a href="checklist.html#availability-and-suggestions"><i class="fa fa-check"></i><b>B.5</b> Availability and Suggestions</a></li>
+<li class="chapter" data-level="B.6" data-path="checklist.html"><a href="checklist.html#note"><i class="fa fa-check"></i><b>B.6</b> Note</a></li>
+<li class="chapter" data-level="B.7" data-path="checklist.html"><a href="checklist.html#help"><i class="fa fa-check"></i><b>B.7</b> Help</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="communication.html"><a href="communication.html"><i class="fa fa-check"></i><b>C</b> Communication</a><ul>
+<li class="chapter" data-level="C.1" data-path="communication.html"><a href="communication.html#medium"><i class="fa fa-check"></i><b>C.1</b> Medium</a></li>
+<li class="chapter" data-level="C.2" data-path="communication.html"><a href="communication.html#language"><i class="fa fa-check"></i><b>C.2</b> Language</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html"><i class="fa fa-check"></i><b>D</b> Using openICPSR Projects Prior to Publication</a><ul>
+<li class="chapter" data-level="D.1" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html#basics-of-openicpsr"><i class="fa fa-check"></i><b>D.1</b> Basics of openICPSR</a></li>
+<li class="chapter" data-level="D.2" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html#downloading-a-project"><i class="fa fa-check"></i><b>D.2</b> Downloading a project</a></li>
+<li class="chapter" data-level="D.3" data-path="using-openicpsr-projects-prior-to-publication.html"><a href="using-openicpsr-projects-prior-to-publication.html#reminders"><i class="fa fa-check"></i><b>D.3</b> Reminders</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="access-to-computers.html"><a href="access-to-computers.html"><i class="fa fa-check"></i><b>E</b> Access to Computers</a><ul>
+<li class="chapter" data-level="E.1" data-path="access-to-computers.html"><a href="access-to-computers.html#what-can-you-do-where"><i class="fa fa-check"></i><b>E.1</b> What can you do where</a></li>
+<li class="chapter" data-level="E.2" data-path="access-to-computers.html"><a href="access-to-computers.html#where-is-the-data"><i class="fa fa-check"></i><b>E.2</b> Where is the data</a></li>
+<li class="chapter" data-level="E.3" data-path="access-to-computers.html"><a href="access-to-computers.html#what-software"><i class="fa fa-check"></i><b>E.3</b> What software</a></li>
+<li class="chapter" data-level="E.4" data-path="access-to-computers.html"><a href="access-to-computers.html#what-if-the-code-runs-for-a-long-time-i-need-to-run-to-class-i-need-my-life-twitter-back-on-my-laptop"><i class="fa fa-check"></i><b>E.4</b> What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop</a></li>
+<li class="chapter" data-level="E.5" data-path="access-to-computers.html"><a href="access-to-computers.html#requesting-access"><i class="fa fa-check"></i><b>E.5</b> Requesting Access</a></li>
+<li class="chapter" data-level="E.6" data-path="access-to-computers.html"><a href="access-to-computers.html#where-can-i-learn-more"><i class="fa fa-check"></i><b>E.6</b> Where can I learn more</a></li>
+</ul></li>
+<li class="divider"></li>
+<li class="chapter"> ©️ 2020 Vilhuber, Wasser, Welch </li>
+<li class="chapter"><a href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="CC-BY-NC logo" src="assets/cc-by-nc.png" height="12px"/> CC-BY-NC</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">TRAINING For Reproducibility Verification</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="aea-revision-reports-after-author-resubmission" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> AEA: Revision reports after author resubmission</h1>
+<p>Most pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.</p>
+<div id="generic-guidance" class="section level2">
+<h2><span class="header-section-number">12.1</span> Generic Guidance</h2>
+<ul>
+<li><p>Most revisions will not take you much time, so please try to process them quickly!</p></li>
+<li><p>Revisions do not require you to repeat all of the same steps as the original replication (see below).</p></li>
+<li><p><strong>Do not create a new Bitbucket repo</strong>. You will overwrite the original repo (the original contents will still be available – this is why we use version control software like Bitbucket!)</p></li>
+<li><p>The original REPLICATION.md is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.</p>
+<ul>
+<li>If new issues turn up as a result of additional materials provided, these are okay to include as [REQUIRED] changes in the revised report.</li>
+<li>If you are unsure about something, add it to the report. While reviewing your report, we can make a determination about whether or not it can be done after acceptance of the manuscript, be a suggested instead of required change, etc.</li>
+</ul></li>
+</ul>
+</div>
+<div id="writing-the-revision-report" class="section level2">
+<h2><span class="header-section-number">12.2</span> Writing the Revision Report</h2>
+<p>Please be clear when writing the revision report. The report should make sense without having to refer to the previous report.</p>
+<ul>
+<li>The body of the report should reflect the current status of the deposit.
+<ul>
+<li>Example: if authors were missing a setup program before and now provide it, the <code>Code Description</code> section of the REPLICATION.md should be updated to reflect the inclusion of this program.</li>
+</ul></li>
+<li>Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively.
+<ul>
+<li>Note: in the summary, these tags are using bullets (<code>- [REQUIRED]</code>) - those should be changed to “quotes”: <code>&gt; [We REQUESTED]</code></li>
+</ul></li>
+<li>Below each such tag, add a bullet point. Start the paragraph with “Done” if the issue was resolved, or “Not done” if not. Then explain what was done.</li>
+</ul>
+<p>An example:</p>
+<pre><code>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)</code></pre>
+<p>becomes</p>
+<pre><code>&gt; [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+
+- Done. A setup program has been added to the deposit, which installs all necessary packages. </code></pre>
+</div>
+<div id="revision-workflow" class="section level2">
+<h2><span class="header-section-number">12.3</span> Revision Workflow</h2>
+<p>You should proceed through the <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-workflow-training.md">workflow</a> as you would for an original case with some exceptions:</p>
+<ul>
+<li>You <strong>should not</strong> create a new Bitbucket repository.</li>
+<li>You do not need to fill out a new Data Citation and Information Report.</li>
+<li>You <em>may</em> not need to re-run any code.</li>
+</ul>
+<div id="in-progress" class="section level3">
+<h3><span class="header-section-number">12.3.1</span> In Progress</h3>
+<p>First, advance the ticket from <code>Assigned</code> to <code>In Progress</code>.</p>
+<ul>
+<li><p><input type="checkbox" disabled="" />
+Identify previous issue.</p><ul>
+<li>You should see the previous issue listed under <strong>Linked Issues</strong> on JIRA.</li>
+<li>Use the previous issue, to fill in the following JIRA fields (if not already filled):
+<ul>
+<li><code>Code provenance</code></li>
+<li><code>Journal</code></li>
+<li><code>Empirical Article</code></li>
+<li><code>Bitbucket short name</code>. This should be the name of the original JIRA issue (e.g. <code>aearep-123)</code>.</li>
+<li><code>openICPSR project number</code></li>
+</ul></li>
+</ul></li>
+<li><p><input type="checkbox" disabled="" />
+Download the materials attached to the JIRA issue. This will typically include an updated copy of the manuscript, readme, and a response to the editor addressing the requested changes from the prior replication attempt. These should be added to the root of the repository</p></li>
+<li><p><input type="checkbox" disabled="" />
+Remove obsolete files. In the root, this should be obvious (old manuscript, old README), in the copy of the code, a bit trickier, but necessary.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Add these to the root of the repository locally, and then add, commit, and push them to the Bitbucket repository (e.g., <code>git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf</code>)</p><ul>
+<li>The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</li>
+</ul></li>
+</ul>
+<pre><code>code-check.xlsx
+config.do
+PDF_Proof.PDF
+PII_stata_scan.do
+readme.pdf
+REPLICATION.md
+reply_to_editor.pdf</code></pre>
+<ul>
+<li><input type="checkbox" disabled="" />
+Open <code>REPLICATION.md</code> to review the requested changes from the prior replication attempt. Read the reply to the editor, if provided, to get a sense of what changes the authors made. Make a determination if the revision requires re-running code.<ul>
+<li>If there were [REQUIRED] changes in the Code Description, Replication Steps, or Findings sections of the original report, you will likely have to re-run code.</li>
+<li>If the only [REQUIRED] changes were data citations or changes to the README, you should not need to re-run code.</li>
+</ul></li>
+</ul>
+<p>Change the status from <code>In Progress</code> to <code>Code</code>.</p>
+</div>
+<div id="code" class="section level3">
+<h3><span class="header-section-number">12.3.2</span> Code</h3>
+<p>At this point, you may want to transition to CISER if you haven’t already. You should <code>git pull</code> to ensure the changes you’ve made are reflected in the local version of the repository on CISER.</p>
+<ul>
+<li><p><input type="checkbox" disabled="" />
+Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code>12345</code> then all updated materials will again go into the <code>12345</code> subdirectory.</p><ul>
+<li>Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the <code>aearep-123</code> repo on Bitbucket.</li>
+<li>Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to <code>git rm</code> them).</li>
+<li>Ensure that output produced from the prior replication attempt remains in the repository.</li>
+</ul></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Data Description section of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Code Description section of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Fill out the required JIRA fields:</p><ul>
+<li><code>Data Provenance</code></li>
+</ul></li>
+</ul>
+<p>Change the status from <code>Code</code> to <code>Data</code>.</p>
+</div>
+<div id="data" class="section level3">
+<h3><span class="header-section-number">12.3.3</span> Data</h3>
+<ul>
+<li><p><input type="checkbox" disabled="" />
+Update the Data Checks section of the report, if new data have been provided.</p></li>
+<li><p>Fill out the required fields in JIRA:</p>
+<ul>
+<li><code>Working location of the data</code> or</li>
+<li><code>Reason for non-accessibility</code></li>
+</ul></li>
+</ul>
+<p>Change the status from <code>Data</code> to <code>Write Preliminary Report</code>.</p>
+</div>
+<div id="write-preliminary-report" class="section level3">
+<h3><span class="header-section-number">12.3.4</span> Write Preliminary report</h3>
+<ul>
+<li><p><input type="checkbox" disabled="" />
+Ensure all sections of the report up to Replication Steps have been updated.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Delete sections of the report.</p></li>
+</ul>
+<p>Change the status from <code>Writing preliminary report</code> to <code>Code Review</code> or <code>Verification</code>.</p>
+</div>
+<div id="code-review-or-verification" class="section level3">
+<h3><span class="header-section-number">12.3.5</span> Code Review or Verification</h3>
+<p>If you have previously determined that code needs to be re-run, you should select the <code>Verification</code> stage.</p>
+<p>If you have determined that code does not need to be re-run (or code is unable to be run due to lack of data), select the <code>Code Review</code> option.</p>
+<div id="re-running-code" class="section level4">
+<h4><span class="header-section-number">12.3.5.1</span> Re-running code</h4>
+<ul>
+<li><p>You <strong>do not</strong> need to re-verify tables/figures that were successfully replicated the first time <em>unless</em> the new code also affects them.</p></li>
+<li><p>If parts of the code take a long time to run and the [REQUIRED] changes do not involve those parts, you do not need to re-run that part of the code.</p></li>
+<li><p><strong>Be careful!</strong> Sometimes the code will produce intermediate outputs along the way that may be needed later on. So if you skip parts of the code and cannot replicate the result(s), go back and check to see if you actually need to run all of the code.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Run relevant parts of code, including the config.do generating system.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Replication Steps section of the report, accordingly.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the <code>code-check.xlsx</code> file.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Findings section of the report.</p></li>
+<li><p><input type="checkbox" disabled="" />
+<code>git add</code>, <code>git commit</code>, and <code>git push</code> any new results to the Bitbucket repository.</p></li>
+</ul>
+<p>Change the status from <code>Code Review</code> or <code>Verification</code> to <code>Writing Report</code>.</p>
+</div>
+</div>
+<div id="writing-report" class="section level3">
+<h3><span class="header-section-number">12.3.6</span> Writing Report</h3>
+<p>In this stage, you will finalize the revision report.</p>
+<ul>
+<li><p><input type="checkbox" disabled="" />
+Ensure all [REQUIRED] and [SUGGESTED] items from the original report have been changed to [We REQUESTED] and [We SUGGESTED] in the body of the report.</p><ul>
+<li>The resolution (or lack thereof) should be included as a bullet point directly below the request.</li>
+</ul></li>
+<li><p><input type="checkbox" disabled="" />
+Ensure any new issues found are tagged with the appropriate [REQUIRED] and [SUGGESTED] tags.</p></li>
+<li><p><input type="checkbox" disabled="" />
+Delete/modify any comments of the report template that are no longer true:</p><ul>
+<li>e.g. if the previous report stated “Data not cited” and the author has now added citations, then that part should state “Data is cited” or “Data is now cited”.</li>
+</ul></li>
+<li><p><input type="checkbox" disabled="" />
+Delete any parts of the report template that are no longer relevant:</p><ul>
+<li>e.g. if no code changes were [REQUIRED], then delete the sections involving code, replication steps, and findings.</li>
+<li>careful however here, too: authors should only be making changes to parts that we requested changes for, but if they change things elsewhere, then you should, in fact, retain that section, and accurately describe it again. New errors <em>can</em> be introduced!</li>
+</ul></li>
+<li><p><input type="checkbox" disabled="" />
+Update the Classification.</p><ul>
+<li>If you do not need to re-run code for the revision, keep the original classification.</li>
+<li>If you do need to re-run code for the revision, update the classification appropriately.</li>
+</ul></li>
+<li><p><input type="checkbox" disabled="" />
+Incorporate all old/new requested changes and resolutions in the SUMMARY section of the report:</p><ul>
+<li>Create sub-sections for <strong>New</strong>, <strong>Unresolved</strong>, and <strong>Resolved</strong> issues.</li>
+<li>Replace all previously <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> items in the SUMMARY section with <code>&gt; [We REQUESTED]</code> and <code>&gt; [We SUGGESTED]</code>, respectively. New issues should still have the <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> tags.</li>
+<li>Below each item, include the same resolution you listed in the body of the report.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="an-example" class="section level2">
+<h2><span class="header-section-number">12.4</span> An example</h2>
+<pre><code>SUMMARY
+-------
+
+### New 
+
+- [REQUIRED] Please provide debugged code, addressing the issues identified in 
+  this report.
+
+### Unresolved 
+
+&gt; [We REQUESTED] Please add data citations to the article. 
+  Guidance on how to cite data is provided in the 
+  [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references) 
+  and in [additional guidance](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html#confidential-databases).
+
+- Not done. Please add data citations to the manuscript for the 
+  following data sources: data source 1, data source 2. 
+
+### Resolved 
+
+&gt; [We REQUESTED] Please add a setup program that installs all 
+  packages as noted above. Please specify all necessary commands. 
+  An example of a setup file can be found at 
+  [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+
+- Done. A setup program has been added to the deposit, which 
+  installs all necessary packages.</code></pre>
+<p>Finally, don’t forget to <code>git add</code>, <code>git commit</code>, and <code>git push</code> the new report. Then, change the status in JIRA from <code>Writing Report</code> to <code>Report Under Review</code>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aea-jira-workflow-a-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aea-interfacing-with-the-journal-management-system.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": "labordynamicsinstitute",
+"facebook": false,
+"twitter": "larsvil",
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
