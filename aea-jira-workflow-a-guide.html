@@ -724,7 +724,10 @@ Commit this preliminary report to the Bitbucket repository.</li>
 <ul>
 <li>This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.</li>
 <li>You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.</li>
-<li>The authors might have identified computational requirements that you do not have access to, or do not have the time to run (“compute cluster with 100 nodes”, “Fortran compiler”).</li>
+<li>The authors might have identified computational requirements that you do not have access to, or do not have the time to run (“compute cluster with 100 nodes”, “Fortran compiler”).
+<ul>
+<li>You may want to identify packages that needs to be installed. To help you with this task, we provide a tool called “scan_packages.do” for STATA programs. Instruction for using this dofile is in <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-scan-packages-do.html">Appendix G</a>.</li>
+</ul></li>
 </ul>
 <blockquote>
 <p>Commit!</p>
@@ -753,7 +756,8 @@ git push</code></pre>
 <div id="verification" class="section level3">
 <h3><span class="header-section-number">11.3.5</span> Verification</h3>
 <p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
-<p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.</p>
+<p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.
+- For codes using STATA, we provide a template of <code>config.do</code> in the repository. It creates log files and saves it in the repository. Instructions for using <code>config.do</code> is in the <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a></p>
 <p>Follow the steps <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a></p>
 <p>You should commit your report with intermediate results as you have them. Do <strong>not</strong> wait until you have all the results finished. Commit frequently!</p>
 <blockquote>

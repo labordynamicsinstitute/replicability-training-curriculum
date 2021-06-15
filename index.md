@@ -1282,6 +1282,7 @@ This stage allows for earlier identification of  issues that might warrant chang
 - This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.
 - You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.
 - The authors might have identified computational requirements that you do not have access to, or do not have the time to run ("compute cluster with 100 nodes", "Fortran compiler").
+  - You may want to identify packages that needs to be installed. To help you with this task, we provide a tool called "scan_packages.do" for STATA programs. Instruction for using this dofile is in [Appendix G](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-scan-packages-do.html).
 
 
 > Commit!
@@ -1307,6 +1308,7 @@ In this stage, you are verifying the code, by using the provided data, or by ins
 
 
 Keep a log of what you do, what you find, and what does not work, in the `REPLICATION.md`, under *Findings*.
+  - For codes using STATA, we provide a template of `config.do` in the repository. It creates log files and saves it in the repository. Instructions for using `config.do` is in the [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html)
 
 Follow the steps [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication)
 
