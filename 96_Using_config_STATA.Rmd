@@ -59,43 +59,14 @@ As explained above, we often need to install packages. Even when the packages we
 The given name should be `template-config.do`. In order to use it, rename it to `config.do` and move it to the openICPSR folder (e.g. , 140XXX).
 
 ### Include config.do
-If there is a master do file, add the following line at the beginning of the code:
-```
-include config.do
-```
+- Add the following line at the beginning of each code:
+    ```
+    include config.do
+    ```
+    and add the following at the end of each code:
+    ```
+    log close
+    ```
+- If there is a master do file, you can choose to put the above line at the beginning and the end of the `master.do` once.
 
-
-## Where is the data
-
-We are currently exploring how to make the data *mobile*. At present, we do not want the data in Bitbucket, so you will need to re-download the data on each computer you intend to **run programs**. So you should decide on one particular computer. You can edit documents and code anywhere else, but again, remember to `git push` any changes from your *other* computer, and to `git pull` on your *compute* computer.
-
-## What software
-
-By default, you should expect to run the code on CISER, which has a [broad selection of software](https://ciser.cornell.edu/computing/software/).
-
-If you actually have the software on your laptop, you should feel free to run code there, but see the caveat below. We will not purchase software for your personal laptop, and we do not provide you with a computationally capable laptop.
-
-Some software is not available on CISER. If you encounter the following, you should check with your supervisor:
-
-| Software | Computing resource |
-|==========|====================|
-| Dynare   | Red Cloud Windows node |
-| Fortran compiler | BioHPC linux cluster |
-| C compiler  | BioHPC linux cluster |
-| Eviews | Not currently available |
-
-Much statistical software loads data into memory. Your laptop has a limited amount of memory (in 2018, between 2GB and 8GB, rarely more). CISER nodes and BioHPC nodes can have between 256GB and 1024 GB of memory!
-
-## What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop
-
-One of the advantages of running on the CISER or BioHPC nodes is that you can *disconnect* from the server, while leaving your programs running. That is one of the reasons to use them instead of your laptop. 
-
-## Requesting Access
-
-See setup checklist.
-
-
-## Where can I learn more
-
-- For CISER nodes, see [here](https://ciser.cornell.edu/computing/computing-help/how-to-login/)
-- For special *Red Cloud* nodes, see [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Connect-to-a-Ciser-Custom-Red-Cloud-Machine)
+- There will be cases where authors create their own log files. In that case, one thing you can do is to comment out line 27. 
