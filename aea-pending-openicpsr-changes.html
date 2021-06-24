@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Privacy | TRAINING For Reproducibility Verification</title>
+  <title>Chapter 16 AEA: Pending openICPSR Changes | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Privacy | TRAINING For Reproducibility Verification" />
+  <meta property="og:title" content="Chapter 16 AEA: Pending openICPSR Changes | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Privacy | TRAINING For Reproducibility Verification" />
+  <meta name="twitter:title" content="Chapter 16 AEA: Pending openICPSR Changes | TRAINING For Reproducibility Verification" />
   
   <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
   
@@ -34,8 +34,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="aea-pending-openicpsr-changes.html"/>
-<link rel="next" href="checklist.html"/>
+<link rel="prev" href="aea-reproducibility-checks-in-codeocean.html"/>
+<link rel="next" href="privacy.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -233,55 +233,86 @@ function toggleCitation() {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="privacy" class="section level1">
-<h1><span class="header-section-number">A</span> Privacy</h1>
-<p>We need to cover two sorts of privacy: the privacy of those whose materials we verify, and your own privacy. There are limitations to both, but we attempt to protect privacy as much as possible.</p>
-<div id="privacy-of-replicators" class="section level2">
-<h2><span class="header-section-number">A.1</span> Privacy of Replicators</h2>
-<p>You are tasked with reproducing articles. Much as referees for journals mostly remain anonymous, we want you to remain anonymous as well.</p>
-<ul>
-<li>You <em>may</em> reveal yourself to authors later (after the task is completed), if you wish.</li>
-<li>You should <em>not</em> contact authors unless authorized by the Lab Leader. Normally, all such communications go through the Lab Leader.</li>
-<li>We do <em>name</em> you (to thank you) in the annual report, but do not attribute your work to any one article.</li>
-<li>In the empirical analysis of all the articles, we replace your netid and name with an anonymous (and untraceable) identifier. So we can track that you have done Articles A1, D57, and Z31, but nobody knows that it was <strong>you</strong>.</li>
-</ul>
-<p>There is “leakage” of information:</p>
-<ul>
-<li>In order to download materials, you need to login to openICPSR, and have the ability to download from specific deposits. This <em>does</em> reveal your name to the depositors. This is currently a technological constraint, and cannot be avoided without great complications.
-<ul>
-<li>If you have concerns, please let us know, and we will find a workaround.</li>
-</ul></li>
-</ul>
-<p>Should you ever be contacted in some unacceptable fashion by authors, you should immediately contact the Lab Leadership.</p>
-<p>You can, and you <strong>should</strong>, reveal your affiliation with this project! You can (and you should) be proud of the work you will do or have done, and you are allowed (and you should) reference this project as an accomplishment.</p>
+<div id="aea-pending-openicpsr-changes" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> AEA: Pending openICPSR Changes</h1>
+<div id="background" class="section level2">
+<h2><span class="header-section-number">16.1</span> Background</h2>
+<p>Many cases which we review end up with a recommendation (<code>MCRecommendationV2</code> on Jira) of “Accept - with Changes.” In short, what this means is that the changes which we are requesting do not constitute a complete revision from the authors. So, instead of having a complete revision added to our queue, the authors will make any necessary changes to the deposit on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage and handled by the editorial office, which is something that we in the lab are not involved in.</p>
+<p>It is important to understand how the submission process works once we have finished reviewing a manuscript and Lars has approved the final report. The RA’s responsible for this process are following these <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html">instructions</a>. It will be very helpful to review them. Cases that are designated as “Accept - with Changes” will have our report submitted to manuscript central (MC), the Jira ticket will be moved into “Pending openICPSR changes,” and the ICPSR deposit will be unlocked so that the authors can make changes.</p>
+<p>Once the submission process is complete, we wait for the authors to make the requested changes to the deposit. When it is clear that edits have been made to the deposit, we need to verify that all of our [REQUIRED] tags have been completed. You can review the required changes both in the full report on bitbucket and in the Project Communication Log in ICPSR.</p>
+<p>The evaluation process does <strong>NOT</strong> require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which we are only checking to see that edits to the code have been made. We do not need to go back and re-verify that the code runs.</p>
 </div>
-<div id="the-privacy-of-authors" class="section level2">
-<h2><span class="header-section-number">A.2</span> The Privacy of Authors</h2>
-<p>When we do pre-publication verification, this is equally important.</p>
+<div id="process" class="section level2">
+<h2><span class="header-section-number">16.2</span> Process</h2>
+<div id="icpsr-view-log" class="section level3">
+<h3><span class="header-section-number">16.2.1</span> ICPSR View Log</h3>
 <ul>
-<li>You are never allowed to reveal that the author has submitted to the journal
+<li>A good place to start in this process is to open ICPSR and click “View Log” under “Share Project” and “Change Owner.”</li>
+<li>This log will tell you all the changes that have been made to the deposit and when. From here we can tell whether or not the authors have made any changes since we originally requested the revisions.</li>
+<li>Additionally, this is a great resource for checking which program files the authors have made changes to.</li>
+</ul>
+</div>
+<div id="verify-requested-changes" class="section level3">
+<h3><span class="header-section-number">16.2.2</span> Verify Requested Changes</h3>
 <ul>
-<li>This includes when you need to contact third parties for materials that are part of the replication materials. In case of doubt, contact Lab Leadership.</li>
-</ul></li>
-<li>You are never allowed to reveal anything about the analysis that the author is conducting, and that you are reproducing, to anybody outside of this group.</li>
-<li>You must never put the code, the article, or the data on a location where others outside of this group could access it
+<li>If you have verified that all the required changes have been made, move forward with the acceptance process. This simply means following step <strong>13.5.2 FOR ACCEPT</strong> from the submission <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html">instructions</a>.</li>
+<li>ICPSR does not always successfully send out a notification email for the posting of the comment. If you don’t receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.</li>
+</ul>
+</div>
+<div id="insufficient-changes" class="section level3">
+<h3><span class="header-section-number">16.2.3</span> Insufficient Changes</h3>
 <ul>
-<li>Bitbucket within the <code>aeaverification</code> project is OK, do not attempt to make a repository public (even if it may seem convenient not to have to enter your login etc.)</li>
-<li>Remove the files from your laptop as soon as you are done with it (after <code>git push</code>, of course)</li>
-<li>You may remove them from CISER nodes, but those will be cleansed later</li>
-<li>Do not email or otherwise disseminate (twitter, facebook, snapchat, whatever) the files received, or any other information about the papers</li>
+<li>If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to Lars and Michael with a comment on the Jira ticket outlining your question.</li>
+<li>These cases are not always cut and dry, and we would prefer that you ask us questions before making a final acceptance decision on the deposit.</li>
+</ul>
+</div>
+<div id="no-changes" class="section level3">
+<h3><span class="header-section-number">16.2.4</span> No Changes</h3>
+<ul>
+<li><p>If no changes have been made to the deposit since requesting revisions, start a message in the Communication log:</p>
+<ul>
+<li>with subject line: <code>AEAREP-xxx Data and Code Deposit Revisions Reminder</code> (replace with appropriate numbers)</li>
+<li>with body
+<div class="bbox">
+<p>
+Authors,
+</p>
+<p>
+Please make the revisions requested to the ICPSR deposit so that we may move forward with publication of the deposit.
+</p>
+<p>
+See our previous comment above and our full report for details. Feel free to contact us directly at <a href="mailto:dataeditor@aeapubs.org" class="email">dataeditor@aeapubs.org</a> with any questions.
+</p>
+<p>
+Thanks!
+</p>
+</div></li>
 </ul></li>
 </ul>
+</div>
+</div>
+<div id="notes" class="section level2">
+<h2><span class="header-section-number">16.3</span> Notes</h2>
+<ul>
+<li><p><strong>A note on [SUGGESTED] items</strong>. We, of course, attempt to get authors to make their deposit as reproducible as possible. Which means suggesting improvements such as creating a <code>master.do</code> or including code to automatically export results. However, they are only suggestions. In other words, they do not impede reproducibility and thus we do not require that the authors make those changes. If the only changes not made to the deposit were [SUGGESTED], move forward with acceptance.</p></li>
+<li><p><strong>A note on deposit status</strong>. When an ICPSR deposit has a status of “Submitted” it is locked. This means that the authors will not be able to make any changes. If the deposit status is “Deposit in Progress” or “Revisions Requested” the deposit unlocked and changes may be made. Review the submission instructions above for information on how to unlock a deposit.</p></li>
+<li><p>When authors ask if they need to re-submit the updated manuscript to ScholarOne/Manuscript Central. Paste the following within the acceptance (or reminder) post on ICPSR:
+&gt; At this stage, any changes to the manuscript are handled directly with editorial office â another submission to Scholar One is not necessary. If you are not already in contact with the editorial office, please reach out to Lucia Giordano at <a href="mailto:l.giordano@aeapubs.org" class="email">l.giordano@aeapubs.org</a>.</p></li>
+</ul>
+
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="aea-pending-openicpsr-changes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="aea-reproducibility-checks-in-codeocean.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="privacy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
