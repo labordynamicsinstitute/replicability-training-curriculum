@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-06-24"
+date: "2021-07-05"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1630,9 +1630,9 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
    - Note: links in the pop-up window are not clickable: double-click, then use right-click to `Open in New Tab`
    - `MCEntryURL`  has the link to Manuscript Central (MC) in order to submit
    - `Manuscript Central Identifier` to find the manuscript
-   - `MCRecommendationV2` has the information about how the editorial office should proceed, to be selected in the JMS
-      - In cases where `MCStatus` contains `RR`, the information will be in  `MCRecommendation`
-   - `Git working location` has the information to clone the repository (and thus be able to access the report)
+   - Field [`MCRecommendationV2`] has the information about how the editorial office should proceed, to be selected in the JMS
+      - In cases where `MCStatus` contains `RR`, the information will be in field [`MCRecommendation`]
+   - Field [`Git working location`] has the information to clone the repository (and thus be able to access the report)
 4. If necessary, clone the Bitbucket repository associated with the issue 
    -  If not already created, make a `REPLICATION.pdf` file from the markdown `REPLICATION.md` using Visual Studio Code, then commit and push!
 5. Open the Manuscript Central link (double-click, right-click, open in new tab)
@@ -1641,9 +1641,16 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
    3. Select `Continue Review`
    4. Always click `Yes` when asked: Would you be willing to review a revision of this manuscript?
    5. Select the recommendation as noted in the Issue
-      - If `MCStatus` contains `CA`: Look at the field `MCRecommendationV2`
-      - If `MCStatus` contains `RR`: Look at the field  `MCRecommendation`
-   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. Add "Details are in the full report."
+      - If `MCStatus` contains `CA`: Look at the field [`MCRecommendationV2`]
+      - If `MCStatus` contains `RR`: Look at the field [`MCRecommendation`]
+   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. 
+      - If not already present, add "Details are in the full report."
+      - If not already present, add
+   <div class="bbox">
+   <blockquote>
+   <p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+   </blockquote>
+   </div>
    7. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
    8. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field `Confidential Comments to the Coeditor`.
    8. Re-verify all information
@@ -1656,12 +1663,12 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 
 If 
 
-  - `MCStatus` contains `CA` and `MCRecommendationV2` = `Conditional Accept`, or
-  - `MCStatus` contains `RR`
+  - [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Conditional Accept`, or
+  - [`MCStatus`] contains `RR`
 
 then proceed to [Request revisions].
 
-Otherwise, if  `MCStatus` contains `CA` and `MCRecommendationV2` = `Accept` or `Accept with changes`
+Otherwise, if  [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Accept` or `Accept with changes`
 then proceed to [Preparing Deposit for Publication].
 
 ## Request revisions
@@ -1670,7 +1677,7 @@ In principle, once the report is uploaded, the author will get the report with t
 To do so, proceed as follows:
 
 1. Open the issue on Jira
-2. Right-click on the `Code Provenance` field to open the openICPSR deposit.
+2. Right-click on the [`Code Provenance`] field to open the openICPSR deposit.
 3. On openICPSR, 
    - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
    - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue
@@ -1680,6 +1687,9 @@ To do so, proceed as follows:
 
 <div class="bbox">
 <p>Revisions requested. Details in the full report, which has been sent to the Editor in charge of your manuscript.</p>
+<blockquote>
+<p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+</blockquote>
 </div>
 
 4. Back in the Jira issue, transition the issue to `Done`.
@@ -1714,6 +1724,9 @@ To do so, proceed as follows:
 <div class="bbox">
 <p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
 <p>Once all changes have been made, please change the status of your deposit to “Submit to AEA”.</p>
+<blockquote>
+<p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+</blockquote>
 </div>
 (replace xxx with the issue number)
 
@@ -1725,6 +1738,9 @@ To do so, proceed as follows:
 
 <div class="bbox">
 <p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
+<blockquote>
+<p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+</blockquote>
 </div>
 (replace xxx with the issue number)
  
@@ -1770,6 +1786,8 @@ Action items:
    - manually add the **issue number** (AEAREP-xxx) into the subject line
    - delete anything in the body of the email before the "From:" 
    - This will add the message to the Jira ticket.
+
+> - ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
 
 <!--chapter:end:13-jira-prepare-publication.Rmd-->
 
@@ -1977,37 +1995,41 @@ Example:
 
 <!--chapter:end:15-reproducibility-check-on-Codeocean.Rmd-->
 
-# AEA: Pending openICPSR Changes
+# AEA: Monitoring Pending openICPSR Changes
 
 ## Background
 
-Many cases which we review end up with a recommendation (`MCRecommendationV2` on Jira) of "Accept - with Changes." In short, what this means is that the changes which we are requesting do not constitute a complete revision from the authors. So, instead of having a complete revision added to our queue, the authors will make any necessary changes to the deposit on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage and handled by the editorial office, which is something that we in the lab are not involved in. 
+Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`] on Jira) of "Accept - with Changes." What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.
 
-It is important to understand how the submission process works once we have finished reviewing a manuscript and Lars has approved the final report. The RA's responsible for this process are following these [instructions](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html). It will be very helpful to review them. Cases that are designated as "Accept - with Changes" will have our report submitted to manuscript central (MC), the Jira ticket will be moved into "Pending openICPSR changes," and the ICPSR deposit will be unlocked so that the authors can make changes. 
+It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Chapter 13](aea-interfacing-with-the-journal-management-system.html). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as "Accept - with Changes" will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status "Pending openICPSR changes," and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
 
-Once the submission process is complete, we wait for the authors to make the requested changes to the deposit. When it is clear that edits have been made to the deposit, we need to verify that all of our [REQUIRED] tags have been completed. You can review the required changes both in the full report on bitbucket and in the Project Communication Log in ICPSR. 
+The openICPSR deposit is subsequently regularly monitored. Authors may contact the Data Editor as well. When it is clear that edits have been made to the deposit, the Data Editor needs to verify that all of the `[REQUIRED]` tags have been completed. The RA conducting that check can review the required changes both in the full report on Bitbucket and in the Project Communication Log in ICPSR. 
 
-The evaluation process does **NOT** require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which we are only checking to see that edits to the code have been made. We do not need to go back and re-verify that the code runs. 
+The evaluation process does **NOT** require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which the Lab  only checks to see that edits to the code have been made. Unless specifically instructed to do so by the Data Editor, no code needs to be run.
 
 ## Process
 
+As RA tasked with this, these are the instructions.
+
 ### ICPSR View Log
 
-- A good place to start in this process is to open ICPSR and click "View Log" under "Share Project" and "Change Owner." 
+- A good place to start in this process is to open ICPSR (field [`Code Provenance`] and click "View Log" under "Share Project" and "Change Owner." 
 - This log will tell you all the changes that have been made to the deposit and when. From here we can tell whether or not the authors have made any changes since we originally requested the revisions. 
 - Additionally, this is a great resource for checking which program files the authors have made changes to. 
 
 ### Verify Requested Changes
 
-- If you have verified that all the required changes have been made, move forward with the acceptance process. This simply means following step **13.5.2 FOR ACCEPT** from the submission [instructions](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html). 
-- ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
+- If you have verified that all the required changes have been made, move forward with the acceptance process. 
+  - All necessary steps are outlined in [**Chapter 13.5.2**](aea-interfacing-with-the-journal-management-system.html#for-accept). 
+
 
 ### Insufficient Changes
 
-- If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to Lars and Michael with a comment on the Jira ticket outlining your question. 
-- These cases are not always cut and dry, and we would prefer that you ask us questions before making a final acceptance decision on the deposit.
+- If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the Data Editor with a comment on the Jira ticket outlining your question. 
+- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
 
 ### No Changes
+
 - If no changes have been made to the deposit since requesting revisions, start a message in the Communication log:
 
     - with subject line: `AEAREP-xxx Data and Code Deposit Revisions Reminder` (replace with appropriate numbers)
@@ -2016,6 +2038,9 @@ The evaluation process does **NOT** require running any code. In most cases, the
 <p>Authors,</p>
 <p>Please make the revisions requested to the ICPSR deposit so that we may move forward with publication of the deposit.</p>
 <p>See our previous comment above and our full report for details. Feel free to contact us directly at <a href="mailto:dataeditor@aeapubs.org" class="email">dataeditor@aeapubs.org</a> with any questions.</p>
+<blockquote>
+<p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+</blockquote>
 <p>Thanks!</p>
 </div>
 
@@ -2027,7 +2052,10 @@ The evaluation process does **NOT** require running any code. In most cases, the
 - **A note on deposit status**. When an ICPSR deposit has a status of "Submitted" it is locked. This means that the authors will not be able to make any changes. If the deposit status is "Deposit in Progress" or "Revisions Requested" the deposit unlocked and changes may be made. Review the submission instructions above for information on how to unlock a deposit. 
 
 - When authors ask if they need to re-submit the updated manuscript to ScholarOne/Manuscript Central. Paste the following within the acceptance (or reminder) post on ICPSR:
-> At this stage, any changes to the manuscript are handled directly with editorial office â another submission to Scholar One is not necessary. If you are not already in contact with the editorial office, please reach out to Lucia Giordano at l.giordano@aeapubs.org.
+
+<div class="bbox">
+<p>At this stage, any changes to the manuscript are handled directly with editorial office â another submission to Scholar One is not necessary. If you are not already in contact with the editorial office, please reach out to the managing editors via <a href="mailto:aejaccept@aeapubs.org" class="email">aejaccept@aeapubs.org</a> or <a href="mailto:aeraccept@aeapubs.org" class="email">aeraccept@aeapubs.org</a>.</p>
+</div>
 
 <!--chapter:end:16-Pending_ICPSR.Rmd-->
 

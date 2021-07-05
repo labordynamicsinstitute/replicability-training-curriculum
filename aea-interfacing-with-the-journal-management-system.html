@@ -27,7 +27,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2021-06-24" />
+<meta name="date" content="2021-07-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,9 +169,9 @@ function toggleCitation() {
 <li class="chapter" data-level="15.7" data-path="aea-reproducibility-checks-in-codeocean.html"><a href="aea-reproducibility-checks-in-codeocean.html#recording-runs"><i class="fa fa-check"></i><b>15.7</b> Recording runs</a></li>
 <li class="chapter" data-level="15.8" data-path="aea-reproducibility-checks-in-codeocean.html"><a href="aea-reproducibility-checks-in-codeocean.html#jira"><i class="fa fa-check"></i><b>15.8</b> Jira</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="aea-pending-openicpsr-changes.html"><a href="aea-pending-openicpsr-changes.html"><i class="fa fa-check"></i><b>16</b> AEA: Pending openICPSR Changes</a><ul>
+<li class="chapter" data-level="16" data-path="aea-monitoring-pending-openicpsr-changes.html"><a href="aea-monitoring-pending-openicpsr-changes.html"><i class="fa fa-check"></i><b>16</b> AEA: Monitoring Pending openICPSR Changes</a><ul>
 <li class="chapter" data-level="16.1" data-path="background.html"><a href="background.html#background"><i class="fa fa-check"></i><b>16.1</b> Background</a></li>
-<li class="chapter" data-level="16.2" data-path="aea-pending-openicpsr-changes.html"><a href="aea-pending-openicpsr-changes.html#process"><i class="fa fa-check"></i><b>16.2</b> Process</a></li>
+<li class="chapter" data-level="16.2" data-path="aea-monitoring-pending-openicpsr-changes.html"><a href="aea-monitoring-pending-openicpsr-changes.html#process"><i class="fa fa-check"></i><b>16.2</b> Process</a></li>
 <li class="chapter" data-level="16.3" data-path="aea-jira-workflow-a-guide.html"><a href="aea-jira-workflow-a-guide.html#notes"><i class="fa fa-check"></i><b>16.3</b> Notes</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -277,11 +277,11 @@ submitters need <code>Publisher</code> permission on Jira (can be set in Project
 <li>Note: links in the pop-up window are not clickable: double-click, then use right-click to <code>Open in New Tab</code></li>
 <li><code>MCEntryURL</code> has the link to Manuscript Central (MC) in order to submit</li>
 <li><code>Manuscript Central Identifier</code> to find the manuscript</li>
-<li><code>MCRecommendationV2</code> has the information about how the editorial office should proceed, to be selected in the JMS
+<li>Field [<code>MCRecommendationV2</code>] has the information about how the editorial office should proceed, to be selected in the JMS
 <ul>
-<li>In cases where <code>MCStatus</code> contains <code>RR</code>, the information will be in <code>MCRecommendation</code></li>
+<li>In cases where <code>MCStatus</code> contains <code>RR</code>, the information will be in field [<code>MCRecommendation</code>]</li>
 </ul></li>
-<li><code>Git working location</code> has the information to clone the repository (and thus be able to access the report)</li>
+<li>Field [<code>Git working location</code>] has the information to clone the repository (and thus be able to access the report)</li>
 </ul></li>
 <li>If necessary, clone the Bitbucket repository associated with the issue
 <ul>
@@ -295,10 +295,21 @@ submitters need <code>Publisher</code> permission on Jira (can be set in Project
 <li>Always click <code>Yes</code> when asked: Would you be willing to review a revision of this manuscript?</li>
 <li>Select the recommendation as noted in the Issue
 <ul>
-<li>If <code>MCStatus</code> contains <code>CA</code>: Look at the field <code>MCRecommendationV2</code></li>
-<li>If <code>MCStatus</code> contains <code>RR</code>: Look at the field <code>MCRecommendation</code></li>
+<li>If <code>MCStatus</code> contains <code>CA</code>: Look at the field [<code>MCRecommendationV2</code>]</li>
+<li>If <code>MCStatus</code> contains <code>RR</code>: Look at the field [<code>MCRecommendation</code>]</li>
 </ul></li>
-<li>Copy-paste the “Summary” part from <code>REPLICATION.md</code> into the field <code>Comments to the Author</code>. Add “Details are in the full report.”</li>
+<li>Copy-paste the “Summary” part from <code>REPLICATION.md</code> into the field <code>Comments to the Author</code>.
+<ul>
+<li>If not already present, add “Details are in the full report.”</li>
+<li>If not already present, add
+<div class="bbox">
+<blockquote>
+<p>
+[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+</p>
+</blockquote>
+</div></li>
+</ul></li>
 <li>Select and upload the <code>REPLICATION.pdf</code>, click on <code>For author and  editor</code>.</li>
 <li>In some cases, the Data Editor will have put a note in the issue with a “for Editor only” file. The contents of that file should be copied and pasted into the field <code>Confidential Comments to the Coeditor</code>.</li>
 <li>Re-verify all information</li>
@@ -314,11 +325,11 @@ submitters need <code>Publisher</code> permission on Jira (can be set in Project
 <h2><span class="header-section-number">13.3</span> Decision point?</h2>
 <p>If</p>
 <ul>
-<li><code>MCStatus</code> contains <code>CA</code> and <code>MCRecommendationV2</code> = <code>Conditional Accept</code>, or</li>
-<li><code>MCStatus</code> contains <code>RR</code></li>
+<li>[<code>MCStatus</code>] contains <code>CA</code> and [<code>MCRecommendationV2</code>] = <code>Conditional Accept</code>, or</li>
+<li>[<code>MCStatus</code>] contains <code>RR</code></li>
 </ul>
 <p>then proceed to <a href="aea-interfacing-with-the-journal-management-system.html#request-revisions">Request revisions</a>.</p>
-<p>Otherwise, if <code>MCStatus</code> contains <code>CA</code> and <code>MCRecommendationV2</code> = <code>Accept</code> or <code>Accept with changes</code>
+<p>Otherwise, if [<code>MCStatus</code>] contains <code>CA</code> and [<code>MCRecommendationV2</code>] = <code>Accept</code> or <code>Accept with changes</code>
 then proceed to <a href="aea-interfacing-with-the-journal-management-system.html#preparing-deposit-for-publication">Preparing Deposit for Publication</a>.</p>
 </div>
 <div id="request-revisions" class="section level2">
@@ -327,7 +338,7 @@ then proceed to <a href="aea-interfacing-with-the-journal-management-system.html
 To do so, proceed as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Open the issue on Jira</li>
-<li>Right-click on the <code>Code Provenance</code> field to open the openICPSR deposit.</li>
+<li>Right-click on the [<code>Code Provenance</code>] field to open the openICPSR deposit.</li>
 <li>On openICPSR,
 <ul>
 <li>verify what the openICPSR <code>Deposit Status</code> is (top right corner) <img src="images/change-status-button.png" alt="Deposit in Progress image" />.</li>
@@ -345,6 +356,11 @@ To do so, proceed as follows:</p>
 <p>
 Revisions requested. Details in the full report, which has been sent to the Editor in charge of your manuscript.
 </p>
+<blockquote>
+<p>
+[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+</p>
+</blockquote>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li>Back in the Jira issue, transition the issue to <code>Done</code>.</li>
@@ -398,6 +414,11 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
 <p>
 Once all changes have been made, please change the status of your deposit to “Submit to AEA”.
 </p>
+<blockquote>
+<p>
+[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+</p>
+</blockquote>
 </div>
 <p>(replace xxx with the issue number)</p>
 <ol start="6" style="list-style-type: decimal">
@@ -415,6 +436,11 @@ Once all changes have been made, please change the status of your deposit to “
 <p>
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
 </p>
+<blockquote>
+<p>
+[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+</p>
+</blockquote>
 </div>
 <p>(replace xxx with the issue number)</p>
 </div>
@@ -481,6 +507,11 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
 <li>This will add the message to the Jira ticket.</li>
 </ul></li>
 </ol>
+<blockquote>
+<ul>
+<li>ICPSR does not always successfully send out a notification email for the posting of the comment. If you don’t receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.</li>
+</ul>
+</blockquote>
 
 </div>
 </div>
