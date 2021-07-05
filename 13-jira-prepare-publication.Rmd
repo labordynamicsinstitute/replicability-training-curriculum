@@ -29,9 +29,9 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
    - Note: links in the pop-up window are not clickable: double-click, then use right-click to `Open in New Tab`
    - `MCEntryURL`  has the link to Manuscript Central (MC) in order to submit
    - `Manuscript Central Identifier` to find the manuscript
-   - `MCRecommendationV2` has the information about how the editorial office should proceed, to be selected in the JMS
-      - In cases where `MCStatus` contains `RR`, the information will be in  `MCRecommendation`
-   - `Git working location` has the information to clone the repository (and thus be able to access the report)
+   - Field [`MCRecommendationV2`] has the information about how the editorial office should proceed, to be selected in the JMS
+      - In cases where `MCStatus` contains `RR`, the information will be in field [`MCRecommendation`]
+   - Field [`Git working location`] has the information to clone the repository (and thus be able to access the report)
 4. If necessary, clone the Bitbucket repository associated with the issue 
    -  If not already created, make a `REPLICATION.pdf` file from the markdown `REPLICATION.md` using Visual Studio Code, then commit and push!
 5. Open the Manuscript Central link (double-click, right-click, open in new tab)
@@ -40,9 +40,14 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
    3. Select `Continue Review`
    4. Always click `Yes` when asked: Would you be willing to review a revision of this manuscript?
    5. Select the recommendation as noted in the Issue
-      - If `MCStatus` contains `CA`: Look at the field `MCRecommendationV2`
-      - If `MCStatus` contains `RR`: Look at the field  `MCRecommendation`
-   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. Add "Details are in the full report."
+      - If `MCStatus` contains `CA`: Look at the field [`MCRecommendationV2`]
+      - If `MCStatus` contains `RR`: Look at the field [`MCRecommendation`]
+   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. 
+      - If not already present, add "Details are in the full report."
+      - If not already present, add
+   ```{block, type="bbox"}
+   > [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+   ```
    7. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
    8. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field `Confidential Comments to the Coeditor`.
    8. Re-verify all information
@@ -55,12 +60,12 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 
 If 
 
-  - `MCStatus` contains `CA` and `MCRecommendationV2` = `Conditional Accept`, or
-  - `MCStatus` contains `RR`
+  - [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Conditional Accept`, or
+  - [`MCStatus`] contains `RR`
 
 then proceed to [Request revisions].
 
-Otherwise, if  `MCStatus` contains `CA` and `MCRecommendationV2` = `Accept` or `Accept with changes`
+Otherwise, if  [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Accept` or `Accept with changes`
 then proceed to [Preparing Deposit for Publication].
 
 ## Request revisions
@@ -69,7 +74,7 @@ In principle, once the report is uploaded, the author will get the report with t
 To do so, proceed as follows:
 
 1. Open the issue on Jira
-2. Right-click on the `Code Provenance` field to open the openICPSR deposit.
+2. Right-click on the [`Code Provenance`] field to open the openICPSR deposit.
 3. On openICPSR, 
    - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
    - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue
@@ -79,6 +84,8 @@ To do so, proceed as follows:
 
 ```{block, type="bbox"}
 Revisions requested. Details in the full report, which has been sent to the Editor in charge of your manuscript. 
+
+> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 
 4. Back in the Jira issue, transition the issue to `Done`.
@@ -114,6 +121,9 @@ Revisions requested. Details in the full report, which has been sent to the Edit
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
 
 Once all changes have been made, please change the status of your deposit to "Submit to AEA".
+
+
+> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 (replace xxx with the issue number)
 
@@ -125,6 +135,8 @@ Once all changes have been made, please change the status of your deposit to "Su
 
 ```{block, type="bbox"}
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
+
+> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 (replace xxx with the issue number)
  
@@ -174,3 +186,5 @@ Action items:
    - manually add the **issue number** (AEAREP-xxx) into the subject line
    - delete anything in the body of the email before the "From:" 
    - This will add the message to the Jira ticket.
+
+> - ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
