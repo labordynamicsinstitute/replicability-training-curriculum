@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-07-12"
+date: "2021-08-06"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1480,7 +1480,7 @@ At this point, you may want to transition to CISER if you haven't already. You s
     - Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the `aearep-123` repo on Bitbucket.
     - Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to `git rm` them). 
     - Ensure that output produced from the prior replication attempt remains in the repository. 
-    - Detailed instructions for the process of updating the replication materials can be found [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md). 
+    - More detailed instructions for the process of updating the replication materials can be found [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md). 
 
 - [ ] Update the Data Description section of the report.  
    
@@ -1917,6 +1917,8 @@ Example:
 
 > AEAREP-1974 Compute Capsule for: Waiting to Choose: The Role of Deliberation in Intertemporal Choice
 
+- Share your CodeOcean capsule with `dataeditor@aeapubs.org`
+
 ## Environment
 
 - Set up the environment specified by the authors. This includes software, version of that software, and any dependencies (packages). 
@@ -1987,7 +1989,6 @@ Example:
 ## Jira
 
 - The `Computing Environment` and `Working location of the data` should be "Codeocean"
-- Share your CodeOcean capsule with `dataeditor@aeapubs.org`
 - Add the CodeOcean shareable URL to the issue
 
 
