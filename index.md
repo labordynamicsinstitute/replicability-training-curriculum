@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-08-06"
+date: "2021-08-17"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -109,9 +109,9 @@ We ask that trainees accomplish a few tasks prior to the first training session.
 
 ## View
 
-- View [my recent talk on the background of the lab](https://www.youtube.com/watch?v=rLoeNzOApFk)), including what we do, and why we do it. 
+- View [my talk on the background of the lab](https://www.youtube.com/watch?v=pj-y3dLDOEA)), including what we do, and why we do it. 
 
-<a href="https://www.youtube.com/watch?v=rLoeNzOApFk"><img alt="Youtube video" src="images/RR_in_Social_Sciences_Statistics_Youtube20200320.png" width="400px"></a>
+<a href="https://www.youtube.com/watch?v=pj-y3dLDOEA"><img alt="Youtube video" src="images/RR_in_Social_Sciences_Statistics_Youtube20200320.png" width="400px"></a>
 
 
 ## Install
