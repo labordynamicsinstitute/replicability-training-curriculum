@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-08-17"
+date: "2021-08-26"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2111,10 +2111,13 @@ When we do pre-publication verification, this is equally important.
 
 ## Accounts you will need to sign up for (action required)
 
-- [ ] CISER account (for computing access) - [Select "Apply for Research account" and list Lars as a sponsor.](https://ciser.cornell.edu/computing/request-an-account/) Do not select "*Request Secure Data Services account*". If prompted about using sensitive or restricted data, please select "*No*". Otherwise, this will take you to a window to sign up for a CRADC account instead, which is not necessary. If you encounter this issue, please email the [CISER help desk](https://ciser.cornell.edu/consulting/ciser-helpdesk/) asking them cancel the CRADC account request. 
+- [ ] CCSS-RS account (for computing access) - [Select "Apply for Research account" and list Lars as a sponsor.](https://ciser.cornell.edu/computing/request-an-account/) Do not select "*Request Secure Data Services account*". If prompted about using sensitive or restricted data, please select "*No*". Otherwise, this will take you to a window to sign up for a CRADC account instead, which is not necessary. If you encounter this issue, please email the [CISER help desk](https://ciser.cornell.edu/consulting/ciser-helpdesk/) asking them cancel the CRADC account request. 
     - (no installation necessary on Windows, as it is pre-installed)
     - If using a Mac and if "*Microsoft Remote Desktop*"  is not already installed on Mac, install [Remote Desktop Software from iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466) 
-    - Once an account is set up, learn [How to log on to CISER](https://ciser.cornell.edu/computing/computing-help/how-to-login/) (also includes download links)
+    - Once an account is set up, learn [How to log on to CCSS-RS](https://ciser.cornell.edu/computing/computing-help/how-to-login/) (also includes download links).
+
+> You must try this out before the first day of training! If you run into any issues, contact the [CCSS-RS helpdesk](https://ciser.cornell.edu/consulting/ciser-helpdesk/) at [CCSS-ResearchSupport@cornell.edu](mailto:CCSS-ResearchSupport@cornell.edu)
+
 - [ ] You will need [openICPSR account](https://www.icpsr.umich.edu/cgi-bin/newacct), in order to download pre-publication materials. Please be sure to use your Cornell e-mail!
 
 ## Accounts you will be signed up for (no action required)
@@ -2152,7 +2155,7 @@ General purpose text editors can view and edit them all, although they may lack 
 
 ## Availability and Suggestions
 
-|  | OS | Laptop | CISER | Custom node |
+|  | OS | Laptop | CCSS-RS | Custom node |
 |--|----|--------|-------|-------------|
 |[MS Visual Studio Code](https://code.visualstudio.com/) | All| Suggested| | Yes |
 | [Atom](https://atom.io)| All| | |Yes|
