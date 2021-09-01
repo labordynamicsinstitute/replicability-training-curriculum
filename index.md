@@ -805,7 +805,7 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github [here](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github [here](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
