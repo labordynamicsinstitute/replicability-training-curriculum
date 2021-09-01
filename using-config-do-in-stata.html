@@ -315,12 +315,12 @@ function toggleCitation() {
 <div id="include-config.do" class="section level3">
 <h3><span class="header-section-number">F.4.2</span> Include config.do</h3>
 <ul>
-<li><p>Add the following line at the beginning of each code:
+<li><p>Add the following line at the beginning of each code file:
 <code>include config.do</code>
-and add the following at the end of each code:
-<code>log close</code></p></li>
-<li><p>If there is a master do file, you can choose to put the above line at the beginning and the end of the <code>master.do</code> once.</p></li>
-<li><p>There will be cases where authors create their own log files. In that case, one thing you can do is to comment out line 27.</p></li>
+and add the following at the end of each code file:
+<code>log close _all</code></p></li>
+<li><p>If there is a master do file, you should put the above lines at the beginning and the end of the <code>master.do</code> once, and NOT include it in the individual code files.</p></li>
+<li><p>There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
 </ul>
 
 </div>
