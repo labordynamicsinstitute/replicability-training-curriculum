@@ -42,7 +42,7 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github [here](`r config$url$replmd`REPLICATION.md](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github [here](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
