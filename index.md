@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-09-01"
+date: "2021-09-13"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1912,12 +1912,13 @@ The workflow should be the same up until the verification stage, at which point 
 
 ## Create a Capsule
 
+- First, create your own account on Codeocean using your cornell.edu email address (it's free). 
 - In Codeocean, create a new capsule. Name the compute capsule as "`AEAREP-xxxx Compute Capsule for: TITLE`"
 Example:
 
 > AEAREP-1974 Compute Capsule for: Waiting to Choose: The Role of Deliberation in Intertemporal Choice
 
-- Share your CodeOcean capsule with `dataeditor@aeapubs.org`
+- Share your CodeOcean capsule with `dataeditor@aeapubs.org` (make sure to give edit permissions).
 
 ## Environment
 
