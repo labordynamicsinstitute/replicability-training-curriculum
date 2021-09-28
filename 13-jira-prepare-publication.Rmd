@@ -153,7 +153,7 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
    - (new!) verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
 5. On openICPSR, if `Deposit Status` = *`Deposit in Progress`*
    - start a message in the Communication log:
-      - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
+      - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
       
 ```{block2, type="bbox"}
@@ -167,7 +167,7 @@ Action items:
 
 6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - start a message in the Communication log:
-      - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
+      - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
       
 
