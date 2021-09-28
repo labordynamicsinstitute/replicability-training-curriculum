@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-09-27"
+date: "2021-09-28"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1758,7 +1758,7 @@ To do so, proceed as follows:
    - (new!) verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
 5. On openICPSR, if `Deposit Status` = *`Deposit in Progress`*
    - start a message in the Communication log:
-      - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
+      - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
       
 \BeginKnitrBlock{bbox}<div class="bbox">This data and code deposit is accepted.
@@ -1770,7 +1770,7 @@ Action items:
 
 6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - start a message in the Communication log:
-      - with subject line: `AEAREP-xxx Data and Code Deposit for MCNumberXXX accepted` (replace with appropriate numbers)
+      - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
       
 
