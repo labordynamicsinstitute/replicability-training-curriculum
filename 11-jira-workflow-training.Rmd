@@ -157,8 +157,9 @@ REPLICATION.md
 ```
 
 Now you will establish a **list of Datasets used** and fill out the **Data Citation and Information** report.
+
 - Please check Data and Code Availability Form.
-  - The form should be attached in the jira ticket. 
+  - The form should be attached in the JIRA ticket. 
   - In area 2 of the screen, choose DCAF.
     - Open Data and Code Availability Form, and check if all blanks are filled out.
     - Once you checked the form, choose "Yes" from the dropdown menu of `DCAF_README_checked` cell.
