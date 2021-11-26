@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-10-07"
+date: "2021-11-26"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2285,7 +2285,7 @@ If you actually have the software on your laptop, you should feel free to run co
 Some software is not available on CISER. If you encounter the following, you should check with your supervisor:
 
 | Software | Computing resource |
-|==========|====================|
+|----------|--------------------|
 | Dynare   | Red Cloud Windows node |
 | Fortran compiler | BioHPC linux cluster |
 | C compiler  | BioHPC linux cluster |
