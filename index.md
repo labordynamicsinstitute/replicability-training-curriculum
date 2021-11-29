@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-11-26"
+date: "2021-11-29"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1259,11 +1259,11 @@ Fill out the following Jira fields:
 
 You can now proceed to change the status to `Write Preliminary Report`. You will be asked to provide additional information:
 
-  - [ ] `DATAAVAILABILITYACESS` Is at least some of the data available?
-  - [ ] `DATAAVAILABILITYEXCLUSIVE` Is there data that is **only** accessible to the author (nobody else)?
+  - [ ] `DATASETSINCLUDED` Are all datasets included as part of the replication package (on openICPSR or, if not using openICPSR, on the other repository)?
+  - [ ] `DATAAVAILABILITYACESS` Do the data require users to apply for access, purchase, or otherwise sign or enter into agreements to access the data? This could be a license agreement, or even a click-through acknowledgement. (This should be mentioned in the Readme PDF or in the article) 
+  - [ ] `DATAAVAILABILITYEXCLUSIVE` Are there data that are **only** accessible to the author (nobody else)?
   - [ ] `REASON FOR NON-ACCESSIBILITY OF DATA` Fill this out if **none** of the code can be run
-  - [ ] `NUMBEROFDATASETS` How many datasets are used in the article? 
-  - [ ] `DATASETSINCLUDED` How many of the datasets used in the article are actually provided by the authors?   
+  - [ ] `NUMBEROFDATASETS` How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the "S:" drive, or "CRADC", or some other secure mechanism.
 
 
 ### Write Preliminary Report 

@@ -27,7 +27,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2021-11-26" />
+<meta name="date" content="2021-11-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -701,15 +701,15 @@ Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are t
 <p>You can now proceed to change the status to <code>Write Preliminary Report</code>. You will be asked to provide additional information:</p>
 <ul>
 <li><input type="checkbox" disabled="" />
-<code>DATAAVAILABILITYACESS</code> Is at least some of the data available?</li>
+<code>DATASETSINCLUDED</code> Are all datasets included as part of the replication package (on openICPSR or, if not using openICPSR, on the other repository)?</li>
 <li><input type="checkbox" disabled="" />
-<code>DATAAVAILABILITYEXCLUSIVE</code> Is there data that is <strong>only</strong> accessible to the author (nobody else)?</li>
+<code>DATAAVAILABILITYACESS</code> Do the data require users to apply for access, purchase, or otherwise sign or enter into agreements to access the data? This could be a license agreement, or even a click-through acknowledgement. (This should be mentioned in the Readme PDF or in the article)</li>
+<li><input type="checkbox" disabled="" />
+<code>DATAAVAILABILITYEXCLUSIVE</code> Are there data that are <strong>only</strong> accessible to the author (nobody else)?</li>
 <li><input type="checkbox" disabled="" />
 <code>REASON FOR NON-ACCESSIBILITY OF DATA</code> Fill this out if <strong>none</strong> of the code can be run</li>
 <li><input type="checkbox" disabled="" />
-<code>NUMBEROFDATASETS</code> How many datasets are used in the article?</li>
-<li><input type="checkbox" disabled="" />
-<code>DATASETSINCLUDED</code> How many of the datasets used in the article are actually provided by the authors?</li>
+<code>NUMBEROFDATASETS</code> How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the “S:” drive, or “CRADC”, or some other secure mechanism.</li>
 </ul>
 </div>
 <div id="write-preliminary-report" class="section level3">
