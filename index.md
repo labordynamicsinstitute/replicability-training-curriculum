@@ -2003,21 +2003,21 @@ Example:
 
 ## Background
 
-Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`] on Jira) of "Accept - with Changes." What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.
+Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`] on Jira) of "`Accept - with Changes.`" What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.
 
-It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Chapter 13](aea-interfacing-with-the-journal-management-system.html). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as "Accept - with Changes" will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status "Pending openICPSR changes," and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
+It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Chapter 13](aea-interfacing-with-the-journal-management-system.html). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as "`Accept - with Changes`" will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status "`Pending openICPSR changes`," and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
 
-The openICPSR deposit is subsequently regularly monitored. Authors may contact the Data Editor as well. When it is clear that edits have been made to the deposit, the Data Editor needs to verify that all of the `[REQUIRED]` tags have been completed. The RA conducting that check can review the required changes both in the full report on Bitbucket and in the Project Communication Log in ICPSR. 
+The openICPSR deposit is subsequently regularly monitored. Authors may contact the Data Editor as well. When it is clear that edits have been made to the deposit, the Jira issue is moved to "`Assess openICPSR changes`." The Data Editor then needs to verify that all of the `[REQUIRED]` tags have been completed. The RA conducting that check can review the required changes both in the full report on Bitbucket and in the Project Communication Log in ICPSR. 
 
-The evaluation process does **NOT** require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which the Lab  only checks to see that edits to the code have been made. Unless specifically instructed to do so by the Data Editor, no code needs to be run.
+The evaluation process usually does **NOT** require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which the Lab  only checks to see that edits to the code have been made as identified in the report. Unless specifically instructed to do so by the Data Editor, no code needs to be run.
 
 ## Process
 
 As RA tasked with this, these are the instructions.
 
-### ICPSR View Log
+### Verifying if changes have been made
 
-- A good place to start in this process is to open ICPSR (field [`Code Provenance`] and click "View Log" under "Share Project" and "Change Owner." 
+- A good place to start in this process is to go to the openICPSR deposit (field [`Code Provenance`] or  and click "View Log" under "Share Project" and "Change Owner." 
 - This log will tell you all the changes that have been made to the deposit and when. From here we can tell whether or not the authors have made any changes since we originally requested the revisions. 
 - Additionally, this is a great resource for checking which program files the authors have made changes to. 
 
