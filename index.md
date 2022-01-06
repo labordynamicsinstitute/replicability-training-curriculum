@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2021-11-29"
+date: "2022-01-06"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1720,8 +1720,8 @@ To do so, proceed as follows:
    - start a message in the Communication log:
       - with subject line: `Please make the following changes (AEAREP-xxx)` (replace with appropriate numbers)
       - Message content: 
-         - the contents of the repository-specific "for openICPSR.md"
-         - then the following lines: 
+         - the contents of the repository-specific "for openICPSR.md" **OR** the portion of the report after "`Action Items (openICPSR)`"
+         - then the following lines (which may already be present in the "for openICPSR.md")
 
 <div class="bbox">
 <p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
@@ -1735,7 +1735,7 @@ To do so, proceed as follows:
 6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - click on `Change Status`, choose `Request revisions`
   - in the pop-up, 
-    - paste the the contents  of the repository-specific "for openICPSR.md"
+    - paste the the contents  of the repository-specific "for openICPSR.md" **OR** the portion of the report after "`Action Items (openICPSR)`"
     - then the following lines: 
 
 <div class="bbox">
