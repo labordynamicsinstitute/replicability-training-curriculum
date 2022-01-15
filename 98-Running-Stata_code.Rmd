@@ -28,7 +28,7 @@ The folder with the code, whether is the root directory or a subfolder, should l
 
 > **[ACTION]** Open the master .do file. In the beginning, add the line:
 
-```{stata}
+```
 1 include "config.do"
 2
 3 */ This is Master do file /*
@@ -63,7 +63,7 @@ However, the typical case will only require one modification, either to the mast
 
 In a master file, a global variable "maindir" defines the path of the root directory as:
 
-```{stata}
+```
 */ This is Master do file /*
 
 global maindir "C:\Users\Author\Dropbox\Project1" // this is the path to the repository
@@ -74,7 +74,7 @@ global figures "$maindir/figures" // path to figures folder
 You would add `config.do` and change the global.
 After the change:
 
-```{stata}
+```
 include "config.do"
 
 */ This is Master do file /*
@@ -97,7 +97,7 @@ global figures "$maindir/figures" // path to figures folder
 
 A simplified directory structure that correspond with scenario "A" look like this:
 
-```{}
+```
 directory/
                main.do
                scripts/
@@ -111,7 +111,7 @@ directory/
 
 - A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
 
-```{stata}
+```
 * Template config.do */
 
 local scenario "A" 
@@ -126,7 +126,7 @@ local ssc_packages "estout ivreg2"
 
 A simplified directory structure that correspond to scenario "B" looks like this:
 
-```{}
+```
  directory/
               code/
                  main.do
@@ -141,7 +141,7 @@ A simplified directory structure that correspond to scenario "B" looks like this
 
 - A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
 
-```{stata}
+```
 * Template config.do */
 
 local scenario "B"  // around line 30
