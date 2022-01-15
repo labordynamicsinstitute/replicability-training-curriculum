@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-01-06"
+date: "2022-01-15"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2434,4 +2434,160 @@ In "Writing Preliminary Report" stage, we ask you to check the completeness of t
 - Locate the file "candidatepackages.xlsx", use the information there, and remember to push the file to the repository.
 
 <!--chapter:end:97_Scan_packages.Rmd-->
+
+# Running Code in Stata
+
+Although, there are plenty of ways to run code in Stata, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.
+
+In essence, these instructions show how to deal with the three most common actions that replicators have to undertake when running Stata code:
+
+ 1. Making sure that paths (i.e., something like "Mycomputer/Documents/Workspace/) in the .do files (Stata scripts) reflect the appropriate location of code, data, and output in the computer where the code is run.
+ 2. Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.
+ 3. Creating .log files (files that record, in this case, Stata output) of the replication attempts.
+
+## Step 1: check for a "master" .do file
+
+> **[ACTION]** Check the README or the repository and determine if a master .do file was provided.
+
+A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.
+
+If there is a master do file, continue with the following steps. If not, see the instruction below: *"When a master .do is not provided"*.
+
+## Step 2: place config.do where the master .do file is located
+
+> **[ACTION]** Copy the file `template-config.do` and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
+
+The folder with the code, whether is the root directory or a subfolder, should look something like this:
+
+![Code_Repository](images/code_repo.png)
+
+## Step 3: include config.do in the master .do file
+
+> **[ACTION]** Open the master .do file. In the beginning, add the line:
+
+```
+1 include "config.do"
+2
+3 */ This is Master do file /*
+```
+
+> Save.
+
+More information about `config.do` can be found in [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) of the training materials.
+
+In summary, `config.do` does 4 things:
+
+- Creates a global variable called "rootdir" with the local path to the root directory.
+- Creates a logs files.
+- Sets a path to save the packages to be installed in the replication repository, and
+- It allows you to install the packages simply by listing their names.
+
+A crucial function of `config.do` is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.`config.do` allow us to installed packages in the replication directory.  
+
+## Step 4: modifying paths if necessary
+
+> **[ACTION]**
+>
+> - Check the Readme and determine if (and where) the root directory should be modified.
+> - Open the .do file to be modified (probably the master .do file) and set the global variable `$rootdir` as the path.
+> - Save.
+
+To run the code, we need to make sure that Stata can access the locally-saved data, access the packages that will be installed, and save the output in the computer where you are running the code. To do that, we often need to change some directory paths defined in the .do files provided. This step may vary in each replication package, so you need to look at the README instructions closely. Some packages may not require any change, while others may require a little more work.
+
+However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the "root directory". Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.
+
+### Example
+
+In a master file, a global variable "maindir" defines the path of the root directory as:
+
+```
+*/ This is Master do file /*
+
+global maindir "C:\Users\Author\Dropbox\Project1" // this is the path to the repository
+global data "$maindir/data" // path to data folder
+global figures "$maindir/figures" // path to figures folder
+```
+
+You would add `config.do` and change the global.
+After the change:
+
+```
+include "config.do"
+
+*/ This is Master do file /*
+
+global maindir "$rootdir" // this is the path to the repository
+global data "$maindir/data" // path to data folder
+global figures "$maindir/figures" // path to figures folder
+```
+
+## Step 5: Check the location of the master .do file and modify config.do
+
+> **[ACTION]**
+>
+> - If the master .do file is directly placed in the root directory, set the parameter `scenario` to be `A` and save. (This is the default, so really no action is necessary.)
+> - If the master .do file is inside a folder, open `config.do` and set the parameter `scenario` to `B` and save.
+> - If the replication package includes a folder with Stata packages, add the line  `adopath ++` followed by the path of the location of that folder and save. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
+> - Add packages that need to be installed to config.do. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
+
+### Scenario A
+
+A simplified directory structure that correspond with scenario "A" look like this:
+
+```
+directory/
+               main.do
+               scripts/
+                   01_dosomething.do
+                data/
+                   data.dta
+                   otherdata.dta
+```
+
+#### Example
+
+- A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
+
+```
+* Template config.do */
+
+local scenario "A" 
+* *** Add required packages from SSC to this list ***
+local ssc_packages "estout ivreg2"
+    // Example:
+    // local ssc_packages "estout boottest"
+    // If you need to "net install" packages, go to the very end of this program, and add them there.
+```
+
+### Scenario B
+
+A simplified directory structure that correspond to scenario "B" looks like this:
+
+```
+ directory/
+              code/
+                 main.do
+                 01_dosomething.do
+              data/
+                 data.dta
+                 otherdata.dta
+
+```
+
+#### Example
+
+- A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
+
+```
+* Template config.do */
+
+local scenario "B"  // around line 30
+*** Add required packages from SSC to this list ***
+local ssc_packages "estout"
+    // Example:
+    // local ssc_packages "estout boottest"
+    // If you need to "net install" packages, go to the very end of this program, and add them there.
+```
+
+<!--chapter:end:98-Running-Stata_code.Rmd-->
 

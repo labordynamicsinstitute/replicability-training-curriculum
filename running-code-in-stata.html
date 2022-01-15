@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Generic data workflow | TRAINING For Reproducibility Verification</title>
+  <title>H Running Code in Stata | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Generic data workflow | TRAINING For Reproducibility Verification" />
+  <meta property="og:title" content="H Running Code in Stata | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Generic data workflow | TRAINING For Reproducibility Verification" />
+  <meta name="twitter:title" content="H Running Code in Stata | TRAINING For Reproducibility Verification" />
   
   <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
   
@@ -34,8 +34,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="datacitations.html"/>
-<link rel="next" href="assessing-computational-reproducibility.html"/>
+<link rel="prev" href="using-scan-packages-do.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -240,87 +240,184 @@ function toggleCitation() {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generic-data-workflow" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Generic data workflow</h1>
-<p>In a very generic, all empirical analysis goes through the following steps:</p>
-<ul>
-<li>acquiring data (primary or secondary)</li>
-<li>cleaning data (reformatting, standardizing, dropping) to create analysis data</li>
-<li>analyzing data and reporting results in tables, figures, and in-text numbers.</li>
-</ul>
-<div id="dataflowdiagram" class="section level2">
-<h2><span class="header-section-number">8.1</span> Details on data workflows</h2>
-<p>In a reproducible workflow, <em>instructions</em> to perform all of the above are provided. Most of the time, those instructions will be <em>computer code</em>, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments. But more often, acquiring data entails manual actions. For instance, secondary data access might be described in <a href="datacitations.html#dasmaster">Data Availability Statements</a>, whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures. But sometimes authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly.</p>
-<p>The following diagram illustrates the generic flow:
-<!--
-
-<img src="images/mermaid-data-flow.png" width="778" />
--->
-<img src="images/mermaid-data-flow.png" alt="Data flow" /></p>
-<p>Real articles are often more complex. A simple example will be discussed next.</p>
-</div>
-<div id="a-simple-example" class="section level2">
-<h2><span class="header-section-number">8.2</span> A simple example</h2>
-<p>At the Github repository <a href="https://github.com/labordynamicsinstitute/simple-example">labordynamicsinstitute/simple-example</a>, we have prepared a very simple example of a data analysis workflow. It illustrates the concepts above.</p>
-<blockquote>
-<p>Read the <a href="https://github.com/labordynamicsinstitute/simple-example/blob/master/README.md">README</a> before going on.</p>
-</blockquote>
-<p>We focus on the information provided in the README first:</p>
-<ul>
-<li><code>Source</code>: Census of Population and Housing, 2000</li>
-</ul>
-<p>The <code>source</code> data is identified, and a <code>data citation</code> is provided as part of the README. The README notes that the data is considered public-use, but a login is required at ICPSR, which is the distributor of the data. The data acquisition, as described, is a manual process (because it requires a login). The data is also manually unzipped, and the final location described.</p>
-<blockquote>
-<p>Note: this could be scripted to make part of the data acquisition code-driven.</p>
-</blockquote>
-<ul>
-<li><code>Cleaning programs</code>: <code>01_dataclean.do</code></li>
-</ul>
-<p>A <code>cleaning program</code> is identified and described.</p>
-<ul>
-<li><code>Analysis data</code>: is verbally described in the README (“clean merged dataset”)</li>
-</ul>
-<blockquote>
-<p>Note: Could this be improved?</p>
-</blockquote>
-<ul>
-<li><code>Analysis program</code>: <code>02_table1.do</code></li>
-<li><code>Outputs</code>: Table 1</li>
-</ul>
-<p>An <code>analysis program</code> is also listed, and identified as creating <code>output</code> Table 1. An inspection of the “<a href="https://github.com/labordynamicsinstitute/simple-example/blob/master/text/simple-paper.pdf">manuscript</a>” shows that only a single table is included.</p>
-<p>So a flow diagram for the simple example might be:
-<!--This figure above does not appear
-```{=html}
-<div class="mermaid">
-graph TD;
-    subgraph Dataflow;
-    A(("Input data:<br/><i>ICPSR_13568-V1"</i>)) ==>  B["Cleaning programs:<br/><i>01_dataclean.do</i>"];
-    B ==> C((Analysis data));
-    C ==> D["Analysis programs:<br/><i>02_table1.do</i>"]
-    D ==> E(("Outputs:<br/><i>Table 1</i>"));
-    end;
-    Z(("Source:<br/><i>Decennial Census")) -.-> X[Data citation] -.-> A;
-
-</div>
-```
--->
-<img src="images/mermaid-data-flow-example.png" alt="Data flow" /></p>
-
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>Note that when the authors generate or collect primary data, subsequent users of the same data are secondary data users, but replication might also involve re-executing the experiment, or collecting data anew with the same survey instruments.<a href="generic-data-workflow.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<div id="running-code-in-stata" class="section level1">
+<h1><span class="header-section-number">H</span> Running Code in Stata</h1>
+<p>Although, there are plenty of ways to run code in Stata, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.</p>
+<p>In essence, these instructions show how to deal with the three most common actions that replicators have to undertake when running Stata code:</p>
+<ol style="list-style-type: decimal">
+<li>Making sure that paths (i.e., something like "Mycomputer/Documents/Workspace/) in the .do files (Stata scripts) reflect the appropriate location of code, data, and output in the computer where the code is run.</li>
+<li>Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.</li>
+<li>Creating .log files (files that record, in this case, Stata output) of the replication attempts.</li>
 </ol>
+<div id="step-1-check-for-a-master-.do-file" class="section level2">
+<h2><span class="header-section-number">H.1</span> Step 1: check for a “master” .do file</h2>
+<blockquote>
+<p><strong>[ACTION]</strong> Check the README or the repository and determine if a master .do file was provided.</p>
+</blockquote>
+<p>A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.</p>
+<p>If there is a master do file, continue with the following steps. If not, see the instruction below: <em>“When a master .do is not provided”</em>.</p>
 </div>
+<div id="step-2-place-config.do-where-the-master-.do-file-is-located" class="section level2">
+<h2><span class="header-section-number">H.2</span> Step 2: place config.do where the master .do file is located</h2>
+<blockquote>
+<p><strong>[ACTION]</strong> Copy the file <code>template-config.do</code> and paste it into the folder where the master file is located. Change the name from <code>template-config.do</code> to <code>config.do</code></p>
+</blockquote>
+<p>The folder with the code, whether is the root directory or a subfolder, should look something like this:</p>
+<div class="figure">
+<img src="images/code_repo.png" alt="" />
+<p class="caption">Code_Repository</p>
+</div>
+</div>
+<div id="step-3-include-config.do-in-the-master-.do-file" class="section level2">
+<h2><span class="header-section-number">H.3</span> Step 3: include config.do in the master .do file</h2>
+<blockquote>
+<p><strong>[ACTION]</strong> Open the master .do file. In the beginning, add the line:</p>
+</blockquote>
+<pre><code>1 include &quot;config.do&quot;
+2
+3 */ This is Master do file /*</code></pre>
+<blockquote>
+<p>Save.</p>
+</blockquote>
+<p>More information about <code>config.do</code> can be found in <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> of the training materials.</p>
+<p>In summary, <code>config.do</code> does 4 things:</p>
+<ul>
+<li>Creates a global variable called “rootdir” with the local path to the root directory.</li>
+<li>Creates a logs files.</li>
+<li>Sets a path to save the packages to be installed in the replication repository, and</li>
+<li>It allows you to install the packages simply by listing their names.</li>
+</ul>
+<p>A crucial function of <code>config.do</code> is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.<code>config.do</code> allow us to installed packages in the replication directory.</p>
+</div>
+<div id="step-4-modifying-paths-if-necessary" class="section level2">
+<h2><span class="header-section-number">H.4</span> Step 4: modifying paths if necessary</h2>
+<blockquote>
+<p><strong>[ACTION]</strong></p>
+<ul>
+<li>Check the Readme and determine if (and where) the root directory should be modified.</li>
+<li>Open the .do file to be modified (probably the master .do file) and set the global variable <code>$rootdir</code> as the path.</li>
+<li>Save.</li>
+</ul>
+</blockquote>
+<p>To run the code, we need to make sure that Stata can access the locally-saved data, access the packages that will be installed, and save the output in the computer where you are running the code. To do that, we often need to change some directory paths defined in the .do files provided. This step may vary in each replication package, so you need to look at the README instructions closely. Some packages may not require any change, while others may require a little more work.</p>
+<p>However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the “root directory”. Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.</p>
+<div id="example" class="section level3">
+<h3><span class="header-section-number">H.4.1</span> Example</h3>
+<p>In a master file, a global variable “maindir” defines the path of the root directory as:</p>
+<pre><code>*/ This is Master do file /*
+
+global maindir &quot;C:\Users\Author\Dropbox\Project1&quot; // this is the path to the repository
+global data &quot;$maindir/data&quot; // path to data folder
+global figures &quot;$maindir/figures&quot; // path to figures folder</code></pre>
+<p>You would add <code>config.do</code> and change the global.
+After the change:</p>
+<pre><code>include &quot;config.do&quot;
+
+*/ This is Master do file /*
+
+global maindir &quot;$rootdir&quot; // this is the path to the repository
+global data &quot;$maindir/data&quot; // path to data folder
+global figures &quot;$maindir/figures&quot; // path to figures folder</code></pre>
+</div>
+</div>
+<div id="step-5-check-the-location-of-the-master-.do-file-and-modify-config.do" class="section level2">
+<h2><span class="header-section-number">H.5</span> Step 5: Check the location of the master .do file and modify config.do</h2>
+<blockquote>
+<p><strong>[ACTION]</strong></p>
+<ul>
+<li>If the master .do file is directly placed in the root directory, set the parameter <code>scenario</code> to be <code>A</code> and save. (This is the default, so really no action is necessary.)</li>
+<li>If the master .do file is inside a folder, open <code>config.do</code> and set the parameter <code>scenario</code> to <code>B</code> and save.</li>
+<li>If the replication package includes a folder with Stata packages, add the line <code>adopath ++</code> followed by the path of the location of that folder and save. See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</li>
+<li>Add packages that need to be installed to config.do. See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</li>
+</ul>
+</blockquote>
+<div id="scenario-a" class="section level3">
+<h3><span class="header-section-number">H.5.1</span> Scenario A</h3>
+<p>A simplified directory structure that correspond with scenario “A” look like this:</p>
+<pre><code>directory/
+               main.do
+               scripts/
+                   01_dosomething.do
+                data/
+                   data.dta
+                   otherdata.dta</code></pre>
+<div id="example-1" class="section level4">
+<h4><span class="header-section-number">H.5.1.1</span> Example</h4>
+<ul>
+<li>A Master .do file is in the main directory, and you have placed <code>config.do</code> in the main directory. The package <code>estout</code> and <code>ivreg2</code> need to be installed:</li>
+</ul>
+<pre><code>* Template config.do */
+
+local scenario &quot;A&quot; 
+* *** Add required packages from SSC to this list ***
+local ssc_packages &quot;estout ivreg2&quot;
+    // Example:
+    // local ssc_packages &quot;estout boottest&quot;
+    // If you need to &quot;net install&quot; packages, go to the very end of this program, and add them there.</code></pre>
+</div>
+</div>
+<div id="scenario-b" class="section level3">
+<h3><span class="header-section-number">H.5.2</span> Scenario B</h3>
+<p>A simplified directory structure that correspond to scenario “B” looks like this:</p>
+<pre><code> directory/
+              code/
+                 main.do
+                 01_dosomething.do
+              data/
+                 data.dta
+                 otherdata.dta
+</code></pre>
+<div id="example-2" class="section level4">
+<h4><span class="header-section-number">H.5.2.1</span> Example</h4>
+<ul>
+<li>A Master .do file is inside a folder and you have placed <code>config.do</code> in that same folder. The package <code>estout</code> needs to be installed:</li>
+</ul>
+<pre><code>* Template config.do */
+
+local scenario &quot;B&quot;  // around line 30
+*** Add required packages from SSC to this list ***
+local ssc_packages &quot;estout&quot;
+    // Example:
+    // local ssc_packages &quot;estout boottest&quot;
+    // If you need to &quot;net install&quot; packages, go to the very end of this program, and add them there.</code></pre>
+
+<div id="refs" class="references">
+<div>
+<p>American Economic Association. 2019. “AEA Member Announcements: Updated AEA Data and Code Availability Policy.” <em>AEA Member Announcements: Updated AEA Data and Code Availability Policy (July 16, 2019)</em>. <a href="https://web.archive.org/web/20191208160745/https://www.aeaweb.org/news/member-announcements-july-16-2019">https://web.archive.org/web/20191208160745/https://www.aeaweb.org/news/member-announcements-july-16-2019</a>.</p>
+</div>
+<div>
+<p>———. 2020. “Data and Code Availability Policy.” <em>AEA Papers and Proceedings</em> 110 (May): 776–78. <a href="https://doi.org/10.1257/pandp.110.776">https://doi.org/10.1257/pandp.110.776</a>.</p>
+</div>
+<div>
+<p>FORCE11. 2016. “THE FAIR Data Principles.” <a href="https://www.force11.org/group/fairgroup/fairprinciples">https://www.force11.org/group/fairgroup/fairprinciples</a>.</p>
+</div>
+<div>
+<p>ICPSR. n.d. “Citing Data.” Accessed August 21, 2020. <a href="https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html">https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html</a>.</p>
+</div>
+<div>
+<p>Martone, M. (ed.). 2014. “Data Citation Synthesis Group: Joint Declaration of Data Citation Principles.” FORCE11. 2014. <a href="https://doi.org/10.25490/a97f-egyk">https://doi.org/10.25490/a97f-egyk</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="datacitations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="assessing-computational-reproducibility.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-scan-packages-do.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
