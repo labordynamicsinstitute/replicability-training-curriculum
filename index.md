@@ -2593,5 +2593,8 @@ local ssc_packages "estout"
 
 # Bitbucket Authentication
 
+
+  ![Internet Explorer Error](images/Bitbucket_Error.png)
+
 <!--chapter:end:99-Bitbucket_Authentication.Rmd-->
 
