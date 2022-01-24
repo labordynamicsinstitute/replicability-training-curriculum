@@ -2596,5 +2596,13 @@ local ssc_packages "estout"
 
   ![Internet Explorer Error](images/Bitbucket_Error.png)
 
+#### Temporary Solution
+
+1. Make Firefox (or Edge) your default browswer. 
+2. Sign into Bitbucket on your browswer and then attempt the git action once again. You may then receive an error like below:
+
+  ![Second Error](images/Bitbucket_Error2.png)
+3. Attempt the git action again.
+
 <!--chapter:end:99-Bitbucket_Authentication.Rmd-->
 
