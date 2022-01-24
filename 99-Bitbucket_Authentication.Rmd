@@ -1,1 +1,4 @@
 # Bitbucket Authentication
+
+
+  ![Internet Explorer Error](images/Bitbucket_Error.png)
