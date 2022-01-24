@@ -9,6 +9,7 @@ Any user who created a Bitbucket account after Semptember 13, 2021 may encounter
 2. Sign into Bitbucket on your browswer and then attempt the git action once again. You may then receive an error like below:
 
   ![Second Error](images/Bitbucket_Error2.png)
+  
 3. Attempt the git action again.
 
 ## Long-Term Solution
