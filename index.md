@@ -5,7 +5,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-01-17"
+date: "2022-01-24"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2590,4 +2590,8 @@ local ssc_packages "estout"
 ```
 
 <!--chapter:end:98-Running-Stata_code.Rmd-->
+
+# Bitbucket Authentication
+
+<!--chapter:end:99-Bitbucket_Authentication.Rmd-->
 
