@@ -27,7 +27,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-01-24" />
+<meta name="date" content="2022-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -718,7 +718,17 @@ Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are t
 <li><input type="checkbox" disabled="" />
 <code>DATAAVAILABILITYEXCLUSIVE</code> Are there data that are <strong>only</strong> accessible to the author (nobody else)?</li>
 <li><input type="checkbox" disabled="" />
-<code>REASON FOR NON-ACCESSIBILITY OF DATA</code> Fill this out if <strong>none</strong> of the code can be run</li>
+<code>REASON FOR NON-ACCESSIBILITY OF DATA</code> Fill this out for <strong>any</strong> data that is not accessible/ not included as part of this archive; check <strong>all</strong> that apply. This should be clear from the authors’ descriptions (in the README)<ul>
+<li><code>Too big</code>: The data can be accessed elsewhere, but they are too big for this replication package</li>
+<li><code>Application process</code>: In order to access the data, an application needs to be made to an institution (not a purchase).</li>
+<li><code>Cost</code>: It costs money to obtain the data. This may be because it has to be purchased, or because there is a fee for the application process.</li>
+<li><code>Confidential data</code>: The data are sensitive / confidential and are therefore not made available in this replication package. They can be available elsewhere, subject to conditions.</li>
+<li><code>Proprietary data</code>: The data “belong” to somebody - a company, or in rare cases, a specific author, and cannot be redistributed.</li>
+<li><code>Licensed data</code>: A license must be obtained. This can be different than an application process (generally, less complicated).</li>
+<li><code>Redistribution not authorized</code>: Often, even if data are not confidential, not proprietary, etc., there may be redistribution restrictions. An example are some IPUMS data, as well as many others.</li>
+<li><code>Other download site provided</code>: When data can be downloaded elsewhere, possibly due to <code>licenses</code> or <code>application process</code>. In other cases, even if they could be provided, they may already be archived elsewhere, and are not included here.</li>
+<li><code>Not found</code>: This should be checked when data cannot be found as per the instructions by the author. This is rarely a final finding for pre-publication verification.</li>
+</ul></li>
 <li><input type="checkbox" disabled="" />
 <code>NUMBEROFDATASETS</code> How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the “S:” drive, or “CRADC”, or some other secure mechanism.</li>
 </ul>
