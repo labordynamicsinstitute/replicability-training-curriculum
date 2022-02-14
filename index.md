@@ -2367,6 +2367,13 @@ See setup checklist.
 
 <!--chapter:end:95_Access_to_computers.Rmd-->
 
+# Stata-related procedures
+
+In this section, we will show you a few things related specifically to running code reproducibly with Stata. For more general debugging tips for Stata and other computer languages, see [our wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Stata-Tips).
+
+
+<!--chapter:end:96-00-using-Stata.Rmd-->
+
 ## Using config.do in STATA
 
 In "Verification" stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide `template-config.do` in the template repository you clone which addresses these problems. 
