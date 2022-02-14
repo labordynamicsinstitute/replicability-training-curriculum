@@ -2659,12 +2659,12 @@ A simplified directory structure that correspond to scenario "B" looks like this
 
 ```
  directory/
- main.do
-               scripts/
-                   01_dosomething.do
-                data/
-                   data.dta
-                   otherdata.dta
+        main.do
+        scripts/
+             01_dosomething.do
+        data/
+             data.dta
+             otherdata.dta
 ```
 
 ##### Example
@@ -2676,7 +2676,7 @@ A simplified directory structure that correspond to scenario "B" looks like this
 ```
 * Template config.do */
 
-local scenario "A"  // around line 30
+local scenario "B"  // around line 30
 *** Add required packages from SSC to this list ***
 local ssc_packages "estout"
     // Example:

@@ -506,12 +506,12 @@ local ssc_packages &quot;estout ivreg2&quot;
 <h4><span class="header-section-number">F.2.5.2</span> Scenario B</h4>
 <p>A simplified directory structure that correspond to scenario “B” looks like this:</p>
 <pre><code> directory/
- main.do
-               scripts/
-                   01_dosomething.do
-                data/
-                   data.dta
-                   otherdata.dta</code></pre>
+        main.do
+        scripts/
+             01_dosomething.do
+        data/
+             data.dta
+             otherdata.dta</code></pre>
 <div id="example-2" class="section level5">
 <h5><span class="header-section-number">F.2.5.2.1</span> Example</h5>
 <ul>
@@ -519,7 +519,7 @@ local ssc_packages &quot;estout ivreg2&quot;
 </ul>
 <pre><code>* Template config.do */
 
-local scenario &quot;A&quot;  // around line 30
+local scenario &quot;B&quot;  // around line 30
 *** Add required packages from SSC to this list ***
 local ssc_packages &quot;estout&quot;
     // Example:
