@@ -99,17 +99,17 @@ A simplified directory structure that correspond with scenario "A" look like thi
 
 ```
 directory/
-               main.do
-               scripts/
-                   01_dosomething.do
-                data/
-                   data.dta
-                   otherdata.dta
+              code/
+                 main.do
+                 01_dosomething.do
+              data/
+                 data.dta
+                 otherdata.dta
 ```
 
 ##### Example
 
-- A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
+- A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
 
 ```
 * Template config.do */
@@ -128,18 +128,20 @@ A simplified directory structure that correspond to scenario "B" looks like this
 
 ```
  directory/
-              code/
-                 main.do
-                 01_dosomething.do
-              data/
-                 data.dta
-                 otherdata.dta
+ main.do
+               scripts/
+                   01_dosomething.do
+                data/
+                   data.dta
+                   otherdata.dta
 
 ```
 
 ##### Example
 
-- A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
+
+- A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
+
 
 ```
 * Template config.do */
