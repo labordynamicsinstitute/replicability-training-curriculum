@@ -2106,44 +2106,7 @@ You should now open the report, and verify the changes made by the author. How t
 
 
 
-
-# Privacy {#privacy}
-
-We need to cover two sorts of privacy: the privacy of those whose materials we verify, and your own privacy. There are limitations to both, but we attempt to protect privacy as much as possible.
-
-##  Privacy of Replicators
-
-You are tasked with reproducing articles. Much as referees for journals mostly remain anonymous, we want you to remain anonymous as well.
-
-- You *may* reveal yourself to authors later (after the task is completed), if you wish. 
-- You should *not* contact authors unless authorized by the Lab Leader. Normally, all such communications go through the Lab Leader.
-- We do *name* you (to thank you) in the annual report, but do not attribute your work to any one article.
-- In the empirical analysis of all the articles, we replace your netid and name with an anonymous (and untraceable) identifier. So we can track that you have done Articles A1, D57, and Z31, but nobody knows that it was **you**.
-
-There is "leakage" of information:
-
-- In order to download materials, you need to login to openICPSR, and have the ability to download from specific deposits. This *does* reveal your name to the depositors. This is currently a technological constraint, and cannot be avoided without great complications.
-  - If you have concerns, please let us know, and we will find a workaround. 
-
-Should you ever be contacted in some unacceptable fashion by authors, you should immediately contact the Lab Leadership. 
-
-You can, and you **should**, reveal your affiliation with this project! You can (and you should) be proud of the work you will do or have done, and you are allowed (and you should) reference this project as an accomplishment.
-
-## The Privacy of Authors
-
-When we do pre-publication verification, this is equally important.
-
-- You are never allowed to reveal that the author has submitted to the journal
-  - This includes when you need to contact third parties for materials that are part of the replication materials. In case of doubt, contact Lab Leadership.
-- You are never allowed to reveal anything about the analysis that the author is conducting, and that you are reproducing, to anybody outside of this group.
-- You must never put the code, the article, or the data on a location where others outside of this group could access it
-  - Bitbucket within the `aeaverification` project is OK, do not attempt to make a repository public (even if it may seem convenient not to have to enter your login etc.)
-  - Remove the files from your  laptop as soon as you are done with it (after `git push`, of course)
-  - You may remove them from CISER nodes, but those will be cleansed later
-  - Do not email or otherwise disseminate (twitter, facebook, snapchat, whatever) the files received, or any other information about the papers
-
-
-<!--chapter:end:91-Privacy.Rmd-->
+<!--chapter:end:90-Part-Appendix.Rmd-->
 
 # Setup Checklist {#checklist}
 
@@ -2209,7 +2172,47 @@ General purpose text editors can view and edit them all, although they may lack 
 - [Git cheatsheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) [and another one](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 - [Markdown cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
-<!--chapter:end:92-setup_checklist.Rmd-->
+<!--chapter:end:91-setup-checklist.Rmd-->
+
+
+
+# Privacy {#privacy}
+
+We need to cover two sorts of privacy: the privacy of those whose materials we verify, and your own privacy. There are limitations to both, but we attempt to protect privacy as much as possible.
+
+##  Privacy of Replicators
+
+You are tasked with reproducing articles. Much as referees for journals mostly remain anonymous, we want you to remain anonymous as well.
+
+- You *may* reveal yourself to authors later (after the task is completed), if you wish. 
+- You should *not* contact authors unless authorized by the Lab Leader. Normally, all such communications go through the Lab Leader.
+- We do *name* you (to thank you) in the annual report, but do not attribute your work to any one article.
+- In the empirical analysis of all the articles, we replace your netid and name with an anonymous (and untraceable) identifier. So we can track that you have done Articles A1, D57, and Z31, but nobody knows that it was **you**.
+
+There is "leakage" of information:
+
+- In order to download materials, you need to login to openICPSR, and have the ability to download from specific deposits. This *does* reveal your name to the depositors. This is currently a technological constraint, and cannot be avoided without great complications.
+  - If you have concerns, please let us know, and we will find a workaround. 
+
+Should you ever be contacted in some unacceptable fashion by authors, you should immediately contact the Lab Leadership. 
+
+You can, and you **should**, reveal your affiliation with this project! You can (and you should) be proud of the work you will do or have done, and you are allowed (and you should) reference this project as an accomplishment.
+
+## The Privacy of Authors
+
+When we do pre-publication verification, this is equally important.
+
+- You are never allowed to reveal that the author has submitted to the journal
+  - This includes when you need to contact third parties for materials that are part of the replication materials. In case of doubt, contact Lab Leadership.
+- You are never allowed to reveal anything about the analysis that the author is conducting, and that you are reproducing, to anybody outside of this group.
+- You must never put the code, the article, or the data on a location where others outside of this group could access it
+  - Bitbucket within the `aeaverification` project is OK, do not attempt to make a repository public (even if it may seem convenient not to have to enter your login etc.)
+  - Remove the files from your  laptop as soon as you are done with it (after `git push`, of course)
+  - You may remove them from CISER nodes, but those will be cleansed later
+  - Do not email or otherwise disseminate (twitter, facebook, snapchat, whatever) the files received, or any other information about the papers
+
+
+<!--chapter:end:92-Privacy.Rmd-->
 
 # Communication
 
@@ -2261,6 +2264,13 @@ For reference: Authors who have seen the documents written by this group
 
 <!--chapter:end:93-Communication.Rmd-->
 
+# Downloading Data
+
+Most data we receive comes from pre-publication openICPSR deposits. However, they may sometimes be privately provided and are then stored on a secure shared drive, or they may come from other trusted repositories (e.g., Zenodo, Dataverse).
+
+
+<!--chapter:end:94-00-downloading-data.Rmd-->
+
 # Using openICPSR Projects Prior to Publication
 
 Typically the AEA Data Editor team will access code and data provided by authors that is stored on [openICPSR](https://www.openicpsr.org/openicpsr/aea). 
@@ -2293,7 +2303,19 @@ Normally, none of the actions below are technically possible, but you should nev
 See [Privacy] section about expectations on privacy.
 
 
-<!--chapter:end:94-how-to-use-openICPSR-backend.Rmd-->
+<!--chapter:end:94-01-how-to-use-openICPSR-backend.Rmd-->
+
+## Accessing privately provided data
+
+(to come)
+
+<!--chapter:end:94-02-alternate-downloads.Rmd-->
+
+## Accessing privately provided data
+
+(to come)
+
+<!--chapter:end:94-03-private-data.Rmd-->
 
 # Access to Computers
 
@@ -2427,22 +2449,7 @@ The given name should be `template-config.do`. In order to use it, rename it to 
 
 - There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files. 
 
-<!--chapter:end:96_Using_config_STATA.Rmd-->
-
-# Using scan_packages.do
-
-In "Writing Preliminary Report" stage, we ask you to check the completeness of the information on system requirements. Often, authors do not list out packages they installed that are not default packages in STATA. The authors should list them in the README (even when they provide ado files!), but it does not always happen. To help you identify these packages, we provide an useful tool for this exercise.
-
-- Locate a directory named "tools/Stata_scan_code/".
-- Change the following command in line 11 with your system information:
-    ```
-    global codedir "U:/Workspace/aearep-2216/140161"
-    ``` 
-    You should locate the directory where the codes are. This will be the directory where the output excel file will be saved.
-- Execute the dofile.
-- Locate the file "candidatepackages.xlsx", use the information there, and remember to push the file to the repository.
-
-<!--chapter:end:97_Scan_packages.Rmd-->
+<!--chapter:end:96-01-using-config-stata.Rmd-->
 
 # Running Code in Stata
 
@@ -2598,14 +2605,36 @@ local ssc_packages "estout"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
 
-<!--chapter:end:98-Running-Stata_code.Rmd-->
+<!--chapter:end:96-02-running-stata-code-on-windows.Rmd-->
 
-# Bitbucket Authentication
+# Using scan_packages.do
+
+In "Writing Preliminary Report" stage, we ask you to check the completeness of the information on system requirements. Often, authors do not list out packages they installed that are not default packages in STATA. The authors should list them in the README (even when they provide ado files!), but it does not always happen. To help you identify these packages, we provide an useful tool for this exercise.
+
+- Locate a directory named "tools/Stata_scan_code/".
+- Change the following command in line 11 with your system information:
+    ```
+    global codedir "U:/Workspace/aearep-2216/140161"
+    ``` 
+    You should locate the directory where the codes are. This will be the directory where the output excel file will be saved.
+- Execute the dofile.
+- Locate the file "candidatepackages.xlsx", use the information there, and remember to push the file to the repository.
+
+<!--chapter:end:96-03-stata-scan-packages.Rmd-->
+
+# Authentication-related issues
+
+For CISER-related authentication or logon questions, see [CCSS-RS pages](https://socialsciences.cornell.edu/research-support/login-instructions#passwords).
+
+
+<!--chapter:end:97-00-authentication.Rmd-->
+
+## Bitbucket Authentication
 
 Any user who created a Bitbucket account after Semptember 13, 2021 may encounter the following error when attempting to git clone (or push) using Internet Explorer.
   ![Internet Explorer Error](images/Bitbucket_Error.png)
 
-## Temporary Solution
+### Temporary Solution
 
 1. Make Firefox (or Edge) your default browswer. 
 2. Sign into Bitbucket on your browswer and then attempt the git action once again. You may then receive an error like below:
@@ -2614,12 +2643,11 @@ Any user who created a Bitbucket account after Semptember 13, 2021 may encounter
   
 3. Attempt the git action again.
 
-## Long-Term Solution
+### Long-Term Solution
 
 The long-term solution is to create an [App Password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/).
 
 1. Follow the steps to create an App Password. 
-2. 
 
 Some important points about app passwords:
 
@@ -2627,5 +2655,10 @@ Some important points about app passwords:
 - You **cannot** use them to log in to your Bitbucket account at bitbucket.org.
 - You **cannot** use app passwords to manage workspace actions.
 
-<!--chapter:end:99-Bitbucket_Authentication.Rmd-->
+<!--chapter:end:97-01-Bitbucket-authentication.Rmd-->
+
+# References
+
+
+<!--chapter:end:99-References.Rmd-->
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 AEA: Interfacing with the Journal Management System | TRAINING For Reproducibility Verification</title>
+  <title>D Downloading Data | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 AEA: Interfacing with the Journal Management System | TRAINING For Reproducibility Verification" />
+  <meta property="og:title" content="D Downloading Data | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 AEA: Interfacing with the Journal Management System | TRAINING For Reproducibility Verification" />
+  <meta name="twitter:title" content="D Downloading Data | TRAINING For Reproducibility Verification" />
   
   <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
   
@@ -34,8 +34,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="aea-revision-reports-after-author-resubmission.html"/>
-<link rel="next" href="aea-instructions-for-papers-and-proceedings-checks.html"/>
+<link rel="prev" href="communication.html"/>
+<link rel="next" href="using-openicpsr-projects-prior-to-publication.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -247,296 +247,18 @@ function toggleCitation() {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="aea-interfacing-with-the-journal-management-system" class="section level1">
-<h1><span class="header-section-number">Chapter 13</span> AEA: Interfacing with the Journal Management System</h1>
-<blockquote>
-<p>The AEA uses ScholarOne (also known as Manuscript Central) as its Journal Management System (JMS), but the guidelines below will work for any email-based system. A more integrated approach is probably preferred.</p>
-</blockquote>
-<div id="basic-setup" class="section level2">
-<h2><span class="header-section-number">13.1</span> Basic setup</h2>
-<p>In the JMS, the Data Editor is set up as a reviewer who can be assigned during the conditional accept stage. Assignment is via email to a pre-configured email address. Once the Data Editor has finalized the replication report, a manual upload is required to submit the report. If the report requires a revision, a note may need to be posted on the openICPSR deposit as well. If the report requires no revisions, a note is made on the openICPSR deposit to confirm that everything is in order.</p>
-<div class="AEA">
-<h2 id="permissions" class="unnumbered">
-Permissions
-</h2>
-<ul>
-<li>
-submitters needs password to ScholarOne (Lars shares via LastPass)
-</li>
-<li>
-submitters need permissions on openICPSR (Lars requests from openICPSR)
-</li>
-<li>
-submitters need <code>Publisher</code> permission on Jira (can be set in Project -&gt; Settings -&gt; People in Jira)
-</li>
-</ul>
-</div>
-</div>
-<div id="submitting-to-the-jms" class="section level2">
-<h2><span class="header-section-number">13.2</span> Submitting to the JMS</h2>
-<blockquote>
-<p>Reminder: for the AEA, the JMS is ScholarOne.</p>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Open the issue on JIRA. It must be <code>Approved</code>.</li>
-<li>Click on the <code>Submit to MC</code> transition. A pop-up will be shown.</li>
-</ol>
-<div class="figure">
-<img src="images/jira-Submit-to-MC.png" alt="" />
-<p class="caption">Submit to MC pop-up</p>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li>In the pop-up, you should have all the necessary information
-<ul>
-<li>Note: links in the pop-up window are not clickable: double-click, then use right-click to <code>Open in New Tab</code></li>
-<li><code>MCEntryURL</code> has the link to Manuscript Central (MC) in order to submit</li>
-<li><code>Manuscript Central Identifier</code> to find the manuscript</li>
-<li>Field [<code>MCRecommendationV2</code>] has the information about how the editorial office should proceed, to be selected in the JMS
-<ul>
-<li>In cases where <code>MCStatus</code> contains <code>RR</code>, the information will be in field [<code>MCRecommendation</code>]</li>
-</ul></li>
-<li>Field [<code>Git working location</code>] has the information to clone the repository (and thus be able to access the report)</li>
-</ul></li>
-<li>If necessary, clone the Bitbucket repository associated with the issue
-<ul>
-<li>If not already created, make a <code>REPLICATION.pdf</code> file from the markdown <code>REPLICATION.md</code> using Visual Studio Code, then commit and push!</li>
-</ul></li>
-<li>Open the Manuscript Central link (double-click, right-click, open in new tab)
-<ol style="list-style-type: decimal">
-<li>Enter your credentials to access Manuscript Central (if using LastPass, let LastPass fill the information)</li>
-<li>Click on the review tab and identify the manuscript number (<code>Manuscript Central Identifier</code>) of the paper</li>
-<li>Select <code>Continue Review</code></li>
-<li>Always click <code>Yes</code> when asked: Would you be willing to review a revision of this manuscript?</li>
-<li>Select the recommendation as noted in the Issue
-<ul>
-<li>If <code>MCStatus</code> contains <code>CA</code>: Look at the field [<code>MCRecommendationV2</code>]</li>
-<li>If <code>MCStatus</code> contains <code>RR</code>: Look at the field [<code>MCRecommendation</code>]</li>
-</ul></li>
-<li>Copy-paste the “Summary” part from <code>REPLICATION.md</code> into the field <code>Comments to the Author</code>.
-<ul>
-<li>If not already present, add “Details are in the full report.”</li>
-<li>If not already present, add
-<div class="bbox">
-<blockquote>
-<p>
-[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
-</p>
-</blockquote>
-</div></li>
-</ul></li>
-<li>Select and upload the <code>REPLICATION.pdf</code>, click on <code>For author and  editor</code>.</li>
-<li>In some cases, the Data Editor will have put a note in the issue with a “for Editor only” file. The contents of that file should be copied and pasted into the field <code>Confidential Comments to the Coeditor</code>.</li>
-<li>Re-verify all information</li>
-<li>Click on <code>Submit</code></li>
-</ol></li>
-<li>Back in the pop-up,
-<ol style="list-style-type: decimal">
-<li>Click on <code>Submit to MC</code></li>
-</ol></li>
-</ol>
-</div>
-<div id="decision-point" class="section level2">
-<h2><span class="header-section-number">13.3</span> Decision point?</h2>
-<p>If</p>
-<ul>
-<li>[<code>MCStatus</code>] contains <code>CA</code> and [<code>MCRecommendationV2</code>] = <code>Conditional Accept</code>, or</li>
-<li>[<code>MCStatus</code>] contains <code>RR</code></li>
-</ul>
-<p>then proceed to <a href="aea-interfacing-with-the-journal-management-system.html#request-revisions">Request revisions</a>.</p>
-<p>Otherwise, if [<code>MCStatus</code>] contains <code>CA</code> and [<code>MCRecommendationV2</code>] = <code>Accept</code> or <code>Accept with changes</code>
-then proceed to <a href="aea-interfacing-with-the-journal-management-system.html#preparing-deposit-for-publication">Preparing Deposit for Publication</a>.</p>
-</div>
-<div id="request-revisions" class="section level2">
-<h2><span class="header-section-number">13.4</span> Request revisions</h2>
-<p>In principle, once the report is uploaded, the author will get the report with the requested revisions via ScholarOne. However, under the post-August 2020 workflow on openICPSR, the project may need to be unlocked for the author to make changes.
-To do so, proceed as follows:</p>
-<ol style="list-style-type: decimal">
-<li>Open the issue on Jira</li>
-<li>Right-click on the [<code>Code Provenance</code>] field to open the openICPSR deposit.</li>
-<li>On openICPSR,
-<ul>
-<li>verify what the openICPSR <code>Deposit Status</code> is (top right corner) <img src="images/change-status-button.png" alt="Deposit in Progress image" />.</li>
-<li>if <code>Deposit Status</code> = <em><code>Deposit in Progress</code></em>, you are done on openICPSR. Go back to the Jira issue</li>
-<li>if <code>Deposit Status</code> = <em><code>Submitted</code></em>, then
-<ul>
-<li>click on <code>Change Status</code>, choose <code>Request revisions</code></li>
-</ul></li>
-</ul></li>
-</ol>
-<ul>
-<li>in the pop-up, paste and submit the following lines:</li>
-</ul>
-<div class="bbox">
-<p>
-Revisions requested. Details in the full report, which has been sent to the Editor in charge of your manuscript.
-</p>
-<blockquote>
-<p>
-[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
-</p>
-</blockquote>
-</div>
-<ol start="4" style="list-style-type: decimal">
-<li>Back in the Jira issue, transition the issue to <code>Done</code>.</li>
-</ol>
-</div>
-<div id="preparing-deposit-for-publication" class="section level2">
-<h2><span class="header-section-number">13.5</span> Preparing Deposit for Publication</h2>
-<div id="for-accept-with-changes" class="section level3">
-<h3><span class="header-section-number">13.5.1</span> FOR ACCEPT WITH CHANGES</h3>
-<ol style="list-style-type: decimal">
-<li>Open the issue on Jira</li>
-<li>Click on the <code>Wait for response on openICPSR</code> transition to <code>Pending openICPSR changes</code>.</li>
-</ol>
-<ul>
-<li>In the pop-up, you should have all the necessary information.
-<ul>
-<li>Note: links in the pop-up window are not clickable: double-click, then use right-click to “Open in New Tab”.</li>
-<li>If not already done: <code>Code provenance</code> should point to openICPSR. If not, go to the final step.</li>
-<li>Make a note of the issue number (in the URL) and the <code>Manuscript Central identifier</code> again.</li>
-</ul></li>
-</ul>
-<div class="figure">
-<img src="images/jira-Wait-for-response-on-ICPSR.png" alt="" />
-<p class="caption">Pop-up for transition to Pending openICSPR</p>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li>Look for a file “for openICPSR.md” in the repository.</li>
-<li>On openICPSR,</li>
-</ol>
-<ul>
-<li>(new!) verify what the openICPSR <code>Deposit Status</code> is (top right corner) <img src="images/change-status-button.png" alt="Deposit in Progress image" />.</li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li>On openICPSR, if <code>Deposit Status</code> = <em><code>Deposit in Progress</code></em>
-<ul>
-<li>start a message in the Communication log:
-<ul>
-<li>with subject line: <code>Please make the following changes (AEAREP-xxx)</code> (replace with appropriate numbers)</li>
-<li>Message content:
-<ul>
-<li>the contents of the repository-specific “for openICPSR.md” <strong>OR</strong> the portion of the report after “<code>Action Items (openICPSR)</code>”</li>
-<li>then the following lines (which may already be present in the “for openICPSR.md”)</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ol>
-<div class="bbox">
-<p>
-Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
-</p>
-<p>
-Once all changes have been made, please change the status of your deposit to “Submit to AEA”.
-</p>
-<blockquote>
-<p>
-[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
-</p>
-</blockquote>
-</div>
-<p>(replace xxx with the issue number)</p>
-<ol start="6" style="list-style-type: decimal">
-<li>On openICPSR, if <code>Deposit Status</code> = <em><code>Submitted</code></em>:</li>
-</ol>
-<ul>
-<li>click on <code>Change Status</code>, choose <code>Request revisions</code></li>
-<li>in the pop-up,
-<ul>
-<li>paste the the contents of the repository-specific “for openICPSR.md” <strong>OR</strong> the portion of the report after “<code>Action Items (openICPSR)</code>”</li>
-<li>then the following lines:</li>
-</ul></li>
-</ul>
-<div class="bbox">
-<p>
-Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
-</p>
-<blockquote>
-<p>
-[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
-</p>
-</blockquote>
-</div>
-<p>(replace xxx with the issue number)</p>
-</div>
-<div id="for-accept" class="section level3">
-<h3><span class="header-section-number">13.5.2</span> FOR ACCEPT:</h3>
-<ol style="list-style-type: decimal">
-<li>Open the issue on Jira</li>
-<li>Click on the <code>Prepare for publication</code> transition</li>
-<li>In the pop-up, you should have all the necessary information.
-<ul>
-<li>Note: links in the pop-up window are not clickable: double-click, then use right-click to “Open in New Tab”.</li>
-<li>If not already done: <code>Code provenance</code> should point to openICPSR. If not, go to the final step.</li>
-<li>Make a note of the issue number (in the URL) and the <code>Manuscript Central identifier</code> again.</li>
-</ul></li>
-<li>On openICPSR,
-<ul>
-<li>remove any RAs from the Share list (leave anybody else who is on there!)</li>
-<li>(new!) verify what the openICPSR <code>Deposit Status</code> is (top right corner) <img src="images/change-status-button.png" alt="Deposit in Progress image" />.</li>
-</ul></li>
-<li>On openICPSR, if <code>Deposit Status</code> = <em><code>Deposit in Progress</code></em>
-<ul>
-<li>start a message in the Communication log:
-<ul>
-<li>with subject line: <code>Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx</code> (replace with appropriate numbers)</li>
-<li>with body</li>
-</ul></li>
-</ul></li>
-</ol>
+<div id="downloading-data" class="section level1">
+<h1><span class="header-section-number">D</span> Downloading Data</h1>
+<p>Most data we receive comes from pre-publication openICPSR deposits. However, they may sometimes be privately provided and are then stored on a secure shared drive, or they may come from other trusted repositories (e.g., Zenodo, Dataverse).</p>
 
-<div class="bbox">
-<p>This data and code deposit is accepted.</p>
-<p>Action items:</p>
-<ul>
-<li>Author: Please change the status of your deposit to “Submit to AEA”</li>
-<li>AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.
-</div></li>
-</ul>
-<ol start="6" style="list-style-type: decimal">
-<li>On openICPSR, if <code>Deposit Status</code> = <em><code>Submitted</code></em>:</li>
-</ol>
-<ul>
-<li>start a message in the Communication log:
-<ul>
-<li>with subject line: <code>Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx</code> (replace with appropriate numbers)</li>
-<li>with body</li>
-</ul></li>
-</ul>
-
-<div class="bbox">
-<p>This data and code deposit is accepted.</p>
-<p>Action items:</p>
-<ul>
-<li>Author: no further action required</li>
-<li>AEA Staff: update DOI, Vol, Iss, Year of related publication, then publish.
-</div></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>Back in the Jira popup, finalize by clicking <code>OK</code>. The issue will be moved to <code>Pending Publication</code>.</li>
-<li>You are not quite done yet! You will receive an email from openICPSR.
-<ul>
-<li>the email needs to be forwarded to <em><a href="mailto:dataeditor-queue@aeapubs.org" class="email">dataeditor-queue@aeapubs.org</a></em></li>
-<li>manually add the <strong>issue number</strong> (AEAREP-xxx) into the subject line</li>
-<li>delete anything in the body of the email before the “From:”</li>
-<li>This will add the message to the Jira ticket.</li>
-</ul></li>
-</ol>
-<blockquote>
-<ul>
-<li>ICPSR does not always successfully send out a notification email for the posting of the comment. If you don’t receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.</li>
-</ul>
-</blockquote>
-
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="aea-revision-reports-after-author-resubmission.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="aea-instructions-for-papers-and-proceedings-checks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="communication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="using-openicpsr-projects-prior-to-publication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
