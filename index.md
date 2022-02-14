@@ -2271,19 +2271,19 @@ Most data we receive comes from pre-publication openICPSR deposits. However, the
 
 <!--chapter:end:94-00-downloading-data.Rmd-->
 
-# Using openICPSR Projects Prior to Publication
+## Using openICPSR Projects Prior to Publication
 
 Typically the AEA Data Editor team will access code and data provided by authors that is stored on [openICPSR](https://www.openicpsr.org/openicpsr/aea). 
 
 > Cornell replicators: You will need to set up an openICPSR account using your Cornell email.
 
-## Basics of openICPSR
+### Basics of openICPSR
 
 - Authors will create a draft deposit that contains the replication archive for their paper.
 - Each deposit is identified with a six digit number.
 - You will download the project and commit the code (but not the data) files to the corresponding Bitbucket repo.
 
-## Downloading a project
+### Downloading a project
 
 - Log on to the openICPSR website by clicking on the `Code provenance` link in Jira
 - If you get an error, the project has probably not been shared with you. Contact your supervisor.
@@ -2291,7 +2291,7 @@ Typically the AEA Data Editor team will access code and data provided by authors
 
 ![](images/openICPSRexample.png)
 
-## Reminders
+### Reminders
 
 Normally, none of the actions below are technically possible, but you should nevertheless follow these guidelines:
 
@@ -2367,28 +2367,28 @@ See setup checklist.
 
 <!--chapter:end:95_Access_to_computers.Rmd-->
 
-# Using config.do in STATA
+## Using config.do in STATA
 
 In "Verification" stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide `template-config.do` in the template repository you clone which addresses these problems. 
 
-## Why do we need log files?
+### Why do we need log files?
 
 - Log files record each step of the analysis and its results as a text. It also records error messages if you encounter any error upon running the code.
 - There are other purposes to have log files, but for us, it is to communicate with other team members. 
     - When a replicator submits the report, a preapprover (and an approver) needs to verify how the code ran. It is to ensure that any discrepancies we find is not due to mistakes on our end.
     - Log file is crucial for this verification. Otherwise, preapprovers and approvers have to run the code again to verify which is not an ideal use of time, nor an efficient way to process the case.
 
-## Why do we have to install programs?
+### Why do we have to install programs?
 
 - STATA, or any statistical software, does not provide all the package that enables or facilitates the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. 
 - We differ in installation process from many others in the sense that, we want to install programs in a specified directory that is NOT a system directory.
     - This is to ensure that the package is complete. A complete replication package should be stand-alone, regardless of packages installed in the machine that program is run.
 
-## Explaining template-config.do
+### Explaining template-config.do
 
 ![template-config.do](images/stata_config.png)
 
-### Directory paths for log files.
+#### Directory paths for log files.
 
 `config.do` creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let's say the current working directory path is the following, since jira issue number is AEAREP-9999 and openICPSR case number is 111111
     ```
@@ -2401,18 +2401,18 @@ In "Verification" stage, we ask you to keep a log of what you do. Moreover, auth
     - `mkdir` is a command to create a directory 
 
 
-### Opening a log file with current date and time
+#### Opening a log file with current date and time
 
 Since we usually run the program several times until we complete the replication, we would like to record all the instances. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and open the log file.
 
 - line 22-25: calls the current date and time as local macro
 - line 27: start the log files
 
-### System information
+#### System information
 
 We require system information as part of the replication package. This is because some commands are sensitive to the OS, STATA version, machine type, etc. Area 3 calls in that information from the system and displays in the log file.
 
-### Package installation
+#### Package installation
 
 As explained above, we often need to install packages. Even when the packages were installed in other cases before, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.
 
@@ -2429,13 +2429,13 @@ As explained above, we often need to install packages. Even when the packages we
 - In some cases, the installation would fail since you have to use "net install.." instead of "ssc install". In this case, uncomment and use line 66.
 
 
-## How to use config.do
+### How to use config.do
 
-### Rename the config file.
+#### Rename the config file.
 
 The given name should be `template-config.do`. In order to use it, rename it to `config.do` and move it into the openICPSR folder (e.g. , 140XXX).
 
-### Include config.do
+#### Include config.do
 
 - Add the following line at the beginning of each code file:
     ```
@@ -2451,7 +2451,7 @@ The given name should be `template-config.do`. In order to use it, rename it to 
 
 <!--chapter:end:96-01-using-config-stata.Rmd-->
 
-# Running Code in Stata
+## Running Code in Stata
 
 Although, there are plenty of ways to run code in Stata, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.
 
@@ -2461,7 +2461,7 @@ In essence, these instructions show how to deal with the three most common actio
  2. Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.
  3. Creating .log files (files that record, in this case, Stata output) of the replication attempts.
 
-## Step 1: check for a "master" .do file
+### Step 1: check for a "master" .do file
 
 > **[ACTION]** Check the README or the repository and determine if a master .do file was provided.
 
@@ -2469,7 +2469,7 @@ A master .do file is a Stata script that will call, in the correct sequence, all
 
 If there is a master do file, continue with the following steps. If not, see the instruction below: *"When a master .do is not provided"*.
 
-## Step 2: place config.do where the master .do file is located
+### Step 2: place config.do where the master .do file is located
 
 > **[ACTION]** Copy the file `template-config.do` and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
 
@@ -2477,7 +2477,7 @@ The folder with the code, whether is the root directory or a subfolder, should l
 
 ![Code_Repository](images/code_repo.png)
 
-## Step 3: include config.do in the master .do file
+### Step 3: include config.do in the master .do file
 
 > **[ACTION]** Open the master .do file. In the beginning, add the line:
 
@@ -2500,7 +2500,7 @@ In summary, `config.do` does 4 things:
 
 A crucial function of `config.do` is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.`config.do` allow us to installed packages in the replication directory.  
 
-## Step 4: modifying paths if necessary
+### Step 4: modifying paths if necessary
 
 > **[ACTION]**
 >
@@ -2512,7 +2512,7 @@ To run the code, we need to make sure that Stata can access the locally-saved da
 
 However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the "root directory". Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.
 
-### Example
+#### Example
 
 In a master file, a global variable "maindir" defines the path of the root directory as:
 
@@ -2537,7 +2537,7 @@ global data "$maindir/data" // path to data folder
 global figures "$maindir/figures" // path to figures folder
 ```
 
-## Step 5: Check the location of the master .do file and modify config.do
+### Step 5: Check the location of the master .do file and modify config.do
 
 > **[ACTION]**
 >
@@ -2546,7 +2546,7 @@ global figures "$maindir/figures" // path to figures folder
 > - If the replication package includes a folder with Stata packages, add the line  `adopath ++` followed by the path of the location of that folder and save. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
 > - Add packages that need to be installed to config.do. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
 
-### Scenario A
+#### Scenario A
 
 A simplified directory structure that correspond with scenario "A" look like this:
 
@@ -2560,7 +2560,7 @@ directory/
                    otherdata.dta
 ```
 
-#### Example
+##### Example
 
 - A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
 
@@ -2575,7 +2575,7 @@ local ssc_packages "estout ivreg2"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
 
-### Scenario B
+#### Scenario B
 
 A simplified directory structure that correspond to scenario "B" looks like this:
 
@@ -2590,7 +2590,7 @@ A simplified directory structure that correspond to scenario "B" looks like this
 
 ```
 
-#### Example
+##### Example
 
 - A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
 
@@ -2607,18 +2607,22 @@ local ssc_packages "estout"
 
 <!--chapter:end:96-02-running-stata-code-on-windows.Rmd-->
 
-# Using scan_packages.do
+## Using scan_packages.do
 
 In "Writing Preliminary Report" stage, we ask you to check the completeness of the information on system requirements. Often, authors do not list out packages they installed that are not default packages in STATA. The authors should list them in the README (even when they provide ado files!), but it does not always happen. To help you identify these packages, we provide an useful tool for this exercise.
 
 - Locate a directory named "tools/Stata_scan_code/".
 - Change the following command in line 11 with your system information:
     ```
-    global codedir "U:/Workspace/aearep-2216/140161"
+    global codedir "XXXCODEDIRXXX"
     ``` 
-    You should locate the directory where the codes are. This will be the directory where the output excel file will be saved.
+    You should locate the directory where the codes are (typically `112233`, the openICPSR space number):
+    ```
+    global codedir "../../112233"
+    ```
+    This will be the directory where the output excel file will be saved.
 - Execute the dofile.
-- Locate the file "candidatepackages.xlsx", use the information there, and remember to push the file to the repository.
+- Locate the file "`candidatepackages.xlsx`", use the information there, and remember to push the file to the repository.
 
 <!--chapter:end:96-03-stata-scan-packages.Rmd-->
 
