@@ -1916,98 +1916,6 @@ Once the form PDF has been added to the issue, you should first return to the op
 
 <!--chapter:end:14-Instructions-PandP-Checks.Rmd-->
 
-# AEA: Reproducibility Checks in Codeocean
-
-The workflow should be the same up until the verification stage, at which point you will use Codeocean to run the reproducibility check, as opposed to running directly in the statistical software. You can run Codeocean on your personal workspace or on CISER.
-
-## Create a Capsule
-
-- First, create your own account on Codeocean using your cornell.edu email address (it's free). 
-- In Codeocean, create a new capsule. Name the compute capsule as "`AEAREP-xxxx Compute Capsule for: TITLE`"
-Example:
-
-> AEAREP-1974 Compute Capsule for: Waiting to Choose: The Role of Deliberation in Intertemporal Choice
-
-- Share your CodeOcean capsule with `dataeditor@aeapubs.org` (make sure to give edit permissions).
-
-## Environment
-
-- Set up the environment specified by the authors. This includes software, version of that software, and any dependencies (packages). 
-Example:
-`Stata(16) with ssc packages estout and boottest`
-
-![Environment](images/environment.png)
-
-## Files and Directories
-
-- There are only three directories in the Codeocean environment: `/data`; `/code`; `/results`.
-    - All paths in the code must refer to one of these directories.
-    - If the authors set their own globals, you change the globals to reflect these directories.
-    - If the authors do not use globals, you should make the code more reproducible by setting globals in the `config.do` and amending the paths in the authors' code. Example:
-    `use "D:\Dropbox\Data for paper\x.dta"` becomes `use "$data/x.dta"` where `$data` is defined in `config.do`: `global data "/data"`.
-
-- Upload the code  to the `/code` and the data files to the `/data` directories in Codeocean.
-
-- Define the default `run` file using the dropdown menu to the right of the file. This will create a new file (called `run`) which is a Bash script that CodeOcean uses to run all of the other code. 
-
-    ![run](images/run_file.png)
-
-- Which file to use for the automatic creation of the `run` file depends on your manuscript:
-    - If the manuscript has a single master file (e.g., `master.do`), use that. The `run` file will then look like 
-    ```
-    #!/usr/bin/env bash
-    set -ex
-
-    # This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
-    stata-mp -q do master.do "$@"
-    ``` 
-    - If the authors provide instructions on a specific order in which to individually execute programs, each program will need to be added to the "run" file in that order. In this case, you should be including the `config.do` at the top of each program instead of only the `Master.do`. 
-    ```
-    #!/usr/bin/env bash
-    set -ex
-
-    # This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
-    stata-mp -q do 01_step1.do "$@"
-    stata-mp -q do 02_step2.do "$@"
-    stata-mp -q do 03_step3.do "$@"
-    stata-mp -q do 04_step4.do "$@"
-    ``` 
-
-## Log files
-
-- As with any case, if the authors' code creates log files, you can comment out the log file creation in the `config.do`. 
-- Any code that generates logfiles (this includes the `config.do`) needs to be amended to write to the `results` directory (i.e. `global logdir "/results"`). 
-- Note that CodeOcean automatically generates a capture of all screen output in a file called "`output`" in the `results` directory. In many cases, this will be sufficient.
-
-## Output
-
-- Nothing is captured unless it is *explicitly* exported to the `/results` directory.
-    - For example, you will not see any graphics files saved by the code unless they are saved as something such as `/results/figure1.gph`. 
-    - You may not need to do this for intermediate data files. The program(s) should still run as long as the files are successfully created.
-    - All tables and figures need to be adjusted to write to "`/results`". The best way is to use a global (yet again defined in the `config.do`), e.g. `graph export "$figures/figure1.pdf"`.
-
-## Notes
-
-- Note that some features will not work on CodeOcean if they rely on graphical windows (see LINK TO CODEOCEAN SITE)
-  - A particular feature missing from Stata 16.0 on CodeOcean is the ability to write PNG graphics. Write PDF instead.
-
-## Recording runs 
-
-- Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the steps taken during a revision (LINK TO INSTRUCTIONS FOR REVISION). Delete, by hand (**NOT** git rm), the code files as you downloaded them onto your workspace. Then, place the amended codes into that same directory. Git add, commit, push. We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md).
-
-- Download the `/results` directory and add it to the repository.
-
-## Jira
-
-- The `Computing Environment` and `Working location of the data` should be "Codeocean"
-- Add the CodeOcean shareable URL to the issue
-
-
-
-
-
-<!--chapter:end:15-reproducibility-check-on-Codeocean.Rmd-->
-
 # AEA: Monitoring Pending openICPSR Changes
 
 ## Background
@@ -2321,20 +2229,27 @@ See [Privacy] section about expectations on privacy.
 
 You will be working on a variety of computers
 
-- your laptop (Windows, OS X, Linux)
-- a Windows remote desktop at [CISER](https://ciser.cornell.edu/computing/) ([Login instructions](https://ciser.cornell.edu/computing/computing-help/how-to-login/))
-- possibly a [Linux cluster](https://biohpc.cornell.edu/lab/lab.aspx) or [Linux server](https://www2.vrdc.cornell.edu/news/ecco/step-1-requesting-an-ecco-account/ecco-account-creation/) (rare)
+- your laptop (Windows, OS X, Linux) to access the various resources
+- a computer to run the code
+  - your laptop (but not necessarily)
+  - a Windows remote desktop at [CISER](https://ciser.cornell.edu/computing/) ([Login instructions](https://ciser.cornell.edu/computing/computing-help/how-to-login/))
+  - possibly a [Linux cluster](https://biohpc.cornell.edu/lab/lab.aspx)
+  - [WholeTale](https://docs.google.com/document/d/1hyXMnEKh52V7uFG7C4sLZUdUzF4gGNIvy6990YHGUwg/edit?usp=sharing) (experimental)
+  - [CodeOcean](https://codeocean.com/dashboard)
+  - [Github Codespaces](https://github.com/codespaces) ([experimental instructions](https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md))
 - [Bitbucket](https://bitbucket.org/account/signup/) 
 
-## What can you do where
+## General guidelines
+
+### What can you do where
 
 In principle, assuming you have the necessary software, you can work on any computer. Just remember to `git push` all changes back to Bitbucket.
 
-## Where is the data
+### Where is the data
 
 We are currently exploring how to make the data *mobile*. At present, we do not want the data in Bitbucket, so you will need to re-download the data on each computer you intend to **run programs**. So you should decide on one particular computer. You can edit documents and code anywhere else, but again, remember to `git push` any changes from your *other* computer, and to `git pull` on your *compute* computer.
 
-## What software
+### What software
 
 By default, you should expect to run the code on CISER, which has a [broad selection of software](https://ciser.cornell.edu/computing/software/).
 
@@ -2342,7 +2257,7 @@ If you actually have the software on your laptop, you should feel free to run co
 
 Some software is not available on CISER. If you encounter the following, you should check with your supervisor:
 
-| Software | Computing resource |
+| Software | CISER |
 |----------|--------------------|
 | Dynare   | Red Cloud Windows node |
 | Fortran compiler | BioHPC linux cluster |
@@ -2351,21 +2266,175 @@ Some software is not available on CISER. If you encounter the following, you sho
 
 Much statistical software loads data into memory. Your laptop has a limited amount of memory (in 2018, between 2GB and 8GB, rarely more). CISER nodes and BioHPC nodes can have between 256GB and 1024 GB of memory!
 
-## What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop
+### What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop
 
 One of the advantages of running on the CISER or BioHPC nodes is that you can *disconnect* from the server, while leaving your programs running. That is one of the reasons to use them instead of your laptop. 
 
-## Requesting Access
+### Requesting Access
 
 See setup checklist.
 
 
-## Where can I learn more
+### Where can I learn more
 
 - For CISER nodes, see [here](https://ciser.cornell.edu/computing/computing-help/how-to-login/)
 - For special *Red Cloud* nodes, see [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Connect-to-a-Ciser-Custom-Red-Cloud-Machine)
 
 <!--chapter:end:95_Access_to_computers.Rmd-->
+
+## Reproducibility Checks in Codeocean
+
+The workflow should be the same up until the verification stage, at which point you will use [Codeocean](https://codeocean.com) to run the reproducibility check. You can access Codeocean from your personal computer or on CISER.
+
+### Create a Capsule
+
+- First, create your own account on Codeocean using your cornell.edu email address (it's free). 
+- In Codeocean, create a new capsule. Name the compute capsule as "`AEAREP-xxxx Compute Capsule for: TITLE`"
+Example:
+
+> AEAREP-1974 Compute Capsule for: Waiting to Choose: The Role of Deliberation in Intertemporal Choice
+
+- Share your CodeOcean capsule with `dataeditor@aeapubs.org` (make sure to give `ownership` permissions).
+
+### Environment
+
+- Set up the environment specified by the authors. This includes software, version of that software, and any dependencies (packages). 
+Example: `Stata(16) with ssc packages estout and boottest`
+
+![Environment](images/environment.png)
+
+### Recording the environment in Jira
+
+In Jira,
+
+- record the URL for the CodeOcean capsule (e.g., `https://codeocean.com/capsule/1665863/tree`) in the field `Computing URL` (`Data Info`  tab)
+- record the use of CodeOcean in the `Computing Environment` field (`Data Info` tab) (use the existing word `codeocean`)
+- record the `Working location of the data` as "Codeocean"
+
+
+
+
+
+### Files and Directories
+
+- There are only three directories in the Codeocean environment: `/data`; `/code`; `/results`.
+    - All paths in the code must refer to one of these directories.
+    - If the authors set their own globals, you change the globals to reflect these directories.
+    - If the authors do not use globals, you should use the `config.do` (see [instructions](stata-related-procedures.html#using-config.do-in-stata)) to make the code more reproducible by setting globals in the `config.do` and amending the paths in the authors' code. Example:
+    `use "D:\Dropbox\Data for paper\x.dta"` becomes `use "$data/x.dta"`.
+    - Modify the standard `config.do` as follows:
+    
+    ```stata
+    local scenario "A"                      // line 35
+    global logdir "${rootdir}/results/logs" // line 59
+    // .... go to the very end 
+    global data    "${rootdir}/data
+    global results "${rootdir}/results
+    ```
+    Occasionally, other changes are also necessary, for instance, creating new directories.
+
+
+- Upload the code  to the `/code` and the data files to the `/data` directories in Codeocean.
+
+- Define the default `run` file using the right-click menu for the main do file. This will create a new file (called `run`) which is a Bash script that CodeOcean uses to run all of the other code. 
+
+    ![run](images/run_file.png)
+
+- Which file to use for the automatic creation of the `run` file depends on your manuscript:
+    - If the manuscript has a single master file (e.g., `master.do`), use that. The `run` file will then look like 
+    ```
+    #!/usr/bin/env bash
+    set -ex
+
+    ## This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+    stata-mp -q do master.do "$@"
+    ``` 
+    - If the authors provide instructions on a specific order in which to individually execute programs, each program will need to be added to the "run" file in that order. In this case, you should be including the `config.do` at the top of each program instead of only the `Master.do`. 
+    ```
+    #!/usr/bin/env bash
+    set -ex
+
+    ## This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+    stata-mp -q do 01_step1.do "$@"
+    stata-mp -q do 02_step2.do "$@"
+    stata-mp -q do 03_step3.do "$@"
+    stata-mp -q do 04_step4.do "$@"
+    ``` 
+
+### Log files
+
+- Any code that generates logfiles (this includes the `config.do`) needs to be amended to write to the `results` directory (i.e. `global logdir "${rootdir}/results"`). 
+- Note that CodeOcean automatically generates a capture of all screen output in a file called "`output`" in the `results` directory. In many cases, this will be sufficient.
+
+### Output
+
+- Nothing is captured unless it is *explicitly* exported to the `/results` directory.
+    - For example, you will not see any graphics files saved by the code unless they are saved as something such as `${results}/figure1.gph`. 
+    - You may not need to do this for intermediate data files. The program(s) should still run as long as the files are successfully created.
+    - All tables and figures need to be adjusted to write to "`${results}`". The best way is to use a global (yet again defined in the `config.do`), e.g. `graph export "${results}/figure1.pdf"`.
+
+### Notes
+
+- Note that some features will not work on CodeOcean if they rely on graphical windows (see LINK TO CODEOCEAN SITE)
+  - A particular feature missing from Stata 16.0 on CodeOcean is the ability to write PNG graphics. Write PDF instead.
+
+### Recording edits 
+
+- Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the steps taken during a revision (LINK TO INSTRUCTIONS FOR REVISION). Delete, by hand (**NOT** git rm), the code files as you downloaded them onto your workspace. Then, place the amended codes into that same directory. Git `add, commit, push`. We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md).
+
+#### Expert tip
+
+Instead of manually downloading CodeOcean results, in a (git) bash shell on your laptop or CISER, cd to the base directory of the reproducibility check (e.g., "aearep-xxxxx"), and run
+
+```
+tools/sync-codeocean.sh nnnnn
+```
+
+where `nnnnn` is the numerical capsule identifier from the CodeOcean URL: `https://codeocean.com/capsule/` **nnnnnn** `/tree`. You will be asked to authenticate using your CodeOcean (not Bitbucket!) login and password!
+
+This will create two directories in your workspace: `codeocean-nnnnn-live` and `codeocean-nnnn`. The former will be "ignored", but the latter will be refreshed each time you run the `sync-codeocean.sh` command, and will be committed to the Bitbucket repository. This is a convenient way to synchronize the two.
+
+Don't forget to `git add; git commit; git push` afterwards. This command can be run multiple times, as changes are made on CodeOcean.
+
+### Recording results
+
+- Download the `/results` directory as a ZIP file. Remember the "run" number from the CodeOcean interface (e.g. "Run 1234567").
+- If not already present, create a "results" directory in the `codeocean-nnnnn` directory. 
+- Create a directory for each run with the "run" number. 
+- Unzip the ZIP file you just downloaded into the numerical directory you just created.
+
+This should look like this:
+
+```
+aearep-1234/
+    codeocean-nnnnn/
+        code/
+        metadata/
+        results/
+            2931206/
+                output
+                logfile_20220201-1201-root.log
+                figure1.pdf
+```
+
+- Don't forget to add all results from the "results" directory, `git add; git commit; git push`.
+
+
+
+
+<!--chapter:end:95-02-codeocean.Rmd-->
+
+## Conducting reproducibility checks on WholeTale
+
+[See instructions](https://docs.google.com/document/d/1hyXMnEKh52V7uFG7C4sLZUdUzF4gGNIvy6990YHGUwg/edit?usp=sharing) (experimental)
+
+<!--chapter:end:95-03-wholetale.Rmd-->
+
+## Computing using Github Codespaces
+
+(coming, for now, see [https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md](https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md))
+
+<!--chapter:end:95-04-codespaces.Rmd-->
 
 # Stata-related procedures
 
@@ -2567,10 +2636,9 @@ A simplified directory structure that correspond with scenario "A" look like thi
 
 ```
 
-
 ##### Example
 
-- A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
+- A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
 
 ```
 * Template config.do */
@@ -2588,8 +2656,8 @@ local ssc_packages "estout ivreg2"
 A simplified directory structure that correspond to scenario "B" looks like this:
 
 ```
-directory/
-               main.do
+ directory/
+ main.do
                scripts/
                    01_dosomething.do
                 data/
@@ -2599,7 +2667,9 @@ directory/
 
 ##### Example
 
-- A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
+
+- A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
+
 
 ```
 * Template config.do */
