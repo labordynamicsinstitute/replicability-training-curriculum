@@ -179,41 +179,6 @@ Replication steps
 Findings
 --------
 
-- Minor directory issues in the all do-files (the automated directory changing code does not work properly). Manual changes are needed
-
-## Tables
-
-- Table 1: Mostly reproduced (minor difference in F-statistics)
-  - Paper: Table 1, Col. 2: **456.783**
-  - Reproduced: Table 1, Col 2: **456.812**
-- Table 2-7: Fully replicated
-- Appendix Table 1-29: Fully replicated
-- Appendix Table C-2: Not found
-
-> [REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect. 
-
-## Figures
-
-- Appendix Figure 1: not empirical
-- Appendix Figure 2: Fully replicated
-- Appendix Figure 3: not empirical
-- Appendix Figure 4: Fully replicated
-- Appendix Figure 5: Fully replicated
-
-
-## In-Text Numbers
-[x] There are no in-text numbers, or all in-text numbers stem from tables and figures.
-
-[ ] There are in-text numbers, but they are not identified in the code
-
-
-Classification
---------------
-
-- [ ] full replication
-- [x] full replication with minor issues
-- [ ] partial replication (see above)
-- [ ] not able to replicate most or all of the results (reasons see above)
 
 Code Check Table
 ----------------
@@ -227,37 +192,57 @@ Code Check Table
 | Table 6           | table6.do            |             | Yes                              |
 | Table 7           | table7.do            |             | Yes                              |
 | Appendix Table 1  | appendix_table1.do   |             | Yes                              |
-| Appendix Table 2  | appendix_table2.do   |             | Yes                              |
-| Appendix Table 3  | appendix_table3.do   |             | Yes                              |
-| Appendix Table 4  | appendix_table4.do   |             | Yes                              |
-| Appendix Table 5  | appendix_table5ab.do |             | Yes                              |
-| Appendix Table 6  | appendix_table6.do   |             | Yes                              |
-| Appendix Table 7  | appendix_table7.do   |             | Yes                              |
-| Appendix Table 8  | appendix_table8.do   |             | Yes                              |
-| Appendix Table 9  | appendix_table9.do   |             | Yes                              |
-| Appendix Table 10 | appendix_table10.do  |             | Yes                              |
-| Appendix Table 11 | appendix_table11.do  |             | Yes                              |
-| Appendix Table 12 | appendix_table12.do  |             | Yes                              |
-| Appendix Table 13 | appendix_table13.do  |             | Yes                              |
-| Appendix Table 14 | appendix_table14.do  |             | Yes                              |
-| Appendix Table 15 | appendix_table15.do  |             | Yes                              |
-| Appendix Table 16 | appendix_table16.do  |             | Yes                              |
-| Appendix Table 17 | appendix_table17.do  |             | Yes                              |
-| Appendix Table 18 | appendix_table18.do  |             | Yes                              |
-| Appendix Table 19 | appendix_table19.do  |             | Yes                              |
-| Appendix Table 20 | appendix_table20.do  |             | Yes                              |
-| Appendix Table 21 | appendix_table21.do  |             | Yes                              |
-| Appendix Table 22 | appendix_table22.do  |             | Yes                              |
-| Appendix Table 23 | appendix_table23.do  |             | Yes                              |
-| Appendix Table 24 | appendix_table24.do  |             | Yes                              |
-| Appendix Table 25 | appendix_table25.do  |             | Yes                              |
-| Appendix Table 26 | appendix_table26.do  |             | Yes                              |
-| Appendix Table 27 | appendix_table27.do  |             | Yes                              |
-| Appendix Table 28 | appendix_table28.do  |             | Yes                              |
+| (abbreviated)     |                      |             |                                  |
 | Appendix Table 29 | appendix_table29.do  |             | Yes                              |
-| Appendix Table C-2|   not found          |             | **No** |
+| Appendix Table C-2|   not found          |             | **No**                           |
 | Appendix Figure 1 | not empirical        |             | N/A                              |
 | Appendix Figure 2 | appendix_figure2.do  |             | Yes                              |
 | Appendix Figure 3 | not empirical        |             | N/A                              |
 | Appendix Figure 4 | appendix_figure4.do  |             | Yes                              |
 | Appendix Figure 5 | appendix_figure5.do  |             | Yes                              |
+
+- Minor directory issues in the all do-files (the automated directory changing code does not work properly). Manual changes are needed
+
+## Tables
+
+- Table 1: Mostly reproduced (minor difference in F-statistics)
+  - Paper: Table 1, Col. 2: **456.783**
+  - Reproduced: Table 1, Col 2: **456.812**
+- Table 2-7: Fully replicated
+- Appendix Table 1-29: Fully replicated
+- Appendix Table C-2: Not found
+
+> [REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect. 
+
+
+## In-Text Numbers
+
+[x] There are no in-text numbers, or all in-text numbers stem from tables and figures.
+
+[ ] There are in-text numbers, but they are not identified in the code
+
+
+Classification
+--------------
+
+- [ ] full reproduction
+- [x] full reproduction with minor issues
+- [ ] partial reproduction (see above)
+- [ ] not able to reproduce most or all of the results (reasons see above)
+
+
+### Reason for incomplete reproducibility
+
+> INSTRUCTIONS: mark the reasons here why full reproduciblity was not achieved, and enter this information in JIRA
+
+- [x] `Discrepancy in output` (either figures or numbers in tables or text differ)
+- [x] `Bugs in code`  that  were fixable by the replicator (but should be fixed in the final deposit)
+- [x] `Code missing`, in particular if it  prevented the replicator from completing the reproducibility check
+  - [ ] `Data preparation code missing` should be checked if the code missing seems to be data preparation code
+- [ ] `Code not functional` is more severe than a simple bug: it  prevented the replicator from completing the reproducibility check
+- [ ] `Software not available to replicator`  may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.
+- [ ] `Insufficient time available to replicator` is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.
+- [ ] `Data missing` is marked when data *should* be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package
+- [ ] `Data not available` is marked when data requires additional access steps, for instance purchase or application procedure. 
+
+
