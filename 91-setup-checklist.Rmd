@@ -22,7 +22,7 @@
 
 - [ ] Windows Remote Desktop (see above)
 - [ ] Git command line tool ([download the software](https://git-scm.com/downloads), then follow the guide on [Installing Git on your computer](https://github.com/labordynamicsinstitute/ldi-lab-standards/wiki/Setting-up-Git)
-- [x] Command line (We will use the "Bash shell", but PowerShell will work, too) 
+- [x] Command line (We will use the "Bash shell", but PowerShell and Zsh will work, too) 
     - Windows: "Git bash" comes with the Git install above. You could also use [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (OPTIONAL, Pro)
     - macOS: Use the "Terminal" app (pre-installed)
     - Linux: Use any "terminal" app (typically pre-installed)
@@ -55,7 +55,7 @@ General purpose text editors can view and edit them all, although they may lack 
 
 ## Note 
 
-- It is possible to synchronize VSCode settings and modules between your laptop and CISER. 
+- It is possible to [synchronize VSCode settings and modules](https://code.visualstudio.com/docs/editor/settings-sync) between your laptop, the cloud, and CISER. 
 
 ## Help
 
