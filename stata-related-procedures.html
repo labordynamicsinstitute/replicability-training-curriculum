@@ -241,7 +241,7 @@ function toggleCitation() {
 
 <div id="using-config.do-in-stata" class="section level2">
 <h2><span class="header-section-number">F.1</span> Using config.do in STATA</h2>
-<p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide <code>template-config.do</code> in the template repository you clone which addresses these problems.</p>
+<p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide <code>template-config.do</code> in the <a href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems.</p>
 <div id="why-do-we-need-log-files" class="section level3">
 <h3><span class="header-section-number">F.1.1</span> Why do we need log files?</h3>
 <ul>
@@ -271,12 +271,12 @@ function toggleCitation() {
 </div>
 <div id="directory-paths-for-log-files." class="section level4">
 <h4><span class="header-section-number">F.1.3.1</span> Directory paths for log files.</h4>
-<p><code>config.do</code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since jira issue number is AEAREP-9999 and openICPSR case number is 111111
+<p><code>config.do</code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since Jira issue number is <code>AEAREP-9999</code> and openICPSR case number is <code>111111</code>
 <code>U:/Workspace/aearep-9999/111111</code></p>
 <ul>
-<li>line 16, <code>global rootdir "`pwd"</code> sets the current working directory as a root directory, a.k.a. rootdir.</li>
-<li>line 17, <code>global logdir "${rootdir}/logs"</code> sets the following direcotry as a directory for log files: U:/Workspace/aearep-9999/111111/logs</li>
-<li>Notice that there is no such directory exists. Therefore, the do file creates one new directory in line 18.
+<li>line 50, <code>global rootdir : pwd</code> sets the current working directory as a root directory, a.k.a. <code>rootdir</code>.</li>
+<li>line 59, <code>global logdir "${rootdir}/logs"</code> sets the following direcotry as a directory for log files: U:/Workspace/aearep-9999/111111/logs</li>
+<li>Notice that there is no such directory exists. Therefore, the do file creates one new directory in line 60.
 <ul>
 <li><code>mkdir</code> is a command to create a directory</li>
 </ul></li>
@@ -286,8 +286,8 @@ function toggleCitation() {
 <h4><span class="header-section-number">F.1.3.2</span> Opening a log file with current date and time</h4>
 <p>Since we usually run the program several times until we complete the replication, we would like to record all the instances. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and open the log file.</p>
 <ul>
-<li>line 22-25: calls the current date and time as local macro</li>
-<li>line 27: start the log files</li>
+<li>line 64-67: calls the current date and time as local macro</li>
+<li>line 69: start the log file, with an internal name <code>ldi</code> which prevents collision with any log files opened by authors.</li>
 </ul>
 </div>
 <div id="system-information" class="section level4">
@@ -298,17 +298,17 @@ function toggleCitation() {
 <h4><span class="header-section-number">F.1.3.4</span> Package installation</h4>
 <p>As explained above, we often need to install packages. Even when the packages were installed in other cases before, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.</p>
 <ul>
-<li>The sysdir commands (in line 47-50) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.
+<li>The sysdir commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.
 <ul>
-<li>In case where the authors provided the ado files, adding a new command to the end of the config.do would suffice:</li>
+<li>In case where the authors provided the ado files, adding a new command to the end of the config.do would suffice. For instance, if the authors have provided ado files in the directory <code>packages</code>, then</li>
 </ul>
 <pre><code>adopath ++ &quot;${rootdir}/packages&quot;</code></pre></li>
-<li>Add list of packages in the quotation maeks in <strong>line 55</strong>
+<li>Add list of packages in the quotation marks in <strong>line 37</strong>
 <ul>
-<li>line 56 provides an example.</li>
-<li>line 58-62 installs each package if there are packages listed.</li>
+<li>line 39 provides an example.</li>
+<li>line 97-106 installs each package if there are packages listed and these packages do not already exist.</li>
 </ul></li>
-<li>In some cases, the installation would fail since you have to use “net install..” instead of “ssc install”. In this case, uncomment and use line 66.</li>
+<li>In some cases, the installation would fail since you have to use “<code>net install..</code>” instead of “<code>ssc install</code>”. In this case, write such <code>net install</code> commands after line 112, an example is given in line 111.</li>
 </ul>
 </div>
 </div>
@@ -316,7 +316,7 @@ function toggleCitation() {
 <h3><span class="header-section-number">F.1.4</span> How to use config.do</h3>
 <div id="rename-the-config-file." class="section level4">
 <h4><span class="header-section-number">F.1.4.1</span> Rename the config file.</h4>
-<p>The given name should be <code>template-config.do</code>. In order to use it, rename it to <code>config.do</code> and move it into the openICPSR folder (e.g. , 140XXX).</p>
+<p>The given name should be <code>template-config.do</code>. In order to use it, rename it to <code>config.do</code> and move it into the openICPSR folder (e.g. , <code>111111</code>).</p>
 </div>
 <div id="include-config.do" class="section level4">
 <h4><span class="header-section-number">F.1.4.2</span> Include config.do</h4>

@@ -2376,7 +2376,7 @@ In this section, we will show you a few things related specifically to running c
 
 ## Using config.do in STATA
 
-In "Verification" stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide `template-config.do` in the template repository you clone which addresses these problems. 
+In "Verification" stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide `template-config.do` in the [template repository](https://github.com/AEADataEditor/replication-template) you clone which addresses these problems. 
 
 ### Why do we need log files?
 
@@ -2397,14 +2397,14 @@ In "Verification" stage, we ask you to keep a log of what you do. Moreover, auth
 
 #### Directory paths for log files.
 
-`config.do` creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let's say the current working directory path is the following, since jira issue number is AEAREP-9999 and openICPSR case number is 111111
+`config.do` creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let's say the current working directory path is the following, since Jira issue number is `AEAREP-9999` and openICPSR case number is `111111`
     ```
     U:/Workspace/aearep-9999/111111
     ```
 
-- line 16, ```global rootdir "`pwd"``` sets the current working directory as a root directory, a.k.a. rootdir.
-- line 17, `global logdir "${rootdir}/logs"` sets the following direcotry as a directory for log files: U:/Workspace/aearep-9999/111111/logs 
-- Notice that there is no such directory exists. Therefore, the do file creates one new directory in line 18.
+- line 50, `global rootdir : pwd` sets the current working directory as a root directory, a.k.a. `rootdir`.
+- line 59, `global logdir "${rootdir}/logs"` sets the following direcotry as a directory for log files: U:/Workspace/aearep-9999/111111/logs 
+- Notice that there is no such directory exists. Therefore, the do file creates one new directory in line 60.
     - `mkdir` is a command to create a directory 
 
 
@@ -2412,8 +2412,8 @@ In "Verification" stage, we ask you to keep a log of what you do. Moreover, auth
 
 Since we usually run the program several times until we complete the replication, we would like to record all the instances. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and open the log file.
 
-- line 22-25: calls the current date and time as local macro
-- line 27: start the log files
+- line 64-67: calls the current date and time as local macro
+- line 69: start the log file, with an internal name `ldi` which prevents collision with any log files opened by authors.
 
 #### System information
 
@@ -2423,24 +2423,24 @@ We require system information as part of the replication package. This is becaus
 
 As explained above, we often need to install packages. Even when the packages were installed in other cases before, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.
 
-- The sysdir commands (in line 47-50) redirects Stata to search for, and install ado files in the directories referenced. It won't automatically install them.
-    - In case where the authors provided the ado files, adding a new command to the end of the config.do would suffice:
+- The sysdir commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won't automatically install them.
+    - In case where the authors provided the ado files, adding a new command to the end of the config.do would suffice. For instance, if the authors have provided ado files in the directory `packages`, then
     ```
     adopath ++ "${rootdir}/packages"
     ```
 
-- Add list of packages in the quotation maeks in **line 55**
-    - line 56 provides an example.
-    - line 58-62 installs each package if there are packages listed.
+- Add list of packages in the quotation marks in **line 37**
+    - line 39 provides an example.
+    - line 97-106 installs each package if there are packages listed and these packages do not already exist.
 
-- In some cases, the installation would fail since you have to use "net install.." instead of "ssc install". In this case, uncomment and use line 66.
+- In some cases, the installation would fail since you have to use "`net install..`" instead of "`ssc install`". In this case, write such `net install`  commands after line 112, an example is given in line 111. 
 
 
 ### How to use config.do
 
 #### Rename the config file.
 
-The given name should be `template-config.do`. In order to use it, rename it to `config.do` and move it into the openICPSR folder (e.g. , 140XXX).
+The given name should be `template-config.do`. In order to use it, rename it to `config.do` and move it into the openICPSR folder (e.g. , `111111`).
 
 #### Include config.do
 
