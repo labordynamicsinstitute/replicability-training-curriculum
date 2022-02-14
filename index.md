@@ -2548,24 +2548,25 @@ global figures "$maindir/figures" // path to figures folder
 
 > **[ACTION]**
 >
-> - If the master .do file is directly placed in the root directory, set the parameter `scenario` to be `A` and save. (This is the default, so really no action is necessary.)
-> - If the master .do file is inside a folder, open `config.do` and set the parameter `scenario` to `B` and save.
+> - If the master .do file is directly placed in the root directory, set the parameter `scenario` to be `B` and save. 
+> - If the master .do file is inside a folder, open `config.do` and set the parameter `scenario` to `A` and save. (This is the default, so really no action is necessary.)
 > - If the replication package includes a folder with Stata packages, add the line  `adopath ++` followed by the path of the location of that folder and save. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
 > - Add packages that need to be installed to config.do. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
 
 #### Scenario A
 
 A simplified directory structure that correspond with scenario "A" look like this:
+```
+ directory/
+              code/
+                 main.do
+                 01_dosomething.do
+              data/
+                 data.dta
+                 otherdata.dta
 
 ```
-directory/
-               main.do
-               scripts/
-                   01_dosomething.do
-                data/
-                   data.dta
-                   otherdata.dta
-```
+
 
 ##### Example
 
@@ -2587,14 +2588,13 @@ local ssc_packages "estout ivreg2"
 A simplified directory structure that correspond to scenario "B" looks like this:
 
 ```
- directory/
-              code/
-                 main.do
-                 01_dosomething.do
-              data/
-                 data.dta
-                 otherdata.dta
-
+directory/
+               main.do
+               scripts/
+                   01_dosomething.do
+                data/
+                   data.dta
+                   otherdata.dta
 ```
 
 ##### Example
@@ -2604,7 +2604,7 @@ A simplified directory structure that correspond to scenario "B" looks like this
 ```
 * Template config.do */
 
-local scenario "B"  // around line 30
+local scenario "A"  // around line 30
 *** Add required packages from SSC to this list ***
 local ssc_packages "estout"
     // Example:

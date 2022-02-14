@@ -417,8 +417,8 @@ global figures &quot;$maindir/figures&quot; // path to figures folder</code></pr
 <blockquote>
 <p><strong>[ACTION]</strong></p>
 <ul>
-<li>If the master .do file is directly placed in the root directory, set the parameter <code>scenario</code> to be <code>A</code> and save. (This is the default, so really no action is necessary.)</li>
-<li>If the master .do file is inside a folder, open <code>config.do</code> and set the parameter <code>scenario</code> to <code>B</code> and save.</li>
+<li>If the master .do file is directly placed in the root directory, set the parameter <code>scenario</code> to be <code>B</code> and save.</li>
+<li>If the master .do file is inside a folder, open <code>config.do</code> and set the parameter <code>scenario</code> to <code>A</code> and save. (This is the default, so really no action is necessary.)</li>
 <li>If the replication package includes a folder with Stata packages, add the line <code>adopath ++</code> followed by the path of the location of that folder and save. See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</li>
 <li>Add packages that need to be installed to config.do. See <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</li>
 </ul>
@@ -426,13 +426,14 @@ global figures &quot;$maindir/figures&quot; // path to figures folder</code></pr
 <div id="scenario-a" class="section level4">
 <h4><span class="header-section-number">F.2.5.1</span> Scenario A</h4>
 <p>A simplified directory structure that correspond with scenario “A” look like this:</p>
-<pre><code>directory/
-               main.do
-               scripts/
-                   01_dosomething.do
-                data/
-                   data.dta
-                   otherdata.dta</code></pre>
+<pre><code> directory/
+              code/
+                 main.do
+                 01_dosomething.do
+              data/
+                 data.dta
+                 otherdata.dta
+</code></pre>
 <div id="example-1" class="section level5">
 <h5><span class="header-section-number">F.2.5.1.1</span> Example</h5>
 <ul>
@@ -451,14 +452,13 @@ local ssc_packages &quot;estout ivreg2&quot;
 <div id="scenario-b" class="section level4">
 <h4><span class="header-section-number">F.2.5.2</span> Scenario B</h4>
 <p>A simplified directory structure that correspond to scenario “B” looks like this:</p>
-<pre><code> directory/
-              code/
-                 main.do
-                 01_dosomething.do
-              data/
-                 data.dta
-                 otherdata.dta
-</code></pre>
+<pre><code>directory/
+               main.do
+               scripts/
+                   01_dosomething.do
+                data/
+                   data.dta
+                   otherdata.dta</code></pre>
 <div id="example-2" class="section level5">
 <h5><span class="header-section-number">F.2.5.2.1</span> Example</h5>
 <ul>
@@ -466,7 +466,7 @@ local ssc_packages &quot;estout ivreg2&quot;
 </ul>
 <pre><code>* Template config.do */
 
-local scenario &quot;B&quot;  // around line 30
+local scenario &quot;A&quot;  // around line 30
 *** Add required packages from SSC to this list ***
 local ssc_packages &quot;estout&quot;
     // Example:
