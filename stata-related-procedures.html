@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-02-14" />
+<meta name="date" content="2022-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -261,7 +261,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html"><i class="fa fa-check"></i><b>F</b> Stata-related procedures</a><ul>
 <li class="chapter" data-level="F.1" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html#using-config.do-in-stata"><i class="fa fa-check"></i><b>F.1</b> Using config.do in STATA</a></li>
 <li class="chapter" data-level="F.2" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html#running-code-in-stata"><i class="fa fa-check"></i><b>F.2</b> Running Code in Stata</a></li>
-<li class="chapter" data-level="F.3" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html#using-scan_packages.do"><i class="fa fa-check"></i><b>F.3</b> Using scan_packages.do</a></li>
+<li class="chapter" data-level="F.3" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html#step-6-run-the-code"><i class="fa fa-check"></i><b>F.3</b> Step 6: Run the Code</a></li>
+<li class="chapter" data-level="F.4" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html#when-a-master-.do-file-is-not-provided"><i class="fa fa-check"></i><b>F.4</b> When a master .do file is not provided</a></li>
+<li class="chapter" data-level="F.5" data-path="stata-related-procedures.html"><a href="stata-related-procedures.html#using-scan_packages.do"><i class="fa fa-check"></i><b>F.5</b> Using scan_packages.do</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="authentication-related-issues.html"><a href="authentication-related-issues.html"><i class="fa fa-check"></i><b>G</b> Authentication-related issues</a><ul>
 <li class="chapter" data-level="G.1" data-path="authentication-related-issues.html"><a href="authentication-related-issues.html#bitbucket-authentication"><i class="fa fa-check"></i><b>G.1</b> Bitbucket Authentication</a></li>
@@ -525,13 +527,71 @@ local ssc_packages &quot;estout&quot;
     // Example:
     // local ssc_packages &quot;estout boottest&quot;
     // If you need to &quot;net install&quot; packages, go to the very end of this program, and add them there.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="step-6-run-the-code" class="section level2">
+<h2><span class="header-section-number">F.3</span> Step 6: Run the Code</h2>
+<blockquote>
+<p><strong>[ACTION]</strong> Right click in the master .do file and select the option <code>Execute (do)</code></p>
+</blockquote>
+<div class="figure">
+<img src="images/execute-do.png" alt="" />
+<p class="caption">execute do</p>
+</div>
+<p>This option will set the working directory set to the location where the master is. It opens Stata and will show the processes in the Stata window.</p>
+<div id="checking-for-a-complete-run-debugging-and-running-the-master-in-pieces" class="section level3">
+<h3><span class="header-section-number">F.3.1</span> Checking for a complete run, debugging and running the master in pieces</h3>
+<p>After running the code, the log files will need to be checked for a complete run. <strong>Use Visual Studio Code to open and inspect log files</strong>. Any bugs that prevents a complete run will also show up in the log files.</p>
+<p>If a you find a bug that is simple enough to fix, you can make changes to the do files. Then, you can right click on the master file and select <code>Execute (do)</code> as this option will open Stata, allowing to run the code interactively.</p>
+<p>If you decide the code needs to be run in pieces. In the master .do file, you can comment out (using the symbol *) the programs that are not to be run and save the master. Then, you can right click on the master and select the option `<code>Execute (do)</code>.</p>
+<p>When debugging is complete, you can uncomment all programs in the master and make a clean run, using again <code>Execute Quietly (run)</code> (consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run.)</p>
+</div>
+</div>
+<div id="when-a-master-.do-file-is-not-provided" class="section level2">
+<h2><span class="header-section-number">F.4</span> When a master .do file is not provided</h2>
+<p>If a master .do file is not provided, it might be worth it to create a one. Use your judgment to determine if it is indeed necessary, as opposed to running programs individually.</p>
+<p>To create a do file follow the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a master do file.</p></li>
+<li><p>Assuming that the sequence of programs is clear to you, open stata and click on the “New do file editor” (you can also work on Visual Studio Code):</p></li>
+</ol>
+<div class="figure">
+<img src="images/doeditor.png" alt="" />
+<p class="caption">do_editor</p>
+</div>
+<p>To open the do file editor:</p>
+<div class="figure">
+<img src="images/doeditor2.png" alt="" />
+<p class="caption">do_editor2</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li><p>In the first line write <code>include "config.do"</code></p></li>
+<li><p>Write the command <code>do</code> and the path of each program that needs to be run. Write them in the correct sequence.</p></li>
+</ol>
+<pre><code>include &quot;config.do&quot;
+
+* Assuming scenario &quot;A&quot;
+
+do &quot;${rootdir}/code/0_first_program.do&quot; 
+do &quot;${rootdir}/code/1_second_program.do&quot;
+do &quot;${rootdir}/code/2_third_program.do&quot;
+do &quot;${rootdir}/code/appendix_code/appendix.do&quot;
+</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Save your master file.</li>
+</ol>
+<p>At the end your master .do file may look like this:</p>
+<div class="figure">
+<img src="images/master-example.png" alt="" />
+<p class="caption">master</p>
+</div>
+<p>With your master do file done, you can go back to step 2.</p>
 
 </div>
-</div>
-</div>
-</div>
 <div id="using-scan_packages.do" class="section level2">
-<h2><span class="header-section-number">F.3</span> Using scan_packages.do</h2>
+<h2><span class="header-section-number">F.5</span> Using scan_packages.do</h2>
 <p>In “Writing Preliminary Report” stage, we ask you to check the completeness of the information on system requirements. Often, authors do not list out packages they installed that are not default packages in STATA. The authors should list them in the README (even when they provide ado files!), but it does not always happen. To help you identify these packages, we provide an useful tool for this exercise.</p>
 <ul>
 <li>Locate a directory named “tools/Stata_scan_code/”.</li>
