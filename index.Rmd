@@ -2,6 +2,8 @@
 title: "TRAINING For Reproducibility Verification"
 author: 
   - "Lars Vilhuber"
+  - "Michael Darisse"
+  - "Leonel Borja Plaza"
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
