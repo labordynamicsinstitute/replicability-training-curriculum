@@ -152,3 +152,60 @@ local ssc_packages "estout"
     // local ssc_packages "estout boottest"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
+## Step 6: Run the Code
+
+> **[ACTION]** Right click in the master .do file and select the option `Execute (do)`
+
+![execute do](images/execute-do.png)
+
+This option will set the working directory set to the location where the master is. It opens Stata and will show the processes in the Stata window.
+
+### Checking for a complete run, debugging and running the master in pieces
+
+After running the code, the log files will need to be checked for a complete run. **Use Visual Studio Code to open and inspect log files**. Any bugs that prevents a complete run will also show up in the log files.
+
+If a you find a bug that is simple enough to fix, you can make changes to the do files. Then,  you can right click on the master file and select `Execute (do)` as this option will open Stata, allowing to run the code interactively.
+
+If you decide the code needs to be run in pieces. In the master .do file, you can comment out (using the symbol *) the programs that are not to be run and save the master. Then, you can right click on the master and select the option ``Execute (do)`.
+
+When debugging is complete, you can uncomment all programs in the master and make a clean run, using again `Execute Quietly (run)` (consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run.)
+
+## When a master .do file is not provided
+
+If a master .do file is not provided, it might be worth it to create a one. Use your judgment to determine if it is indeed necessary, as opposed to running programs individually.
+
+To create a do file follow the following steps:
+
+1. Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a master do file.
+
+2. Assuming that the sequence of programs is clear to you, open stata and click on the "New do file editor" (you can also work on Visual Studio Code):
+
+![do_editor](images/doeditor.png)
+
+To open the do file editor:
+
+![do_editor2](images/doeditor2.png)
+
+3. In the first line write `include "config.do"`
+
+4. Write the command `do` and the path of each program that needs to be run. Write them in the correct sequence.
+
+  ```
+  include "config.do"
+ 
+  * Assuming scenario "A"
+
+  do "${rootdir}/code/0_first_program.do" 
+  do "${rootdir}/code/1_second_program.do"
+  do "${rootdir}/code/2_third_program.do"
+  do "${rootdir}/code/appendix_code/appendix.do"
+
+  ```
+
+5. Save your master file.
+
+At the end your master .do file may look like this:
+
+![master](images/master-example.png)
+
+With your master do file done, you can go back to step 2.
