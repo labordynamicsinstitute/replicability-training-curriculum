@@ -152,7 +152,7 @@ local ssc_packages "estout"
     // local ssc_packages "estout boottest"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
-## Step 6: Run the Code
+### Step 6: Run the Code
 
 > **[ACTION]** Right click in the master .do file and select the option `Execute (do)`
 
@@ -160,15 +160,17 @@ local ssc_packages "estout"
 
 This option will set the working directory set to the location where the master is. It opens Stata and will show the processes in the Stata window.
 
-### Checking for a complete run, debugging and running the master in pieces
+#### Checking for a complete run, debugging and running the master in pieces
 
 After running the code, the log files will need to be checked for a complete run. **Use Visual Studio Code to open and inspect log files**. Any bugs that prevents a complete run will also show up in the log files.
 
 If a you find a bug that is simple enough to fix, you can make changes to the do files. Then,  you can right click on the master file and select `Execute (do)` as this option will open Stata, allowing to run the code interactively.
 
-If you decide the code needs to be run in pieces. In the master .do file, you can comment out (using the symbol *) the programs that are not to be run and save the master. Then, you can right click on the master and select the option ``Execute (do)`.
+If you decide the code needs to be run in pieces. In the master .do file, you can comment out (using the symbol \*) the programs that are not to be run and save the master. Then, you can right click on the master and select the option ``Execute (do)`.
 
-When debugging is complete, you can uncomment all programs in the master and make a clean run, using again `Execute Quietly (run)` (consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run.)
+When debugging is complete, you can uncomment all programs in the master and make a clean run, using again `Execute Quietly (run)`.
+
+> Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs.
 
 ## When a master .do file is not provided
 
