@@ -1,2 +1,11 @@
 <link rel="shortcut icon" href="https://www.povertyactionlab.org/themes/custom/jpal/favicon.ico" type="image/vnd.microsoft.icon" />
 
+function openTab(computeName) {
+    var i;
+    var x = document.getElementsByClassName("computeloc");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+      x[i].classList.remove('invisible');
+    }
+    document.getElementById(computeName).style.display = "block";
+  }

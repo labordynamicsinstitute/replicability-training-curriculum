@@ -134,7 +134,12 @@ This is because the git setup we use does not allow you to include the data file
 
 ---
 
-#### CISER
+ <div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openCity('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openCity('GHCS')">Github Codespaces</button>
+</div> 
+
+#### CISER {#CISER .computeloc .invisible}
 
 - [ ] Populate the Bitbucket repository clone:
   - If not already done, use `git clone` to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like `aearep-123`.
@@ -148,7 +153,7 @@ This is because the git setup we use does not allow you to include the data file
 - [ ] Also add the manuscript, and any response by the authors (if a revision)
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
 
-#### Github Codespaces (CS)
+#### Github Codespaces (CS)  {#GHCS .computeloc .invisible}
 
 All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.h
 
