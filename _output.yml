@@ -1,6 +1,6 @@
 bookdown::gitbook:
   includes:
-    in_header: [includes/toggle-citation.html]
+    in_header: [includes/toggle-citation.html,includes/header.html]
   css: [assets/css/style.css, assets/css/font-awesome.min.css, assets/css/toc.css ]
   split_by: chapter
   toc_depth: 2
