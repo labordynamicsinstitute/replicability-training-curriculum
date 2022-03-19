@@ -618,8 +618,12 @@ Then fill out the following fields in the Jira ticket (some may be pre-populated
 <p>In this stage, download the code or the entire replication package, and populate the Bitbucket repository.</p>
 <hr />
 <blockquote>
-<p>You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps.</p>
+<p>You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:</p>
 </blockquote>
+<div class="w3-bar w3-black">
+<p><button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+<button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button></p>
+</div>
 <p>This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
 <hr />
 <div class="w3-bar w3-black">
@@ -795,16 +799,52 @@ Fill out the “Code Description” section of the REPLICATION.md<ul>
 <code>PROGRAMSSTRUCTUREMANUAL</code> Does the README note any manual changes that you need to make to the code in order for it to run?</li>
 </ul>
 </div>
-<div id="data" class="section level3">
+<div id="data" class="section level3 tabset">
 <h3><span class="header-section-number">11.3.4</span> Data</h3>
 <ul>
 <li><input type="checkbox" disabled="" />
 Download the data (if not already done in the previous step, and if available).<ul>
-<li>Data should be stored locally (currently) / in <a href="https://confluence.atlassian.com/bitbucket/git-large-file-storage-in-bitbucket-829078514.html">Git LFS</a> (soon)</li>
+<li>from the openICPSR repository as provided by the authors</li>
+<li>attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved.</li>
+</ul></li>
+</ul>
+<div class="w3-bar w3-black">
+<p><button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+<button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button></p>
+</div>
+<div id="CISER" class="section level4 computeloc">
+<h4><span class="header-section-number">11.3.4.1</span> CISER</h4>
+<ul>
+<li><input type="checkbox" disabled="" />
+On CISER, the data will be stored locally.<ul>
+<li>In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.</li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
-If there is data: Run the PII-checking code, review the output, and record the result in the REPLICATION.md<ul>
-<li>You should check the output - it is not automatic.</li>
+If there is data: Run the PII-checking code, review the output, and record the result in the <code>REPLICATION.md</code>.</li>
+</ul>
+</div>
+<div id="GHCS" class="section level4 computeloc invisible">
+<h4><span class="header-section-number">11.3.4.2</span> Github Codespaces (CS)</h4>
+<p>If you are using Github Codespaces, you will download any data first to your laptop, and then upload it to CS.</p>
+<ul>
+<li>Data downloadable from openICPSR will already be present from the previous step, if any.</li>
+<li><input type="checkbox" disabled="" />
+Upload data that you obtained from other sources to CS. There are two ways to do this:<ul>
+<li>Drag-and-drop the downloaded data file into the file pane of VSC, into the appropriate location.</li>
+<li>Use the <code>gh</code> command line tool from a non-VSC terminal (on your local computer): <code>gh cs cp datafile.dat remote:/workspaces/aearep-123/111234/data/location</code> (adjust accordingly as per the author’s instructions)</li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+If there is data: Run the PII-checking code, review the output, and record the result in the <code>REPLICATION.md</code>.<ul>
+<li>You can use the convenience command <code>aeapii</code>, which will perform this task for you.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="section-1" class="section level3 unnumbered">
+<h3></h3>
+<ul>
+<li><input type="checkbox" disabled="" />
+You should check the output - it is not automatic.<ul>
 <li>You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.</li>
 <li>The author will NOT see the output from the program unless you copy <strong>relevant</strong> parts of it into the report.</li>
 </ul></li>
@@ -892,7 +932,7 @@ git push</code></pre>
 <li><code>Verification</code>: at least some of the data is accessible. In order to progress to this state,
 <ul>
 <li><input type="checkbox" disabled="" />
-<code>Working location of data</code>has to be filled out</li>
+<code>Working location of data</code> has to be filled out</li>
 <li><input type="checkbox" disabled="" />
 <code>Computing environment</code> has to be selected.</li>
 </ul></li>
@@ -906,7 +946,28 @@ git push</code></pre>
 <p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
 <p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.
 - For codes using STATA, we provide a template of <code>config.do</code> in the repository. It creates log files and saves it in the repository. Instructions for using <code>config.do</code> is in the <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a></p>
-<p>Follow the steps <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a></p>
+<div class="w3-bar w3-black">
+<p><button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+<button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button></p>
+</div>
+<div id="CISER" class="section level4 computeloc">
+<h4><span class="header-section-number">11.3.6.1</span> CISER</h4>
+<p>Follow the steps <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a>. If using Stata, also see <a href="stata-related-procedures.html">Stata related procedures</a>.</p>
+</div>
+<div id="GHCS" class="section level4 computeloc invisible">
+<h4><span class="header-section-number">11.3.6.2</span> Github Codespaces (CS)</h4>
+<p>Refer to guidelines <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a>. CS is a command line environment, so you will run code from the command line.</p>
+<ul>
+<li>Add the software-specific config file, as described.</li>
+<li>To run Stata, type <code>stata-mp -b do main.do</code> (adjust to account for whatever the program or programs are called). You can do this for every one of the programs.</li>
+<li>To run R, type <code>Rscript program.R</code> or <code>R --vanilla &lt; program.R &gt; program.Rlog 2&gt;&amp;1</code> (which will always create a log file)</li>
+<li>To run Python code, type <code>python3 program.py</code> or whatever the authors specify.</li>
+</ul>
+</div>
+</div>
+<div id="section-2" class="section level3 unnumbered">
+<h3></h3>
+<p>Do not forget to add files output by the code to the repository (log files, figures – <code>eps, png, pdf</code> – and tables – <code>tex, txt, xlsx, xls</code>). Typically (but not always), you can type <code>git add *</code> to add any allowable files, but careful with large data files, and sometimes code will output <code>.txt</code> files, which you have to force-add: <code>git add -f name.txt</code>.</p>
 <p>You should commit your report with intermediate results as you have them. Do <strong>not</strong> wait until you have all the results finished. Commit frequently!</p>
 <blockquote>
 <p>Add (report, modified files)! Commit! Push!</p>
