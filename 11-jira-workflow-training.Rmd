@@ -135,11 +135,11 @@ This is because the git setup we use does not allow you to include the data file
 ---
 
  <div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openCity('CISER')">CISER</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('GHCS')">Github Codespaces</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
 </div> 
 
-#### CISER {#CISER .computeloc .invisible}
+#### CISER {#CISER .computeloc}
 
 - [ ] Populate the Bitbucket repository clone:
   - If not already done, use `git clone` to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like `aearep-123`.
