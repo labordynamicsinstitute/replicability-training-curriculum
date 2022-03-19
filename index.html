@@ -81,6 +81,16 @@ function toggleCitation() {
 
 </script>
 
+function openTab(computeName) {
+    var i;
+    var x = document.getElementsByClassName("computeloc");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+      x[i].classList.remove('invisible');
+    }
+    document.getElementById(computeName).style.display = "block";
+  }
+
 
 <style type="text/css">
 code.sourceCode > span { display: inline-block; line-height: 1.25; }
