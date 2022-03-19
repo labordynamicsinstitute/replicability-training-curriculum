@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-03-13"
+date: "2022-03-19"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1151,7 +1151,7 @@ At this stage, you are collecting information.
 
 You can now proceed to change the status to `Code`.
 
-### Code
+### Code {.tabset}
 
 In this stage, download the code or the entire replication package, and populate the Bitbucket repository.
 
@@ -1163,17 +1163,51 @@ This is because the git setup we use does not allow you to include the data file
 
 ---
 
-- [ ] Download the code from openICPSR (typicaly for most cases). See [openICPSR repositories](https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
-  ![icpsr screen](images/icpsr-download.png)
-- [ ] Populate the Bitbucket repository:
+#### CISER
+
+- [ ] Populate the Bitbucket repository clone:
   - If not already done, use `git clone` to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like `aearep-123`.
     - **[EXPERT TIP]** It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.
+- [ ] Download the code (and data) from openICPSR (typicaly for most cases). See [openICPSR repositories](https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
+  ![icpsr screen](images/icpsr-download.png)
   - Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the `aearep-123` repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.
   - Unzip the openICPSR folder under a folder **named by the openICPSR repostory number**. On Windows and OSX, double-click. From bash: `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
     - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
   - Perform a `git add`, `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
 - [ ] Also add the manuscript, and any response by the authors (if a revision)
-- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. After pushing to the repository, is should now look like this:
+- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+
+#### Github Codespaces (CS)
+
+All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.h
+
+- [ ] Populate the Bitbucket repository clone:
+  - Use the LDI short-cut command `aeagit 123 h` to clone the Bitbucket repository for `aearep-123` onto CS (this executed `git clone (URL)/aearep-123` behind the scenes).
+    - If this is the first repository you run on this CS instance, you may need to configure authentication. Follow the instructions from the `aeagit` command.
+    - Once the  `aeagit 123 h` has completed, it will open a new VSC windows. **All subsequent actions should be done in that window.**
+- [ ] Download the code (and data) from openICPSR (typicaly for most cases) TO YOUR LAPTOP. See [openICPSR repositories](https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
+  ![icpsr screen](images/icpsr-download.png)
+  - Copy the downloaded ZIP file into the CS. There are two ways to do this:
+    - Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC. 
+    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp 111234.zip remote:/workspaces/aearep-123` (adjust accordingly)
+  - The ZIP file should now be in the same folder as `REPLICATION.md`.
+  - Unzip the openICPSR ZIP file to a folder **named by the openICPSR repostory number**. 
+    - In the terminal `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
+    - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
+  - Perform a `git add`, `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data). - In the terminal: `git add 111234; git commit -m 'Author code'; git push`
+- [ ] Also add the manuscript, and any response by the authors (if a revision)
+  - Copy the manuscript to the CS.    There are two ways to do this:
+    - Drag-and-drop the downloaded manuscript into the file pane of VSC. 
+    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp PDF_Proof.pdf remote:/workspaces/aearep-123` 
+  - Add the manuscript to the Git repo
+    - In the terminal: `git add PDF_Proof.pdf; git commit 'Manuscript'; git push`
+
+
+### {-} 
+
+- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+
+After pushing to the repository, is should now look like this:
 
 ```
 116941/
@@ -1184,6 +1218,8 @@ PII_stata_scan.do
 readme.pdf
 REPLICATION.md
 ```
+
+### List of Datasets 
 
 Now you will establish a **list of Datasets used** and fill out the **Data Citation and Information** report.
 
@@ -1209,7 +1245,7 @@ Now you will establish a **list of Datasets used** and fill out the **Data Citat
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: all, some, or none. 
 - [ ] Fill out the `Data Provenance` section 
   - is the data in the openICPSR repository, or is it someplace else? "Various" is a legitimate answer if it is in various locations.
-- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how to assess the provided information.
+- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how to assess the provided information.
 
 Do a first pass through the code files provided:
 

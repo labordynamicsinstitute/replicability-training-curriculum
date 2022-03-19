@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-03-13" />
+<meta name="date" content="2022-03-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -601,7 +601,7 @@ Then fill out the following fields in the Jira ticket (some may be pre-populated
 </ul>
 <p>You can now proceed to change the status to <code>Code</code>.</p>
 </div>
-<div id="code" class="section level3">
+<div id="code" class="section level3 tabset">
 <h3><span class="header-section-number">11.3.2</span> Code</h3>
 <p>In this stage, download the code or the entire replication package, and populate the Bitbucket repository.</p>
 <hr />
@@ -610,16 +610,19 @@ Then fill out the following fields in the Jira ticket (some may be pre-populated
 </blockquote>
 <p>This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
 <hr />
+<div id="ciser" class="section level4">
+<h4><span class="header-section-number">11.3.2.1</span> CISER</h4>
 <ul>
 <li><input type="checkbox" disabled="" />
-Download the code from openICPSR (typicaly for most cases). See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.
-<img src="images/icpsr-download.png" alt="icpsr screen" /></li>
-<li><input type="checkbox" disabled="" />
-Populate the Bitbucket repository:<ul>
+Populate the Bitbucket repository clone:<ul>
 <li>If not already done, use <code>git clone</code> to clone the Bitbucket repository onto CISER (or your laptop, but see below). It should be named something like <code>aearep-123</code>.
 <ul>
 <li><strong>[EXPERT TIP]</strong> It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.</li>
 </ul></li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Download the code (and data) from openICPSR (typicaly for most cases). See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.
+<img src="images/icpsr-download.png" alt="icpsr screen" /><ul>
 <li>Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the <code>aearep-123</code> repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.</li>
 <li>Unzip the openICPSR folder under a folder <strong>named by the openICPSR repostory number</strong>. On Windows and OSX, double-click. From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code>
 <ul>
@@ -630,8 +633,59 @@ Populate the Bitbucket repository:<ul>
 <li><input type="checkbox" disabled="" />
 Also add the manuscript, and any response by the authors (if a revision)</li>
 <li><input type="checkbox" disabled="" />
-Be sure to <code>git push</code> it all to Bitbucket, with a meaningful commit message. After pushing to the repository, is should now look like this:</li>
+Be sure to <code>git push</code> it all to Bitbucket, with a meaningful commit message.</li>
 </ul>
+</div>
+<div id="github-codespaces-cs" class="section level4">
+<h4><span class="header-section-number">11.3.2.2</span> Github Codespaces (CS)</h4>
+<p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.h</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+Populate the Bitbucket repository clone:<ul>
+<li>Use the LDI short-cut command <code>aeagit 123 h</code> to clone the Bitbucket repository for <code>aearep-123</code> onto CS (this executed <code>git clone (URL)/aearep-123</code> behind the scenes).
+<ul>
+<li>If this is the first repository you run on this CS instance, you may need to configure authentication. Follow the instructions from the <code>aeagit</code> command.</li>
+<li>Once the <code>aeagit 123 h</code> has completed, it will open a new VSC windows. <strong>All subsequent actions should be done in that window.</strong></li>
+</ul></li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Download the code (and data) from openICPSR (typicaly for most cases) TO YOUR LAPTOP. See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.
+<img src="images/icpsr-download.png" alt="icpsr screen" /><ul>
+<li>Copy the downloaded ZIP file into the CS. There are two ways to do this:
+<ul>
+<li>Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC.</li>
+<li>Use the <code>gh</code> command line tool from a non-VSC terminal (on your local computer): <code>gh cs cp 111234.zip remote:/workspaces/aearep-123</code> (adjust accordingly)</li>
+</ul></li>
+<li>The ZIP file should now be in the same folder as <code>REPLICATION.md</code>.</li>
+<li>Unzip the openICPSR ZIP file to a folder <strong>named by the openICPSR repostory number</strong>.
+<ul>
+<li>In the terminal <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code></li>
+<li>The manuscript’s files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+</ul></li>
+<li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data). - In the terminal: <code>git add 111234; git commit -m 'Author code'; git push</code></li>
+</ul></li>
+<li><input type="checkbox" disabled="" />
+Also add the manuscript, and any response by the authors (if a revision)<ul>
+<li>Copy the manuscript to the CS. There are two ways to do this:
+<ul>
+<li>Drag-and-drop the downloaded manuscript into the file pane of VSC.</li>
+<li>Use the <code>gh</code> command line tool from a non-VSC terminal (on your local computer): <code>gh cs cp PDF_Proof.pdf remote:/workspaces/aearep-123</code></li>
+</ul></li>
+<li>Add the manuscript to the Git repo
+<ul>
+<li>In the terminal: <code>git add PDF_Proof.pdf; git commit 'Manuscript'; git push</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="section" class="section level3 unnumbered">
+<h3></h3>
+<ul>
+<li><input type="checkbox" disabled="" />
+Be sure to <code>git push</code> it all to Bitbucket, with a meaningful commit message.</li>
+</ul>
+<p>After pushing to the repository, is should now look like this:</p>
 <pre><code>116941/
 code-check.xlsx
 config.do
@@ -639,6 +693,9 @@ PDF_Proof.PDF
 PII_stata_scan.do
 readme.pdf
 REPLICATION.md</code></pre>
+</div>
+<div id="list-of-datasets" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> List of Datasets</h3>
 <p>Now you will establish a <strong>list of Datasets used</strong> and fill out the <strong>Data Citation and Information</strong> report.</p>
 <ul>
 <li>Please check Data and Code Availability Form.
@@ -678,7 +735,7 @@ Fill out the <code>Data Provenance</code> section<ul>
 <li>is the data in the openICPSR repository, or is it someplace else? “Various” is a legitimate answer if it is in various locations.</li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
-Please refer to <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/a-guided-walk-through-the-replication-report.html">Chapter 9 A guided walk through the Replication Report</a> for more details about which datasets to be included and how to assess the provided information.</li>
+Please refer to <a href="a-guided-walk-through-the-replication-report.html">Chapter 9 A guided walk through the Replication Report</a> for more details about which datasets to be included and how to assess the provided information.</li>
 </ul>
 <p>Do a first pass through the code files provided:</p>
 <blockquote>
@@ -723,7 +780,7 @@ Fill out the “Code Description” section of the REPLICATION.md<ul>
 </ul>
 </div>
 <div id="data" class="section level3">
-<h3><span class="header-section-number">11.3.3</span> Data</h3>
+<h3><span class="header-section-number">11.3.4</span> Data</h3>
 <ul>
 <li><input type="checkbox" disabled="" />
 Download the data (if not already done in the previous step, and if available).<ul>
@@ -779,7 +836,7 @@ Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are t
 </ul>
 </div>
 <div id="write-preliminary-report" class="section level3">
-<h3><span class="header-section-number">11.3.4</span> Write Preliminary Report</h3>
+<h3><span class="header-section-number">11.3.5</span> Write Preliminary Report</h3>
 <p>At this stage, you need to fill out the REPLICATION.md up to the “Replication steps” part.</p>
 <ul>
 <li>There is sample language for commonly encountered problems at the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar
@@ -829,7 +886,7 @@ git push</code></pre>
 </ul>
 </div>
 <div id="verification" class="section level3">
-<h3><span class="header-section-number">11.3.5</span> Verification</h3>
+<h3><span class="header-section-number">11.3.6</span> Verification</h3>
 <p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
 <p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.
 - For codes using STATA, we provide a template of <code>config.do</code> in the repository. It creates log files and saves it in the repository. Instructions for using <code>config.do</code> is in the <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a></p>
@@ -841,7 +898,7 @@ git push</code></pre>
 <p>You can now proceed to change the status to <code>Writing Report</code>.</p>
 </div>
 <div id="code-review" class="section level3">
-<h3><span class="header-section-number">11.3.6</span> Code Review</h3>
+<h3><span class="header-section-number">11.3.7</span> Code Review</h3>
 <p>In this stage, you are verifying the code by inspecting the completeness of the source code. In general, your ability to detect any issues is limited, but go through the code one more time, and identify</p>
 <ul>
 <li>packages that are installed late in the code, but not mentioned in a setup program or the README</li>
@@ -855,7 +912,7 @@ git push</code></pre>
 <p>You can now proceed to change the status to <code>Writing Report</code>.</p>
 </div>
 <div id="writing-report" class="section level3">
-<h3><span class="header-section-number">11.3.7</span> Writing Report</h3>
+<h3><span class="header-section-number">11.3.8</span> Writing Report</h3>
 <p>At this stage, you will write the final version of the report.</p>
 <ul>
 <li>There is sample language for commonly encountered problems at the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
