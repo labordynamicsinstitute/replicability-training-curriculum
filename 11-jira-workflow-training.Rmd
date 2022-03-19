@@ -128,13 +128,19 @@ In this stage, download the code or the entire replication package, and populate
 
 ---
 
-> You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. 
+> You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
+</div> 
+
 
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
 
 ---
 
- <div class="w3-bar w3-black">
+<div class="w3-bar w3-black">
   <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
   <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
 </div> 
@@ -252,12 +258,37 @@ You can now proceed to change the status to `Data`. As you select that transitio
   - [ ] `PROGRAMSSTRUCTUREMANUAL` Does the README note any manual changes that you need to make to the code in order for it to run?
 
 
-### Data
+### Data {.tabset}
 
 - [ ] Download the data (if not already done in the previous step, and if available).
-  - Data should be stored locally (currently) / in [Git LFS](https://confluence.atlassian.com/bitbucket/git-large-file-storage-in-bitbucket-829078514.html) (soon)
-- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the REPLICATION.md
-  - You should check the output - it is not automatic.
+  - from the openICPSR repository as provided by the authors
+  - attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved. 
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
+</div> 
+
+#### CISER {#CISER .computeloc}
+
+- [ ] On CISER, the data will be stored locally.
+  - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
+- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
+
+#### Github Codespaces (CS)  {#GHCS .computeloc .invisible}
+
+If you are using Github Codespaces, you will download any data first to your laptop, and then upload it to CS. 
+
+- Data downloadable from openICPSR will already be present from the previous step, if any.
+- [ ] Upload data that you obtained from other sources to CS. There are two ways to do this:
+    - Drag-and-drop the downloaded data file into the file pane of VSC, into the appropriate location.
+    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp datafile.dat remote:/workspaces/aearep-123/111234/data/location` (adjust accordingly as per the author's instructions)
+- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
+    - You can use the convenience command `aeapii`, which will perform this task for you.
+
+### {-}
+
+- [ ] You should check the output - it is not automatic.
   - You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.
   - The author will NOT see the output from the program unless you copy **relevant** parts of it into the report.
 - [ ] Describe the data 
@@ -321,7 +352,7 @@ git push
 
 - Otherwise, advance the ticket to one of three options: `Verification`, `Code Review`, or `Incomplete`
   - `Verification`: at least some of the data is accessible. In order to progress to this state,
-    - [ ] `Working location of data`has to be filled out
+    - [ ] `Working location of data` has to be filled out
     - [ ] `Computing environment` has to be selected.
   - `Code Review`: none of the data is accessible
   - `Incomplete`: more information/action is required before you can proceed
@@ -330,11 +361,33 @@ git push
 
 In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The [REPLICATION.md](`r config$url$templmd`REPLICATION.md) is the report.
 
-
 Keep a log of what you do, what you find, and what does not work, in the `REPLICATION.md`, under *Findings*.
   - For codes using STATA, we provide a template of `config.do` in the repository. It creates log files and saves it in the repository. Instructions for using `config.do` is in the [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html)
 
-Follow the steps [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication)
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
+</div> 
+
+#### CISER {#CISER .computeloc}
+
+Follow the steps [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication). If using Stata, also see [Stata related procedures](stata-related-procedures.html).
+
+
+#### Github Codespaces (CS)  {#GHCS .computeloc .invisible}
+
+Refer to guidelines [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication). CS is a command line environment, so you will run code from the command line. 
+
+- Add the software-specific config file, as described.
+- To run Stata, type `stata-mp -b do main.do` (adjust to account for whatever the program or programs are called). You can do this for every one of the programs. 
+- To run R, type `Rscript program.R` or `R --vanilla < program.R > program.Rlog 2>&1` (which will always create a log file)
+- To run Python code, type `python3 program.py` or whatever the authors specify.
+
+
+### {-}
+
+Do not forget to add files output by the code to the repository (log files, figures -- `eps, png, pdf` -- and tables -- `tex, txt, xlsx, xls`). Typically (but not always), you can type `git add *` to add any allowable files, but careful with large data files, and sometimes code will output `.txt` files, which you have to force-add: `git add -f name.txt`.
 
 You should commit your report with intermediate results as you have them. Do __not__ wait until you have all the results finished. Commit frequently!
 
