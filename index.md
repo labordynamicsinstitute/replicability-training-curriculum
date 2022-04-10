@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-03-19"
+date: "2022-04-10"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1818,16 +1818,15 @@ To do so, proceed as follows:
 
 ![Pop-up for transition to Pending openICSPR](images/jira-Wait-for-response-on-ICPSR.png)
 
-3. Look for a file "for openICPSR.md" in the repository.
-4. On openICPSR, 
-  - (new!) verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
-5. On openICPSR, if `Deposit Status` = *`Deposit in Progress`*
+3. On openICPSR, 
+  - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
+4. On openICPSR, if `Deposit Status` = *`Deposit in Progress`*
    - start a message in the Communication log:
       - with subject line: `Please make the following changes (AEAREP-xxx)` (replace with appropriate numbers)
       - Message content: 
-         - the contents of the repository-specific "for openICPSR.md" **OR** the portion of the report after "`Action Items (openICPSR)`"
-         - then the following lines (which may already be present in the "for openICPSR.md")
-
+         - the contents of the portion of the report after "`Action Items (openICPSR)`"
+         - then the following lines
+         
 <div class="bbox">
 <p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
 <p>Once all changes have been made, please change the status of your deposit to “Submit to AEA”.</p>
@@ -1840,7 +1839,7 @@ To do so, proceed as follows:
 6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - click on `Change Status`, choose `Request revisions`
   - in the pop-up, 
-    - paste the the contents  of the repository-specific "for openICPSR.md" **OR** the portion of the report after "`Action Items (openICPSR)`"
+    - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`"
     - then the following lines: 
 
 <div class="bbox">
