@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-04-10"
+date: "2022-04-21"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -106,12 +106,12 @@ We ask that trainees accomplish a few tasks prior to the first training session.
 
 ## Read
 
-- The training is virtual, using video, and we frequently meet virtually. Review our [Video Etiquette rules](https://github.com/labordynamicsinstitute/replicability-training/wiki/Videoconferencing-Rules-and-Etiquette) (they are useful beyond our group as well)
+- We frequently meet virtually - at least one, and most of the time both of our weekly meetings are on Zoom. Review our [Video Etiquette rules](https://github.com/labordynamicsinstitute/replicability-training/wiki/Videoconferencing-Rules-and-Etiquette) (they are useful beyond our group as well). When training is virtual, these rules apply as well.
 - Review our [Privacy Policy](#privacy), where you will recognize how we handle your privacy, and the privacy of authors. 
 
 ## View
 
-- View [my talk on the background of the lab](https://www.youtube.com/watch?v=pj-y3dLDOEA)), including what we do, and why we do it. 
+- View [my talk on the background of the lab](https://www.youtube.com/watch?v=pj-y3dLDOEA), including what we do, and why we do it. 
 
 <a href="https://www.youtube.com/watch?v=pj-y3dLDOEA"><img alt="Youtube video" src="images/RR_in_Social_Sciences_Statistics_Youtube20200320.png" width="400px"></a>
 
