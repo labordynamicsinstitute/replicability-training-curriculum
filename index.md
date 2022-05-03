@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-04-21"
+date: "2022-05-03"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2638,9 +2638,56 @@ In essence, these instructions show how to deal with the three most common actio
 
 A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.
 
-If there is a master do file, continue with the following steps. If not, see the instruction below: *"When a master .do is not provided"*.
 
-### Step 2: place config.do where the master .do file is located
+#### When a master .do file is provided
+
+If there is a master do file, continue with [Step 2](#Step2).
+
+
+#### When a master .do file is not provided
+
+If a master .do file is not provided, you should create a one. 
+
+To create a do file follow the following steps:
+
+1. Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a master do file.
+
+2. Assuming that the sequence of programs is clear to you, open stata and click on the "New do file editor" (you can also work on Visual Studio Code):
+
+![do_editor](images/doeditor.png)
+
+To open the do file editor:
+
+![do_editor2](images/doeditor2.png)
+
+3. In the first line write `include "config.do"`
+
+4. Write the command `do` and the path of each program that needs to be run. Write them in the correct sequence. 
+
+Example:
+
+```
+include "config.do"
+ 
+* Assuming scenario "A"
+
+do "${rootdir}/code/0_first_program.do" 
+do "${rootdir}/code/1_second_program.do"
+do "${rootdir}/code/2_third_program.do"
+do "${rootdir}/code/appendix_code/appendix.do"
+
+```
+
+5. Save your master file.
+
+At the end your master .do file may look like this:
+
+![master](images/master-example.png)
+
+With your master do file done, continue with [Step 2](#Step2).
+
+
+### Step 2: place config.do where the master .do file is located {#Step2}
 
 > **[ACTION]** Copy the file `template-config.do` and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
 
@@ -2776,13 +2823,44 @@ local ssc_packages "estout"
     // local ssc_packages "estout boottest"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
-### Step 6: Run the Code
+### Step 6: Run the Code {.tabset}
 
-> **[ACTION]** Right click in the master .do file and select the option `Execute (do)`
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openTab('Windows')">Windows</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('MacLinux')">Mac/Linux</button>
+</div> 
+
+#### Windows {#Windows .computeloc}
+
+> **[ACTION]** **Right click** on the master .do file and select the option `Execute (do)`.
 
 ![execute do](images/execute-do.png)
 
-This option will set the working directory set to the location where the master is. It opens Stata and will show the processes in the Stata window.
+This option will set the working directory  to the location where the `master.do` is. It opens Stata and will show the processes in the Stata window.
+
+#### Mac/Linux {#MacLinux .computeloc .invisible}
+
+On Unix-style systems, the preferred way is to use the command line to run Stata code.
+
+> Mac-specific one-time setup: Open Stata on your Mac, go to the "Stata" tab at the top of your screen and click "`Install Terminal Utility…`" 
+
+Open up a terminal in the folder where the `master.do` file is located - this may differ depending on your system, and may involve using "`cd /path/to/code`" commands. Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
+
+Identify which Stata version you have installed (some systems have only one, some have multiple):
+
+```
+which stata
+which stata-se
+which stata-mp
+```
+
+Each version is increasingly powerful. Choose the most powerful one installed on your system. (We will assume that you have `stata-mp` but adjust accordingly)
+
+Then  type "`stata-mp -b do master.do`". 
+
+
+### {-} 
 
 #### Checking for a complete run, debugging and running the master in pieces
 
@@ -2796,47 +2874,7 @@ When debugging is complete, you can uncomment all programs in the master and mak
 
 > Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs.
 
-## When a master .do file is not provided
-
-If a master .do file is not provided, it might be worth it to create a one. Use your judgment to determine if it is indeed necessary, as opposed to running programs individually.
-
-To create a do file follow the following steps:
-
-1. Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a master do file.
-
-2. Assuming that the sequence of programs is clear to you, open stata and click on the "New do file editor" (you can also work on Visual Studio Code):
-
-![do_editor](images/doeditor.png)
-
-To open the do file editor:
-
-![do_editor2](images/doeditor2.png)
-
-3. In the first line write `include "config.do"`
-
-4. Write the command `do` and the path of each program that needs to be run. Write them in the correct sequence.
-
-  ```
-  include "config.do"
- 
-  * Assuming scenario "A"
-
-  do "${rootdir}/code/0_first_program.do" 
-  do "${rootdir}/code/1_second_program.do"
-  do "${rootdir}/code/2_third_program.do"
-  do "${rootdir}/code/appendix_code/appendix.do"
-
-  ```
-
-5. Save your master file.
-
-At the end your master .do file may look like this:
-
-![master](images/master-example.png)
-
-With your master do file done, you can go back to step 2.
-
-<!--chapter:end:96-02-running-stata-code-on-windows.Rmd-->
+<!--chapter:end:96-02-running-stata-code.Rmd-->
 
 ## Using scan_packages.do
 
