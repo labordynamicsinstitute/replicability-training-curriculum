@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-05-03"
+date: "2022-05-25"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2397,6 +2397,10 @@ Example:
 Example: `Stata(16) with ssc packages estout and boottest`
 
 ![Environment](images/environment.png)
+
+### Metadata
+
+- Add a "Tag" in the metadata with the AEAREP number, and an additional tag with the manuscript number. These tags persist, even when we rename the deposit for publication, and thus allows us to keep track of things.
 
 ### Recording the environment in Jira
 
