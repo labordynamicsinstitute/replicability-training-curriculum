@@ -19,6 +19,10 @@ Example: `Stata(16) with ssc packages estout and boottest`
 
 ![Environment](images/environment.png)
 
+### Metadata
+
+- Add a "Tag" in the metadata with the AEAREP number, and an additional tag with the manuscript number. These tags persist, even when we rename the deposit for publication, and thus allows us to keep track of things.
+
 ### Recording the environment in Jira
 
 In Jira,
