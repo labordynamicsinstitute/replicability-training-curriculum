@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-05-25"
+date: "2022-05-31"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1793,7 +1793,7 @@ To do so, proceed as follows:
   - in the pop-up, paste and submit the following lines: 
 
 <div class="bbox">
-<p>Revisions requested. Details in the full report, which has been sent to the Editor in charge of your manuscript.</p>
+<p>Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.</p>
 <blockquote>
 <p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
 </blockquote>
