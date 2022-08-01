@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-06-09"
+date: "2022-08-01"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2693,7 +2693,7 @@ With your master do file done, continue with [Step 2](#Step2).
 
 ### Step 2: place config.do where the master .do file is located {#Step2}
 
-> **[ACTION]** Copy the file `template-config.do` and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
+> **[ACTION]** Copy the file [`template-config.do`](https://github.com/AEADataEditor/replication-template/blob/master/template-config.do) and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
 
 The folder with the code, whether is the root directory or a subfolder, should look something like this:
 
