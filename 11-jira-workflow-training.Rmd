@@ -152,10 +152,17 @@ This is because the git setup we use does not allow you to include the data file
     - **[EXPERT TIP]** It may be more convenient to do this FIRST on CISER, so that the data files are there. Data files are NOT committed to the repository. You can then later update the repository on your local computer.
 - [ ] Download the code (and data) from openICPSR (typicaly for most cases). See [openICPSR repositories](`r config$url$reploldmd`openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
   ![icpsr screen](images/icpsr-download.png)
-  - Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the `aearep-123` repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.
-  - Unzip the openICPSR folder under a folder **named by the openICPSR repostory number**. On Windows and OSX, double-click. From bash: `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
-    - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
-  - Perform a `git add`, `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
+  - Copy/paste the downloaded openICPSR ZIP file into the local copy of the `aearep-123` repository
+    - The ZIP file should be called something like `111234.zip`. Note: it might *look* like a folder, but it is not! (on Windows) 
+    - The ZIP file will be wherever your browser downloads materials - probably your `Download` folder.
+  - The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.
+  - Unzip the openICPSR folder under a folder **named for the openICPSR repostory number**. 
+    - On Windows, right-click and select "Extract all" 
+    - On OSX, double-click. 
+    - From bash: `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
+  - The individual files that are part of the replication package should now be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
+  - Perform a `git add`: `git add 111234` should do the right thing.
+  - Perform `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
 - [ ] Also add the manuscript, and any response by the authors (if a revision)
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
 
@@ -173,10 +180,12 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
     - Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC. 
     - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp 111234.zip remote:/workspaces/aearep-123` (adjust accordingly)
   - The ZIP file should now be in the same folder as `REPLICATION.md`.
-  - Unzip the openICPSR ZIP file to a folder **named by the openICPSR repostory number**. 
+  - Unzip the openICPSR ZIP file to a folder **named for the openICPSR repostory number**. 
     - In the terminal `mkdir 111234; cd 111234; unzip ../111234.zip; cd ..`
-    - The manuscript's files should be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
-  - Perform a `git add`, `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data). - In the terminal: `git add 111234; git commit -m 'Author code'; git push`
+  - The individual files that are part of the replication package should now be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
+  - Perform a `git add`: `git add 111234` should do the right thing.
+  - Perform `git commit`, `git push`  sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data). 
+    - All at once:  `git add 111234; git commit -m 'Author code'; git push`
 - [ ] Also add the manuscript, and any response by the authors (if a revision)
   - Copy the manuscript to the CS.    There are two ways to do this:
     - Drag-and-drop the downloaded manuscript into the file pane of VSC. 
