@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-08-01" />
+<meta name="date" content="2022-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -642,12 +642,21 @@ Populate the Bitbucket repository clone:<ul>
 <li><input type="checkbox" disabled="" />
 Download the code (and data) from openICPSR (typicaly for most cases). See <a href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/openICPSR_training.md">openICPSR repositories</a> for instructions on downloading these materials. Typically called <code>111234.zip</code>.
 <img src="images/icpsr-download.png" alt="icpsr screen" /><ul>
-<li>Copy/paste the downloaded openICPSR folder (ZIP file) into the local copy of the <code>aearep-123</code> repository. The local repository should now have the relevant LDI replication template materials and the openICPSR folder containing the replication materials provided by the authors.</li>
-<li>Unzip the openICPSR folder under a folder <strong>named by the openICPSR repostory number</strong>. On Windows and OSX, double-click. From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code>
+<li>Copy/paste the downloaded openICPSR ZIP file into the local copy of the <code>aearep-123</code> repository
 <ul>
-<li>The manuscript’s files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+<li>The ZIP file should be called something like <code>111234.zip</code>. Note: it might <em>look</em> like a folder, but it is not! (on Windows)</li>
+<li>The ZIP file will be wherever your browser downloads materials - probably your <code>Download</code> folder.</li>
 </ul></li>
-<li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</li>
+<li>The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.</li>
+<li>Unzip the openICPSR folder under a folder <strong>named for the openICPSR repostory number</strong>.
+<ul>
+<li>On Windows, right-click and select “Extract all”</li>
+<li>On OSX, double-click.</li>
+<li>From bash: <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code></li>
+</ul></li>
+<li>The individual files that are part of the replication package should now be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+<li>Perform a <code>git add</code>: <code>git add 111234</code> should do the right thing.</li>
+<li>Perform <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
 Also add the manuscript, and any response by the authors (if a revision)</li>
@@ -676,12 +685,16 @@ Download the code (and data) from openICPSR (typicaly for most cases) TO YOUR LA
 <li>Use the <code>gh</code> command line tool from a non-VSC terminal (on your local computer): <code>gh cs cp 111234.zip remote:/workspaces/aearep-123</code> (adjust accordingly)</li>
 </ul></li>
 <li>The ZIP file should now be in the same folder as <code>REPLICATION.md</code>.</li>
-<li>Unzip the openICPSR ZIP file to a folder <strong>named by the openICPSR repostory number</strong>.
+<li>Unzip the openICPSR ZIP file to a folder <strong>named for the openICPSR repostory number</strong>.
 <ul>
 <li>In the terminal <code>mkdir 111234; cd 111234; unzip ../111234.zip; cd ..</code></li>
-<li>The manuscript’s files should be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
 </ul></li>
-<li>Perform a <code>git add</code>, <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data). - In the terminal: <code>git add 111234; git commit -m 'Author code'; git push</code></li>
+<li>The individual files that are part of the replication package should now be in a subdirectory (e.g, <code>111234</code>, the openICPSR repository number).</li>
+<li>Perform a <code>git add</code>: <code>git add 111234</code> should do the right thing.</li>
+<li>Perform <code>git commit</code>, <code>git push</code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).
+<ul>
+<li>All at once: <code>git add 111234; git commit -m 'Author code'; git push</code></li>
+</ul></li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
 Also add the manuscript, and any response by the authors (if a revision)<ul>
