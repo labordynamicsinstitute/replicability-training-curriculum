@@ -1239,14 +1239,27 @@ readme.pdf
 REPLICATION.md
 ```
 
+### Verifying completeness of the README
+
+The first section of the README is titeled "[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)". Here you want to verify how complete the README is. 
+
+- Go through the entire README, and compare both to the [template README](https://social-science-data-editors.github.io/template_README/template-README.html) and the sections in the **General** section. 
+  - Check off the sections for which you appear to have information. 
+  - Leave blank the sections that are either not provided, or that are empty
+- In JIRA, identify the question called "`DCAF_README_compliant`". 
+  - If all or most of the sections are in the same order, and are filled with meaningful information, then check `Fully`
+  - If information is provided, but in different order, or only mostly, mark "`Content only`".
+  - If very little of the information is provided, mark it as "`No`"
+
+
 ### List of Datasets 
 
 Now you will establish a **list of Datasets used** and fill out the **Data Citation and Information** report.
 
-- Please check Data and Code Availability Form.
+- Please check the `Data and Code Availability Form`.
   - The form should be attached in the JIRA ticket. 
   - In area 2 of the screen, choose DCAF.
-    - Open Data and Code Availability Form, and check if all blanks are filled out.
+    - Open `Data and Code Availability Form`, and check if all blanks are filled out.
     - Once you checked the form, choose "Yes" from the dropdown menu of `DCAF_README_checked` cell.
     - If the answer to the following question at the bottom of the form is "Yes", then, choose "Yes" from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose "No".
       "Is any of the data used in this manuscript subject to access restrictions?"

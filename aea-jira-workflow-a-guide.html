@@ -726,16 +726,33 @@ PII_stata_scan.do
 readme.pdf
 REPLICATION.md</code></pre>
 </div>
+<div id="verifying-completeness-of-the-readme" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> Verifying completeness of the README</h3>
+<p>The first section of the README is titeled “<a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general">General</a>”. Here you want to verify how complete the README is.</p>
+<ul>
+<li>Go through the entire README, and compare both to the <a href="https://social-science-data-editors.github.io/template_README/template-README.html">template README</a> and the sections in the <strong>General</strong> section.
+<ul>
+<li>Check off the sections for which you appear to have information.</li>
+<li>Leave blank the sections that are either not provided, or that are empty</li>
+</ul></li>
+<li>In JIRA, identify the question called “<code>DCAF_README_compliant</code>”.
+<ul>
+<li>If all or most of the sections are in the same order, and are filled with meaningful information, then check <code>Fully</code></li>
+<li>If information is provided, but in different order, or only mostly, mark “<code>Content only</code>”.</li>
+<li>If very little of the information is provided, mark it as “<code>No</code>”</li>
+</ul></li>
+</ul>
+</div>
 <div id="list-of-datasets" class="section level3">
-<h3><span class="header-section-number">11.3.3</span> List of Datasets</h3>
+<h3><span class="header-section-number">11.3.4</span> List of Datasets</h3>
 <p>Now you will establish a <strong>list of Datasets used</strong> and fill out the <strong>Data Citation and Information</strong> report.</p>
 <ul>
-<li>Please check Data and Code Availability Form.
+<li>Please check the <code>Data and Code Availability Form</code>.
 <ul>
 <li>The form should be attached in the JIRA ticket.</li>
 <li>In area 2 of the screen, choose DCAF.
 <ul>
-<li>Open Data and Code Availability Form, and check if all blanks are filled out.</li>
+<li>Open <code>Data and Code Availability Form</code>, and check if all blanks are filled out.</li>
 <li>Once you checked the form, choose “Yes” from the dropdown menu of <code>DCAF_README_checked</code> cell.</li>
 <li>If the answer to the following question at the bottom of the form is “Yes”, then, choose “Yes” from the dropdown menu of <code>DCAF_Access_Restrictions</code>. Otherwise, choose “No”.
 “Is any of the data used in this manuscript subject to access restrictions?”
@@ -812,7 +829,7 @@ Fill out the “Code Description” section of the REPLICATION.md<ul>
 </ul>
 </div>
 <div id="data" class="section level3 tabset">
-<h3><span class="header-section-number">11.3.4</span> Data</h3>
+<h3><span class="header-section-number">11.3.5</span> Data</h3>
 <ul>
 <li><input type="checkbox" disabled="" />
 Download the data (if not already done in the previous step, and if available).<ul>
@@ -825,7 +842,7 @@ Download the data (if not already done in the previous step, and if available).<
 <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button></p>
 </div>
 <div id="CISER" class="section level4 computeloc">
-<h4><span class="header-section-number">11.3.4.1</span> CISER</h4>
+<h4><span class="header-section-number">11.3.5.1</span> CISER</h4>
 <ul>
 <li><input type="checkbox" disabled="" />
 On CISER, the data will be stored locally.<ul>
@@ -836,7 +853,7 @@ If there is data: Run the PII-checking code, review the output, and record the r
 </ul>
 </div>
 <div id="GHCS" class="section level4 computeloc invisible">
-<h4><span class="header-section-number">11.3.4.2</span> Github Codespaces (CS)</h4>
+<h4><span class="header-section-number">11.3.5.2</span> Github Codespaces (CS)</h4>
 <p>If you are using Github Codespaces, you will download any data first to your laptop, and then upload it to CS.</p>
 <ul>
 <li>Data downloadable from openICPSR will already be present from the previous step, if any.</li>
@@ -904,7 +921,7 @@ Is the data in archive-ready formats (<code>csv</code> or <code>txt</code> are t
 </ul>
 </div>
 <div id="write-preliminary-report" class="section level3">
-<h3><span class="header-section-number">11.3.5</span> Write Preliminary Report</h3>
+<h3><span class="header-section-number">11.3.6</span> Write Preliminary Report</h3>
 <p>At this stage, you need to fill out the REPLICATION.md up to the “Replication steps” part.</p>
 <ul>
 <li>There is sample language for commonly encountered problems at the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar
@@ -954,7 +971,7 @@ git push</code></pre>
 </ul>
 </div>
 <div id="verification" class="section level3">
-<h3><span class="header-section-number">11.3.6</span> Verification</h3>
+<h3><span class="header-section-number">11.3.7</span> Verification</h3>
 <p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a> is the report.</p>
 <p>Keep a log of what you do, what you find, and what does not work, in the <code>REPLICATION.md</code>, under <em>Findings</em>.
 - For codes using STATA, we provide a template of <code>config.do</code> in the repository. It creates log files and saves it in the repository. Instructions for using <code>config.do</code> is in the <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a></p>
@@ -963,11 +980,11 @@ git push</code></pre>
 <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button></p>
 </div>
 <div id="CISER" class="section level4 computeloc">
-<h4><span class="header-section-number">11.3.6.1</span> CISER</h4>
+<h4><span class="header-section-number">11.3.7.1</span> CISER</h4>
 <p>Follow the steps <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a>. If using Stata, also see <a href="stata-related-procedures.html">Stata related procedures</a>.</p>
 </div>
 <div id="GHCS" class="section level4 computeloc invisible">
-<h4><span class="header-section-number">11.3.6.2</span> Github Codespaces (CS)</h4>
+<h4><span class="header-section-number">11.3.7.2</span> Github Codespaces (CS)</h4>
 <p>Refer to guidelines <a href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Prepare_and_run_replication">here</a>. CS is a command line environment, so you will run code from the command line.</p>
 <ul>
 <li>Add the software-specific config file, as described.</li>
@@ -987,7 +1004,7 @@ git push</code></pre>
 <p>You can now proceed to change the status to <code>Writing Report</code>.</p>
 </div>
 <div id="code-review" class="section level3">
-<h3><span class="header-section-number">11.3.7</span> Code Review</h3>
+<h3><span class="header-section-number">11.3.8</span> Code Review</h3>
 <p>In this stage, you are verifying the code by inspecting the completeness of the source code. In general, your ability to detect any issues is limited, but go through the code one more time, and identify</p>
 <ul>
 <li>packages that are installed late in the code, but not mentioned in a setup program or the README</li>
@@ -1001,7 +1018,7 @@ git push</code></pre>
 <p>You can now proceed to change the status to <code>Writing Report</code>.</p>
 </div>
 <div id="writing-report" class="section level3">
-<h3><span class="header-section-number">11.3.8</span> Writing Report</h3>
+<h3><span class="header-section-number">11.3.9</span> Writing Report</h3>
 <p>At this stage, you will write the final version of the report.</p>
 <ul>
 <li>There is sample language for commonly encountered problems at the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</li>
