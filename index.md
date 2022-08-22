@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-08-18"
+date: "2022-08-22"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1241,7 +1241,7 @@ REPLICATION.md
 
 ### Verifying completeness of the README
 
-The first section of the README is titeled "[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)". Here you want to verify how complete the README is. 
+The first section of the Replication report is titled "[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)". Here you want to verify how complete the README is. 
 
 - Go through the entire README, and compare both to the [template README](https://social-science-data-editors.github.io/template_README/template-README.html) and the sections in the **General** section. 
   - Check off the sections for which you appear to have information. 
