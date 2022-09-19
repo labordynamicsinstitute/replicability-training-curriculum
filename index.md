@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-08-22"
+date: "2022-09-19"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1254,46 +1254,42 @@ The first section of the Replication report is titled "[General](https://github.
 
 ### List of Datasets 
 
-Now you will establish a **list of Datasets used** and fill out the **Data Citation and Information** report.
+Now you will establish a **list of Datasets used**.
 
 - Please check the `Data and Code Availability Form`.
   - The form should be attached in the JIRA ticket. 
   - In area 2 of the screen, choose DCAF.
     - Open `Data and Code Availability Form`, and check if all blanks are filled out.
-    - Once you checked the form, choose "Yes" from the dropdown menu of `DCAF_README_checked` cell.
+    - Once you checked the form, and in particular, if the checkbox next to "README" is checked, choose "Yes" from the dropdown menu of `DCAF_README_checked` cell.
     - If the answer to the following question at the bottom of the form is "Yes", then, choose "Yes" from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose "No".
       "Is any of the data used in this manuscript subject to access restrictions?"
   ![jira screen](images/jira-screen.png)
 
-- From the **README** provided by the authors, the **data section of the article itself**, or an **appendix**, establish a list of datasets used in the article.
-- [ ] Fill out the **[Data Citation and Information](https://goo.gl/forms/3IaMu6PCG7P7WhK43)** report:
-  - A [link to the report](https://goo.gl/forms/3IaMu6PCG7P7WhK43) can be found in the tall grey bar - area 1 of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.
-  - [ ] Fill out the `DATA CITATION REPORT` field on Jira with the date on which you complete this report.
-    - If there are more than 10 datasets that you can see, get approval from your Team Lead to fill out [this spreadsheet](https://drive.google.com/file/d/1-4Ah3AvNVmFJCs6IfjTKUrMOvZ9BHiO6/view?usp=sharing) instead (see the [printed form](assets/Data-citation-and-information-report.pdf) for allowed categories). You should fill out the FIRST dataset on the **[Data Citation and Information form](https://goo.gl/forms/3IaMu6PCG7P7WhK43)**. At the **end of the form** is an upload option, where you should upload the form. The spreadsheet should then *also* be added to the repo (add, commit, push), and a note added to the JIRA comments. 
-  - Use the list of datasets to guide you when filling this out.
-  - [ ] **AT THE SAME TIME:** write the corresponding `Data description` section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the **Data Citation and Information** .
+- From the **README** provided by the authors, the **data section of the article itself**, or an **appendix**, establish a list of datasets used in the article. Use the list of datasets to guide you when filling this out.
+  - [ ] write the corresponding `Data description` section of REPLICATION.md. This should provide detail about the datasets 
     - If data are cited, copy and past the citation to the replication report, clarify which one you are referring to. 
-  - [ ] In particular, check each provided URL, and verify if there is a **"Data Use Agreement", "Citation requirement", "License"** on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor. 
+  - [ ] check each provided URL, and verify if there is a **"Data Use Agreement", "Citation requirement", "License"** on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor. 
 - [ ] Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (`git add`, `git commit`, `git push`)
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: all, some, or none. 
 - [ ] Fill out the `Data Provenance` section 
   - is the data in the openICPSR repository, or is it someplace else? "Various" is a legitimate answer if it is in various locations.
 - [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](a-guided-walk-through-the-replication-report.html) for more details about which datasets to be included and how to assess the provided information.
 
-Do a first pass through the code files provided:
+Now do a first pass through the code files provided:
 
 > Do NOT run any code!
 
 - [ ] review the code in detail. 
-- [ ] In the template, you will find *[code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx)*. Use this to create a list of all Tables and Figures in the paper, and use this to guide you in [REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md).
+- [ ] In the template, you will find *[code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx)*. 
+  - Use this to create a list of all Tables and Figures in the paper, and use this to guide you in [REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md).
 - [ ] Fill out the "Code Description" section of the REPLICATION.md
   - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the `Software Used` later as well, but provide details here.
   - Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README? 
   - Are all the REQUIREMENTS listed? How long does the author say the code will run?
   - Are there files in the archive not explained in the README?
   - **[EXPERT TIP]** You should **not** run the code at this time, only read the program code! (You can do this on your laptop)
-  - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omitte "Replicated?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
-    - This table will be pasted in under "Findings" again, with "Replicated?" column.
+  - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omit the "Reproduced?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
+    - This table will be pasted in under "Findings" again, with "Reproduced?" column.
 
 Next fill out the following fields in the Jira ticket:
 

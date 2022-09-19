@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-08-22" />
+<meta name="date" content="2022-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -745,7 +745,7 @@ REPLICATION.md</code></pre>
 </div>
 <div id="list-of-datasets" class="section level3">
 <h3><span class="header-section-number">11.3.4</span> List of Datasets</h3>
-<p>Now you will establish a <strong>list of Datasets used</strong> and fill out the <strong>Data Citation and Information</strong> report.</p>
+<p>Now you will establish a <strong>list of Datasets used</strong>.</p>
 <ul>
 <li>Please check the <code>Data and Code Availability Form</code>.
 <ul>
@@ -753,27 +753,20 @@ REPLICATION.md</code></pre>
 <li>In area 2 of the screen, choose DCAF.
 <ul>
 <li>Open <code>Data and Code Availability Form</code>, and check if all blanks are filled out.</li>
-<li>Once you checked the form, choose “Yes” from the dropdown menu of <code>DCAF_README_checked</code> cell.</li>
+<li>Once you checked the form, and in particular, if the checkbox next to “README” is checked, choose “Yes” from the dropdown menu of <code>DCAF_README_checked</code> cell.</li>
 <li>If the answer to the following question at the bottom of the form is “Yes”, then, choose “Yes” from the dropdown menu of <code>DCAF_Access_Restrictions</code>. Otherwise, choose “No”.
 “Is any of the data used in this manuscript subject to access restrictions?”
 <img src="images/jira-screen.png" alt="jira screen" /></li>
 </ul></li>
 </ul></li>
-<li>From the <strong>README</strong> provided by the authors, the <strong>data section of the article itself</strong>, or an <strong>appendix</strong>, establish a list of datasets used in the article.</li>
+<li>From the <strong>README</strong> provided by the authors, the <strong>data section of the article itself</strong>, or an <strong>appendix</strong>, establish a list of datasets used in the article. Use the list of datasets to guide you when filling this out.
+<ul>
 <li><input type="checkbox" disabled="" />
-Fill out the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information</a></strong> report:<ul>
-<li>A <a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">link to the report</a> can be found in the tall grey bar - area 1 of the ticket. If this tall grey bar is not visible, then edit the url according to the directions above.</li>
-<li><input type="checkbox" disabled="" />
-Fill out the <code>DATA CITATION REPORT</code> field on Jira with the date on which you complete this report.<ul>
-<li>If there are more than 10 datasets that you can see, get approval from your Team Lead to fill out <a href="https://drive.google.com/file/d/1-4Ah3AvNVmFJCs6IfjTKUrMOvZ9BHiO6/view?usp=sharing">this spreadsheet</a> instead (see the <a href="assets/Data-citation-and-information-report.pdf">printed form</a> for allowed categories). You should fill out the FIRST dataset on the <strong><a href="https://goo.gl/forms/3IaMu6PCG7P7WhK43">Data Citation and Information form</a></strong>. At the <strong>end of the form</strong> is an upload option, where you should upload the form. The spreadsheet should then <em>also</em> be added to the repo (add, commit, push), and a note added to the JIRA comments.</li>
-</ul></li>
-<li>Use the list of datasets to guide you when filling this out.</li>
-<li><input type="checkbox" disabled="" />
-<strong>AT THE SAME TIME:</strong> write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets that are not obvious from the <strong>Data Citation and Information</strong> .<ul>
+write the corresponding <code>Data description</code> section of REPLICATION.md. This should provide detail about the datasets<ul>
 <li>If data are cited, copy and past the citation to the replication report, clarify which one you are referring to.</li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
-In particular, check each provided URL, and verify if there is a <strong>“Data Use Agreement”, “Citation requirement”, “License”</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</li>
+check each provided URL, and verify if there is a <strong>“Data Use Agreement”, “Citation requirement”, “License”</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</li>
 </ul></li>
 <li><input type="checkbox" disabled="" />
 Add the list of datasets to the repository by committing the preliminary version of the REPLICATION.md (<code>git add</code>, <code>git commit</code>, <code>git push</code>)</li>
@@ -786,7 +779,7 @@ Fill out the <code>Data Provenance</code> section<ul>
 <li><input type="checkbox" disabled="" />
 Please refer to <a href="a-guided-walk-through-the-replication-report.html">Chapter 9 A guided walk through the Replication Report</a> for more details about which datasets to be included and how to assess the provided information.</li>
 </ul>
-<p>Do a first pass through the code files provided:</p>
+<p>Now do a first pass through the code files provided:</p>
 <blockquote>
 <p>Do NOT run any code!</p>
 </blockquote>
@@ -794,7 +787,9 @@ Please refer to <a href="a-guided-walk-through-the-replication-report.html">Chap
 <li><input type="checkbox" disabled="" />
 review the code in detail.</li>
 <li><input type="checkbox" disabled="" />
-In the template, you will find <em><a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a></em>. Use this to create a list of all Tables and Figures in the paper, and use this to guide you in <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a>.</li>
+In the template, you will find <em><a href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a></em>.<ul>
+<li>Use this to create a list of all Tables and Figures in the paper, and use this to guide you in <a href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a>.</li>
+</ul></li>
 <li><input type="checkbox" disabled="" />
 Fill out the “Code Description” section of the REPLICATION.md<ul>
 <li>Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the <code>Software Used</code> later as well, but provide details here.</li>
@@ -802,9 +797,9 @@ Fill out the “Code Description” section of the REPLICATION.md<ul>
 <li>Are all the REQUIREMENTS listed? How long does the author say the code will run?</li>
 <li>Are there files in the archive not explained in the README?</li>
 <li><strong>[EXPERT TIP]</strong> You should <strong>not</strong> run the code at this time, only read the program code! (You can do this on your laptop)</li>
-<li>Copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Omitte “Replicated?” Column in doing so. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.
+<li>Copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Omit the “Reproduced?” Column in doing so. Use the <a href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.
 <ul>
-<li>This table will be pasted in under “Findings” again, with “Replicated?” column.</li>
+<li>This table will be pasted in under “Findings” again, with “Reproduced?” column.</li>
 </ul></li>
 </ul></li>
 </ul>
