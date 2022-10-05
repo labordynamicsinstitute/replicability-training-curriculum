@@ -82,6 +82,11 @@ To do so, proceed as follows:
       - click on `Change Status`, choose `Request revisions`
   - in the pop-up, paste and submit the following lines: 
 
+
+```{block, type='rmdcomment'}
+"Request-revisions-RR" message.
+```
+
 ```{block, type="bbox"}
 Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.
 
@@ -115,6 +120,11 @@ Revisions requested. Details in the full report, which you will receive via Scho
       - Message content: 
          - the contents of the portion of the report after "`Action Items (openICPSR)`"
          - then the following lines
+
+
+```{block, type='rmdcomment'}
+"Request-revisions-CA" message when `Deposit in Progress` is shown.
+```
          
 ```{block, type="bbox"}
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
@@ -132,6 +142,11 @@ Once all changes have been made, please change the status of your deposit to "Su
     - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`"
     - then the following lines: 
 
+
+```{block, type='rmdcomment'}
+"Request-revisions-CA" message when `Submitted` is shown.
+```
+
 ```{block, type="bbox"}
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
 
@@ -141,6 +156,7 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
  
 
 ### FOR ACCEPT:
+
 1. Open the issue on Jira
 2. Click on the `Prepare for publication` transition
 3. In the pop-up, you should have all the necessary information.
@@ -154,6 +170,11 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
    - start a message in the Communication log:
       - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
+
+
+```{block, type='rmdcomment'}
+"Sign-off" message when author needs to `Submit`.
+```
       
 ```{block2, type="bbox"}
 This data and code deposit is accepted.
@@ -168,7 +189,11 @@ Action items:
   - start a message in the Communication log:
       - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
-      
+
+
+```{block, type='rmdcomment'}
+"Sign-off" message when author has `Submit`ted.
+```
 
 ```{block2, type="bbox"}
 This data and code deposit is accepted.
