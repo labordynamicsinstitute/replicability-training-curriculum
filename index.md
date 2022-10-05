@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-09-19"
+date: "2022-10-05"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1810,6 +1810,11 @@ To do so, proceed as follows:
       - click on `Change Status`, choose `Request revisions`
   - in the pop-up, paste and submit the following lines: 
 
+
+<div class="rmdcomment">
+<p>“Request-revisions-RR” message.</p>
+</div>
+
 <div class="bbox">
 <p>Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.</p>
 <blockquote>
@@ -1844,6 +1849,11 @@ To do so, proceed as follows:
       - Message content: 
          - the contents of the portion of the report after "`Action Items (openICPSR)`"
          - then the following lines
+
+
+<div class="rmdcomment">
+<p>“Request-revisions-CA” message when <code>Deposit in Progress</code> is shown.</p>
+</div>
          
 <div class="bbox">
 <p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
@@ -1860,6 +1870,11 @@ To do so, proceed as follows:
     - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`"
     - then the following lines: 
 
+
+<div class="rmdcomment">
+<p>“Request-revisions-CA” message when <code>Submitted</code> is shown.</p>
+</div>
+
 <div class="bbox">
 <p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
 <blockquote>
@@ -1870,6 +1885,7 @@ To do so, proceed as follows:
  
 
 ### FOR ACCEPT:
+
 1. Open the issue on Jira
 2. Click on the `Prepare for publication` transition
 3. In the pop-up, you should have all the necessary information.
@@ -1883,6 +1899,11 @@ To do so, proceed as follows:
    - start a message in the Communication log:
       - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
+
+
+<div class="rmdcomment">
+<p>“Sign-off” message when author needs to <code>Submit</code>.</p>
+</div>
       
 \BeginKnitrBlock{bbox}<div class="bbox">This data and code deposit is accepted.
 
@@ -1895,7 +1916,11 @@ Action items:
   - start a message in the Communication log:
       - with subject line: `Data and Code Deposit accepted for MCNumberXXX AEAREP-xxx` (replace with appropriate numbers)
       - with body
-      
+
+
+<div class="rmdcomment">
+<p>“Sign-off” message when author has <code>Submit</code>ted.</p>
+</div>
 
 \BeginKnitrBlock{bbox}<div class="bbox">This data and code deposit is accepted.
 
