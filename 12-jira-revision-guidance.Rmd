@@ -1,18 +1,18 @@
 # AEA: Revision reports after author resubmission
 
-Most pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.
+Some pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.
 
 ## Generic Guidance 
 
 - Most revisions will not take you much time, so please try to process them quickly!
-
 - Revisions do not require you to repeat all of the same steps as the original replication (see below).
-
 - **Do not create a new Bitbucket repo**. You will overwrite the original repo (the original contents will still be available -- this is why we use version control software like Bitbucket!)
-
 - The original REPLICATION.md is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.
     - If new issues turn up as a result of additional materials provided, these are okay to include as [REQUIRED] changes in the revised report. 
     - If you are unsure about something, add it to the report. While reviewing your report, we can make a determination about whether or not it can be done after acceptance of the manuscript, be a suggested instead of required change, etc. 
+
+- In particular, **do NOT create "update" or "new" directories** The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
+- Please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
 
 
 
@@ -40,11 +40,12 @@ becomes
 
 ## Revision Workflow 
 
-You should proceed through the [workflow](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-workflow-training.md) as you would for an original case with some exceptions:
+You should proceed through the [workflow](/replicability-training-curriculum/aea-jira-workflow-a-guide.html) as you would for an original case with some exceptions:
 
 - You **should not** create a new Bitbucket repository. 
 - You do not need to fill out a new Data Citation and Information Report.
 - You _may_ not need to re-run any code.  
+- All sections are potentially subject to updates, so pay attention.
 
 ### In Progress 
 
@@ -61,12 +62,13 @@ First, advance the ticket from `Assigned` to `In Progress`.
 
         
 
-- [ ] Download the materials attached to the JIRA issue. This will typically include an updated copy of the manuscript, readme, and a response to the editor addressing the requested changes from the prior replication attempt. These should be added to the root of the repository 
+- [ ] Download the materials attached to the JIRA issue. This will typically include 
+  - an updated copy of the manuscript, 
+  - a response to the editor addressing the requested changes from the prior replication attempt. 
+  
+- [ ] Remove obsolete files. In the root, this should be obvious (old manuscript), in the copy of the code, a bit trickier, but necessary.
 
-- [ ] Remove obsolete files. In the root, this should be obvious (old manuscript, old README), in the copy of the code, a bit trickier, but necessary.
-
-
-- [ ] Add these to the root of the repository locally, and then add, commit, and push them to the Bitbucket repository (e.g., `git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf`)
+- [ ] Add these to the root of the repository locally, and then `git add`, `git commit`, and `git push` them to the Bitbucket repository (e.g., `git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf`)
   - The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:
 
 ```
@@ -94,8 +96,7 @@ At this point, you may want to transition to CISER if you haven't already. You s
 - [ ] Download the updated openICPSR deposit and commit the materials to the **same Bitbucket repo as the original replication**, in the **same directory** (i.e., if the openICPSR deposit is `12345` then all updated materials will again go into the `12345` subdirectory. 
     - Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the `aearep-123` repo on Bitbucket.
     - Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to `git rm` them). 
-    - Ensure that output produced from the prior replication attempt remains in the repository. 
-    - More detailed instructions for the process of updating the replication materials can be found [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md). 
+    - There are tricks to letting Git do much of the work: Follow the detailed instructions for the process of updating the replication materials in the [Appendix: Updating Replication Materials after Revision](/replicability-training-curriculum/updating-replication-materials-after-revisions.html).
 
 - [ ] Update the Data Description section of the report.  
    

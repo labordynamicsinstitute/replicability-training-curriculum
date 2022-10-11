@@ -1,12 +1,12 @@
 # AEA Jira workflow - A guide
 
-For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki).
+For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki). For AEA work, that post-publication process can be ignored.
 
 ## Scope
 
 Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](`r config$url$reploldmd`jira-supervisor-notes.md) for details.
 
-- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](`r config$url$reploldmd`Instructions-PandP-Checks.md).
+- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions for Papers and Proceedings](/replicability-training-curriculum/aea-instructions-for-papers-and-proceedings-checks.html).
 
 ## Overview
 
@@ -81,12 +81,32 @@ The first thing you must do is to advance the ticket from `Open` to `In Progress
 
 - This lets us know that you have started working on replication.
 
+
+```{block, type='rmdcomment'}
+STOP! Is the current Jira issue an **original report** (first time we see the manuscript?) or **is it a revision** (we've seen the manuscript before?)?
+```
+
+- [ ] Check the `MCStatus` field: 
+  - If it says "`RR`" or "`CA`", then it is an "original report" - proceed.
+  - If it says "`CA` `Revision`", then it is ... a revision! 
+    - Follow the instructions at "[Revision reports after author resubmission](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html)".
+    - In particular, **do NOT create a new repository** - you will re-use the previous repository.
+    - In particular, **do NOT create "update" or "new" directories** The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
+    - When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
+
+
 At this stage, you are collecting information. 
 
-- [ ] start by [creating a repository](https://bitbucket.org/repo/import) (for detailed instructions, see the [Wiki page](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket))
+- [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
+    - copy-paste from this URL: "[https://github.com/AEADataEditor/replication-template](https://github.com/AEADataEditor/replication-template)" to the URL field
     - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
     - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
-- [x] populate the repository with the latest version of the [template](https://github.com/AEADataEditor/replication-template) (*If you used the "Import Repository" technique outlined on the [wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket), this is already done!*) 
+    - Keep the other settings (in particular, keep this a **private** repository).
+    - Click Import Repository
+
+![](images/bitbucket_import_blank_2022.png)
+
+- We have now created a Bitbucket repo named something like aearep-123 that has been populated with the latest version of the LDI replication template documents!
 
 - [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
 - [ ] Delete (`git rm`) unused files from the template! 
@@ -449,12 +469,6 @@ To complete this stage, enter the direct URL of the report, i.e., in the relevan
 > https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md
 
 You can now submit your report for review by changing the status to `Under Review`
-
-## Replication Revisions
-
-- See [revision guidance](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html) on the Chapter 11.
-- When receiving updated files from authors, do NOT create "update" or "new" directories. The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
-- When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
 
 ## Reviewing Reports
 
