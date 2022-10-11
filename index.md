@@ -1619,7 +1619,7 @@ At this point, you may want to transition to CISER if you haven't already. You s
 - [ ] Download the updated openICPSR deposit and commit the materials to the **same Bitbucket repo as the original replication**, in the **same directory** (i.e., if the openICPSR deposit is `12345` then all updated materials will again go into the `12345` subdirectory. 
     - Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the `aearep-123` repo on Bitbucket.
     - Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to `git rm` them). 
-    - There are tricks to letting Git do much of the work: Follow the detailed instructions for the process of updating the replication materials in the [Appendix: Updating Replication Materials after Revision](/replicability-training-curriculum/updating-replication-materials-after-revisions.html).
+    - There are tricks to letting Git do much of the work: **Follow the detailed instructions for the process of updating the replication materials** in the [Appendix: Updating Replication Materials after Revision](/replicability-training-curriculum/updating-replication-materials-after-revisions.html).
 
 - [ ] Update the Data Description section of the report.  
    
@@ -1677,16 +1677,18 @@ Change the status from `Code Review` or `Verification` to `Writing Report`.
 
 In this stage, you will finalize the revision report. 
 
-- [ ] Ensure all [REQUIRED] and [SUGGESTED] items from the original report have been changed to [We REQUESTED] and [We SUGGESTED] in the body of the report. 
+- [ ] Ensure all `[REQUIRED]` and `[SUGGESTED]` items from the original report have been changed to `[We REQUESTED]` and `[We SUGGESTED]` in the body of the report. 
     - The resolution (or lack thereof) should be included as a bullet point directly below the request. 
+    - If using the scripts, you can use the `[aearevision](https://github.com/AEADataEditor/editor-scripts)` to change all the tags
+    - If the resolution is incomplete (`Not done`  or `Partially done`), then repeat the usual `> [REQUIRED]` tag, as this will become an action item.
 
-- [ ] Ensure any new issues found are tagged with the appropriate [REQUIRED] and [SUGGESTED] tags. 
+- [ ] Ensure any new issues found are tagged with the appropriate `> [REQUIRED]` and `> [SUGGESTED]` tags. 
 
 - [ ] Delete/modify any comments of the report template that are no longer true:
     - e.g. if the previous report stated "Data not cited" and the author has now added citations, then that part should state "Data is cited" or "Data is now cited".
 
 - [ ] Delete any parts of the report template that are no longer relevant:
-    - e.g. if no code changes were [REQUIRED], then delete the sections involving code, replication steps, and findings. 
+    - e.g. if no code changes were `[REQUIRED]`, then delete the sections involving code, replication steps, and findings. 
     - careful however here, too: authors should only be making changes to parts that we requested changes for, but if they change things elsewhere, then you should, in fact, retain that section, and accurately describe it again. New errors *can* be introduced!
 
 - [ ] Update the Classification. 
@@ -1696,22 +1698,35 @@ In this stage, you will finalize the revision report.
 
 - [ ] Incorporate all old/new requested changes and resolutions in the SUMMARY section of the report: 
 
-    - Create sub-sections for **New**, **Unresolved**, and **Resolved** issues. 
-    - Replace all previously `- [REQUIRED]` and `- [SUGGESTED]` items in the SUMMARY section with `> [We REQUESTED]` and `> [We SUGGESTED]`, respectively. New issues should still have the `- [REQUIRED]` and `- [SUGGESTED]` tags. 
-    - Below each item, include the same resolution you listed in the body of the report. 
+    - Create a new sub-section `### Previously` and collect the **Unresolved**, and **Resolved** issues. 
+      - Leave the existing `### Action Items (manuscript)` and `### Action Items (openICPSR)` sections!
+    - Collect all the `> [We REQUESTED]` and `> [We SUGGESTED]` items from the rest of the report (this should correspond to the previous - [REQUIRED]` and `- [SUGGESTED]` items)
+      - These should go under the `### Previously` section, appropriately classified.
+      - Below each item, include the same resolution you listed in the body of the report. 
+    - New and any unresolved issues should be collected with their `- [REQUIRED]` and `- [SUGGESTED]` tags under the `### Action Items` sections. 
+      - If using the scripts, you can use the `[aeareq](https://github.com/AEADataEditor/editor-scripts)` as usual.
+    
 
 ## An example
+
+In the example below, the revision found bugs in the code that were not previously present (a **new action item**), and identified the continued lack of data citations (an **unresolved** action item). A setup program that was requested was provided by the authors, and is thus **resolved**.
 
 ```
 SUMMARY
 -------
 
-### New 
+### Action Items (openICPSR)
 
 - [REQUIRED] Please provide debugged code, addressing the issues identified in 
   this report.
+- [REQUIRED] Please add data citations to the article. 
+  Guidance on how to cite data is provided in the 
+  [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references) 
+  and in [additional guidance](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html#confidential-databases).
 
-### Unresolved 
+### Previously
+
+#### Unresolved 
 
 > [We REQUESTED] Please add data citations to the article. 
   Guidance on how to cite data is provided in the 
@@ -1721,7 +1736,7 @@ SUMMARY
 - Not done. Please add data citations to the manuscript for the 
   following data sources: data source 1, data source 2. 
 
-### Resolved 
+#### Resolved 
 
 > [We REQUESTED] Please add a setup program that installs all 
   packages as noted above. Please specify all necessary commands. 

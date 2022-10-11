@@ -409,7 +409,7 @@ Open <code>REPLICATION.md</code> to review the requested changes from the prior 
 Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code>12345</code> then all updated materials will again go into the <code>12345</code> subdirectory.</p><ul>
 <li>Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the <code>aearep-123</code> repo on Bitbucket.</li>
 <li>Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to <code>git rm</code> them).</li>
-<li>There are tricks to letting Git do much of the work: Follow the detailed instructions for the process of updating the replication materials in the <a href="/replicability-training-curriculum/updating-replication-materials-after-revisions.html">Appendix: Updating Replication Materials after Revision</a>.</li>
+<li>There are tricks to letting Git do much of the work: <strong>Follow the detailed instructions for the process of updating the replication materials</strong> in the <a href="/replicability-training-curriculum/updating-replication-materials-after-revisions.html">Appendix: Updating Replication Materials after Revision</a>.</li>
 </ul></li>
 <li><p><input type="checkbox" disabled="" />
 Update the Data Description section of the report.</p></li>
@@ -474,18 +474,20 @@ Update the Findings section of the report.</p></li>
 <p>In this stage, you will finalize the revision report.</p>
 <ul>
 <li><p><input type="checkbox" disabled="" />
-Ensure all [REQUIRED] and [SUGGESTED] items from the original report have been changed to [We REQUESTED] and [We SUGGESTED] in the body of the report.</p><ul>
+Ensure all <code>[REQUIRED]</code> and <code>[SUGGESTED]</code> items from the original report have been changed to <code>[We REQUESTED]</code> and <code>[We SUGGESTED]</code> in the body of the report.</p><ul>
 <li>The resolution (or lack thereof) should be included as a bullet point directly below the request.</li>
+<li>If using the scripts, you can use the <code>[aearevision](https://github.com/AEADataEditor/editor-scripts)</code> to change all the tags</li>
+<li>If the resolution is incomplete (<code>Not done</code> or <code>Partially done</code>), then repeat the usual <code>&gt; [REQUIRED]</code> tag, as this will become an action item.</li>
 </ul></li>
 <li><p><input type="checkbox" disabled="" />
-Ensure any new issues found are tagged with the appropriate [REQUIRED] and [SUGGESTED] tags.</p></li>
+Ensure any new issues found are tagged with the appropriate <code>&gt; [REQUIRED]</code> and <code>&gt; [SUGGESTED]</code> tags.</p></li>
 <li><p><input type="checkbox" disabled="" />
 Delete/modify any comments of the report template that are no longer true:</p><ul>
 <li>e.g. if the previous report stated “Data not cited” and the author has now added citations, then that part should state “Data is cited” or “Data is now cited”.</li>
 </ul></li>
 <li><p><input type="checkbox" disabled="" />
 Delete any parts of the report template that are no longer relevant:</p><ul>
-<li>e.g. if no code changes were [REQUIRED], then delete the sections involving code, replication steps, and findings.</li>
+<li>e.g. if no code changes were <code>[REQUIRED]</code>, then delete the sections involving code, replication steps, and findings.</li>
 <li>careful however here, too: authors should only be making changes to parts that we requested changes for, but if they change things elsewhere, then you should, in fact, retain that section, and accurately describe it again. New errors <em>can</em> be introduced!</li>
 </ul></li>
 <li><p><input type="checkbox" disabled="" />
@@ -495,24 +497,40 @@ Update the Classification.</p><ul>
 </ul></li>
 <li><p><input type="checkbox" disabled="" />
 Incorporate all old/new requested changes and resolutions in the SUMMARY section of the report:</p><ul>
-<li>Create sub-sections for <strong>New</strong>, <strong>Unresolved</strong>, and <strong>Resolved</strong> issues.</li>
-<li>Replace all previously <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> items in the SUMMARY section with <code>&gt; [We REQUESTED]</code> and <code>&gt; [We SUGGESTED]</code>, respectively. New issues should still have the <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> tags.</li>
+<li>Create a new sub-section <code>### Previously</code> and collect the <strong>Unresolved</strong>, and <strong>Resolved</strong> issues.
+<ul>
+<li>Leave the existing <code>### Action Items (manuscript)</code> and <code>### Action Items (openICPSR)</code> sections!</li>
+</ul></li>
+<li>Collect all the <code>&gt; [We REQUESTED]</code> and <code>&gt; [We SUGGESTED]</code> items from the rest of the report (this should correspond to the previous - [REQUIRED]<code>and</code>- [SUGGESTED]<code>items) - These should go under the</code>### Previously` section, appropriately classified.
+<ul>
 <li>Below each item, include the same resolution you listed in the body of the report.</li>
+</ul></li>
+<li>New and any unresolved issues should be collected with their <code>- [REQUIRED]</code> and <code>- [SUGGESTED]</code> tags under the <code>### Action Items</code> sections.
+<ul>
+<li>If using the scripts, you can use the <code>[aeareq](https://github.com/AEADataEditor/editor-scripts)</code> as usual.</li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
 </div>
 <div id="an-example" class="section level2">
 <h2><span class="header-section-number">12.4</span> An example</h2>
+<p>In the example below, the revision found bugs in the code that were not previously present (a <strong>new action item</strong>), and identified the continued lack of data citations (an <strong>unresolved</strong> action item). A setup program that was requested was provided by the authors, and is thus <strong>resolved</strong>.</p>
 <pre><code>SUMMARY
 -------
 
-### New 
+### Action Items (openICPSR)
 
 - [REQUIRED] Please provide debugged code, addressing the issues identified in 
   this report.
+- [REQUIRED] Please add data citations to the article. 
+  Guidance on how to cite data is provided in the 
+  [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references) 
+  and in [additional guidance](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html#confidential-databases).
 
-### Unresolved 
+### Previously
+
+#### Unresolved 
 
 &gt; [We REQUESTED] Please add data citations to the article. 
   Guidance on how to cite data is provided in the 
@@ -522,7 +540,7 @@ Incorporate all old/new requested changes and resolutions in the SUMMARY section
 - Not done. Please add data citations to the manuscript for the 
   following data sources: data source 1, data source 2. 
 
-### Resolved 
+#### Resolved 
 
 &gt; [We REQUESTED] Please add a setup program that installs all 
   packages as noted above. Please specify all necessary commands. 
