@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 16 AEA: Instructions for Papers and Proceedings checks | TRAINING For Reproducibility Verification</title>
+  <title>Chapter 13 AEA: Reviewing and (Pre-) Approving Reports | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 16 AEA: Instructions for Papers and Proceedings checks | TRAINING For Reproducibility Verification" />
+  <meta property="og:title" content="Chapter 13 AEA: Reviewing and (Pre-) Approving Reports | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 16 AEA: Instructions for Papers and Proceedings checks | TRAINING For Reproducibility Verification" />
+  <meta name="twitter:title" content="Chapter 13 AEA: Reviewing and (Pre-) Approving Reports | TRAINING For Reproducibility Verification" />
   
   <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
   
@@ -36,8 +36,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="aea-interfacing-with-the-journal-management-system.html"/>
-<link rel="next" href="checklist.html"/>
+<link rel="prev" href="aea-revision-reports-after-author-resubmission.html"/>
+<link rel="next" href="aea-monitoring-pending-openicpsr-changes.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -308,152 +308,168 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="aea-instructions-for-papers-and-proceedings-checks" class="section level1">
-<h1><span class="header-section-number">Chapter 16</span> AEA: Instructions for Papers and Proceedings checks</h1>
-<p>You will be assigned a Jira issue. It should look something like this:</p>
-<p><img src="images/jira-pnp_screenshot.png" /></p>
-<p>Take note of the 4 highlighted fields:</p>
+<div id="aea-reviewing-and-pre--approving-reports" class="section level1">
+<h1><span class="header-section-number">Chapter 13</span> AEA: Reviewing and (Pre-) Approving Reports</h1>
+<p>“Approvers” and “Pre-approvers” will review the reports, and finalize the Summary.</p>
+<div id="generic-guidance" class="section level2">
+<h2><span class="header-section-number">13.1</span> Generic Guidance</h2>
 <ul>
-<li><p>(1) the “AEAREP” number (identifier for the issue on Jira)</p></li>
-<li><p>(2) the “Manuscript Central Number” (identifier on the AEA’s editorial system)</p></li>
-<li><p>(3) the “openICPSR Project Number” (identifier on the ICPSR system)</p></li>
-<li><p>(4) the link for “Code Provenance”, which should direct you directly to openICPSR</p></li>
-</ul>
-<p>Additionally, certain steps below (i.e. transitioning to “Pending Publication”) require that you have “Publisher” permission in Jira. If it is unclear whether or not you have that permission, please reach out to a supervisor.</p>
-<blockquote>
-<p>Here’s the <a href="https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html">guidance document</a></p>
-</blockquote>
-<div id="step-1" class="section level2">
-<h2><span class="header-section-number">16.1</span> Step 1</h2>
-<p>You should now do the following:</p>
-<ul>
-<li><p>Open the link in (4) on openICPSR</p>
-<ul>
-<li>If you need to find the openICPSR repository, use <a href="https://www.openicpsr.org/openicpsr/tenant/openicpsr/module/aea/reports">this link</a></li>
-</ul></li>
-</ul>
-<!-- -->
-<ul>
-<li><p>Open the form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgcBTGA9JVH_90pjLpoASn_tKFtRuQdi0Ge-UCLL3Kx6toLg/viewform?usp=sf_link">link here</a></p></li>
-<li><p>Assess the openICPSR repository, filling out the form as you go along</p>
-<ul>
-<li>It is important that you enter the AEAREP and Manuscript numbers accurately. We suggest copying-and-pasting.</li>
-</ul></li>
-<li><p>Submit the form.</p></li>
-<li><p>Close the form after each issue, and open it again for the next one.</p></li>
-<li><p>Navigate to the “PandP Docs” Google Drive folder <a href="https://drive.google.com/drive/folders/1TJ7e-0Zq1wAvmCoY0PUrFGjo2rV-nSn-">here</a>, locate the PDF with the Jira ticket of the case you are working on (PDF format: <code>Report-PandP-AEAREP-xxxx.pdf</code>), and download the file. This is the PDF version of the checklist form using the information you entered.</p></li>
-</ul>
-<p>In Jira:</p>
-<ul>
-<li>Move the issue forward by choosing “<strong>Process PandP</strong>” to status
-“<em>Submitted PandP Form</em>”
-<ul>
-<li>This indicates that you have completed the form.</li>
-</ul></li>
-<li>Attach the downloaded PDF to the Jira ticket.</li>
+<li>Pre-approvals usually can be completed rather quickly and should be prioritized.</li>
+<li>The pre-approver should not be running any of the code or downloading any of the data unless asked to do so.</li>
+<li>The language for the <code>[REQUIRED]</code> tag comments is drawn from the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Sample Language for Reports</a>. To ensure uniformity across reports, pre-approvers are encouraged to use the phrases verbatim.</li>
 </ul>
 </div>
-<div id="step-2" class="section level2">
-<h2><span class="header-section-number">16.2</span> Step 2</h2>
-<p>Once the form PDF has been added to the issue, you should first return to the openICPSR repository, and then come back to Jira. Depending on what’s on the form, proceed to do one of the following:</p>
-<div id="if-the-form-has-all-required-elements-checked-you-should-sign-off" class="section level3">
-<h3><span class="header-section-number">16.2.1</span> If the form has all “required” elements checked, you should “sign off”:</h3>
-<div id="on-openicpsr" class="section level4">
-<h4><span class="header-section-number">16.2.1.1</span> On openICPSR</h4>
-<ul>
-<li>Write a “Project communication log” entry. After clicking on “+ add entry”, copy the following to the relevant cell. Update AEAREP number accordingly.
-<ul>
-<li><p><em>Subject line:</em> AEAREP-xxx Data and Code Deposit for P&amp;P submission accepted</p></li>
-<li><p><em>Content</em>: Thank you for uploading your code and data. This
-deposit is accepted. No computational verification was
-conducted, only compliance with required metadata was checked.</p></li>
-</ul></li>
-</ul>
-</div>
-<div id="back-in-jira" class="section level4">
-<h4><span class="header-section-number">16.2.1.2</span> Back in Jira</h4>
-<ul>
-<li><p>Move it through the workflow</p>
-<ul>
-<li>Choose “<strong>Prepare for publication</strong>”
-<ul>
-<li>Resolution: <em>Evaluation only</em></li>
-<li>MCRecommendationV2: <em>Accept</em></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div id="if-the-form-does-not-have-all-required-elements-checked-make-the-following-entry" class="section level3">
-<h3><span class="header-section-number">16.2.2</span> If the form does not have all “required” elements checked, make the following entry:</h3>
-<div id="on-openicpsr-1" class="section level4">
-<h4><span class="header-section-number">16.2.2.1</span> On openICPSR</h4>
+<div id="preliminary-steps-for-pre-approving-reports" class="section level2">
+<h2><span class="header-section-number">13.2</span> Preliminary Steps for Pre-approving Reports</h2>
 <ol style="list-style-type: decimal">
-<li>If <code>Deposit Status</code> = <code>Deposit in Progress</code>,</li>
+<li>The “Review for pre-approval” transition in Jira requires specific permissions. If you have not been granted this permission, please reach out to your supervisor.</li>
+<li>Clone the Bitbucket repository of the report that requires pre-approval to the local machine or CISER machine. <strong>Do not download the openICPSR deposit!</strong> The pre-approver checks and finalizes the report but does not redo the whole replication.</li>
 </ol>
 <ul>
-<li><p>Write a “Project communication log” entry</p>
-<ul>
-<li><p><em>Subject line:</em> AEAREP-XXX Modifications to make to your P&amp;P
-deposit</p></li>
-<li><p><em>Content:</em> Thank you for uploading your code and data. We have
-checked the deposit for compliance with the required metadata
-elements. Please see the attached form for modifications to
-make.</p></li>
-<li><p>Attach the PDF from the issue to the communication log.</p></li>
-</ul></li>
+<li>You can also use “Github Codespaces” for this process.</li>
 </ul>
-<ol start="2" style="list-style-type: decimal">
-<li>If <code>Deposit Status</code> = <code>Submitted</code>,</li>
+<ol start="3" style="list-style-type: decimal">
+<li>Skim through the report and note if it is an original replication or a revision. Follow the steps below correspondingly.</li>
+</ol>
+</div>
+<div id="original-replication-report" class="section level2">
+<h2><span class="header-section-number">13.3</span> Original Replication Report</h2>
+<ol style="list-style-type: decimal">
+<li>Verify that the replicator has deleted all of the <code>INSTRUCTIONS</code> comments of the report; if not, please do so.</li>
+<li>Verify if the replication requires <strong>IRB approval/RCT registration</strong>. These are commonly found in papers that utilize randomized experiments, lab experiments, or surveys run by the authors, involving “human participants.” Ensure that the manuscript contains the necessary approval information (on the title footnote). If absent, insert relevant <code>[REQUIRED]</code> or <code>[SUGGESTED]</code> tag comments wherever necessary.</li>
+<li>Read through the <strong>Data Sources section</strong> of the report and check for completeness.
+<ul>
+<li>Reports sometimes might be missing data sources. Cross-check (scan) this with the manuscript and the README. This is usually the most time-intensive part of the pre-approval.</li>
+<li>You are not expected to redo this section, but you should spot-check to see if it is complete and accurate.</li>
+<li>When replicators mention “URL does not work” but provide no further information, verify the URL (if less than 5 URLs to check)</li>
+<li>The report should accurately reflect whether the data source has been cited and whether its location/access modality has been provided.</li>
+<li>Verify/Insert relevant <code>[REQUIRED]</code> or <code>[SUGGESTED]</code> tag comments.</li>
+</ul></li>
+<li>Check the <strong>Data checks section</strong> for completion.
+<ul>
+<li>Check if the PII scan output is present in the repository.</li>
+<li>Check if the Package scan output is present in the repository.</li>
+<li>Verify/Insert relevant <code>[REQUIRED]</code> or <code>[SUGGESTED]</code> tag comments.</li>
+</ul></li>
+<li>Check the <strong>Code checks section</strong> for completion.
+<ul>
+<li>Check if the completed Code check spreadsheet is present in the repository.</li>
+<li>Verify/ Insert relevant <code>[REQUIRED]</code> or <code>[SUGGESTED]</code> tag comments.</li>
+</ul></li>
+<li>Check the <strong>Stated Requirements</strong> and <strong>Missing requirements</strong> section for completion and insert relevant <code>[REQUIRED]</code> or <code>[SUGGESTED]</code> tag comments.</li>
+<li>Carefully read through the <strong>Replication steps section.</strong>
+<ul>
+<li>Ensure that this report section is coherent in its description of the steps the replicator took to perform the entire replication. Can you follow the narrative/list of steps, and from it, do you think you understand what the replicator did?</li>
+<li>If the replicator noted that the code contains bugs, the error message/error code should be explicitly listed.</li>
+<li><strong>The pre-approver should not be rerunning any of the code!</strong></li>
+<li>Communication between the pre-approver and replicator is encouraged so that any confusing/unclear language used in this section can be clarified.</li>
+<li>Verify/Insert relevant <code>[REQUIRED]</code> or <code>[SUGGESTED]</code> tag comments.</li>
+</ul></li>
+<li>Check the <strong>Computing Environment of the Replicator section</strong> for completeness.</li>
+<li>Verify: Format the results in the <strong>Findings section</strong> into tables by utilizing the the Excel-to-Markdown Extension in Visual Studio.
+<ul>
+<li>Check if the output/log files have been pushed to the Bitbucket repository.</li>
+<li>If there are discrepancies between the replicated tables and figures and those of the manuscript, the report should contain images/screenshots to highlight the differences.</li>
+<li>If there are numerous tables and figures that exhibit discrepancies, these should be put into a .zip file. This action should be noted in the <strong>Summary section</strong> as well as mentioned in a JIRA comment.</li>
+</ul></li>
+<li>Ensure the classification of the replication fits the degree of reproducibility.</li>
+<li>Fill out the <strong>Action Items</strong> of the report.
+<ul>
+<li>These are separated into “Manuscript” and “openICPSR” (these sections are pre-existent in the template)</li>
+<li>Use a script or manually copy-paste all of the <code>[REQUIRED]</code> tags to this list.
+<ul>
+<li><code>[aeareq](https://github.com/AEADataEditor/editor-scripts)</code> extracts the <code>[REQUIRED]</code> tags and places them at the top of the REPLICATION.md</li>
+</ul></li>
+<li>Split the action items according to where they can be addressed. Some may be addressable in both sections (for instance, correcting figures and tables, and/or data citations). Others belong only into the “Manuscript” part (IRB, RCT), others only into the “openICPSR” (anything related to code)</li>
+<li>Order them by importance: <code>[REQUIRED]</code> items first, and within these, the most important at the top (correcting bugs, providing missing files).</li>
+<li><code>[SUGGESTED]</code> items can be at the end of each section.
+<ul>
+<li><code>[aeareq](https://github.com/AEADataEditor/editor-scripts)</code> extracts the <code>[SUGGESTED]</code> tags only if provided with the additional argument <code>sug</code></li>
+</ul></li>
+</ul></li>
+<li>Fill out the <strong>Summary section</strong> of the report.</li>
 </ol>
 <ul>
-<li><p>Change the status of the deposit to “Request Revisions” with the note:</p>
+<li>Start with a thank you, and a positive note: Highlight the merits of the replication i.e. how many figures/tables were replicated, if data citations were properly completed, etc.</li>
+<li>Add a template line with the proposed resolution. These are at the top of the <a href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">sample-language-report.md</a>.</li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li>(Re)generate the PDF of the report.</li>
+</ol>
 <ul>
-<li>Please see the attached form for modifications to make.</li>
+<li>Use MarkdownPDF package if you are using Visual Studio Code</li>
+<li>Use a script: <a href="https://github.com/AEADataEditor/editor-scripts">aeaready</a> creates the PDF from the REPLICATION.md, crafts the commit message and pushes it to the repository. It requires additional pieces of software that are noted in the link.</li>
+</ul>
+<ol start="12" style="list-style-type: decimal">
+<li>Commit and push all changes to the repository. Advance the JIRA ticket to “Pre-approved.” The pre-approval is now complete!</li>
+</ol>
+<p><strong>Notes:</strong> The pre-approver should reach out to the original replicator for clarifications should there be any confusions during the course of pre-approving the report. If bugs in the code seem trivial i.e. missing packages, missing <code>Results</code> directory, replicator cannot find output etc., the pre-approver should reach out to the original replicator for further clarification.</p>
+<p>For the majority of the <code>[REQUIRED]</code> comment tags, it is best to use them verbatim to preserve uniformity across our reports. However, there are times where a more accurate description can help the author pinpoint what exactly is required of them.</p>
+<p>For example, say we have a scenario where the author did not include code for Table A.6 in the code deposit but everything else has been provided and replicates perfectly.</p>
+<p>Instead of writing:</p>
+<pre><code>&gt; [REQUIRED] Please provide complete code, including for construction of the analysis data from raw data, and for appendix tables and figures, and identify source for inline numbers.</code></pre>
+<p>It is clearer to the authors if we write:</p>
+<pre><code>&gt; [REQUIRED] Please provide complete code for appendix tables and figures, in particular Table A.6.</code></pre>
+</div>
+<div id="revision-report" class="section level2">
+<h2><span class="header-section-number">13.4</span> Revision Report</h2>
+<p>The checklist of items to review are roughly the same as above. In addition:</p>
+<ul>
+<li>The pre-approver should check that <code>[We REQUESTED]</code> tags are used in place of <code>[REQUIRED]</code> tags. These tags should be preceded by a “&gt;” to create a comment rather than “-,” which creates a bullet point.
+<ul>
+<li>The script <code>[aeareview](https://github.com/AEADataEditor/editor-scripts)</code> changes all the <code>[REQUIRED]</code> to <code>[We REQUESTED]</code>.</li>
 </ul></li>
-<li><p>Write a “Project communication log” entry</p>
+<li>The report should reflect the <strong>current</strong> state of the replication.</li>
+<li>In the <strong>Summary Section:</strong>
 <ul>
-<li><p><em>Subject line:</em> AEAREP-XXX Modifications to make to your P&amp;P
-deposit</p></li>
-<li><p><em>Content:</em> Thank you for uploading your code and data. We have
-checked the deposit for compliance with the required metadata
-elements. Please see the attached form for modifications to
-make.</p></li>
-<li><p>Attach the PDF from the issue to the communication log.</p></li>
+<li>Create a new section “<code>### Previously</code>” that covers all the action items from the previous round.</li>
+<li>Create a list of persisting issues that require attention. These should be added as action items to the usual section, in addition to any new items.</li>
+<li>There is no need to distinguish new from persistent action items: the action item list should simply contain a complete and exhaustive (check)list of items that need to be done.</li>
 </ul></li>
 </ul>
+<p>Example:</p>
+<pre><code>### Action Items (Manuscript)
+
+- [REQUIRED] The data collection reported in this article had IRB approval. Please provide full IRB approval information, including protocol number and home institution of the IRB, in the titlepage footnote.
+
+### Action Items (openICPSR)
+
+...
+
+### Previously
+
+&gt; [We REQUESTED] The data collection reported in this article had IRB approval. Please provide full IRB approval information, including protocol number and home institution of the IRB, in the titlepage footnote.
+
+Not done. The manuscript still does not mention the IRB information in the titlepage footnote.</code></pre>
 </div>
-<div id="back-in-jira-1" class="section level4">
-<h4><span class="header-section-number">16.2.2.2</span> Back in Jira,</h4>
+<div id="choosing-a-recommendation" class="section level2">
+<h2><span class="header-section-number">13.5</span> Choosing a Recommendation</h2>
+<p>Approvers must select/confirm one of the recommendations (field <code>MCRecommendationV2</code>):</p>
 <ul>
-<li>Choose “<strong>Wait for openICPSR response (PandP)</strong>”
-<ul>
-<li>Resolution: “<em>Evaluation only</em>”
-<ul>
-<li>MCRecommendationV2 = “Accept with changes”</li>
-</ul></li>
-</ul></li>
-<li>Later, once the issues have been resolved (typically days or
-weeks later) follow the process under “required elements
-checked”</li>
+<li><strong>Accepted</strong> - the manuscript moves forward in the publishing workflow on Manuscript Central, the Data Editor does not see the manuscript again.</li>
+<li><strong>Accepted with changes</strong> - same, but some conditions may be imposed. However, the Data Editor does not need to see the manuscript again.</li>
+<li><strong>Revisions requested - manuscript ready</strong> - Some revisions need to be made, and the Data Editor needs to see the authors’ response. However, the manuscript can move forward in the publishing workflow. This is rarely used, but opens up the possibility that the managing editors can pull out a manuscript from this category to move forward, depending on the backlog for publication.</li>
+<li><strong>Conditional Acceptance</strong> - the Data Editor expects to see a response from the authors to the report.</li>
+<li><strong>Revise and resubmit</strong> - the Data Editor has detected a serious problem which needs to go back to the “Revise and resubmit” phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript’s conclusions based on the reproduction attempt. Rarely used.</li>
 </ul>
-
+</div>
+<div id="publication" class="section level2">
+<h2><span class="header-section-number">13.6</span> Publication</h2>
+<p>Once all review rounds have been completed, the last revision will lead to a recommendation of “Accepted”. The Data Editor’s staff prepares the openICPSR deposit for final publication. In general, this means that a note is added to the “Project Communications Log” on openICPSR, denoting the acceptance of the deposit. The AEA publication staff can subsequently move this issue forward to “Published” when the supplement has been published on openICPSR.</p>
+<ul>
+<li>The field <code>openICPSRDOI</code> is pre-filled, but should be checked by the AEA publication staff.</li>
+</ul>
+<p>See <a href="/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html">Preparing for publication</a> for details.</p>
 
 </div>
-</div>
-</div>
-</div>
-
-
-
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="aea-interfacing-with-the-journal-management-system.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="aea-revision-reports-after-author-resubmission.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aea-monitoring-pending-openicpsr-changes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

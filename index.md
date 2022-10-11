@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-10-05"
+date: "2022-10-11"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1029,13 +1029,13 @@ Here's a collection from older presentations:
 
 # AEA Jira workflow - A guide
 
-For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki).
+For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki). For AEA work, that post-publication process can be ignored.
 
 ## Scope
 
 Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md) for details.
 
-- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions PandP Checks](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Instructions-PandP-Checks.md).
+- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions for Papers and Proceedings](/replicability-training-curriculum/aea-instructions-for-papers-and-proceedings-checks.html).
 
 ## Overview
 
@@ -1110,12 +1110,32 @@ The first thing you must do is to advance the ticket from `Open` to `In Progress
 
 - This lets us know that you have started working on replication.
 
+
+<div class="rmdcomment">
+<p>STOP! Is the current Jira issue an <strong>original report</strong> (first time we see the manuscript?) or <strong>is it a revision</strong> (we’ve seen the manuscript before?)?</p>
+</div>
+
+- [ ] Check the `MCStatus` field: 
+  - If it says "`RR`" or "`CA`", then it is an "original report" - proceed.
+  - If it says "`CA` `Revision`", then it is ... a revision! 
+    - Follow the instructions at "[Revision reports after author resubmission](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html)".
+    - In particular, **do NOT create a new repository** - you will re-use the previous repository.
+    - In particular, **do NOT create "update" or "new" directories** The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
+    - When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
+
+
 At this stage, you are collecting information. 
 
-- [ ] start by [creating a repository](https://bitbucket.org/repo/import) (for detailed instructions, see the [Wiki page](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket))
+- [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
+    - copy-paste from this URL: "[https://github.com/AEADataEditor/replication-template](https://github.com/AEADataEditor/replication-template)" to the URL field
     - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
     - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
-- [x] populate the repository with the latest version of the [template](https://github.com/AEADataEditor/replication-template) (*If you used the "Import Repository" technique outlined on the [wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Setting-up-a-repository-on-Bitbucket), this is already done!*) 
+    - Keep the other settings (in particular, keep this a **private** repository).
+    - Click Import Repository
+
+![](images/bitbucket_import_blank_2022.png)
+
+- We have now created a Bitbucket repo named something like aearep-123 that has been populated with the latest version of the LDI replication template documents!
 
 - [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
 - [ ] Delete (`git rm`) unused files from the template! 
@@ -1479,12 +1499,6 @@ To complete this stage, enter the direct URL of the report, i.e., in the relevan
 
 You can now submit your report for review by changing the status to `Under Review`
 
-## Replication Revisions
-
-- See [revision guidance](https://labordynamicsinstitute.github.io/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html) on the Chapter 11.
-- When receiving updated files from authors, do NOT create "update" or "new" directories. The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
-- When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
-
 ## Reviewing Reports
 
 "Approvers" and "Pre-approvers" will review the reports, and finalize the Summary. In particular, approvers must select/confirm one of the recommendations (field `MCRecommendationV2`):
@@ -1509,19 +1523,19 @@ See [Preparing for publication](https://labordynamicsinstitute.github.io/replica
 
 # AEA: Revision reports after author resubmission
 
-Most pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.
+Some pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.
 
 ## Generic Guidance 
 
 - Most revisions will not take you much time, so please try to process them quickly!
-
 - Revisions do not require you to repeat all of the same steps as the original replication (see below).
-
 - **Do not create a new Bitbucket repo**. You will overwrite the original repo (the original contents will still be available -- this is why we use version control software like Bitbucket!)
-
 - The original REPLICATION.md is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.
     - If new issues turn up as a result of additional materials provided, these are okay to include as [REQUIRED] changes in the revised report. 
     - If you are unsure about something, add it to the report. While reviewing your report, we can make a determination about whether or not it can be done after acceptance of the manuscript, be a suggested instead of required change, etc. 
+
+- In particular, **do NOT create "update" or "new" directories** The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
+- Please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
 
 
 
@@ -1549,11 +1563,12 @@ becomes
 
 ## Revision Workflow 
 
-You should proceed through the [workflow](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-workflow-training.md) as you would for an original case with some exceptions:
+You should proceed through the [workflow](/replicability-training-curriculum/aea-jira-workflow-a-guide.html) as you would for an original case with some exceptions:
 
 - You **should not** create a new Bitbucket repository. 
 - You do not need to fill out a new Data Citation and Information Report.
 - You _may_ not need to re-run any code.  
+- All sections are potentially subject to updates, so pay attention.
 
 ### In Progress 
 
@@ -1570,12 +1585,13 @@ First, advance the ticket from `Assigned` to `In Progress`.
 
         
 
-- [ ] Download the materials attached to the JIRA issue. This will typically include an updated copy of the manuscript, readme, and a response to the editor addressing the requested changes from the prior replication attempt. These should be added to the root of the repository 
+- [ ] Download the materials attached to the JIRA issue. This will typically include 
+  - an updated copy of the manuscript, 
+  - a response to the editor addressing the requested changes from the prior replication attempt. 
+  
+- [ ] Remove obsolete files. In the root, this should be obvious (old manuscript), in the copy of the code, a bit trickier, but necessary.
 
-- [ ] Remove obsolete files. In the root, this should be obvious (old manuscript, old README), in the copy of the code, a bit trickier, but necessary.
-
-
-- [ ] Add these to the root of the repository locally, and then add, commit, and push them to the Bitbucket repository (e.g., `git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf`)
+- [ ] Add these to the root of the repository locally, and then `git add`, `git commit`, and `git push` them to the Bitbucket repository (e.g., `git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf`)
   - The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:
 
 ```
@@ -1603,8 +1619,7 @@ At this point, you may want to transition to CISER if you haven't already. You s
 - [ ] Download the updated openICPSR deposit and commit the materials to the **same Bitbucket repo as the original replication**, in the **same directory** (i.e., if the openICPSR deposit is `12345` then all updated materials will again go into the `12345` subdirectory. 
     - Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the `aearep-123` repo on Bitbucket.
     - Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to `git rm` them). 
-    - Ensure that output produced from the prior replication attempt remains in the repository. 
-    - More detailed instructions for the process of updating the replication materials can be found [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md). 
+    - There are tricks to letting Git do much of the work: Follow the detailed instructions for the process of updating the replication materials in the [Appendix: Updating Replication Materials after Revision](/replicability-training-curriculum/updating-replication-materials-after-revisions.html).
 
 - [ ] Update the Data Description section of the report.  
    
@@ -1724,6 +1739,232 @@ SUMMARY
 Finally, don't forget to `git add`, `git commit`, and `git push` the new report. Then, change the status in JIRA from `Writing Report` to `Report Under Review`.  
 
 <!--chapter:end:12-jira-revision-guidance.Rmd-->
+
+# AEA: Reviewing and (Pre-) Approving Reports
+
+"Approvers" and "Pre-approvers" will review the reports, and finalize the Summary. 
+
+## Generic Guidance
+
+- Pre-approvals usually can be completed rather quickly and should be prioritized.
+- The pre-approver should not be running any of the code or downloading any of the data unless asked to do so.
+- The language for the `[REQUIRED]` tag comments is drawn from the [Sample Language for Reports](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md). To ensure uniformity across reports, pre-approvers are encouraged to use the phrases verbatim.
+
+## Preliminary Steps for Pre-approving Reports
+
+1. The "Review for pre-approval" transition in Jira requires specific permissions. If you have not been granted this permission, please reach out to your supervisor. 
+2. Clone the Bitbucket repository of the report that requires pre-approval to the local machine or CISER machine. **Do not download the openICPSR deposit!**  The pre-approver checks and finalizes the report but does not redo the whole replication.
+  - You can also use "Github Codespaces" for this process.
+3. Skim through the report and note if it is an original replication or a revision.  Follow the steps below correspondingly.
+
+
+## Original Replication Report
+
+1. Verify that the replicator has deleted all of the `INSTRUCTIONS` comments of the report; if not, please do so.
+1. Verify if the replication requires **IRB approval/RCT registration**.  These are commonly found in papers that utilize randomized experiments, lab experiments, or surveys run by the authors, involving "human participants."  Ensure that the manuscript contains the necessary approval information (on the title footnote). If absent, insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments wherever necessary.
+1. Read through the **Data Sources section** of the report and check for completeness.
+   - Reports sometimes might be missing data sources.  Cross-check (scan) this with the manuscript and the README.  This is usually the most time-intensive part of the pre-approval. 
+   - You are not expected to redo this section, but you should spot-check to see if it is complete and accurate.
+   - When replicators mention "URL does not work" but provide no further information, verify the URL (if less than 5 URLs to check)
+   - The report should accurately reflect whether the data source has been cited and whether its location/access modality has been provided. 
+   - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
+2. Check the **Data checks section** for completion.
+   - Check if the PII scan output is present in the repository.
+   - Check if the Package scan output is present in the repository.
+   - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
+2. Check the **Code checks section** for completion.
+   - Check if the completed Code check spreadsheet is present in the repository.
+   - Verify/ Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
+4. Check the **Stated Requirements** and **Missing requirements** section for completion and insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
+5. Carefully read through the **Replication steps section.**
+   - Ensure that this report section is coherent in its description of the steps the replicator took to perform the entire replication. Can you follow the narrative/list of steps, and from it, do you think you understand what the replicator did?
+   - If the replicator noted that the code contains bugs, the error message/error code should be explicitly listed.
+   - **The pre-approver should not be rerunning any of the code!**
+   - Communication between the pre-approver and replicator is encouraged so that any confusing/unclear language used in this section can be clarified.
+   - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
+6. Check the **Computing Environment of the Replicator section** for completeness. 
+7. Verify: Format the results in the **Findings section** into tables by utilizing the the Excel-to-Markdown Extension in Visual Studio.
+   - Check if the output/log files have been pushed to the Bitbucket repository.
+   - If there are discrepancies between the replicated tables and figures and those of the manuscript, the report should contain images/screenshots to highlight the differences.
+   - If there are numerous tables and figures that exhibit discrepancies, these should be put into a .zip file.  This action should be noted in the **Summary section** as well as mentioned in a JIRA comment.
+8. Ensure the classification of the replication fits the degree of reproducibility.
+9. Fill out the **Action Items** of the report.
+   - These are separated into "Manuscript" and "openICPSR" (these sections are pre-existent in the template)
+   - Use a script or manually copy-paste all of the `[REQUIRED]` tags to this list.
+      - `[aeareq](https://github.com/AEADataEditor/editor-scripts)` extracts the `[REQUIRED]` tags and places them at the top of the REPLICATION.md 
+   - Split the action items according to where they can be addressed. Some may be addressable in both sections (for instance, correcting figures and tables, and/or data citations). Others belong only into the "Manuscript" part (IRB, RCT), others only into the "openICPSR" (anything related to code)
+   - Order them by importance: `[REQUIRED]` items first, and within these, the most important at the top (correcting bugs, providing missing files).
+   - `[SUGGESTED]`  items can be at the end of each section.
+      - `[aeareq](https://github.com/AEADataEditor/editor-scripts)` extracts the `[SUGGESTED]`  tags only if provided with the additional argument `sug`
+10. Fill out the **Summary section** of the report.
+  - Start with a thank you, and a positive note: Highlight the merits of the replication i.e. how many figures/tables were replicated, if data citations were properly completed, etc. 
+  - Add a template line with the proposed resolution. These are at the top of the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md).
+11. (Re)generate the PDF of the report.
+   - Use MarkdownPDF package if you are using Visual Studio Code
+   - Use a script: [aeaready](https://github.com/AEADataEditor/editor-scripts) creates the PDF from the REPLICATION.md, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.
+12. Commit and push all changes to the repository.  Advance the JIRA ticket to "Pre-approved."  The pre-approval is now complete!
+
+**Notes:** The pre-approver should reach out to the original replicator for clarifications should there be any confusions during the course of pre-approving the report.  If bugs in the code seem trivial i.e. missing packages, missing `Results` directory, replicator cannot find output etc., the pre-approver should reach out to the original replicator for further clarification.
+
+For the majority of the `[REQUIRED]` comment tags, it is best to use them verbatim to preserve uniformity across our reports.  However, there are times where a more accurate description can help the author pinpoint what exactly is required of them.
+
+For example, say we have a scenario where the author did not include code for Table A.6 in the code deposit but everything else has been provided and replicates perfectly.
+
+Instead of writing:
+
+```
+> [REQUIRED] Please provide complete code, including for construction of the analysis data from raw data, and for appendix tables and figures, and identify source for inline numbers.
+```
+
+It is clearer to the authors if we write:
+
+```
+> [REQUIRED] Please provide complete code for appendix tables and figures, in particular Table A.6.
+```
+
+
+## Revision Report
+
+The checklist of items to review are roughly the same as above.  In addition:
+
+- The pre-approver should check that `[We REQUESTED]` tags are used in place of `[REQUIRED]` tags.  These tags should be preceded by a ">" to create a comment rather than "-," which creates a bullet point.
+   - The script `[aeareview](https://github.com/AEADataEditor/editor-scripts)` changes all the `[REQUIRED]` to `[We REQUESTED]`.
+- The report should reflect the **current** state of the replication.
+- In the **Summary Section:**
+   - Create a new section "`### Previously`" that covers all the action items from the previous round.
+   - Create a list of persisting issues that require attention. These should be added as action items to the usual section, in addition to any new items. 
+   - There is no need to distinguish new from persistent action items: the action item list should simply contain a complete and exhaustive (check)list of items that need to be done.
+
+Example:
+
+```
+### Action Items (Manuscript)
+
+- [REQUIRED] The data collection reported in this article had IRB approval. Please provide full IRB approval information, including protocol number and home institution of the IRB, in the titlepage footnote.
+
+### Action Items (openICPSR)
+
+...
+
+### Previously
+
+> [We REQUESTED] The data collection reported in this article had IRB approval. Please provide full IRB approval information, including protocol number and home institution of the IRB, in the titlepage footnote.
+
+Not done. The manuscript still does not mention the IRB information in the titlepage footnote.
+```
+
+
+## Choosing a Recommendation
+
+Approvers must select/confirm one of the recommendations (field `MCRecommendationV2`):
+
+- **Accepted** - the manuscript moves forward in the publishing workflow on Manuscript Central, the Data Editor does not see the manuscript again.
+- **Accepted with changes** - same, but some conditions may be imposed. However, the Data Editor does not need to see the manuscript again.
+- **Revisions requested - manuscript ready** - Some revisions need to be made, and the Data Editor needs to see the authors' response. However, the manuscript can move forward in the publishing workflow. This is rarely used, but opens up the possibility that the managing editors can pull out a manuscript from this category to move forward, depending on the backlog for publication.
+- **Conditional Acceptance** - the Data Editor expects to see a response from the authors to the report.
+- **Revise and resubmit** - the Data Editor has detected a serious problem which needs to go back to the "Revise and resubmit" phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript's conclusions based on the reproduction attempt. Rarely used.
+
+
+## Publication
+
+Once all review rounds have been completed, the last revision will lead to a recommendation of "Accepted". The Data Editor's staff prepares the openICPSR deposit for final publication. In general, this means that a note is added to the "Project Communications Log" on openICPSR, denoting the acceptance of the deposit. The AEA publication staff can subsequently move this issue forward to "Published" when the supplement has been published on openICPSR.
+
+- The field `openICPSRDOI` is pre-filled, but should be checked by the AEA publication staff.
+
+See [Preparing for publication](/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html) for details.
+
+<!--chapter:end:13-approving-issues.Rmd-->
+
+# AEA: Monitoring Pending openICPSR Changes
+
+## Background
+
+Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`] on Jira) of `Accept - with Changes.` What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.
+
+It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Chapter 13](aea-interfacing-with-the-journal-management-system.html). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as `Accept - with Changes` will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status `Pending openICPSR changes`, and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
+
+![partial process](images/pending_openicpsr.png)
+
+The openICPSR deposit is subsequently regularly monitored. Authors may contact the Data Editor as well. When it is clear that edits have been made to the deposit, the Jira issue is moved to `Assess openICPSR changes`. The Data Editor then needs to verify that all of the `[REQUIRED]` tags have been completed. The RA conducting that check can review the required changes both in the full report on Bitbucket and in the Project Communication Log in ICPSR. 
+
+The evaluation process usually does **NOT** require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which the Lab  only checks to see that edits to the code have been made as identified in the report. Unless specifically instructed to do so by the Data Editor, no code needs to be run.
+
+## Process
+
+As RA tasked with this, these are the instructions.
+
+### Verifying if changes have been made
+
+- A good place to start in this process is to go to the openICPSR deposit (fields [`Code Provenance`] or [`openICPSR alternate URL`]) 
+- First, verify the data of the last request made to the author, in the "Project Communication Log" area. The Project Communication log always contains our request to the authors, and may contain subsequent responses from the author.
+
+![Communication Log area](images/pending_openicpsr_com.png)
+
+- Now open the project log:  click "View Log" under "Share Project" and "Change Owner." 
+
+![Project log](images/pending_openicpsr_logbutton.png)
+
+- This log will tell you all the changes that have been made to the deposit and when. From here we can tell whether or not the authors have made any changes since we originally requested the revisions. 
+- Additionally, this is a great resource for checking which program files the authors have made changes to. 
+
+### If changes have been made
+
+Once you have ascertained that changes have been made, move the Jira ticket to `Assess openICPSR changes`. 
+
+![partial process](images/pending_openicpsr.png)
+
+
+### Verify Requested Changes
+
+You should now open the report, and verify the changes made by the author. How to do this will vary. In some cases, you may be able to simply inspect the deposit, in others, you may need to download the deposit again, and verify the changes made, as you might do for a full revision (see [Revision Reports](aea-revision-reports-after-author-resubmission.html)).
+
+- Open the report. You can do this by checking out the Bitbucket repo, or by clicking on the [`Report URL`] field.
+  - Check the "Summary" (at the top), as well as the "Reason for incomplete reproducibility" (at the bottom, and in the Jira issue)
+- Verify the changes.
+- For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibiliy" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
+  - You can find the "Reasons for incomplete reproducibility" in the "Repl.info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
+- If you have verified that all the required changes have been made, move forward with the acceptance process, by moving the issue to `Pending publication` (see [**Chapter 13.5.2**](aea-interfacing-with-the-journal-management-system.html#for-accept)).
+  - You have another opportunity to uncheck any boxes here that have been addressed.
+
+
+
+
+### Insufficient Changes
+
+- If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the Data Editor with a comment on the Jira ticket outlining your question. 
+- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
+
+### No Changes
+
+- If no changes have been made to the deposit **four weeks** after requesting revisions, start a message in the Communication log:
+
+    - with subject line: `AEAREP-xxx Data and Code Deposit Revisions Reminder` (replace with appropriate numbers)
+    - with body
+<div class="bbox">
+<p>Authors,</p>
+<p>Please make the revisions requested to the ICPSR deposit so that we may move forward with publication of the deposit.</p>
+<p>See our previous comment above and our full report for details. Feel free to contact us directly at <a href="mailto:dataeditor@aeapubs.org" class="email">dataeditor@aeapubs.org</a> with any questions.</p>
+<blockquote>
+<p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+</blockquote>
+<p>Thanks!</p>
+</div>
+- Make a note in the Jira ticket that such a message has been posted.
+- If after an additional **four weeks** still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.
+
+## Notes
+
+- **A note on [SUGGESTED] items**. We, of course, attempt to get authors to make their deposit as reproducible as possible. Which means suggesting improvements such as creating a `master.do` or including code to automatically export results. However, they are only suggestions. In other words, they do not impede reproducibility and thus we do not require that the authors make those changes. If the only changes not made to the deposit were [SUGGESTED], move forward with acceptance. 
+
+- **A note on deposit status**. When an ICPSR deposit has a status of "Submitted" it is locked. This means that the authors will not be able to make any changes. If the deposit status is "Deposit in Progress" or "Revisions Requested" the deposit unlocked and changes may be made. Review the submission instructions above for information on how to unlock a deposit. 
+
+- When authors ask if they need to re-submit the updated manuscript to ScholarOne/Manuscript Central. Paste the following within the acceptance (or reminder) post on ICPSR:
+
+<div class="bbox">
+<p>At this stage, any changes to the manuscript are handled directly with editorial office â another submission to Scholar One is not necessary. If you are not already in contact with the editorial office, please reach out to the managing editors via <a href="mailto:aejaccept@aeapubs.org" class="email">aejaccept@aeapubs.org</a> or <a href="mailto:aeraccept@aeapubs.org" class="email">aeraccept@aeapubs.org</a>.</p>
+</div>
+
+<!--chapter:end:20-Pending_ICPSR.Rmd-->
 
 # AEA: Interfacing with the Journal Management System
 
@@ -1938,7 +2179,7 @@ Action items:
 
 > - ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
 
-<!--chapter:end:13-jira-prepare-publication.Rmd-->
+<!--chapter:end:30-jira-prepare-publication.Rmd-->
 
 # AEA: Instructions for Papers and Proceedings checks
 
@@ -2052,98 +2293,7 @@ Once the form PDF has been added to the issue, you should first return to the op
         weeks later) follow the process under "required elements
         checked"
 
-<!--chapter:end:14-Instructions-PandP-Checks.Rmd-->
-
-# AEA: Monitoring Pending openICPSR Changes
-
-## Background
-
-Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`] on Jira) of `Accept - with Changes.` What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.
-
-It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Chapter 13](aea-interfacing-with-the-journal-management-system.html). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as `Accept - with Changes` will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status `Pending openICPSR changes`, and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
-
-![partial process](images/pending_openicpsr.png)
-
-The openICPSR deposit is subsequently regularly monitored. Authors may contact the Data Editor as well. When it is clear that edits have been made to the deposit, the Jira issue is moved to `Assess openICPSR changes`. The Data Editor then needs to verify that all of the `[REQUIRED]` tags have been completed. The RA conducting that check can review the required changes both in the full report on Bitbucket and in the Project Communication Log in ICPSR. 
-
-The evaluation process usually does **NOT** require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which the Lab  only checks to see that edits to the code have been made as identified in the report. Unless specifically instructed to do so by the Data Editor, no code needs to be run.
-
-## Process
-
-As RA tasked with this, these are the instructions.
-
-### Verifying if changes have been made
-
-- A good place to start in this process is to go to the openICPSR deposit (fields [`Code Provenance`] or [`openICPSR alternate URL`]) 
-- First, verify the data of the last request made to the author, in the "Project Communication Log" area. The Project Communication log always contains our request to the authors, and may contain subsequent responses from the author.
-
-![Communication Log area](images/pending_openicpsr_com.png)
-
-- Now open the project log:  click "View Log" under "Share Project" and "Change Owner." 
-
-![Project log](images/pending_openicpsr_logbutton.png)
-
-- This log will tell you all the changes that have been made to the deposit and when. From here we can tell whether or not the authors have made any changes since we originally requested the revisions. 
-- Additionally, this is a great resource for checking which program files the authors have made changes to. 
-
-### If changes have been made
-
-Once you have ascertained that changes have been made, move the Jira ticket to `Assess openICPSR changes`. 
-
-![partial process](images/pending_openicpsr.png)
-
-
-### Verify Requested Changes
-
-You should now open the report, and verify the changes made by the author. How to do this will vary. In some cases, you may be able to simply inspect the deposit, in others, you may need to download the deposit again, and verify the changes made, as you might do for a full revision (see [Revision Reports](aea-revision-reports-after-author-resubmission.html)).
-
-- Open the report. You can do this by checking out the Bitbucket repo, or by clicking on the [`Report URL`] field.
-  - Check the "Summary" (at the top), as well as the "Reason for incomplete reproducibility" (at the bottom, and in the Jira issue)
-- Verify the changes.
-- For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibiliy" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
-  - You can find the "Reasons for incomplete reproducibility" in the "Repl.info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
-- If you have verified that all the required changes have been made, move forward with the acceptance process, by moving the issue to `Pending publication` (see [**Chapter 13.5.2**](aea-interfacing-with-the-journal-management-system.html#for-accept)).
-  - You have another opportunity to uncheck any boxes here that have been addressed.
-
-
-
-
-### Insufficient Changes
-
-- If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the Data Editor with a comment on the Jira ticket outlining your question. 
-- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
-
-### No Changes
-
-- If no changes have been made to the deposit **four weeks** after requesting revisions, start a message in the Communication log:
-
-    - with subject line: `AEAREP-xxx Data and Code Deposit Revisions Reminder` (replace with appropriate numbers)
-    - with body
-<div class="bbox">
-<p>Authors,</p>
-<p>Please make the revisions requested to the ICPSR deposit so that we may move forward with publication of the deposit.</p>
-<p>See our previous comment above and our full report for details. Feel free to contact us directly at <a href="mailto:dataeditor@aeapubs.org" class="email">dataeditor@aeapubs.org</a> with any questions.</p>
-<blockquote>
-<p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
-</blockquote>
-<p>Thanks!</p>
-</div>
-- Make a note in the Jira ticket that such a message has been posted.
-- If after an additional **four weeks** still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.
-
-## Notes
-
-- **A note on [SUGGESTED] items**. We, of course, attempt to get authors to make their deposit as reproducible as possible. Which means suggesting improvements such as creating a `master.do` or including code to automatically export results. However, they are only suggestions. In other words, they do not impede reproducibility and thus we do not require that the authors make those changes. If the only changes not made to the deposit were [SUGGESTED], move forward with acceptance. 
-
-- **A note on deposit status**. When an ICPSR deposit has a status of "Submitted" it is locked. This means that the authors will not be able to make any changes. If the deposit status is "Deposit in Progress" or "Revisions Requested" the deposit unlocked and changes may be made. Review the submission instructions above for information on how to unlock a deposit. 
-
-- When authors ask if they need to re-submit the updated manuscript to ScholarOne/Manuscript Central. Paste the following within the acceptance (or reminder) post on ICPSR:
-
-<div class="bbox">
-<p>At this stage, any changes to the manuscript are handled directly with editorial office â another submission to Scholar One is not necessary. If you are not already in contact with the editorial office, please reach out to the managing editors via <a href="mailto:aejaccept@aeapubs.org" class="email">aejaccept@aeapubs.org</a> or <a href="mailto:aeraccept@aeapubs.org" class="email">aeraccept@aeapubs.org</a>.</p>
-</div>
-
-<!--chapter:end:16-Pending_ICPSR.Rmd-->
+<!--chapter:end:40-Instructions-PandP-Checks.Rmd-->
 
 \cleardoublepage
 
@@ -2363,6 +2513,48 @@ See [Privacy] section about expectations on privacy.
 
 <!--chapter:end:94-03-private-data.Rmd-->
 
+# Updating Replication Materials after Revisions
+
+While you move through the [revision workflow](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html), you will find instructions  to download the updated ICPSR deposit and commit new files to the Bitbucket repository, while removing old files that are no longer present. This appendix will detail the most efficient way of executing this process.
+
+1. On the ICPSR deposit, navigate to "View Log" under "Share Project" and "Change Owner." This log will tell you all the changes that have been made to the deposit and when. Verify that changes have been made to the deposit since the recent revisions were requested. If no changes have been made since the previous round, it may be a sign that the authors have created a new deposit instead of updating their existing deposit. If no changes have been made, contact a supervisor.  
+2. Download the ICPSR deposit.
+3. Navigate to the existing `aearep-xxxx` directory on you workspace.
+4. Within the directory on your workspace click into the ICPSR folder (i.e. `123456`).
+5. Move any important files (results, logs, etc.) from the first round to their own subfolder of the root directory.
+6. Navigate back to the root directory (`aearep-xxxx`), right click and select "Git Bash Here" to open a bash shell.
+7. **Delete the files**. It is extremely important that you do this manually and **NOT** through "git rm"
+   - Option 1: Use the File Explorer (Windows) or Finder (macOS). Select everything and delete. 
+    ![shot1](images/Update_Materials_1.png)
+   - Options 2: In the bash shell, type `rm -rf 123456/`
+8. In the bash shell, cd into the ICPSR folder, `cd 123456` (you may need to recreate it: `mkdir 123456`)
+    ![shot2](images/Update_Materials_2.png)
+
+9. In the bash shell, unzip the download of the updated ICPSR deposit `unzip path/to/Downloads/123456.zip`.
+    ![shot3](images/Update_Materials_3.png)
+
+10. In the bash shell, type "`cd ..`" to move back to the root directory.
+11. In the bash shell, type "`git status`" to see what files are new, modified, or deleted.
+12. Git add everything in the ICPSR folder, e.g. `git add 123456`. This will add all new files, commit the deletion of any obsolete files, and record the changes in any files that were modified or moved
+13. Git commit with the "-a" flag: `git commit -m "My great message" -a`. This will capture any previously manually deleted files.
+14. Now push the updated ICPSR folder.
+15. In Bitbucket, you should be able to see the specific changes made to any files (with the same naming convention), that were modified.
+
+**TL;DR**
+```
+rm -rf 123456
+mkdir 123456
+cd 123456
+unzip ../123456.zip 
+cd ..
+git add 123456
+git commit -m 'Updates by author' -a
+```
+
+*Note:* If the structure of the directory is different or files have been renamed, git will treat them as new files instead of allowing you to view specific modifications.
+
+<!--chapter:end:94-04-Updating_Materials.Rmd-->
+
 # Access to Computers
 
 You will be working on a variety of computers
@@ -2522,7 +2714,11 @@ In Jira,
 
 ### Recording edits 
 
-- Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the steps taken during a revision (LINK TO INSTRUCTIONS FOR REVISION). Delete, by hand (**NOT** git rm), the code files as you downloaded them onto your workspace. Then, place the amended codes into that same directory. Git `add, commit, push`. We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance [here](https://github.com/labordynamicsinstitute/replicability-training/blob/master/Updating_Materials.md).
+- Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the [steps taken during a revision](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html):
+  - Delete, by hand (**NOT** git rm), the code files as you downloaded them onto your workspace. 
+  - Then, place the amended codes into that same directory. 
+  - Git `add, commit, push`. 
+  - We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance [here](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html).
 
 #### Expert tip
 

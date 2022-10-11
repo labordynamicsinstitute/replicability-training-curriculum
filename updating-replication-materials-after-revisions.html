@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 16 AEA: Instructions for Papers and Proceedings checks | TRAINING For Reproducibility Verification</title>
+  <title>E Updating Replication Materials after Revisions | TRAINING For Reproducibility Verification</title>
   <meta name="description" content="We provide training for students who will verify the reproducibility of economics articles." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 16 AEA: Instructions for Papers and Proceedings checks | TRAINING For Reproducibility Verification" />
+  <meta property="og:title" content="E Updating Replication Materials after Revisions | TRAINING For Reproducibility Verification" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="labordynamicsinstitute/replicability-training-curriculum" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 16 AEA: Instructions for Papers and Proceedings checks | TRAINING For Reproducibility Verification" />
+  <meta name="twitter:title" content="E Updating Replication Materials after Revisions | TRAINING For Reproducibility Verification" />
   
   <meta name="twitter:description" content="We provide training for students who will verify the reproducibility of economics articles." />
   
@@ -36,8 +36,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="aea-interfacing-with-the-journal-management-system.html"/>
-<link rel="next" href="checklist.html"/>
+<link rel="prev" href="downloading-data.html"/>
+<link rel="next" href="access-to-computers.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -308,143 +308,43 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="aea-instructions-for-papers-and-proceedings-checks" class="section level1">
-<h1><span class="header-section-number">Chapter 16</span> AEA: Instructions for Papers and Proceedings checks</h1>
-<p>You will be assigned a Jira issue. It should look something like this:</p>
-<p><img src="images/jira-pnp_screenshot.png" /></p>
-<p>Take note of the 4 highlighted fields:</p>
-<ul>
-<li><p>(1) the “AEAREP” number (identifier for the issue on Jira)</p></li>
-<li><p>(2) the “Manuscript Central Number” (identifier on the AEA’s editorial system)</p></li>
-<li><p>(3) the “openICPSR Project Number” (identifier on the ICPSR system)</p></li>
-<li><p>(4) the link for “Code Provenance”, which should direct you directly to openICPSR</p></li>
-</ul>
-<p>Additionally, certain steps below (i.e. transitioning to “Pending Publication”) require that you have “Publisher” permission in Jira. If it is unclear whether or not you have that permission, please reach out to a supervisor.</p>
-<blockquote>
-<p>Here’s the <a href="https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html">guidance document</a></p>
-</blockquote>
-<div id="step-1" class="section level2">
-<h2><span class="header-section-number">16.1</span> Step 1</h2>
-<p>You should now do the following:</p>
-<ul>
-<li><p>Open the link in (4) on openICPSR</p>
-<ul>
-<li>If you need to find the openICPSR repository, use <a href="https://www.openicpsr.org/openicpsr/tenant/openicpsr/module/aea/reports">this link</a></li>
-</ul></li>
-</ul>
-<!-- -->
-<ul>
-<li><p>Open the form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgcBTGA9JVH_90pjLpoASn_tKFtRuQdi0Ge-UCLL3Kx6toLg/viewform?usp=sf_link">link here</a></p></li>
-<li><p>Assess the openICPSR repository, filling out the form as you go along</p>
-<ul>
-<li>It is important that you enter the AEAREP and Manuscript numbers accurately. We suggest copying-and-pasting.</li>
-</ul></li>
-<li><p>Submit the form.</p></li>
-<li><p>Close the form after each issue, and open it again for the next one.</p></li>
-<li><p>Navigate to the “PandP Docs” Google Drive folder <a href="https://drive.google.com/drive/folders/1TJ7e-0Zq1wAvmCoY0PUrFGjo2rV-nSn-">here</a>, locate the PDF with the Jira ticket of the case you are working on (PDF format: <code>Report-PandP-AEAREP-xxxx.pdf</code>), and download the file. This is the PDF version of the checklist form using the information you entered.</p></li>
-</ul>
-<p>In Jira:</p>
-<ul>
-<li>Move the issue forward by choosing “<strong>Process PandP</strong>” to status
-“<em>Submitted PandP Form</em>”
-<ul>
-<li>This indicates that you have completed the form.</li>
-</ul></li>
-<li>Attach the downloaded PDF to the Jira ticket.</li>
-</ul>
-</div>
-<div id="step-2" class="section level2">
-<h2><span class="header-section-number">16.2</span> Step 2</h2>
-<p>Once the form PDF has been added to the issue, you should first return to the openICPSR repository, and then come back to Jira. Depending on what’s on the form, proceed to do one of the following:</p>
-<div id="if-the-form-has-all-required-elements-checked-you-should-sign-off" class="section level3">
-<h3><span class="header-section-number">16.2.1</span> If the form has all “required” elements checked, you should “sign off”:</h3>
-<div id="on-openicpsr" class="section level4">
-<h4><span class="header-section-number">16.2.1.1</span> On openICPSR</h4>
-<ul>
-<li>Write a “Project communication log” entry. After clicking on “+ add entry”, copy the following to the relevant cell. Update AEAREP number accordingly.
-<ul>
-<li><p><em>Subject line:</em> AEAREP-xxx Data and Code Deposit for P&amp;P submission accepted</p></li>
-<li><p><em>Content</em>: Thank you for uploading your code and data. This
-deposit is accepted. No computational verification was
-conducted, only compliance with required metadata was checked.</p></li>
-</ul></li>
-</ul>
-</div>
-<div id="back-in-jira" class="section level4">
-<h4><span class="header-section-number">16.2.1.2</span> Back in Jira</h4>
-<ul>
-<li><p>Move it through the workflow</p>
-<ul>
-<li>Choose “<strong>Prepare for publication</strong>”
-<ul>
-<li>Resolution: <em>Evaluation only</em></li>
-<li>MCRecommendationV2: <em>Accept</em></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div id="if-the-form-does-not-have-all-required-elements-checked-make-the-following-entry" class="section level3">
-<h3><span class="header-section-number">16.2.2</span> If the form does not have all “required” elements checked, make the following entry:</h3>
-<div id="on-openicpsr-1" class="section level4">
-<h4><span class="header-section-number">16.2.2.1</span> On openICPSR</h4>
+<div id="updating-replication-materials-after-revisions" class="section level1">
+<h1><span class="header-section-number">E</span> Updating Replication Materials after Revisions</h1>
+<p>While you move through the <a href="/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html">revision workflow</a>, you will find instructions to download the updated ICPSR deposit and commit new files to the Bitbucket repository, while removing old files that are no longer present. This appendix will detail the most efficient way of executing this process.</p>
 <ol style="list-style-type: decimal">
-<li>If <code>Deposit Status</code> = <code>Deposit in Progress</code>,</li>
+<li><p>On the ICPSR deposit, navigate to “View Log” under “Share Project” and “Change Owner.” This log will tell you all the changes that have been made to the deposit and when. Verify that changes have been made to the deposit since the recent revisions were requested. If no changes have been made since the previous round, it may be a sign that the authors have created a new deposit instead of updating their existing deposit. If no changes have been made, contact a supervisor.<br />
+</p></li>
+<li><p>Download the ICPSR deposit.</p></li>
+<li><p>Navigate to the existing <code>aearep-xxxx</code> directory on you workspace.</p></li>
+<li><p>Within the directory on your workspace click into the ICPSR folder (i.e. <code>123456</code>).</p></li>
+<li><p>Move any important files (results, logs, etc.) from the first round to their own subfolder of the root directory.</p></li>
+<li><p>Navigate back to the root directory (<code>aearep-xxxx</code>), right click and select “Git Bash Here” to open a bash shell.</p></li>
+<li><p><strong>Delete the files</strong>. It is extremely important that you do this manually and <strong>NOT</strong> through “git rm”</p>
+<ul>
+<li>Option 1: Use the File Explorer (Windows) or Finder (macOS). Select everything and delete.
+<img src="images/Update_Materials_1.png" alt="shot1" /></li>
+<li>Options 2: In the bash shell, type <code>rm -rf 123456/</code></li>
+</ul></li>
+<li><p>In the bash shell, cd into the ICPSR folder, <code>cd 123456</code> (you may need to recreate it: <code>mkdir 123456</code>)
+<img src="images/Update_Materials_2.png" alt="shot2" /></p></li>
+<li><p>In the bash shell, unzip the download of the updated ICPSR deposit <code>unzip path/to/Downloads/123456.zip</code>.
+<img src="images/Update_Materials_3.png" alt="shot3" /></p></li>
+<li><p>In the bash shell, type “<code>cd ..</code>” to move back to the root directory.</p></li>
+<li><p>In the bash shell, type “<code>git status</code>” to see what files are new, modified, or deleted.</p></li>
+<li><p>Git add everything in the ICPSR folder, e.g. <code>git add 123456</code>. This will add all new files, commit the deletion of any obsolete files, and record the changes in any files that were modified or moved</p></li>
+<li><p>Git commit with the “-a” flag: <code>git commit -m "My great message" -a</code>. This will capture any previously manually deleted files.</p></li>
+<li><p>Now push the updated ICPSR folder.</p></li>
+<li><p>In Bitbucket, you should be able to see the specific changes made to any files (with the same naming convention), that were modified.</p></li>
 </ol>
-<ul>
-<li><p>Write a “Project communication log” entry</p>
-<ul>
-<li><p><em>Subject line:</em> AEAREP-XXX Modifications to make to your P&amp;P
-deposit</p></li>
-<li><p><em>Content:</em> Thank you for uploading your code and data. We have
-checked the deposit for compliance with the required metadata
-elements. Please see the attached form for modifications to
-make.</p></li>
-<li><p>Attach the PDF from the issue to the communication log.</p></li>
-</ul></li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>If <code>Deposit Status</code> = <code>Submitted</code>,</li>
-</ol>
-<ul>
-<li><p>Change the status of the deposit to “Request Revisions” with the note:</p>
-<ul>
-<li>Please see the attached form for modifications to make.</li>
-</ul></li>
-<li><p>Write a “Project communication log” entry</p>
-<ul>
-<li><p><em>Subject line:</em> AEAREP-XXX Modifications to make to your P&amp;P
-deposit</p></li>
-<li><p><em>Content:</em> Thank you for uploading your code and data. We have
-checked the deposit for compliance with the required metadata
-elements. Please see the attached form for modifications to
-make.</p></li>
-<li><p>Attach the PDF from the issue to the communication log.</p></li>
-</ul></li>
-</ul>
-</div>
-<div id="back-in-jira-1" class="section level4">
-<h4><span class="header-section-number">16.2.2.2</span> Back in Jira,</h4>
-<ul>
-<li>Choose “<strong>Wait for openICPSR response (PandP)</strong>”
-<ul>
-<li>Resolution: “<em>Evaluation only</em>”
-<ul>
-<li>MCRecommendationV2 = “Accept with changes”</li>
-</ul></li>
-</ul></li>
-<li>Later, once the issues have been resolved (typically days or
-weeks later) follow the process under “required elements
-checked”</li>
-</ul>
-
-
-</div>
-</div>
-</div>
-</div>
-
-
+<p><strong>TL;DR</strong></p>
+<pre><code>rm -rf 123456
+mkdir 123456
+cd 123456
+unzip ../123456.zip 
+cd ..
+git add 123456
+git commit -m &#39;Updates by author&#39; -a</code></pre>
+<p><em>Note:</em> If the structure of the directory is different or files have been renamed, git will treat them as new files instead of allowing you to view specific modifications.</p>
 
 </div>
             </section>
@@ -452,8 +352,8 @@ checked”</li>
           </div>
         </div>
       </div>
-<a href="aea-interfacing-with-the-journal-management-system.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="downloading-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="access-to-computers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
