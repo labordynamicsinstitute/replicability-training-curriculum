@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-10-11"
+date: "2022-10-17"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1052,7 +1052,7 @@ until a resolution can be found.
 | In Progress  | Download code        | → Code         | `Code provenance` have been filled out, `Journal` has been identified, `Empirical Article`=`Yes`, `External validation` != "yes" |
 | Code         | Access data          | → Data         | `Git working location`, `Data provenance` have been filled out. |
 | Data         | Prepare preliminary report | → Write Preliminary Report | |
-| Write Preliminary Report | Data is accessible   | → Verification  | `Location of data` has been filled out.|
+| Write Preliminary Report | Some data is accessible   | → Verification  | `Location of data`, `Computing environment` have been filled out.|
 | .            | Data not available   | → Code review   | `Reason for non-accessibility of data` has been filled out.|
 | Verification, Code review  | Prepare report       | →	Report        | |
 | Report       | Submit for review    | → Report Under Review  | `Report URL` has been filled out.|
