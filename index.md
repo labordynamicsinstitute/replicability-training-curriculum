@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-10-17"
+date: "2022-12-01"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2524,7 +2524,12 @@ See [Privacy] section about expectations on privacy.
 
 ## Accessing privately provided data
 
-(to come)
+- Log into CISER and open the File Explorer
+- Under "This PC", click "Share (\\rschfs2x.ciserrsch.cornell.edu)" under Network Locations
+- Find the LDILab folder and within that folder is the corresponding restricted access data (often titled aearep-1234_nda_Implicit)
+   - If you cannot open the LDILab folder, contact the assistant to the data editor 
+- If there is a zip folder, right click and Extract All before working in the folder
+- Run all programs within this folder, do not take the data out of this folder.
 
 <!--chapter:end:94-03-private-data.Rmd-->
 
