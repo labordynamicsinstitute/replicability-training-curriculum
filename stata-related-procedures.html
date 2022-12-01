@@ -484,7 +484,7 @@ do &quot;${rootdir}/code/appendix_code/appendix.do&quot;
 </blockquote>
 <pre><code>1 include &quot;config.do&quot;
 2
-3 */ This is Master do file /*</code></pre>
+3 /* This is Master do file */</code></pre>
 <blockquote>
 <p>Save.</p>
 </blockquote>
@@ -512,8 +512,8 @@ do &quot;${rootdir}/code/appendix_code/appendix.do&quot;
 <p>However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the “root directory”. Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.</p>
 <div id="example" class="section level4">
 <h4><span class="header-section-number">G.2.4.1</span> Example</h4>
-<p>In a master file, a global variable “maindir” defines the path of the root directory as:</p>
-<pre><code>*/ This is Master do file /*
+<p>In the author’s master file, a global variable “maindir” defines the path of the root directory as:</p>
+<pre><code>/* This is Master do file */
 
 global maindir &quot;C:\Users\Author\Dropbox\Project1&quot; // this is the path to the repository
 global data &quot;$maindir/data&quot; // path to data folder
@@ -522,7 +522,7 @@ global figures &quot;$maindir/figures&quot; // path to figures folder</code></pr
 After the change:</p>
 <pre><code>include &quot;config.do&quot;
 
-*/ This is Master do file /*
+/* This is Master do file */
 
 global maindir &quot;$rootdir&quot; // this is the path to the repository
 global data &quot;$maindir/data&quot; // path to data folder
@@ -581,7 +581,7 @@ local ssc_packages &quot;estout ivreg2&quot;
 <ul>
 <li>A Master .do file is in the main directory, and you have placed <code>config.do</code> in the main directory. The package <code>estout</code> and <code>ivreg2</code> need to be installed:</li>
 </ul>
-<pre><code>* Template config.do */
+<pre><code>/* Template config.do */
 
 local scenario &quot;B&quot;  // around line 30
 *** Add required packages from SSC to this list ***

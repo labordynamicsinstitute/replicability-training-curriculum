@@ -2965,7 +2965,7 @@ The folder with the code, whether is the root directory or a subfolder, should l
 ```
 1 include "config.do"
 2
-3 */ This is Master do file /*
+3 /* This is Master do file */
 ```
 
 > Save.
@@ -2995,10 +2995,10 @@ However, the typical case will only require one modification, either to the mast
 
 #### Example
 
-In a master file, a global variable "maindir" defines the path of the root directory as:
+In the author's master file, a global variable "maindir" defines the path of the root directory as:
 
 ```
-*/ This is Master do file /*
+/* This is Master do file */
 
 global maindir "C:\Users\Author\Dropbox\Project1" // this is the path to the repository
 global data "$maindir/data" // path to data folder
@@ -3011,7 +3011,7 @@ After the change:
 ```
 include "config.do"
 
-*/ This is Master do file /*
+/* This is Master do file */
 
 global maindir "$rootdir" // this is the path to the repository
 global data "$maindir/data" // path to data folder
@@ -3077,7 +3077,7 @@ A simplified directory structure that correspond to scenario "B" looks like this
 
 
 ```
-* Template config.do */
+/* Template config.do */
 
 local scenario "B"  // around line 30
 *** Add required packages from SSC to this list ***
