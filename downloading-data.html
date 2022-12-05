@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-12-01" />
+<meta name="date" content="2022-12-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,7 +268,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="D" data-path="downloading-data.html"><a href="downloading-data.html"><i class="fa fa-check"></i><b>D</b> Downloading Data</a><ul>
 <li class="chapter" data-level="D.1" data-path="downloading-data.html"><a href="downloading-data.html#using-openicpsr-projects-prior-to-publication"><i class="fa fa-check"></i><b>D.1</b> Using openICPSR Projects Prior to Publication</a></li>
-<li class="chapter" data-level="D.2" data-path="downloading-data.html"><a href="downloading-data.html#accessing-privately-provided-data"><i class="fa fa-check"></i><b>D.2</b> Accessing privately provided data</a></li>
+<li class="chapter" data-level="D.2" data-path="downloading-data.html"><a href="downloading-data.html#alternate-sources-of-data"><i class="fa fa-check"></i><b>D.2</b> Alternate sources of data</a></li>
 <li class="chapter" data-level="D.3" data-path="downloading-data.html"><a href="downloading-data.html#accessing-privately-provided-data"><i class="fa fa-check"></i><b>D.3</b> Accessing privately provided data</a></li>
 </ul></li>
 <li class="chapter" data-level="E" data-path="updating-replication-materials-after-revisions.html"><a href="updating-replication-materials-after-revisions.html"><i class="fa fa-check"></i><b>E</b> Updating Replication Materials after Revisions</a></li>
@@ -348,24 +348,71 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<div id="accessing-privately-provided-data" class="section level2">
-<h2><span class="header-section-number">D.2</span> Accessing privately provided data</h2>
-<p>(to come)</p>
+<div id="alternate-sources-of-data" class="section level2">
+<h2><span class="header-section-number">D.2</span> Alternate sources of data</h2>
+<p>We sometimes encounter replication packages that reference Dataverse or Zotero. Download those as they are found on those sites. Extract them as you would the openICPSR downloads, with the directories named as follows:</p>
+<ul>
+<li>Dataverse: Use the latter part of the DOI. E.g., if the Dataverse package’s DOI is <code>https://doi.org/10.7910/DVN/RE5ZVI</code>, name the directory <code>DVN-RE5ZVI</code>.</li>
+<li>Zenodo: Use the latter part of the DOI. E.g, if the Zenodo package’s DOI is <code>https://doi.org/10.5281/zenodo.7041706</code>, name the directory <code>zenodo-7041706</code>.</li>
+</ul>
 
 </div>
 <div id="accessing-privately-provided-data" class="section level2">
 <h2><span class="header-section-number">D.3</span> Accessing privately provided data</h2>
+<div id="when-there-is-privately-provided-data" class="section level3">
+<h3><span class="header-section-number">D.3.1</span> When there is privately provided data</h3>
+<p>In some cases, authors will provide us privately with data we cannot publish.</p>
+<div class="rmdcomment">
+<p>
+VERY IMPORTANT: You must treat these data as confidential, never remove them from CISER!
+</p>
+</div>
+<p>You will know where the data are by looking at the JIRA issue. You will often (but not always) see a <strong>subtask</strong> which we use to request the confidential data:</p>
+<div class="figure">
+<img src="/images/jira-subtask-restricted.png" alt="" />
+<p class="caption">subtask for confidential data</p>
+</div>
+<p>You should then look into the “<code>Data</code>” tab for the field <code>Working location of restricted data</code>:</p>
+<div class="figure">
+<img src="/images/jira-field-restricted-data.png" alt="" />
+<p class="caption">JIRA field for location: S:-3756-nda_Implicit</p>
+</div>
+</div>
+<div id="how-to-prepare-privately-provided-data" class="section level3">
+<h3><span class="header-section-number">D.3.2</span> How to prepare privately provided data</h3>
 <ul>
-<li>Log into CISER and open the File Explorer</li>
-<li>Under “This PC”, click “Share (\rschfs2x.ciserrsch.cornell.edu)” under Network Locations</li>
-<li>Find the LDILab folder and within that folder is the corresponding restricted access data (often titled aearep-1234_nda_Implicit)
+<li>Log into CISER as usual. You should never need to run code elsewhere when data are restricted/privately provided.</li>
+<li>Open the File Explorer</li>
+<li>Under “<code>This PC</code>”, click “<code>Share (\\rschfs2x.ciserrsch.cornell.edu)</code>” under <code>Network Locations</code>. This location is also available as “<code>S:</code>”.</li>
+<li>Find the <code>LDILab</code> folder. (You should probably bookmark/ add to favorites)</li>
+<li>Within that folder is the corresponding restricted access data (e.g. <code>aearep-3756-nda_Implicit</code>)
 <ul>
-<li>If you cannot open the LDILab folder, contact the assistant to the data editor</li>
+<li>If you cannot open the <code>LDILab</code> folder, contact the assistant to the Data Editor</li>
 </ul></li>
-<li>If there is a zip folder, right click and Extract All before working in the folder</li>
-<li>Run all programs within this folder, do not take the data out of this folder.</li>
+<li>If there is a ZIP file (looks like a folder, but is not), right-click and choose <code>Extract All</code> before working in the folder</li>
+<li>Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., <code>S:\LDILab\aearep-3756-nda_Implicit</code>.</li>
+</ul>
+</div>
+<div id="how-to-use-the-data-in-this-folder" class="section level3">
+<h3><span class="header-section-number">D.3.3</span> How to use the data in this folder</h3>
+<p>There are two situations.</p>
+<ol style="list-style-type: decimal">
+<li>The folder contains ONLY the confidential data. This <em>should</em> normally be the situation…</li>
+<li>The folder contains a copy of the openICPSR deposit, but with the confidential data included.</li>
+</ol>
+<p>There are two ways to run code using the data in this folder:</p>
+<ol style="list-style-type: decimal">
+<li>Run all programs within this folder, do not take the data out of this folder. However, you will need to transfer log files and output back to your regular “cloned” folder (i.e. <code>aearep-3756</code>).</li>
+<li>More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.</li>
+</ol>
+<ul>
+<li>In the <code>config.do</code>, is a line <code>global sdrive ""</code>. Modify that line to read <code>global sdrive "S:/LDILab/aearep-3756-nda_Implicit"</code></li>
+<li>Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.</li>
+<li>Everywhere you encounter references to confidential data in the code, e.g., <code>use "${datadir}/mysuper.dta"</code>, modify the code to reference the S-drive: <code>use "${sdrive}/mysuper.dta</code>.</li>
+<li>commit all code modifications and log files as you normally would.</li>
 </ul>
 
+</div>
 </div>
 </div>
             </section>

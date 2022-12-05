@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-12-01"
+date: "2022-12-05"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -2516,20 +2516,60 @@ See [Privacy] section about expectations on privacy.
 
 <!--chapter:end:94-01-how-to-use-openICPSR-backend.Rmd-->
 
-## Accessing privately provided data
+## Alternate sources of data
 
-(to come)
+We sometimes encounter replication packages that reference Dataverse or Zotero. Download those as they are found on those sites. Extract them as you would the openICPSR downloads, with the directories named as follows:
+
+- Dataverse: Use the latter part of the DOI. E.g., if the Dataverse package's DOI is `https://doi.org/10.7910/DVN/RE5ZVI`, name the directory `DVN-RE5ZVI`. 
+- Zenodo: Use the latter part of the DOI. E.g, if the Zenodo package's DOI is `https://doi.org/10.5281/zenodo.7041706`, name the directory `zenodo-7041706`.
 
 <!--chapter:end:94-02-alternate-downloads.Rmd-->
 
 ## Accessing privately provided data
 
-- Log into CISER and open the File Explorer
-- Under "This PC", click "Share (\\rschfs2x.ciserrsch.cornell.edu)" under Network Locations
-- Find the LDILab folder and within that folder is the corresponding restricted access data (often titled aearep-1234_nda_Implicit)
-   - If you cannot open the LDILab folder, contact the assistant to the data editor 
-- If there is a zip folder, right click and Extract All before working in the folder
-- Run all programs within this folder, do not take the data out of this folder.
+### When there is privately provided data
+
+In some cases, authors will provide us privately with data we cannot publish.
+
+<div class="rmdcomment">
+<p>VERY IMPORTANT: You must treat these data as confidential, never remove them from CISER!</p>
+</div>
+
+You will know where the data are by looking at the JIRA issue. You will often (but not always) see a **subtask** which we use to request the confidential data:
+
+![subtask for confidential data](/images/jira-subtask-restricted.png)
+
+You should then look into the "`Data`" tab for the field `Working location of restricted data`:
+
+![JIRA field for location: S:\LDILab\aearep-3756-nda_Implicit](/images/jira-field-restricted-data.png)
+
+
+### How to prepare privately provided data
+
+- Log into CISER as usual. You should never need to run code elsewhere when data are restricted/privately provided.
+- Open the File Explorer
+- Under "`This PC`", click "`Share (\\rschfs2x.ciserrsch.cornell.edu)`" under `Network Locations`. This location is also available as "`S:`".
+- Find the `LDILab` folder. (You should probably bookmark/ add to favorites) 
+- Within that folder is the corresponding restricted access data (e.g. `aearep-3756-nda_Implicit`)
+   - If you cannot open the `LDILab` folder, contact the assistant to the Data Editor 
+- If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
+- Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756-nda_Implicit`.
+
+### How to use the data in this folder
+
+There are two situations. 
+
+1. The folder contains ONLY the confidential data. This *should* normally be the situation...
+2. The folder contains a copy of the openICPSR deposit, but with the confidential data included.
+
+There are two ways to run code using the data in this folder:
+
+1. Run all programs within this folder, do not take the data out of this folder. However, you will need to transfer log files and output back to your regular "cloned" folder (i.e. `aearep-3756`).
+2. More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.
+  - In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "S:/LDILab/aearep-3756-nda_Implicit"`
+  - Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
+  - Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the S-drive: `use "${sdrive}/mysuper.dta`. 
+  - commit all code modifications and log files as you normally would.
 
 <!--chapter:end:94-03-private-data.Rmd-->
 
