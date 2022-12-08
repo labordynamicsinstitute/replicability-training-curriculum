@@ -7,7 +7,7 @@ author:
   - "Hyuk Son"
   - "Meredith Welch"
   - "David Wasser"
-date: "2022-12-05"
+date: "2022-12-08"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -1940,6 +1940,8 @@ You should now open the report, and verify the changes made by the author. How t
   - You can find the "Reasons for incomplete reproducibility" in the "Repl.info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
 - If you have verified that all the required changes have been made, move forward with the acceptance process, by moving the issue to `Pending publication` (see [**Chapter 13.5.2**](aea-interfacing-with-the-journal-management-system.html#for-accept)).
   - You have another opportunity to uncheck any boxes here that have been addressed.
+  - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
+  - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, then uncheck that box.
 
 
 
