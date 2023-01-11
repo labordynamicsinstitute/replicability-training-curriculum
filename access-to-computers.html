@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -438,11 +438,11 @@ Example: <code>Stata(16) with ssc packages estout and boottest</code></li>
 <code>use "D:\Dropbox\Data for paper\x.dta"</code> becomes <code>use "$data/x.dta"</code>.</li>
 <li>Modify the standard <code>config.do</code> as follows:</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb13-1"><a href="access-to-computers.html#cb13-1"></a><span class="kw">local</span> scenario <span class="st">&quot;A&quot;</span>                      <span class="co">// line 35</span></span>
-<span id="cb13-2"><a href="access-to-computers.html#cb13-2"></a><span class="kw">global</span> logdir <span class="st">&quot;${rootdir}/results/logs&quot;</span> <span class="co">// line 59</span></span>
-<span id="cb13-3"><a href="access-to-computers.html#cb13-3"></a><span class="co">// .... go to the very end </span></span>
-<span id="cb13-4"><a href="access-to-computers.html#cb13-4"></a><span class="kw">global</span> <span class="kw">data</span>    <span class="st">&quot;${rootdir}/data</span></span>
-<span id="cb13-5"><a href="access-to-computers.html#cb13-5"></a><span class="st">global results &quot;</span><span class="ot">${rootdir}</span>/results</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb12-1"><a href="access-to-computers.html#cb12-1"></a><span class="kw">local</span> scenario <span class="st">&quot;A&quot;</span>                      <span class="co">// line 35</span></span>
+<span id="cb12-2"><a href="access-to-computers.html#cb12-2"></a><span class="kw">global</span> logdir <span class="st">&quot;${rootdir}/results/logs&quot;</span> <span class="co">// line 59</span></span>
+<span id="cb12-3"><a href="access-to-computers.html#cb12-3"></a><span class="co">// .... go to the very end </span></span>
+<span id="cb12-4"><a href="access-to-computers.html#cb12-4"></a><span class="kw">global</span> <span class="kw">data</span>    <span class="st">&quot;${rootdir}/data</span></span>
+<span id="cb12-5"><a href="access-to-computers.html#cb12-5"></a><span class="st">global results &quot;</span><span class="ot">${rootdir}</span>/results</span></code></pre></div>
 <p>Occasionally, other changes are also necessary, for instance, creating new directories.</p></li>
 <li><p>Upload the code to the <code>/code</code> and the data files to the <code>/data</code> directories in Codeocean.</p></li>
 <li><p>Define the default <code>run</code> file using the right-click menu for the main do file. This will create a new file (called <code>run</code>) which is a Bash script that CodeOcean uses to run all of the other code.</p>
