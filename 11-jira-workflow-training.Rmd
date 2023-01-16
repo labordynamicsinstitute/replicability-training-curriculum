@@ -123,29 +123,29 @@ We will now ingest the authors' materials, and run a few statistics. Typically, 
 This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.
 ```
 
-You will now run what is called a `Bitbucket Pipeline`. Similar tools on other sites might be called `Continuous integration`, `Github Actions`, etc. If you have encountered these before, this will not be news for you, but it isn't hard even when this new.
+You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other sites might be called `Continuous integration`, `Github Actions`, etc. If you have encountered these before, this will not be news for you, but it isn't hard even when this new.
 
-- [ ] First, in the repository you just created, navigate to the `Pipelines` tab
+- First, in the repository you just created, navigate to the `Pipelines` tab
 
 ![](images/jira-find-pipelines.png)
 
-- [ ] Because this is new, you will see the "Run initial pipeline" page. Click on `Run initial pipeline`.
+- Because this is new, you will see the "Run initial pipeline" page. Click on `Run initial pipeline`.
 
 ![first-time-run](images/jira-run-first-pipeline.png)
 
-- [ ] You will now need to select a "pipeline" to run. 
+- You will now need to select a "pipeline" to run. 
 
 ![select pipeline](images/jira-select-pipeline.png)
 
-- [ ] Choose "populate from ICPSR" (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = `123456`), and hit `Run`.
+- Choose "`populate from ICPSR`" (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = `123456`), and hit `Run`.
 
 ![select pipeline](images/jira-run-pipeline-icpsr.png)
 
-- [ ] Your pipeline will start, working through various steps. This might take a while! Do the next step ([Collecting Information](#collecting-information)) then come back here.
+- Your pipeline will start, working through various steps. This might take a while! Do the next step ([Collecting Information](#collecting-information)) then come back here.
 
 ![running pipeline](images/jira-run-pipeline-running.png)
 
-- [ ] Once your pipeline is done, it will show as green, with some diagnostic output.
+- [ ] Once your pipeline is done, check that it is green.
   - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do [the manual steps later](#Manual).
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
@@ -285,12 +285,12 @@ The first section of the Replication report is titled "[General](https://github.
 
 Now you will establish a **list of data sources used**.
 
-- Please check the `Data and Code Availability Form`.
+- Please check the **Data and Code Availability Form**.
   - The form should be attached in the JIRA ticket. 
-  - In area 2 of the screen, choose DCAF.
-    - Open `Data and Code Availability Form`, and check if all blanks are filled out.
-    - Once you checked the form, and in particular, if the checkbox next to "README" is checked, choose "Yes" from the dropdown menu of `DCAF_README_checked` cell.
-    - If the answer to the following question at the bottom of the form is "Yes", then, choose "Yes" from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose "No".
+  - In area 2 of the screen, choose `DCAF`.
+    - Open the **Data and Code Availability Form**, and check if all blanks are filled out.
+    - Once you checked the form, and in particular, if the checkbox next to "README" is checked, choose "`Yes`" from the dropdown menu of `DCAF_README_checked` cell.
+    - If the answer to the following question at the bottom of the form is "Yes", then, choose "`Yes`" from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose "`No`".
       "Is any of the data used in this manuscript subject to access restrictions?"
   ![jira screen](images/jira-screen.png)
 
