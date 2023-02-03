@@ -20,6 +20,8 @@ description: "We provide training for students who will verify the reproducibili
 
 # Introduction
 
+> New training MANUAL: [/ldilab-manual/](https://labordynamicsinstitute.github.io/ldilab-manual/)
+
 This document is meant to guide the training of students in assessing the reproducibility of articles in the social sciences, and in particular in economics.
 
 
@@ -40,6 +42,16 @@ If you are a casual reader of this document, start with the [pre-requisites](#pr
 ![GitHub issues](https://img.shields.io/github/issues-raw/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat) ![GitHub last commit](https://img.shields.io/github/last-commit/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat) 
 
 <!--chapter:end:index.Rmd-->
+
+# (PART) NEW LOCATION {-}
+
+# Improved manual {-}
+
+> New training MANUAL: [/ldilab-manual/](https://labordynamicsinstitute.github.io/ldilab-manual/)
+
+
+
+<!--chapter:end:00-new-location.Rmd-->
 
 # (PART) Overview {-}
 
