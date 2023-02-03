@@ -1,8 +1,8 @@
 .page-inner::before{
-    content: " The manual has moved - see <a href='/ldilab-manual'>new location</a>.";
+    content: " The manual has moved - use /ldilab-manual for new location.";
     display: inline-block;
-    color: steelblue;
-    font-size: 14px;
+    color: rgb(180, 70, 70);
+    font-size: 20px;
     /* text-align: center; */
     position: absolute;
     left: 20%;
@@ -12,5 +12,5 @@
     -o-transform: rotate(30deg);
     -ms-transform: rotate(30deg);
     transform: rotate(30deg);*/
-    opacity:0.3;
+    opacity:0.9;
 }

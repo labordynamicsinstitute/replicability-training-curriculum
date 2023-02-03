@@ -14,7 +14,8 @@ bookdown::gitbook:
     toc:
       collapse: section
       scroll_highlight: yes
-      before: null
+      before: |
+              <div style="font-size: 20px; color: #b44646;><a href="/ldilab-manual" alt="new location">New location!</a></div>
       after: |
               <li class="chapter"> ©️ 2020 Vilhuber, Darisse, Borja Plaza, Son, Wasser, Welch </li>
               <li class="chapter"><a href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="CC-BY-NC logo" src="assets/cc-by-nc.png" height="12px"/> CC-BY-NC</a></li>
