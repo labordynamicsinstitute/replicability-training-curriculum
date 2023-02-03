@@ -20,6 +20,8 @@ description: "We provide training for students who will verify the reproducibili
 
 # Introduction
 
+> New training MANUAL: [/ldilab-manual/](https://labordynamicsinstitute.github.io/ldilab-manual/)
+
 This document is meant to guide the training of students in assessing the reproducibility of articles in the social sciences, and in particular in economics.
 
 ```{r setup,include=FALSE}

@@ -1,0 +1,7 @@
+# (PART) NEW LOCATION {-}
+
+# Improved manual {-}
+
+> New training MANUAL: [/ldilab-manual/](https://labordynamicsinstitute.github.io/ldilab-manual/)
+
+
