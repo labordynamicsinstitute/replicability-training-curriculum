@@ -29,7 +29,7 @@
 <meta name="author" content="David Wasser" />
 
 
-<meta name="date" content="2023-01-11" />
+<meta name="date" content="2023-02-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,6 +161,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/toc.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/redirect.css" type="text/css" />
 </head>
 
 <body>
@@ -612,39 +613,34 @@ start by <a href="https://bitbucket.org/repo/import">creating a repository using
 This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.
 </p>
 </div>
-<p>You will now run what is called a <code>Bitbucket Pipeline</code>. Similar tools on other sites might be called <code>Continuous integration</code>, <code>Github Actions</code>, etc. If you have encountered these before, this will not be news for you, but it isn’t hard even when this new.</p>
+<p>You will now run what is called a <em><code>Bitbucket Pipeline</code></em>. Similar tools on other sites might be called <code>Continuous integration</code>, <code>Github Actions</code>, etc. If you have encountered these before, this will not be news for you, but it isn’t hard even when this new.</p>
 <ul>
-<li><input type="checkbox" disabled="" />
-First, in the repository you just created, navigate to the <code>Pipelines</code> tab</li>
+<li>First, in the repository you just created, navigate to the <code>Pipelines</code> tab</li>
 </ul>
 <p><img src="images/jira-find-pipelines.png" /></p>
 <ul>
-<li><input type="checkbox" disabled="" />
-Because this is new, you will see the “Run initial pipeline” page. Click on <code>Run initial pipeline</code>.</li>
+<li>Because this is new, you will see the “Run initial pipeline” page. Click on <code>Run initial pipeline</code>.</li>
 </ul>
 <div class="figure">
 <img src="images/jira-run-first-pipeline.png" alt="" />
 <p class="caption">first-time-run</p>
 </div>
 <ul>
-<li><input type="checkbox" disabled="" />
-You will now need to select a “pipeline” to run.</li>
+<li>You will now need to select a “pipeline” to run.</li>
 </ul>
 <div class="figure">
 <img src="images/jira-select-pipeline.png" alt="" />
 <p class="caption">select pipeline</p>
 </div>
 <ul>
-<li><input type="checkbox" disabled="" />
-Choose “populate from ICPSR” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code>123456</code>), and hit <code>Run</code>.</li>
+<li>Choose “<code>populate from ICPSR</code>” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code>123456</code>), and hit <code>Run</code>.</li>
 </ul>
 <div class="figure">
 <img src="images/jira-run-pipeline-icpsr.png" alt="" />
 <p class="caption">select pipeline</p>
 </div>
 <ul>
-<li><input type="checkbox" disabled="" />
-Your pipeline will start, working through various steps. This might take a while! Do the next step (<a href="aea-jira-workflow-a-guide.html#collecting-information">Collecting Information</a>) then come back here.</li>
+<li>Your pipeline will start, working through various steps. This might take a while! Do the next step (<a href="aea-jira-workflow-a-guide.html#collecting-information">Collecting Information</a>) then come back here.</li>
 </ul>
 <div class="figure">
 <img src="images/jira-run-pipeline-running.png" alt="" />
@@ -652,7 +648,7 @@ Your pipeline will start, working through various steps. This might take a while
 </div>
 <ul>
 <li><input type="checkbox" disabled="" />
-Once your pipeline is done, it will show as green, with some diagnostic output.<ul>
+Once your pipeline is done, check that it is green.<ul>
 <li>If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do <a href="aea-jira-workflow-a-guide.html#Manual">the manual steps later</a>.</li>
 </ul></li>
 </ul>
@@ -843,14 +839,14 @@ Check with <code>git status</code> that there are no uncommited files.</p></li>
 <h3><span class="header-section-number">11.3.4</span> List of Data Sources</h3>
 <p>Now you will establish a <strong>list of data sources used</strong>.</p>
 <ul>
-<li>Please check the <code>Data and Code Availability Form</code>.
+<li>Please check the <strong>Data and Code Availability Form</strong>.
 <ul>
 <li>The form should be attached in the JIRA ticket.</li>
-<li>In area 2 of the screen, choose DCAF.
+<li>In area 2 of the screen, choose <code>DCAF</code>.
 <ul>
-<li>Open <code>Data and Code Availability Form</code>, and check if all blanks are filled out.</li>
-<li>Once you checked the form, and in particular, if the checkbox next to “README” is checked, choose “Yes” from the dropdown menu of <code>DCAF_README_checked</code> cell.</li>
-<li>If the answer to the following question at the bottom of the form is “Yes”, then, choose “Yes” from the dropdown menu of <code>DCAF_Access_Restrictions</code>. Otherwise, choose “No”.
+<li>Open the <strong>Data and Code Availability Form</strong>, and check if all blanks are filled out.</li>
+<li>Once you checked the form, and in particular, if the checkbox next to “README” is checked, choose “<code>Yes</code>” from the dropdown menu of <code>DCAF_README_checked</code> cell.</li>
+<li>If the answer to the following question at the bottom of the form is “Yes”, then, choose “<code>Yes</code>” from the dropdown menu of <code>DCAF_Access_Restrictions</code>. Otherwise, choose “<code>No</code>”.
 “Is any of the data used in this manuscript subject to access restrictions?”
 <img src="images/jira-screen.png" alt="jira screen" /></li>
 </ul></li>
